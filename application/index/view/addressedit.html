@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <iframe src="http://wmcdn.qtmojo.cn/adxcm_base_idigger.htm" style="width: 0px; height: 0px; position: absolute; top: -100px; left: -100px; display: none;"></iframe>
+    <script type="text/javascript" async="" src="//1.qtmojo.cn/aywmq_qt.js"></script>
+    <meta charset="UTF-8">
+    <title>地址管理</title>
+    <script type="text/javascript" async="" src="http://script.suning.cn/javascript/sn_da/da_opt.js"></script>
+     <!-- <script src="/static/bs/js/jquery.min.js"></script>
+    // <script src="/static/bs/js/bootstrap.min.js"></script>
+    // <script src="/static/bs/js/holder.min.js"></script> -->
+    <script type="text/javascript">//全局变量
+      var sn = sn || {
+        "context": "/emall",
+        "domain": "www.suning.com",
+        "storeId": "10052",
+        "catalogId": "10051",
+        "cartPath": "//ssl.suning.com",
+        "memberDomain": "member.suning.com",
+        "online": "online.suning.com",
+        "cookieDomain": ".suning.com",
+        "categoryId": "20089",
+        "searchDomain": "//search.suning.com/emall/",
+        "msiDomain": "my.suning.com"
+      };
+      // 定义当前页面在我的易购下的类别标识
+      var mySuningSideBarSign = "myAddressMenuFlag";
+      var mySuningSideMenuType = "short";</script>
+    <script>var passport_config = {
+        base: "/",
+        loginTheme: "b2c_pop"
+      };</script>
+    <!-- 引入全站公用资源文件 -->
+    <!--#include virtual="/include/resources-jq172.shtml"-->
+    <link rel="shortcut icon" href="http://ssl.suning.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://res.suning.cn/public/v3/css/??v3common.min.css,search.min.css,sn-sidebar.min.css?v=2017103101">
+    <script type="text/javascript" src="http://res.suning.cn??/public/v3/js/jquery.js,/public/v3/js/sn_lazyload.js,/public/v3/js/lazyelem.min.js,/public/v3/js/SFE.base.min.js,/public/v3/js/search.min.js,/public/sidebar/build/js/sn-sidebar.min.js,/project/yunxin/js/chatCompat_mini.js?v=2017103101"></script>
+    <script>var sa;
+      if (!sa) {
+        sa = {}
+      }
+      if (!sa.click) {
+        sa.click = {}
+      } (function() {
+        var t = /\.suning\.com/,
+        s = document.location.hostname,
+        h = (("https:" == document.location.protocol) ? "https://": "http://"),
+        o = i(true),
+        b = "|",
+        c = location.href,
+        m = l(p(c));
+        function q(af, F, E) {
+          try {
+            var Q = af.title ? l(af.title) : "";
+            if (Q == "") {
+              var ad = af.attributes.title;
+              if (ad != undefined && ad != null) {
+                Q = ad.value ? l(ad.value) : ""
+              }
+            }
+            if (E != undefined && E != null && E != "") {
+              var D = af.attributes[E];
+              if (D != undefined && D != null) {
+                Q = D.value ? l(D.value) : ""
+              }
+            }
+            var ae = af.name ? l(af.name) : "name undefined";
+            if (ae == "name undefined") {
+              var C = af.attributes.name;
+              if (C != undefined && C != null) {
+                ae = C.value ? l(C.value) : "name undefined"
+              }
+            }
+            if (F != undefined && F != null && F != "") {
+              var W = af.attributes[F];
+              if (W != undefined && W != null) {
+                ae = W.value ? l(W.value) : F + " undefined"
+              }
+            }
+            var S = af.id ? l(af.id) : "id undefined",
+            ab = new Array(),
+            P = (f(af, ab), ab) ? l(ab.join("").replace(/\s|\|/ig, "")) : "text undefined",
+            ag = (ag = document.getElementById("resourceType")) ? ag.value: "",
+            Y = S + b + ae + b + P,
+            k = (k = document.getElementById("errorCode")) ? k.value: "",
+            V = h + o + "/ajaxClick.gif",
+            I = u(),
+            z = "_snck";
+            j(z, I, "/", "", "");
+            var ac = d();
+            var J = typeof sn == "object" ? sn.cityId: "can not get cityId",
+            x = I + b + ac + b + Y + b + m,
+            U = af.href ? af.href: "",
+            K = (U ? w(U) : "-"),
+            L = document.getElementById("URLPattern"),
+            X = (L ? L.value: "");
+            var R = "";
+            var T = n("logonStatus");
+            if (T != undefined && T != null) {
+              R = T
+            }
+            var y = "";
+            var H = n("_snma");
+            if (H != undefined && H != null && H.indexOf("|") >= 0) {
+              try {
+                y = H.split("|")[1]
+              } catch(Z) {}
+            }
+            var N = "";
+            var M = n("idsLoginUserIdLastTime");
+            if (M != undefined && M != null) {
+              N = M
+            }
+            var aa = "";
+            var O = n("custno");
+            if (O != undefined && O != null) {
+              aa = O
+            }
+            var A = "";
+            var G = n("_snmb");
+            if (G != undefined && G != null && G.indexOf("|") >= 0) {
+              try {
+                A = G.split("|")[0]
+              } catch(Z) {}
+            }
+            var B = V + "?_snmk=" + x + "&_snme=" + k + "&_type=" + ag + "&_cId=" + J + "&_sid=" + K + "&urlPattern=" + X + "&vid=" + y + "&lu=" + N + "&sid=" + A + "&mid=" + aa + "&ls=" + R + "&title=" + Q;
+            v(B)
+          } catch(Z) {}
+        }
+        function d() {
+          if (!sa.pvId) {
+            sa.pvId = u()
+          }
+          return sa.pvId
+        }
+        function u() {
+          try {
+            var x = new Date(),
+            k = Math.round(100000 * Math.random()),
+            z = x.getTime().toString().concat(k);
+            return z
+          } catch(y) {}
+        }
+        function n(x) {
+          var k = document.cookie.split("; ");
+          for (var y = 0; y < k.length; y++) {
+            var z = k[y].split("=");
+            if (z[0] == x) {
+              return unescape(z[1])
+            }
+          }
+        }
+        function v(k) {
+          var y = "log_" + (new Date()).getTime();
+          var x = window[y] = new Image();
+          x.onload = (x.onerror = function() {
+            window[y] = null
+          });
+          x.src = k + "&iId=" + y;
+          x = null
+        }
+        function i(k) {
+          if (k) {
+            return "click.suning.cn/sa"
+          } else {
+            return "clicksit.suning.cn/sa"
+          }
+        }
+        function e() {
+          return document.domain
+        }
+        function j(x, k, D, C, B) {
+          try {
+            var A = x + "=" + escape(k);
+            if (C != "") {
+              var z = new Date();
+              z.setTime(z.getTime() + C);
+              A += ";expires=" + z.toGMTString()
+            }
+            if (D != "") {
+              A += ";path=" + D
+            }
+            var y = e();
+            if (y.indexOf(".suning.com") != -1) {
+              A += ";domain=.suning.com"
+            } else {
+              if (y.indexOf(".cnsuning.com") != -1) {
+                A += ";domain=.cnsuning.com"
+              } else {
+                A += ";domain=" + B
+              }
+            }
+            document.cookie = A
+          } catch(B) {}
+        }
+        function w(x) {
+          var k = "-";
+          if (!a(x)) {
+            k = g(x, "tid", "&")
+          }
+          return k
+        }
+        function p(k) {
+          try {
+            if (k.length > 301) {
+              k = k.substring(0, 300)
+            }
+            while (k.indexOf(b) != -1) {
+              k = k.replace(b, "--")
+            }
+            return k
+          } catch(x) {}
+        }
+        function f(z, x) {
+          try {
+            if (z.nodeType == 3) {
+              x.push(z.nodeValue)
+            } else {
+              if (z.nodeType == 1) {
+                for (var k = z.firstChild; k != null; k = k.nextSibling) {
+                  f(k, x)
+                }
+              }
+            }
+          } catch(y) {}
+        }
+        function l(k) {
+          return k != null ? encodeURIComponent(k) : ""
+        }
+        function g(y, x, B) {
+          try {
+            var A = "-",
+            k;
+            if (!a(y) && !a(x) && !a(B)) {
+              k = y.indexOf(x);
+              if (k > -1) {
+                var z = y.indexOf(B, k);
+                if (z < 0) {
+                  z = y.length
+                }
+                A = y.substring(k + x.length + 1, z)
+              }
+            }
+            return A
+          } catch(z) {}
+        }
+        function a(k) {
+          return (undefined == k || "" == k || "-" == k)
+        }
+        var r = sa.click;
+        r.sendDatasIndex = q
+      })();</script>
+    <!--[if IE 6]>
+      <script type="text/javascript" src="//res.suning.cn/public/js/DD_belatedPNG.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="http://res.suning.cn/project/msIndex/address/css/mySuning.min.css?v=2017113002">
+    <link rel="stylesheet" type="text/css" href="http://res.suning.cn/project/msIndex/address2.0/css/main.min.css?v=2017113002">
+    <link rel="stylesheet" type="text/css" href="http://res.suning.cn/project/msIndex/address2.0/css/Snaddress.min.css?v=2017113002">
+    <link rel="stylesheet" type="text/css" href="http://res.suning.cn/project/msIndex/css/ms-style.min.css?v=2017113002">
+    <link rel="stylesheet" type="text/css" href="http://res.suning.cn/project/msIndex/css/reset.min.css?v=2017113002">
+    <link rel="stylesheet" type="text/css" href="http://res.suning.cn/project/msIndex/css/ms_showWin.min.css?v=2017113002">
+    <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/siteAnalytics.min.js?v=2017113002"></script>
+    <!--[if lt IE 9]>
+      <script src="//res.suning.cn/project/msIndex/js/html5.js?v=2017113002"></script>
+    <![endif]-->
+    <script>(function() {
+        _loadAsyncJs(_getJsFilePath("da_opt.js"));
+      })();
+      $(document).ready(function() {
+        $("div[name^=address_index_info_],li[name^=address_index_info_],a[name^=address_index_info_]").live("click",
+        function() {
+          sa.click.sendDatasIndex(this);
+        });
+      })</script>
+    <script>var sa;
+      if (!sa) {
+        sa = {}
+      }
+      if (!sa.click) {
+        sa.click = {}
+      } (function() {
+        var t = /^\w*?.suning.com$/,
+        s = document.location.hostname,
+        g = (("https:" == document.location.protocol) ? "https://": "http://"),
+        o = h(),
+        b = "|",
+        c = location.href,
+        m = l(p(c));
+        function q(Z, M) {
+          var Y = Z.name ? l(Z.name) : "name undefined";
+          if (Y == "name undefined") {
+            var aa = Z.attributes.name;
+            if (aa != undefined && aa != null) {
+              Y = aa.value ? l(aa.value) : "name undefined"
+            }
+          }
+          if (M != undefined && M != null && M != "") {
+            var J = Z.attributes[M];
+            if (J != undefined && J != null) {
+              Y = J.value ? l(J.value) : M + " undefined"
+            }
+          }
+          var N = Z.id ? l(Z.id) : "id undefined",
+          Q = new Array(),
+          z = (e(Z, Q), Q) ? l(Q.join("").replace(/\s|\|/ig, "")) : "text undefined",
+          T = (T = document.getElementById("resourceType")) ? T.value: "",
+          A = N + b + Y + b + z,
+          R = (R = document.getElementById("errorCode")) ? R.value: "",
+          W = g + o + "/ajaxClick.gif",
+          y = u(),
+          k = "_snck";
+          i(k, y, "/", "", "");
+          var X = n("_snmp"),
+          D = typeof sn == "object" ? sn.cityId: "can not get cityId",
+          I = y + b + X + b + A + b + m,
+          V = Z.href ? Z.href: "",
+          H = (V ? w(V) : "-"),
+          K = document.getElementById("URLPattern"),
+          P = (K ? K.value: "");
+          var C = "";
+          var F = n("logonStatus");
+          if (F != undefined && F != null) {
+            C = F
+          }
+          var E = "";
+          var j = n("_snma");
+          if (j != undefined && j != null && j.indexOf("|") >= 0) {
+            try {
+              E = j.split("|")[1]
+            } catch(U) {}
+          }
+          var B = "";
+          var x = n("idsLoginUserIdLastTime");
+          if (x != undefined && x != null) {
+            B = x
+          }
+          var S = "";
+          var O = n("custno");
+          if (O != undefined && O != null) {
+            S = O
+          }
+          var L = "";
+          var ab = n("_snmb");
+          if (ab != undefined && ab != null && ab.indexOf("|") >= 0) {
+            try {
+              L = ab.split("|")[0]
+            } catch(U) {}
+          }
+          var G = W + "?_snmk=" + I + "&_snme=" + R + "&_type=" + T + "&_cId=" + D + "&_sid=" + H + "&urlPattern=" + P + "&vid=" + E + "&lu=" + B + "&sid=" + L + "&mid=" + S + "&ls=" + C;
+          v(G)
+        }
+        function u() {
+          var k = new Date(),
+          j = Math.round(100000 * Math.random()),
+          x = k.getTime().toString().concat(j);
+          return x
+        }
+        function n(k) {
+          var j = document.cookie.split("; ");
+          for (var x = 0; x < j.length; x++) {
+            var y = j[x].split("=");
+            if (y[0] == k) {
+              return unescape(y[1])
+            }
+          }
+        }
+        function v(j) {
+          var x = "log_" + (new Date()).getTime();
+          var k = window[x] = new Image();
+          k.onload = (k.onerror = function() {
+            window[x] = null
+          });
+          k.src = j + "&iId=" + x;
+          k = null
+        }
+        function h() {
+          if (t.test(s)) {
+            return "click.suning.cn/sa"
+          } else {
+            return "clicksit.suning.cn/sa"
+          }
+        }
+        function d() {
+          return document.domain
+        }
+        function i(k, j, C, B, A) {
+          var z = k + "=" + escape(j);
+          if (B != "") {
+            var y = new Date();
+            y.setTime(y.getTime() + B);
+            z += ";expires=" + y.toGMTString()
+          }
+          if (C != "") {
+            z += ";path=" + C
+          }
+          var x = d();
+          if (x.indexOf(".suning.com") != -1) {
+            z += ";domain=.suning.com"
+          } else {
+            if (x.indexOf(".cnsuning.com") != -1) {
+              z += ";domain=.cnsuning.com"
+            } else {
+              z += ";domain=" + A
+            }
+          }
+          document.cookie = z
+        }
+        function w(k) {
+          var j = "-";
+          if (!a(k)) {
+            j = f(k, "tid", "&")
+          }
+          return j
+        }
+        function p(j) {
+          if (j.length > 301) {
+            j = j.substring(0, 300)
+          }
+          while (j.indexOf(b) != -1) {
+            j = j.replace(b, "--")
+          }
+          return j
+        }
+        function e(x, k) {
+          if (x.nodeType == 3) {
+            k.push(x.nodeValue)
+          } else {
+            if (x.nodeType == 1) {
+              for (var j = x.firstChild; j != null; j = j.nextSibling) {
+                e(j, k)
+              }
+            }
+          }
+        }
+        function l(j) {
+          return j != null ? encodeURIComponent(j) : ""
+        }
+        function f(x, k, A) {
+          var z = "-",
+          j;
+          if (!a(x) && !a(k) && !a(A)) {
+            j = x.indexOf(k);
+            if (j > -1) {
+              var y = x.indexOf(A, j);
+              if (y < 0) {
+                y = x.length
+              }
+              z = x.substring(j + k.length + 1, y)
+            }
+          }
+          return z
+        }
+        function a(j) {
+          return (undefined == j || "" == j || "-" == j)
+        }
+        var r = sa.click;
+        r.sendDatasIndex = q
+      })();</script>
+    <!-- <link rel="stylesheet" type="text/css" href="/static/bs/css/bootstrap.min.css"> --></head>
+  
+  <body class="ms-body">
+    <!-- 此处引入公用头部工具栏 -->
+    <div id="_TOP_BANNER_" class="ng-top-banner"></div>
+    <div class="ng-toolbar">
+      <div class="ng-toolbar-con wrapper">
+        <div class="ng-toolbar-left">
+          <a href="//www.suning.com" class="ng-bar-node ng-bar-node-backhome" id="ng-bar-node-backhome" name="public0_none_gongju_fanhui" style="display: block;">
+            <i class="ng-iconfont ng-backhome"></i>
+            <span>返回首页</span></a>
+          <script type="text/javascript">if (!sn.isHome) {
+              document.getElementById('ng-bar-node-backhome').style.display = "block";
+            };</script>
+          <div class="ng-bar-node-box ng-site-nav-box lazy-bar-box">
+            <a href="javascript:void(0);" class="ng-bar-node ng-bar-node-site" name="public0_none_daohang_wzdh">
+              <span>网站导航</span>
+              <em class="ng-iconfont down"></em></a>
+            <div class="ng-sn-site-nav ng-d-box site-nav-child" style="display:none;">
+              <!--网站导航列表-->
+              <div class="head-loading"></div>
+              <a href="javascript:void(0);" class="ng-close" name="public0_none_daohang_close">
+                <em class="ng-iconfont"></em></a>
+            </div>
+          </div>
+          <div class="ng-bar-node-box shop-handle lazy-bar-box">
+            <a href="https://sop.suning.com" class="ng-bar-node ng-bar-node-pr5  ng-bar-node-shop touch-href" name="public0_none_shangjia_ruzhu" target="_blank">
+              <span>商家入驻</span>
+              <em class="ng-iconfont down"></em></a>
+            <div class="ng-down-box ng-d-box shop-center-child ng-ser-list" style="display:none;">
+              <!--商家入驻列表-->
+              <div class="head-loading"></div>
+            </div>
+          </div>
+          <!--服务中心 [[-->
+          <div class="ng-bar-node-box service-handle lazy-bar-box">
+            <a href="javascript:void(0);" class="ng-bar-node ng-bar-node-service ng-bar-node-fix touch-href ng-bar-node-pr5" rel="nofollow" name="public0_none_kehu_fuwu">
+              <span>客户服务</span>
+              <em class="ng-iconfont down"></em></a>
+            <div class="ng-down-box ng-d-box service-center-child ng-ser-list" style="display:none;">
+              <!--服务中心列表-->
+              <div class="head-loading"></div>
+              <a href="javascript:findpass();" rel="nofollow" name="public0_none_kehu_zixun" style="display:none;">
+                <span>在线咨询</span>
+                <em class="ng-iconfont"></em></a>
+            </div>
+          </div>
+          <!--服务中心 ]]-->
+          <!--网站导航 ]]-->
+          <!-- 消息 [[ -->
+          <!-- <div class="ng-bar-node-box ng-msg-box">
+          <a href="//msg.suning.com/" class="ng-bar-node ng-bar-node-msg" name="public0_none_dbgjt_wdxx01" target="_blank">
+          <span>消息<i class="ng-iconfont dot"></i></span><em class="ng-iconfont down">&#xe62e;</em></a>
+          <div class="ng-d-box ng-msg-child" style="display:none;">
+          <div class="ng-msg-list">
+          <div class="ng-msg-item ng-msg-item-no">
+          <i></i><span>嗷~ 没有新消息...</span></div></div>
+          <div class="ng-msg-bottom"><a href="//msg.suning.com/" name="public0_none_dbgjt_wdxx01" target="_blank">查看更多</a></div></div></div>   -->
+          <!-- 消息 ]] --></div>
+        <div class="ng-toolbar-right">
+          <!-- 登录注册 -->
+          <a href="javascript:void(0)" class="ng-bar-node username-bar-node username-bar-node-showside" id="username-node" rel="nofollow" style="display:none;">
+            <span id="usernameHtml01">qq876149799...</span>
+            <em class="hasmsg ng-iconfont"></em></a>
+          <div class="ng-bar-node-box username-handle" id="username-node-slide" style="display: block;">
+            <a href="//my.suning.com" rel="nofollow" class="ng-bar-node username-bar-node username-bar-node-noside">
+              <span id="usernameHtml02">qq876149799.</span>
+              <em class="hasmsg ng-iconfont"></em>
+              <em class="ng-iconfont down"></em></a>
+            <div class="ng-d-box ng-down-box ng-username-slide" style="display:none;">
+              <a href="//my.suning.com/person.do" class="ng-vip-union" target="_blank" name="public0_none_denglu_zhanghao" rel="nofollow">账号管理</a>
+              <a href="javascript:SFE.base.logoff();" rel="nofollow" name="public0_none_denglu_tuichu">退出登录</a></div>
+          </div>
+          <div class="ng-bar-node reg-bar-node" id="reg-bar-node" style="display: none;">
+            <a href="javascript:SFE.base.logonurl();" name="public0_none_denglu_denglu" rel="nofollow" class="login">请登录</a>
+            <a href="https://reg.suning.com/person.do" target="_blank" class="login reg-bbb" rel="nofollow" name="public0_none_denglu_zhuce">注册有礼</a></div>
+          <script type="text/javascript">var stripscript = function(s) {
+              var pattern = new RegExp("[<>]") var rs = "";
+              for (var i = 0; i < s.length; i++) {
+                rs = rs + s.substr(i, 1).replace(pattern, '');
+              }
+              return rs;
+            }
+
+            function d(b) {
+              var a;
+              return (a = document.cookie.match(RegExp("(^| )" + b + "=([^;]*)(;|$)"))) ? stripscript(decodeURIComponent(a[2].replace(/\+/g, "%20"))) : null
+            };
+            var uernameA = d("logonStatus");
+            var usernameNode = document.getElementById('username-node');
+            var usernameNodeSlide = document.getElementById('username-node-slide');
+            var usernameHtml01 = document.getElementById('usernameHtml01'),
+            usernameHtml02 = document.getElementById('usernameHtml02');
+            var regBarNode = document.getElementById('reg-bar-node');
+            if (uernameA != null && uernameA != "") {
+              var uernameC = d("nick");
+              // if( ((window.sidebar_config && sidebar_config.enable)||sn.hasSidebar) && !sn.hasNewSidebar ){
+              //  usernameNode.style.display = "block";
+              // }else{
+              usernameNodeSlide.style.display = "block";
+              //}
+              usernameHtml01.innerHTML = uernameC;
+              usernameHtml02.innerHTML = uernameC;
+              regBarNode.style.display = "none";
+            } else {
+              usernameNode.style.display = "none";
+              usernameNodeSlide.style.display = "none";
+              usernameHtml01.innerHTML = " ";
+              usernameHtml02.innerHTML = " ";
+              regBarNode.style.display = "block";
+            }</script>
+          <!--我的订单 [[-->
+          <div class="ng-bar-node-box myorder-handle">
+            <a href="//order.suning.com/onlineOrder/orderList.do" rel="nofollow" name="public0_none_wode_dingdan" class="ng-bar-node ng-bar-node-fix touch-href ng-bar-node-pr5">
+              <span>我的订单</span>
+              <em class="ng-iconfont down"></em></a>
+            <div class="ng-down-box ng-d-box myorder-child" style="display:none;">
+              <a href="//order.suning.com/onlineOrder/orderList.do?transStatus=waitPay" rel="nofollow" name="public0_none_wode_zhufu">待支付
+                <em id="waitPayCounts"></em></a>
+              <a href="//order.suning.com/onlineOrder/orderList.do?transStatus=waitReceive" rel="nofollow" name="public0_none_wode_shouhuo">待收货
+                <em id="waitDeliveryCounts"></em></a>
+              <a href="//review.suning.com/my_cmmdty_review.do" rel="nofollow" name="public0_none_wode_pingjia">待评价
+                <em id="waitEvaluation"></em></a>
+              <a href="//assss.suning.com/assss-web/pc/modify/toModifyOrderList.do" rel="nofollow" name="public0_none_wode_xiugai">修改订单</a></div>
+          </div>
+          <!--我的订单 ]]-->
+          <!--我的易购 [[-->
+          <div class="ng-bar-node-box mysuning-handle">
+            <a href="//my.suning.com" rel="nofollow" name="public0_none_wode_yigou" class="ng-bar-node ng-bar-node-fix touch-href ng-bar-node-pr5">
+              <span>我的易购</span>
+              <em class="ng-iconfont down"></em></a>
+            <div class="ng-down-box ng-d-box mysuning-child" style="display:none;">
+              <div class="mysuning-infor clearfix">
+                <a name="public0_none_wode_touxiang" target="_blank" href="//my.suning.com/person.do?targetTab=head" class="headimg">
+                  <img src3="//image.suning.cn/uimg/cmf/cust_headpic/0000000000_01_60x60.jpg" alt="" id="userHead"></a>
+                <div class="mysuning-detail">
+                  <a name="public0_none_denglu_denglu" href="javascript:SFE.base.logonurl();" class="login">请登录</a>
+                  <a name="public0_none_wode_name" href="//my.suning.com" rel="nofollow" class="username" id="userNickname">141******13</a>
+                  <a href="https://sign.suning.com/sign/welcome.do" rel="nofollow" name="public0_none_wode_daka" class="daka">点击打卡</a></div>
+              </div>
+              <a href="//2.suning.com/myOrder/queryMyOrders.do" name="public0_none_wode_ershou" rel="nofollow" target="_blank">我的二手</a>
+              <a href="//favorite.suning.com/myFavoriteImg.do" rel="nofollow" name="public0_none_wode_shoucang" target="_blank">我的收藏</a>
+              <a href="https://passport.suning.com/ids/trustLogin?sysCode=epp&amp;targetUrl=http://my.jr.suning.com/sfp/accountAssets/index.htm" rel="nofollow" name="public0_none_wode_jinrong" target="_blank">我的金融</a>
+              <a href="//vip.suning.com" class="ng-vip-union" target="_blank" rel="nofollow" name="">苏宁会员
+                <em class="ng-iconfont"></em></a>
+              <a href="https://rxf.suning.com/epps-cpf/accountMgt/assetOverview.do" rel="nofollow" name="public0_none_wode_renxingfu">我的任性付</a>
+              <a href="//quan.suning.com/yhq.do" rel="nofollow" name="public0_none_wode_quan">我的优惠券</a></div>
+          </div>
+          <!--我的易购 ]]-->
+          <a href="//vip.suning.com/" name="public0_none_sn_huiyuan" rel="nofollow" class="ng-bar-node ng-bar-node-pr5" target="_blank">
+            <span>苏宁会员</span></a>
+          <!--[[ 购物车 2017-06-08 添加购物车商品 -->
+          <div class="ng-bar-node-box cart-handle">
+            <a class="ng-bar-node ng-bar-node-mini-cart " name="public0_none_gouwuche_gwc" rel="nofollow" href="//shopping.suning.com/cart.do">
+              <em class="ng-iconfont cart"></em>
+              <span>购物车</span>
+              <span class="total-num-box" id="J_total_num_box">
+                <b class="total-num J_cart_total_num" id="showTotalQty">2</b>
+                <span class="total-num-bg-box">
+                  <em></em>
+                  <i>
+                  </i>
+                </span>
+              </span>
+              <em class="ng-iconfont down"></em></a>
+            <div class="ng-down-box ng-d-box cart-child" style="display:none;">
+              <!-- -->
+              <div class="cart-box"></div>
+              <div class="cart-loading">
+                <p class="loading-content">加载中...</p></div>
+            </div>
+            <script type="text/javascript">var ngCartNum = d("totalProdQty");
+              ngCartNum = (ngCartNum == 0 || ngCartNum == null) ? 0 : ngCartNum;
+              ngCartNum = parseInt(ngCartNum);
+              ngCartNum = ngCartNum > 99 ? '99+': ngCartNum;
+              document.getElementById('showTotalQty').innerHTML = ngCartNum;</script>
+          </div>
+          <!-- 购物车 ]] -->
+          <a href="https://passport.suning.com/ids/trustLogin?sysCode=epp&amp;targetUrl=https://pay.suning.com/epp-epw/login/login.action" name="public0_none_yifubao_yfb" class="ng-bar-node ng-bar-node-pr5" target="_blank">
+            <span>易付宝</span></a>
+          <a href="//b.suning.com/" class="ng-bar-node ng-bar-node-pr5" name="public0_none_qiye_caigou" target="_blank">
+            <span>企业采购</span></a>
+          <!--手机苏宁 [[-->
+          <div class="ng-bar-node-box app-down-box">
+            <a href="//cuxiao.suning.com/newUser.html" target="_blank" name="public0_none_shouji_sn" rel="nofollow" class="ng-bar-node mb-suning touch-href">
+              <span>手机苏宁</span>
+              <em class="ng-iconfont down"></em></a>
+            <div class="ng-mb-box ng-d-box mb-down-child" style="display:none;">
+              <ul class="ng-app-code">
+                <li>
+                  <img class="top-code" src3="//res.suning.cn/public/v3/images/sn-top-code.png?var=01" alt="苏宁易购APP">
+                  <p>下载苏宁易购APP</p>
+                  <img class="aoyun-text" src3="//res.suning.cn/public/v3/images/aoyun-text.jpg?var=01" alt=""></li>
+                <li>
+                  <img class="top-code" src3="//res.suning.cn/public/v3/images/yfb-top-code.png?var=01" alt="易付宝APP">
+                  <p>扫一扫</p>
+                  <p>下载苏宁金融APP</p>
+                </li>
+                <li>
+                  <img class="top-code" src3="//res.suning.cn/public/v3/images/wxcode.jpg?var=01" alt="易购服务号">
+                  <p>扫一扫</p>
+                  <p>关注苏宁易购服务号</p>
+                </li>
+              </ul>
+              <div class="line"></div>
+              <div class="line lineTwo"></div>
+            </div>
+          </div>
+          <!--手机苏宁 ]]--></div>
+        <div id="ng-minicart-slide-box"></div>
+      </div>
+    </div>
+    <!--我的易购首页头部-->
+    <!-- 我的易购公用头 [[ -->
+    <header class="ms-header ms-header-inner ms-head-position">
+      <article class="ms-header-menu">
+        <style type="text/css">.ms-nav li { float: left; position: relative; padding: 0 20px; height: 44px; font: 14px/26px "Microsoft YaHei"; color: #FFF; cursor: pointer; z-index: 10; } .ms-logo { float: left; position: relative; left: 0; height: 28px; width: 12.3%; min-width: 138px; } .ms-nav { float: right; width: 78%; } .nav-manage .list-nav-manage { position: absolute; padding: 20px 0 20px 20px; left: -120px; top: 36px; width: 335px; /* margin-right: -40px; */ background: #FFF; box-shadow: 1px 0 5px #ddd, -1px 0 5px #ddd; z-index: 10; } .list-nav-manage .nav-col{ float: left; margin-right: 20px; width: 90px; } @media screen and (min-width: 1190px) { .ms-logo { float: left; position: relative; left: 0; height: 28px; width: 12.3%; min-width: 138px; } .ms-nav { float: right; width: 78%; } .nav-manage .list-nav-manage { position: absolute; padding: 20px 0 20px 20px; left: -120px; top: 36px; width: 335px; /* margin-right: -40px; */ background: #FFF; box-shadow: 1px 0 5px #ddd, -1px 0 5px #ddd; z-index: 10; } } @media screen and (max-width: 1190px) { .ms-logo { float: left; position: relative; left: 0; height: 28px; width: 12.3%; min-width: 138px; } .ms-nav { float: right; width: 73%; } .nav-manage .list-nav-manage { position: absolute; padding: 20px 0 20px 20px; left: -120px; top: 36px; width: 335px; /* margin-right: -40px; */ background: #FFF; box-shadow: 1px 0 5px #ddd, -1px 0 5px #ddd; z-index: 10; } } .ms-header .ms-useinfo { padding: 0; height: 5px; line-height: 20px; background: #FFF; box-shadow: 0 2px 5px #e3e3e3; } .ms-nav li.selected .nav-arrow { position: absolute; margin-left: -8px; left: 50%; bottom: 0; line-height: 0; border-style: solid; border-width: 8px; _font-size: 0; border-color: transparent transparent #FFF; z-index:11; } .nav-manage.hover .nav-arrow { position: absolute; margin-left: -8px; left: 50%; bottom: 7px; line-height: 0; border-style: solid; border-width: 8px; _font-size: 0; border-color: transparent transparent #FFF; z-index:11; } .list-nav-manage .nav-mge-hover { color: #666; font: 14px/26px "Microsoft yahei"; font-weight: bold; } /*左侧公用导航菜单*/ .ms-side { position: absolute; overflow: hidden; width: 160px; background: #FFF; background-image: url(images/menu-treeNeck.png); background-position: center top; background-repeat: repeat-x; box-shadow: 0 2px 2px #e3e3e3, -1px 2px 2px #e3e3e3; z-index: 12; background:#fff; } .side-neck { display:none; position: absolute; top: -10px; left: -14px; width: 185px; height: 18px; background: #FFF; border: solid 1px #FFF; border-radius: 18px; box-shadow: 0 2px 5px #e3e3e3; z-index: 10; }</style>
+        <div class="header-menu">
+          <div class="ms-logo">
+            <a class="ms-head-logo" href="//my.suning.com" name="Myyigou_index_none_daohangLogo"></a>
+          </div>
+          <nav class="ms-nav">
+            <ul>
+              <li class="">
+                <a href="http://my.suning.com" data-url="" name="Myyigou_index_none_daohang1001">首页</a>
+                <i class="nav-arrow"></i>
+              </li>
+              <li class="nav-manage selected">
+                <a data-url="" name="Myyigou_index_none_daohang1003">账户管理
+                  <em></em></a>
+                <i class="nav-arrow"></i>
+                <div class="list-nav-manage hide">
+                  <div class="nav-col">
+                    <p class="nav-mge-hover">安全设置
+                      <em></em></p>
+                    <p>
+                      <a href="https://aq.suning.com/asc/password/check.do" data-url="" name="Myyigou_index_none_daohang100311">修改密码</a></p>
+                    <p>
+                      <a href="https://aq.suning.com/asc/mobile/check.do" data-url="" name="Myyigou_index_none_daohang100312">手机管理</a></p>
+                    <p>
+                      <a href="https://aq.suning.com/asc/email/check.do" data-url="" name="Myyigou_index_none_daohang100313">邮箱管理</a></p>
+                    <p>
+                      <a href="https://aq.suning.com/asc/securityquestion/check.do" data-url="" name="Myyigou_index_none_daohang100314">安保问题管理</a></p>
+                  </div>
+                  <div class="nav-col">
+                    <p class="nav-mge-hover">个人资料
+                      <em></em></p>
+                    <p>
+                      <a href="http://my.suning.com/person.do" data-url="" name="Myyigou_index_none_daohang100321">个人信息</a></p>
+                    <p>
+                      <a href="http://my.suning.com/address.do" data-url="" name="Myyigou_index_none_daohang100322">地址管理</a></p>
+                    <p>
+                      <a href="https://pay.suning.com/epp-epw/useraccount/compatible-login!login.action" data-url="" name="Myyigou_index_none_daohang100323" target="_blank">我的易付宝</a></p>
+                    <p>
+                      <a href="http://my.suning.com/personalVat.do" data-url="" name="Myyigou_index_none_daohang100325">个人增票</a></p>
+                  </div>
+                  <div class="nav-col">
+                    <p class="nav-mge-hover">账号绑定
+                      <em></em></p>
+                    <p>
+                      <a href="http://my.suning.com/hulianBind.do" data-url="" name="Myyigou_index_none_daohang100332">关联互联号</a></p>
+                    <p>
+                      <a href="http://my.suning.com/eppBind.do" data-url="" name="Myyigou_index_none_daohang100333">易付宝绑定设置</a></p>
+                    <p>
+                      <a href="http://my.suning.com/accountBind.do" data-url="" name="Myyigou_index_none_daohang100334">绑定管理</a></p>
+                  </div>
+                </div>
+              </li>
+              <li class="ms-nav-msg">
+                <a href="http://msg.suning.com/" data-url="messageMenuFlag" name="Myyigou_index_none_daohang1004">消息</a>
+                <i class="nav-arrow"></i>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </article>
+      <article class="ms-useinfo">
+        <div class="header-useinfo" id="memberInfo">
+          <!--头像--></div>
+      </article>
+    </header>
+    <link rel="stylesheet" type="text/css" href="/static/bs/css/bootstrap.min.css">
+    <!-- 我的易购公用头 ]] -->
+    <script>$(function() {
+        getCommonHorizontalMenu();
+        // getMyMemberInfo();
+      });
+
+      function getCommonHorizontalMenu() {
+        var _msiDomain = ms_common.getEnv('msiDomain');
+        if (!_msiDomain) {
+          _msiDomain = sn.msiDomain;
+        }
+        var _msiT = new Date().getTime();
+        try {
+          if (ms_common.getCookie('custno')) {
+            _msiT = ms_common.getCookie('custno') ^ 'mySuningSideMenu';
+          }
+        } catch(e) {}
+        var url = "//" + _msiDomain + "/ajax/getCommonHorizontalMenu.do?_t=" + _msiT;
+        $.ajax({
+          url: url,
+          type: 'GET',
+          dataType: 'jsonp',
+          timeout: 15000,
+          cache: true,
+          jsonpCallback: "getCommonHorizontalMenuCallBack",
+          success: function(data) {
+            $(".header-menu").replaceWith(data.htmlDom);
+            ms_common.userManage();
+            ms_common.checkhHtml5();
+            if ("undefined" != typeof(mySuningSideBarSign) && "messageMenuFlag" == mySuningSideBarSign) {
+              //有菜单标识且是短消息页面,不加载消息未读数量
+            } else {
+              //无菜单标识或有菜单标识且不为短消息页面，加载消息未读数量
+              // 获取消息数量
+              getMMSMyMessageInfo();
+            }
+            //设置菜单new标识
+            //setMsiMenuNewIcon();
+          },
+          error: function(data) {
+            $(".header-menu").replaceWith("<div style='text-align:center; line-height:40px;'><span></span><a href='javascript:getCommonHorizontalMenu();'>刷新</a></div>");
+          }
+        });
+      };
+
+      getMyMemberInfo = function() {
+        var _msiDomain = ms_common.getEnv('msiDomain');
+        if (!_msiDomain) {
+          _msiDomain = sn.msiDomain;
+        }
+        $.ajax({
+          type: "post",
+          url: "//" + _msiDomain + "/memberInfoPageHead.do",
+          async: true,
+          dataType: 'jsonp',
+          timeout: 15000,
+          success: function(data) {
+            if ("error" != data.htmlDom) {
+              $("#memberInfo").replaceWith("<div class='header-useinfo' id='memberInfo' >" + data.htmlDom + "</div>");
+              ms_common.userAvatar();
+            } else {
+
+}
+          },
+          error: function(data) {}
+        });
+      };
+
+      getMMSMyMessageInfo = function() {
+        $('.ms-header .ms-header-menu .ms-nav').find("li").each(function() {
+          var data_flag = $(this).find('a').attr('data-url');
+          if (data_flag == "messageMenuFlag") {
+            var _mmsDomain = ms_common.getEnv('mmsDomain');
+            $.ajax({
+              type: "get",
+              url: "//" + _mmsDomain + "/service/getUnreadMessages.do",
+              async: true,
+              dataType: 'jsonp',
+              timeout: 15000,
+              success: function(data) {
+                if ("error" != data.returnCode) {
+                  var messageCount = data.unreadMsgTotal;
+                  if (messageCount > 0) {
+                    $('.ms-header-menu .ms-nav').find("li").each(function() {
+                      var data_flag = $(this).find('a').attr('data-url');
+                      if (data_flag == "messageMenuFlag") {
+                        $(this).find('a').append("<span>" + messageCount + "</span>");
+                      }
+                    })
+                  }
+                }
+              },
+              error: function(data) {}
+            });
+          }
+        })
+      };
+
+      setMsiMenuNewIcon = function() {
+        $('.ms-header .ms-header-menu .ms-nav').find("li").each(function() {
+          var data_flag = $(this).find('a').attr('data-url');
+          if (data_flag == "messageMenuFlag") {
+            $(this).find('a').after('<i class="nav-new"></i>');
+          }
+        })
+      };</script>
+    <!--我的易购-我的礼品卡 [[-->
+    <div id="ms-center" class="ms-center">
+      <div class="cont" data-uuid="52e72180-b8ef-46d1-8ad2-4350f8c4b2e3">
+        <div class="cont-main">
+          <div class="main-wrap mt20">
+            <div class="address">
+              <!--默认模块 [[-->
+              <div class="address-def">
+                <!--标题 [[-->
+                <h2 class="address-title">地址管理&nbsp->&nbsp修改地址</h2>
+                
+                <div class="container">
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">添加收货地址</h4></div> -->
+                        <div class="modal-body">
+                         <!--  
+                            <div class="form-group has-success">
+                              <label>用户名:</label>
+                              <input type="text" name="name" class="form-control" value="" >
+                            </div>
+                            <div class="form-group has-success">
+                              <label>电话:</label>
+                              <input type="text" name="phone" class="form-control" value="{$info['phone']}"placeholder="请输入电话"></div>
+                            <div class="form-group has-success">
+                              <label>城市信息:</label>
+                              <select id="cid">
+                                <option value="" class="mm" >--请选择--</option></select>
+                            </div>
+                            <div class="form-group has-success">
+                              <label>街道:</label>
+                              <input type="text" name="adds" class="form-control" placeholder="请输入具体街道"></div>
+                            <input type="hidden" name="address" value="">
+                            <input type="submit" id="bb" value="提交" class="btn btn-info"></form> -->
+                        </div>
+                      </div>
+                      <!-- /.modal-content --></div>
+                    <!-- /.modal-dialog --></div>
+                  <!-- /.modal --></div>
+                <!-- <input id="addr-ticket" type="hidden" value="1fef48ba5c3b9ada9056cf8f107956f8">
+                <!--标题 ]]-->
+                <!--默认地址 [[-->
+                <!-- <div class="default clearfix"> -->
+                <!--添加地址模块-->
+                <!-- </div> -->
+                <!--默认地址 ]]-->
+                <!-- </div> -->
+                <!--默认模块 ]]-->
+                <!--地址簿 [[-->
+                <div class="addr-wap">
+                  <!--Tab切换 [[-->
+                  <div class="addr-tab">
+                    <ul class="addr-tab-con">
+                      <li name="address_index_info_address06" class="on">
+                        <span>全部地址</span></li>
+                      <li name="address_index_info_address07">
+                        <span>配送地址</span></li>
+                      <li name="address_index_info_address08">
+                        <span>自提地址</span></li>
+                    </ul>
+                    <div class="addr-count">
+                      <em class="notice"></em>
+                      <span>您已保存
+                        <i>2</i>个地址，还能增加
+                        <i>18</i>个新地址</span>
+                    </div>
+                  </div>
+                  <!--Tab切换 ]]-->
+                  <!--地址簿内容 [[-->
+                  <div class="addr-matter">
+                    <div class="addr-matter-con clearfix " data-tabindex="0">
+                      <!--地址模块(del) [[-->
+                       
+                      <div class="addr-wap-del">
+                        
+                        <div class="defau-mod def-hide" style="float:left">
+                          
+                          <div class="addr-info-sure">
+                            <form action="/address/doedit" method="post">
+                            <br><br>
+                            用户名:<input type="text" name="name" class="form-control" value="{$info['name']}" style="width:200px" >
+                            <div class="addr-ne" title="张玲">
+
+                         <!--  <input type="text" class="input-text" value="{$info['name']}" placeholder="" id="adminName" name="name" readonly style="border:0"> -->
+
+                              </div><br>
+                              手机号:<input type="text" name="phone" class="form-control" value="{$info['phone']}" style="width:200px" >
+                              <div class="addr-ne" title="张玲">
+
+                              <span class="name"></span>
+                              </div><br>
+                              街道:<input type="text" name="adds" class="form-control" value="{$info['adds']}" style="width:200px" >
+                              <div class="addr-ne" title="张玲">
+
+                              <span class="name"></span>
+                              </div><br>
+                              详细地址:<input type="text" name="huo" class="form-control" value="{$info['huo']}" style="width:200px" >
+                              <div class="addr-ne" title="张玲">
+
+                              <span class="name"></span>
+                              </div>
+                            <div class="addr-hd" title="山西省 忻州市 忻府区新建路街道">
+                              <input type="hidden" value="山西省,050,,prov;忻州市,350,,city;忻府区,01,,area;新建路街道,03,,town">
+                            <input type="hidden" name="id" value="{$info['id']}">
+                              <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                              </form>
+                              <!-- <span>山西省</span>
+                              <span>忻州市</span> -->
+                              <span></span></div>
+                           
+                          </div>
+                          
+                          <div class="hide">
+
+                            <span class="addr-phone"></span>
+                          </div>
+                          
+                          <em class="addr-botbg"></em>
+                        </div>
+                        
+                        <!--删除层 [[-->
+                        <div class="del-mode">
+                          <a href="javascript:void(0);" class="del" data-id="2">确认删除</a>
+                          <a href="javascript:void(0);" class="nodel">取消</a></div>
+                        <!--删除层 ]]--></div>
+                       
+                     
+                      <!--地址模块(del) ]]--></div>
+                    <div class="addr-matter-con clearfix hide" data-tabindex="1">
+                      <!--地址模块(del) [[-->
+                      
+                      
+                      <!--地址模块(del) ]]--></div>
+                    <div class="addr-matter-con clearfix hide" data-tabindex="2">
+                      <!--地址模块(del) [[-->
+                      <div class="none-addr">
+                        <p>
+                          <img src="//res.suning.cn/project/msIndex/address2.0/images/noaddr.png" alt="没有配送地址">
+                          <span>您还没有添加过自提地址哦~</span></p>
+                      </div>
+                      <!--地址模块(del) ]]--></div>
+                  </div>
+                  <!--地址簿内容 ]]--></div>
+                <!--地址簿 ]]--></div>
+            </div>
+          </div>
+          <!--引入公用左侧栏-->
+          <!-- 我的易购左侧组件 [[ -->
+          <div class="cont-side">
+            <div class="side-neck">
+              <i>
+              </i>
+            </div>
+            <div class="ms-side">
+              <article class="side-menu side-menu-off">
+                <dl class="side-menu-tree" style="">
+                  <dt>账户管理</dt>
+                  <dd>
+                    <a id="50011" name="Myyigou_index_none_daohang50011" data-url="personMyInfoMenuFlag" href="http://my.suning.com/person.do">
+                      <span>·</span>个人信息</a></dd>
+                  <dd>
+                    <a id="50012" name="Myyigou_index_none_daohang50012" data-url="" target="_blank" href="https://aq.suning.com/asc/index.do">
+                      <span>·</span>安全设置</a></dd>
+                  <dd>
+                    <a id="50014" name="Myyigou_index_none_daohang50014" data-url="BindSNMobileMenuFlag" href="http://my.suning.com/hulianBind.do">
+                      <span>·</span>关联互联号</a></dd>
+                  <dd>
+                    <a id="50015" name="Myyigou_index_none_daohang50015" data-url="" target="_blank" href="https://pay.suning.com/epp-epw/useraccount/compatible-login!login.action">
+                      <span>·</span>我的易付宝</a></dd>
+                  <dd>
+                    <a id="50016" name="Myyigou_index_none_daohang50016" data-url="myAddressMenuFlag" href="http://my.suning.com/address.do" style="color:#f70">
+                      <span>·</span>地址管理</a></dd>
+                  <dd>
+                    <a id="50018" name="Myyigou_index_none_daohang50018" data-url="eppBindMenuFlag" href="http://my.suning.com/eppBind.do">
+                      <span>·</span>易付宝绑定设置</a></dd>
+                  <dd>
+                    <a id="50019" name="Myyigou_index_none_daohang50019" data-url="wechatBindMenuFlag" href="http://my.suning.com/accountBind.do">
+                      <span>·</span>绑定管理</a></dd>
+                  <dd>
+                    <a id="500110" name="Myyigou_index_none_daohang500110" data-url="personalvatFlag" href="http://my.suning.com/personalVat.do">
+                      <span>·</span>个人增票</a></dd>
+                  <dd>
+                    <a id="500111" name="Myyigou_index_none_daohang500111" data-url="" target="_blank" href="http://mrs.suning.com/mrs-web/stockholder/check.htm">
+                      <span>·</span>股东会员认证</a></dd>
+                </dl>
+                <a ison="on" class="switch-side-menu icon-up-side">
+                  <i>
+                  </i>
+                </a>
+              </article>
+            </div>
+          </div>
+          <!-- 我的易购左侧组件 ]] -->
+          <script>//获得纵向菜单
+            $(function() {
+              getCommonVerticalMenu();
+              window.onresize = resizeBannerImage; //当窗口改变宽度时执行此函数
+            });
+            function getCommonVerticalMenu() {
+              var mySuningSideMenuUrl, menuTypeFlag;
+              var _msiDomain = ms_common.getEnv('msiDomain'); //获取我的易购域名
+              var _sncfDomain = ms_common.getEnv('sncfDomain'); //任性付域名
+              var _rxfDomain = ms_common.getEnv('rxfDomain'); //任性付激活域名
+              var _passportDomain = ms_common.getEnv('passportDomain'); //passport域名
+              if (!_msiDomain) {
+                _msiDomain = sn.msiDomain; //如果取不到默认去全局变量SN的
+              }
+              var _msiT = new Date().getTime();
+              try {
+                if (ms_common.getCookie('custno')) {
+                  _msiT = ms_common.getCookie('custno') ^ 'mySuningSideMenu';
+                }
+              } catch(e) {}
+              //获取菜单类型是否为账户管理下菜单
+              if ("undefined" != typeof(mySuningSideMenuType) && "short" == mySuningSideMenuType) {
+                mySuningSideMenuUrl = "//" + _msiDomain + '/ajax/getCommonVerticalMenu.do?menuType=short&_t=' + _msiT;
+                menuTypeFlag = 1; //1为账户管理
+              } else {
+                mySuningSideMenuUrl = "//" + _msiDomain + '/ajax/getCommonVerticalMenu.do?_t=' + _msiT;
+                menuTypeFlag = 0; //0为交易管理
+              }
+              $.ajax({
+                url: mySuningSideMenuUrl,
+                type: 'GET',
+                dataType: 'jsonp',
+                timeout: 15000,
+                cache: true,
+                jsonpCallback: "getCommonVerticalMenuCallBack",
+                success: function(data) {
+                  $(".side-menu-tree").replaceWith(data.htmlDom);
+                  if (1 == menuTypeFlag) {
+                    $(".side-menu-tree dt").html("账户管理");
+                  }
+                  ms_common.treeOrder();
+                  if ("undefined" != typeof(mySuningSideBarSign)) {
+                    if ("" != mySuningSideBarSign) {
+                      $('.side-menu-tree').find("a").each(function() {
+                        var data_flag = $(this).attr('data-url');
+                        if (data_flag == mySuningSideBarSign) {
+                          $(this).attr("style", "color:#f70");
+                        }
+                      })
+                    }
+                  }
+                  var _wWidth = $(window).width();
+                  if (_wWidth > 880) {
+                    //$(".switch-side-menu").click();
+                    $(".side-menu-tree").show();
+                  }
+                },
+                error: function() {
+                  $(".side-menu-tree").html("<div style='text-align:center; line-height:40px;'><span></span><a href='javascript:getCommonVerticalMenu();'>刷新</a></div>");
+                }
+              });
+            };
+            function resizeBannerImage() {
+              var _wWidth = $(window).width();
+              var _menuIsOn = $('.switch-side-menu').attr("ison");
+              if (_wWidth > 880) {
+                if ('off' == _menuIsOn) {
+                  $(".switch-side-menu").click();
+                }
+              }
+              if (_wWidth < 880) {
+                if ('on' == _menuIsOn) {
+                  $(".switch-side-menu").click();
+                }
+              }
+            }</script>
+        </div>
+      </div>
+      <!--引入公用尾部-->
+      <div class="clear"></div>
+      <div class="ng-footer">
+        <div class="ng-s-footer">
+          <div class="ng-s-f-con">
+            <p class="ng-url-list">
+              <a href="https://www.suningholdings.com/" target="_blank" name="public0_none_sn_konggu">苏宁控股</a>
+              <span>|</span>
+              <a href="https://www.suning.cn/" target="_blank" name="public0_none_sn_yunshang">苏宁云商</a>
+              <span>|</span>
+              <a href="https://10035.suning.com/" target="_blank" name="public0_none_sn_hulian">苏宁互联</a>
+              <span>|</span>
+              <a href="https://jinrong.suning.com" target="_blank" name="public0_none_sn_jinrong">苏宁金融</a>
+              <span>|</span>
+              <a href="https://pay.suning.com/epp-epw/login/login.action?idsTrustFrom=suning&amp;ticket=ST1F1671F32556BC51442EB2ED516EB41D" target="_blank" name="public0_none_sn_zhifu1">苏宁支付</a>
+              <span>|</span>
+              <a href="https://www.pptv.com/?rcc_id=snyg" target="_blank" name="public0_none_sn_pptv">PPTV</a>
+              <span>|</span>
+              <a href="https://redbaby.suning.com/" target="_blank" name="public0_none_sn_redbaby">红孩子</a>
+              <span>|</span>
+              <a href="https://wuliu.suning.com/slp/" target="_blank" name="public0_none_sn_wuliu">苏宁物流</a>
+              <span>|</span>
+              <a href="https://cuxiao.suning.com/newUser.html" target="_blank" name="public0_none_sn_shouji">手机苏宁</a>
+              <span>|</span>
+              <a href="https://www.suninghotel.com/shors-web/pc/hotel/index.html" target="_blank" name="public0_none_sn_jiudian">苏宁酒店</a>
+              <span>|</span>
+              <a href="https://ipp.suning.com/sips/toAgree.action" target="_blank" name="public0_none_sn_zhishi">知识产权举报</a></p>
+            <p class="ng-url-list">
+              <a href="https://help.suning.com/page/id-469.htm" target="_blank" name="public0_none_sn_callme">联系我们</a>
+              <span>|</span>
+              <a href="https://careers.suning.cn/" target="_blank" name="public0_none_sn_zhaopin">诚聘英才</a>
+              <span>|</span>
+              <a href="https://sop.suning.com/sel/canvassBusCenter/showModelDetailNew.htm?model=K" target="_blank" name="public0_none_sn_gongyingshang">供应商入驻</a>
+              <span>|</span>
+              <a href="https://ap.suning.com/aps-sale-web/" target="_blank" name="public0_none_sn_guanggao">广告平台</a>
+              <span>|</span>
+              <a href="https://sums.suning.com/" target="_blank" name="public0_none_sn_lianmeng">苏宁联盟</a>
+              <span>|</span>
+              <a href="https://zb.suning.com/bid-web/main.htm" target="_blank" name="public0_none_sn_zhaobiao">苏宁招标</a>
+              <span>|</span>
+              <a href="https://sums.suning.com/aas/links.html" target="_blank" name="public0_none_sn_link">友情链接</a>
+              <span>|</span>
+              <a href="https://help.suning.com/page/id-281.htm" target="_blank" name="public0_none_sn_law">法律申明</a>
+              <span>|</span>
+              <a href="https://ued.suning.com/survey/" target="_blank" name="public0_none_sn_tiyan">用户体验提升计划</a>
+              <span>|</span>
+              <a href="https://mrs.suning.com/mrs-web/stockholder/check.htm" target="_blank" name="public0_none_sn_gudong">股东会员认证</a></p>
+            <p class="ng-copyright" style="display: block;">Copyright© 2002-2017 ，苏宁云商集团股份有限公司版权所有
+              <span>|</span>
+              <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32010202010078" rel="nofollow" style="color:#999" class="gwab">
+                <i>
+                </i>苏公网安备 32010202010078号</a>
+              <span>|</span>
+              <a href="http://www.miitbeian.gov.cn" target="_blank" style="color:#999">苏ICP备10207551号-4</a>
+              <span>|</span>
+              <a href="//res.suning.cn/public/v3/images/SUB1-20130131.png" target="_blank" rel="nofollow" style="color:#999">苏B1-20130131</a></p>
+            <p class="ng-copyright ng-copyright-2" style="display: block;">
+              <a href="//res.suning.cn/public/v3/images/SUB2-20130376.png" target="_blank" rel="nofollow" style="color:#999">苏B2-20130376</a>
+              <span>|</span>
+              <a href="//res.suning.cn/public/v3/images/SUB2-20130391.png" target="_blank" rel="nofollow" style="color:#999">苏B2-20130391</a>出版物经营许可证新出发苏批字第A-243号
+              <span>|</span>互联网药品信息服务资格证书
+              <a href="//res.suning.cn/public/v3/images/yaopin_content.jpg" target="_blank" rel="nofollow" style="color:#999">（苏）-非经营性-2016-0005</a></p>
+            <p>
+            </p>
+            <p class="ng-copyright" style="display: block;">本网站直接或间接向消费者推销商品或者服务的商业宣传均属于“广告”（包装及参数、售后保障等商品信息除外）</p>
+            <div class="ng-authentication" style="display: block;">
+              <a href="https://search.szfw.org/cert/l/CX20111018000608000610" target="_blank" name="public0_none_wb_zs0302" rel="nofollow">
+                <img src="//res.suning.cn/public/v3/images/chengxin.png" height="24" width="76" alt="诚信网站"></a>
+              <a href="http://image.suning.cn/uimg/snnet/snnetImg/142891196680527240.jpg" target="_blank" name="public0_none_wb_zs0303" rel="nofollow">
+                <img src="//res.suning.cn/public/v3/images/unicom.png" height="24" width="76" alt="中国联通授权网络经营代理商"></a>
+              <a href="//res.suning.cn/public/v3/images/dianxin_content.jpg" target="_blank" name="public0_none_wb_zs0304" rel="nofollow">
+                <img src="//res.suning.cn/public/v3/images/dianxin.jpg" height="24" width="76" alt="中国电信授权网络经营代理商"></a>
+              <a href="http://odr.jsdsgsxt.gov.cn/mbm/entweb/elec/certView.shtml?siteId=27cfad762f3d45069d79a9f8f83f458f" target="_blank" rel="nofollow" name="public0_none_wb_zs0303">
+                <img src="//res.suning.cn/public/v3/images/dianzi.png?v=02" height="24" width="76" alt="电子营业执照"></a>
+            </div>
+          </div>
+        </div>
+        <!--top fix bar [[-->
+        <div class="ng-fix-bar"></div>
+        <!--top fix bar ]]--></div>
+      <style type="text/css">.ng-footer{height:175px;margin-top:0;} .ng-s-footer{height:160px;background:none;text-align:center;} .ng-s-footer p.ng-url-list{height:25px;line-height:25px;} .ng-s-footer p.ng-url-list a{color:#666666;} .ng-s-footer p.ng-url-list a:hover{color:#f60;} .ng-s-footer .ng-authentication{float:none;margin:0 auto;height:25px;width:990px;margin-top:5px;} .ng-s-footer p.ng-copyright{float:none;width:100%;} .root1200 .ng-s-footer p.ng-copyright{width:100%;}</style>
+      <div class="ECode-floatBar" style="position: fixed; top: auto; left: auto; z-index: 7500; right: 55px; bottom: 0px; margin-bottom: 300px;">
+        <div style="" id="snSideTools">
+          <ul>
+            <li>
+              <a title="在线客服" href="javascript:findpass();" name="homepage_youce_zaixkf01"></a>
+            </li>
+            <li>
+              <a class="sntool" title="问卷调查" href="http://ued.suning.com/survey/express/d1NEU3dT" name="homepage_youce_wenjdc02" target="_blank">问卷调查</a></li>
+            <li id="gotop" style="display:none list-item;">
+              <a class="sntool3" title="回顶部" onclick="gotop();" href="javascript:void(0);" name="homepage_youce_huiddb03"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <script type="text/javascript" src="https://passport.suning.com/ids/js/passport.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/ms_common.min.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/utils/New.CitySelect.min.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/address2.0/main.min.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/address2.0/commonValid.min.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/address2.0/address-api.min.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/bind/security.min.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/public/js/SFE.dialog.js?v=2017113002"></script>
+      <script type="text/javascript">var _wmmq = _wmmq || [];
+        var _wmmq_param1 = ["db", "ifc"];
+        var _wmmq_param2 = ["sitecode", "T-000130-01"];
+        var _wmmq_param_end = ["_trackPoint"];
+        var _custno = "";
+        var _cookiesArray = document.cookie.split("; ");
+        for (var i = 0; i < _cookiesArray.length; i++) {
+          var _cookieInfo = _cookiesArray[i].split("=");
+          if (_cookieInfo[0] == "custno") {
+            _custno = decodeURIComponent(_cookieInfo[1] ? _cookieInfo[1] : "");
+            break;
+          }
+        }
+        var _wmmq_param3 = ["userid", _custno, "userflag", ""];
+        if (isArray(_wmmq)) {
+          if (_wmmq.length == 0) {
+            _wmmq.push(_wmmq_param1, _wmmq_param2);
+            _wmmq.push(_wmmq_param3);
+            _wmmq.push(_wmmq_param_end);
+          } else {
+            var _wmmq_param_list = new Set();
+            var _wmmq_param;
+            for (x in _wmmq) {
+              _wmmq_param = _wmmq[x];
+              _wmmq_param_list.add(_wmmq_param.toString());
+            }
+            if (!_wmmq_param_list.contains(_wmmq_param1.toString())) {
+              _wmmq.push(_wmmq_param1);
+            }
+            if (!_wmmq_param_list.contains(_wmmq_param2.toString())) {
+              _wmmq.push(_wmmq_param2);
+            }
+            if (!_wmmq_param_list.contains(_wmmq_param3.toString())) {
+              _wmmq.push(_wmmq_param3);
+            }
+            if (!_wmmq_param_list.contains(_wmmq_param_end.toString())) {
+              _wmmq.push(_wmmq_param_end);
+            }
+          }
+        }</script>
+      <style class="m-style">.m-dialog {position: fixed;_position:absolute; top: 50%; left: 50%; z-index: 8003;}.m-dialog .container { display:none; background:rgba(0,0,0,0.2);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#30000000,endColorstr=#30000000)\9;padding:6px;}.m-dialog .title { border-bottom: 1px solid #ccc; background: #eee; }.m-dialog .title h3 { padding:5px 0; padding-left: 10px; font-size: 14px; }.m-dialog .btn {display:block; position: absolute; color:#999;text-decoration:none; font-family:simsun;right: 12px; top:8px;font-size:16px;font-weight:700;cursor: pointer;}.m-dialog .gt {}.m-dialog .lt { margin-left:-4px;}.m-dialog .btn:hover { color:#666;text-decoration:none; }.m-dialog .content { background:#fff;}.m-dialog-overlay .lay { display:none;}.m-dialog-overlay .close {position:absolute;top:0; left:0; width: 100%; height: 100%; opacity: 0.3; filter:Alpha(opacity=30)\9; cursor: pointer; }.m-dialog-overlay .overlay { background: black; z-index: 8002;cursor:default }.m-dialog-overlay .frame { z-index: 8001; }</style>
+      <div class="m-dialog" style="width: 567px; position: fixed; margin-left: -283.5px; margin-top: 0px; top: 0px;"></div>
+      <div class="m-dialog-overlay">
+        <!--[if IE 6]>
+          <iframe class="close lay frame" src="about:blank" frameborder="0"></iframe>
+        <![endif]--></div>
+  </body>
+  <script type="text/javascript">// alert($);
+    < !DOCTYPE html > <html >
+
+    <head > <iframe src = "http://wmcdn.qtmojo.cn/adxcm_base_idigger.htm"style = "width: 0px; height: 0px; position: absolute; top: -100px; left: -100px; display: none;" ></iframe>
+    <script type="text/javascript " async="" src=" //1.qtmojo.cn/aywmq_qt.js"></script>
+  <meta charset="UTF-8">
+  <title>地址管理</title>
+  <script type="text/javascript" async="" src="http://script.suning.cn/javascript/sn_da/da_opt.js"></script>
+  <script src="/static/bs/js/jquery.min.js"></script>
+  <script src="/static/bs/js/bootstrap.min.js"></script>
+  <script src="/static/bs/js/holder.min.js"></script>
+  <script type="text/javascript">//全局变量
+    var sn = sn || {
+      "context": "/emall",
+      "domain": "www.suning.com",
+      "storeId": "10052",
+      "catalogId": "10051",
+      "cartPath": "//ssl.suning.com",
+      "memberDomain": "member.suning.com",
+      "online": "online.suning.com",
+      "cookieDomain": ".suning.com",
+      "categoryId": "20089",
+      "searchDomain": "//search.suning.com/emall/",
+      "msiDomain": "my.suning.com"
+    };
+    // 定义当前页面在我的易购下的类别标识
+    var mySuningSideBarSign = "myAddressMenuFlag";
+    var mySuningSideMenuType = "short";</script>
+  <script>var passport_config = {
+      base: "/",
+      loginTheme: "b2c_pop"
+    };</script>
+  <!-- 引入全站公用资源文件 -->
+  <!--#include virtual="/include/resources-jq172.shtml"-->
+  <link rel="shortcut icon" href="http://ssl.suning.com/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="http://res.suning.cn/public/v3/css/??v3common.min.css,search.min.css,sn-sidebar.min.css?v=2017103101">
+  <script type="text/javascript" src="http://res.suning.cn??/public/v3/js/jquery.js,/public/v3/js/sn_lazyload.js,/public/v3/js/lazyelem.min.js,/public/v3/js/SFE.base.min.js,/public/v3/js/search.min.js,/public/sidebar/build/js/sn-sidebar.min.js,/project/yunxin/js/chatCompat_mini.js?v=2017103101"></script>
+  <script>var sa;
+    if (!sa) {
+      sa = {}
+    }
+    if (!sa.click) {
+      sa.click = {}
+    } (function() {
+      var t = /\.suning\.com/,
+      s = document.location.hostname,
+      h = (("https:" == document.location.protocol) ? "https://": "http://"),
+      o = i(true),
+      b = "|",
+      c = location.href,
+      m = l(p(c));
+      function q(af, F, E) {
+        try {
+          var Q = af.title ? l(af.title) : "";
+          if (Q == "") {
+            var ad = af.attributes.title;
+            if (ad != undefined && ad != null) {
+              Q = ad.value ? l(ad.value) : ""
+            }
+          }
+          if (E != undefined && E != null && E != "") {
+            var D = af.attributes[E];
+            if (D != undefined && D != null) {
+              Q = D.value ? l(D.value) : ""
+            }
+          }
+          var ae = af.name ? l(af.name) : "name undefined";
+          if (ae == "name undefined") {
+            var C = af.attributes.name;
+            if (C != undefined && C != null) {
+              ae = C.value ? l(C.value) : "name undefined"
+            }
+          }
+          if (F != undefined && F != null && F != "") {
+            var W = af.attributes[F];
+            if (W != undefined && W != null) {
+              ae = W.value ? l(W.value) : F + " undefined"
+            }
+          }
+          var S = af.id ? l(af.id) : "id undefined",
+          ab = new Array(),
+          P = (f(af, ab), ab) ? l(ab.join("").replace(/\s|\|/ig, "")) : "text undefined",
+          ag = (ag = document.getElementById("resourceType")) ? ag.value: "",
+          Y = S + b + ae + b + P,
+          k = (k = document.getElementById("errorCode")) ? k.value: "",
+          V = h + o + "/ajaxClick.gif",
+          I = u(),
+          z = "_snck";
+          j(z, I, "/", "", "");
+          var ac = d();
+          var J = typeof sn == "object" ? sn.cityId: "can not get cityId",
+          x = I + b + ac + b + Y + b + m,
+          U = af.href ? af.href: "",
+          K = (U ? w(U) : "-"),
+          L = document.getElementById("URLPattern"),
+          X = (L ? L.value: "");
+          var R = "";
+          var T = n("logonStatus");
+          if (T != undefined && T != null) {
+            R = T
+          }
+          var y = "";
+          var H = n("_snma");
+          if (H != undefined && H != null && H.indexOf("|") >= 0) {
+            try {
+              y = H.split("|")[1]
+            } catch(Z) {}
+          }
+          var N = "";
+          var M = n("idsLoginUserIdLastTime");
+          if (M != undefined && M != null) {
+            N = M
+          }
+          var aa = "";
+          var O = n("custno");
+          if (O != undefined && O != null) {
+            aa = O
+          }
+          var A = "";
+          var G = n("_snmb");
+          if (G != undefined && G != null && G.indexOf("|") >= 0) {
+            try {
+              A = G.split("|")[0]
+            } catch(Z) {}
+          }
+          var B = V + "?_snmk=" + x + "&_snme=" + k + "&_type=" + ag + "&_cId=" + J + "&_sid=" + K + "&urlPattern=" + X + "&vid=" + y + "&lu=" + N + "&sid=" + A + "&mid=" + aa + "&ls=" + R + "&title=" + Q;
+          v(B)
+        } catch(Z) {}
+      }
+      function d() {
+        if (!sa.pvId) {
+          sa.pvId = u()
+        }
+        return sa.pvId
+      }
+      function u() {
+        try {
+          var x = new Date(),
+          k = Math.round(100000 * Math.random()),
+          z = x.getTime().toString().concat(k);
+          return z
+        } catch(y) {}
+      }
+      function n(x) {
+        var k = document.cookie.split("; ");
+        for (var y = 0; y < k.length; y++) {
+          var z = k[y].split("=");
+          if (z[0] == x) {
+            return unescape(z[1])
+          }
+        }
+      }
+      function v(k) {
+        var y = "log_" + (new Date()).getTime();
+        var x = window[y] = new Image();
+        x.onload = (x.onerror = function() {
+          window[y] = null
+        });
+        x.src = k + "&iId=" + y;
+        x = null
+      }
+      function i(k) {
+        if (k) {
+          return "click.suning.cn/sa"
+        } else {
+          return "clicksit.suning.cn/sa"
+        }
+      }
+      function e() {
+        return document.domain
+      }
+      function j(x, k, D, C, B) {
+        try {
+          var A = x + "=" + escape(k);
+          if (C != "") {
+            var z = new Date();
+            z.setTime(z.getTime() + C);
+            A += ";expires=" + z.toGMTString()
+          }
+          if (D != "") {
+            A += ";path=" + D
+          }
+          var y = e();
+          if (y.indexOf(".suning.com") != -1) {
+            A += ";domain=.suning.com"
+          } else {
+            if (y.indexOf(".cnsuning.com") != -1) {
+              A += ";domain=.cnsuning.com"
+            } else {
+              A += ";domain=" + B
+            }
+          }
+          document.cookie = A
+        } catch(B) {}
+      }
+      function w(x) {
+        var k = "-";
+        if (!a(x)) {
+          k = g(x, "tid", "&")
+        }
+        return k
+      }
+      function p(k) {
+        try {
+          if (k.length > 301) {
+            k = k.substring(0, 300)
+          }
+          while (k.indexOf(b) != -1) {
+            k = k.replace(b, "--")
+          }
+          return k
+        } catch(x) {}
+      }
+      function f(z, x) {
+        try {
+          if (z.nodeType == 3) {
+            x.push(z.nodeValue)
+          } else {
+            if (z.nodeType == 1) {
+              for (var k = z.firstChild; k != null; k = k.nextSibling) {
+                f(k, x)
+              }
+            }
+          }
+        } catch(y) {}
+      }
+      function l(k) {
+        return k != null ? encodeURIComponent(k) : ""
+      }
+      function g(y, x, B) {
+        try {
+          var A = "-",
+          k;
+          if (!a(y) && !a(x) && !a(B)) {
+            k = y.indexOf(x);
+            if (k > -1) {
+              var z = y.indexOf(B, k);
+              if (z < 0) {
+                z = y.length
+              }
+              A = y.substring(k + x.length + 1, z)
+            }
+          }
+          return A
+        } catch(z) {}
+      }
+      function a(k) {
+        return (undefined == k || "" == k || "-" == k)
+      }
+      var r = sa.click;
+      r.sendDatasIndex = q
+    })();</script>
+  <!--[if IE 6]>
+    <script type="text/javascript" src="//res.suning.cn/public/js/DD_belatedPNG.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="http://res.suning.cn/project/msIndex/address/css/mySuning.min.css?v=2017113002">
+  <link rel="stylesheet" type="text/css" href="http://res.suning.cn/project/msIndex/address2.0/css/main.min.css?v=2017113002">
+  <link rel="stylesheet" type="text/css" href="http://res.suning.cn/project/msIndex/address2.0/css/Snaddress.min.css?v=2017113002">
+  <link rel="stylesheet" type="text/css" href="http://res.suning.cn/project/msIndex/css/ms-style.min.css?v=2017113002">
+  <link rel="stylesheet" type="text/css" href="http://res.suning.cn/project/msIndex/css/reset.min.css?v=2017113002">
+  <link rel="stylesheet" type="text/css" href="http://res.suning.cn/project/msIndex/css/ms_showWin.min.css?v=2017113002">
+  <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/siteAnalytics.min.js?v=2017113002"></script>
+  <!--[if lt IE 9]>
+    <script src="//res.suning.cn/project/msIndex/js/html5.js?v=2017113002"></script>
+  <![endif]-->
+  <script>(function() {
+      _loadAsyncJs(_getJsFilePath("da_opt.js"));
+    })();
+    $(document).ready(function() {
+      $("div[name^=address_index_info_],li[name^=address_index_info_],a[name^=address_index_info_]").live("click",
+      function() {
+        sa.click.sendDatasIndex(this);
+      });
+    })</script>
+  <script>var sa;
+    if (!sa) {
+      sa = {}
+    }
+    if (!sa.click) {
+      sa.click = {}
+    } (function() {
+      var t = /^\w*?.suning.com$/,
+      s = document.location.hostname,
+      g = (("https:" == document.location.protocol) ? "https://": "http://"),
+      o = h(),
+      b = "|",
+      c = location.href,
+      m = l(p(c));
+      function q(Z, M) {
+        var Y = Z.name ? l(Z.name) : "name undefined";
+        if (Y == "name undefined") {
+          var aa = Z.attributes.name;
+          if (aa != undefined && aa != null) {
+            Y = aa.value ? l(aa.value) : "name undefined"
+          }
+        }
+        if (M != undefined && M != null && M != "") {
+          var J = Z.attributes[M];
+          if (J != undefined && J != null) {
+            Y = J.value ? l(J.value) : M + " undefined"
+          }
+        }
+        var N = Z.id ? l(Z.id) : "id undefined",
+        Q = new Array(),
+        z = (e(Z, Q), Q) ? l(Q.join("").replace(/\s|\|/ig, "")) : "text undefined",
+        T = (T = document.getElementById("resourceType")) ? T.value: "",
+        A = N + b + Y + b + z,
+        R = (R = document.getElementById("errorCode")) ? R.value: "",
+        W = g + o + "/ajaxClick.gif",
+        y = u(),
+        k = "_snck";
+        i(k, y, "/", "", "");
+        var X = n("_snmp"),
+        D = typeof sn == "object" ? sn.cityId: "can not get cityId",
+        I = y + b + X + b + A + b + m,
+        V = Z.href ? Z.href: "",
+        H = (V ? w(V) : "-"),
+        K = document.getElementById("URLPattern"),
+        P = (K ? K.value: "");
+        var C = "";
+        var F = n("logonStatus");
+        if (F != undefined && F != null) {
+          C = F
+        }
+        var E = "";
+        var j = n("_snma");
+        if (j != undefined && j != null && j.indexOf("|") >= 0) {
+          try {
+            E = j.split("|")[1]
+          } catch(U) {}
+        }
+        var B = "";
+        var x = n("idsLoginUserIdLastTime");
+        if (x != undefined && x != null) {
+          B = x
+        }
+        var S = "";
+        var O = n("custno");
+        if (O != undefined && O != null) {
+          S = O
+        }
+        var L = "";
+        var ab = n("_snmb");
+        if (ab != undefined && ab != null && ab.indexOf("|") >= 0) {
+          try {
+            L = ab.split("|")[0]
+          } catch(U) {}
+        }
+        var G = W + "?_snmk=" + I + "&_snme=" + R + "&_type=" + T + "&_cId=" + D + "&_sid=" + H + "&urlPattern=" + P + "&vid=" + E + "&lu=" + B + "&sid=" + L + "&mid=" + S + "&ls=" + C;
+        v(G)
+      }
+      function u() {
+        var k = new Date(),
+        j = Math.round(100000 * Math.random()),
+        x = k.getTime().toString().concat(j);
+        return x
+      }
+      function n(k) {
+        var j = document.cookie.split("; ");
+        for (var x = 0; x < j.length; x++) {
+          var y = j[x].split("=");
+          if (y[0] == k) {
+            return unescape(y[1])
+          }
+        }
+      }
+      function v(j) {
+        var x = "log_" + (new Date()).getTime();
+        var k = window[x] = new Image();
+        k.onload = (k.onerror = function() {
+          window[x] = null
+        });
+        k.src = j + "&iId=" + x;
+        k = null
+      }
+      function h() {
+        if (t.test(s)) {
+          return "click.suning.cn/sa"
+        } else {
+          return "clicksit.suning.cn/sa"
+        }
+      }
+      function d() {
+        return document.domain
+      }
+      function i(k, j, C, B, A) {
+        var z = k + "=" + escape(j);
+        if (B != "") {
+          var y = new Date();
+          y.setTime(y.getTime() + B);
+          z += ";expires=" + y.toGMTString()
+        }
+        if (C != "") {
+          z += ";path=" + C
+        }
+        var x = d();
+        if (x.indexOf(".suning.com") != -1) {
+          z += ";domain=.suning.com"
+        } else {
+          if (x.indexOf(".cnsuning.com") != -1) {
+            z += ";domain=.cnsuning.com"
+          } else {
+            z += ";domain=" + A
+          }
+        }
+        document.cookie = z
+      }
+      function w(k) {
+        var j = "-";
+        if (!a(k)) {
+          j = f(k, "tid", "&")
+        }
+        return j
+      }
+      function p(j) {
+        if (j.length > 301) {
+          j = j.substring(0, 300)
+        }
+        while (j.indexOf(b) != -1) {
+          j = j.replace(b, "--")
+        }
+        return j
+      }
+      function e(x, k) {
+        if (x.nodeType == 3) {
+          k.push(x.nodeValue)
+        } else {
+          if (x.nodeType == 1) {
+            for (var j = x.firstChild; j != null; j = j.nextSibling) {
+              e(j, k)
+            }
+          }
+        }
+      }
+      function l(j) {
+        return j != null ? encodeURIComponent(j) : ""
+      }
+      function f(x, k, A) {
+        var z = "-",
+        j;
+        if (!a(x) && !a(k) && !a(A)) {
+          j = x.indexOf(k);
+          if (j > -1) {
+            var y = x.indexOf(A, j);
+            if (y < 0) {
+              y = x.length
+            }
+            z = x.substring(j + k.length + 1, y)
+          }
+        }
+        return z
+      }
+      function a(j) {
+        return (undefined == j || "" == j || "-" == j)
+      }
+      var r = sa.click;
+      r.sendDatasIndex = q
+    })();</script>
+  <!-- <link rel="stylesheet" type="text/css" href="/static/bs/css/bootstrap.min.css"> --></head>
+  
+  <body class="ms-body">
+    <!-- 此处引入公用头部工具栏 -->
+    <div id="_TOP_BANNER_" class="ng-top-banner"></div>
+    <!--我的易购首页头部-->
+    <!-- 我的易购公用头 [[ -->
+    <header class="ms-header ms-header-inner ms-head-position">
+      <article class="ms-useinfo">
+        <div class="header-useinfo" id="memberInfo">
+          <!--头像--></div>
+      </article>
+    </header>
+    <link rel="stylesheet" type="text/css" href="/static/bs/css/bootstrap.min.css">
+    <!-- 我的易购公用头 ]] -->
+    <script>$(function() {
+        getCommonHorizontalMenu();
+        // getMyMemberInfo();
+      });
+
+      function getCommonHorizontalMenu() {
+        var _msiDomain = ms_common.getEnv('msiDomain');
+        if (!_msiDomain) {
+          _msiDomain = sn.msiDomain;
+        }
+        var _msiT = new Date().getTime();
+        try {
+          if (ms_common.getCookie('custno')) {
+            _msiT = ms_common.getCookie('custno') ^ 'mySuningSideMenu';
+          }
+        } catch(e) {}
+        var url = "//" + _msiDomain + "/ajax/getCommonHorizontalMenu.do?_t=" + _msiT;
+        $.ajax({
+          url: url,
+          type: 'GET',
+          dataType: 'jsonp',
+          timeout: 15000,
+          cache: true,
+          jsonpCallback: "getCommonHorizontalMenuCallBack",
+          success: function(data) {
+            $(".header-menu").replaceWith(data.htmlDom);
+            ms_common.userManage();
+            ms_common.checkhHtml5();
+            if ("undefined" != typeof(mySuningSideBarSign) && "messageMenuFlag" == mySuningSideBarSign) {
+              //有菜单标识且是短消息页面,不加载消息未读数量
+            } else {
+              //无菜单标识或有菜单标识且不为短消息页面，加载消息未读数量
+              // 获取消息数量
+              getMMSMyMessageInfo();
+            }
+            //设置菜单new标识
+            //setMsiMenuNewIcon();
+          },
+          error: function(data) {
+            $(".header-menu").replaceWith("<div style='text-align:center; line-height:40px;'><span></span><a href='javascript:getCommonHorizontalMenu();'>刷新</a></div>");
+          }
+        });
+      };
+
+      getMyMemberInfo = function() {
+        var _msiDomain = ms_common.getEnv('msiDomain');
+        if (!_msiDomain) {
+          _msiDomain = sn.msiDomain;
+        }
+        $.ajax({
+          type: "post",
+          url: "//" + _msiDomain + "/memberInfoPageHead.do",
+          async: true,
+          dataType: 'jsonp',
+          timeout: 15000,
+          success: function(data) {
+            if ("error" != data.htmlDom) {
+              $("#memberInfo").replaceWith("<div class='header-useinfo' id='memberInfo' >" + data.htmlDom + "</div>");
+              ms_common.userAvatar();
+            } else {
+
+}
+          },
+          error: function(data) {}
+        });
+      };
+
+      getMMSMyMessageInfo = function() {
+        $('.ms-header .ms-header-menu .ms-nav').find("li").each(function() {
+          var data_flag = $(this).find('a').attr('data-url');
+          if (data_flag == "messageMenuFlag") {
+            var _mmsDomain = ms_common.getEnv('mmsDomain');
+            $.ajax({
+              type: "get",
+              url: "//" + _mmsDomain + "/service/getUnreadMessages.do",
+              async: true,
+              dataType: 'jsonp',
+              timeout: 15000,
+              success: function(data) {
+                if ("error" != data.returnCode) {
+                  var messageCount = data.unreadMsgTotal;
+                  if (messageCount > 0) {
+                    $('.ms-header-menu .ms-nav').find("li").each(function() {
+                      var data_flag = $(this).find('a').attr('data-url');
+                      if (data_flag == "messageMenuFlag") {
+                        $(this).find('a').append("<span>" + messageCount + "</span>");
+                      }
+                    })
+                  }
+                }
+              },
+              error: function(data) {}
+            });
+          }
+        })
+      };
+
+      setMsiMenuNewIcon = function() {
+        $('.ms-header .ms-header-menu .ms-nav').find("li").each(function() {
+          var data_flag = $(this).find('a').attr('data-url');
+          if (data_flag == "messageMenuFlag") {
+            $(this).find('a').after('<i class="nav-new"></i>');
+          }
+        })
+      };</script>
+    <!--我的易购-我的礼品卡 [[-->
+    <div id="ms-center" class="ms-center">
+      <div class="cont" data-uuid="52e72180-b8ef-46d1-8ad2-4350f8c4b2e3">
+        <div class="cont-main">
+          <!--引入公用左侧栏-->
+          <!-- 我的易购左侧组件 [[ -->
+          <div class="cont-side">
+            <div class="side-neck">
+              <i>
+              </i>
+            </div>
+            <div class="ms-side"></div>
+          </div>
+          <!-- 我的易购左侧组件 ]] -->
+          <script>//获得纵向菜单
+            $(function() {
+              getCommonVerticalMenu();
+              window.onresize = resizeBannerImage; //当窗口改变宽度时执行此函数
+            });
+            function getCommonVerticalMenu() {
+              var mySuningSideMenuUrl, menuTypeFlag;
+              var _msiDomain = ms_common.getEnv('msiDomain'); //获取我的易购域名
+              var _sncfDomain = ms_common.getEnv('sncfDomain'); //任性付域名
+              var _rxfDomain = ms_common.getEnv('rxfDomain'); //任性付激活域名
+              var _passportDomain = ms_common.getEnv('passportDomain'); //passport域名
+              if (!_msiDomain) {
+                _msiDomain = sn.msiDomain; //如果取不到默认去全局变量SN的
+              }
+              var _msiT = new Date().getTime();
+              try {
+                if (ms_common.getCookie('custno')) {
+                  _msiT = ms_common.getCookie('custno') ^ 'mySuningSideMenu';
+                }
+              } catch(e) {}
+              //获取菜单类型是否为账户管理下菜单
+              if ("undefined" != typeof(mySuningSideMenuType) && "short" == mySuningSideMenuType) {
+                mySuningSideMenuUrl = "//" + _msiDomain + '/ajax/getCommonVerticalMenu.do?menuType=short&_t=' + _msiT;
+                menuTypeFlag = 1; //1为账户管理
+              } else {
+                mySuningSideMenuUrl = "//" + _msiDomain + '/ajax/getCommonVerticalMenu.do?_t=' + _msiT;
+                menuTypeFlag = 0; //0为交易管理
+              }
+              $.ajax({
+                url: mySuningSideMenuUrl,
+                type: 'GET',
+                dataType: 'jsonp',
+                timeout: 15000,
+                cache: true,
+                jsonpCallback: "getCommonVerticalMenuCallBack",
+                success: function(data) {
+                  $(".side-menu-tree").replaceWith(data.htmlDom);
+                  if (1 == menuTypeFlag) {
+                    $(".side-menu-tree dt").html("账户管理");
+                  }
+                  ms_common.treeOrder();
+                  if ("undefined" != typeof(mySuningSideBarSign)) {
+                    if ("" != mySuningSideBarSign) {
+                      $('.side-menu-tree').find("a").each(function() {
+                        var data_flag = $(this).attr('data-url');
+                        if (data_flag == mySuningSideBarSign) {
+                          $(this).attr("style", "color:#f70");
+                        }
+                      })
+                    }
+                  }
+                  var _wWidth = $(window).width();
+                  if (_wWidth > 880) {
+                    //$(".switch-side-menu").click();
+                    $(".side-menu-tree").show();
+                  }
+                },
+                error: function() {
+                  $(".side-menu-tree").html("<div style='text-align:center; line-height:40px;'><span></span><a href='javascript:getCommonVerticalMenu();'>刷新</a></div>");
+                }
+              });
+            };
+            function resizeBannerImage() {
+              var _wWidth = $(window).width();
+              var _menuIsOn = $('.switch-side-menu').attr("ison");
+              if (_wWidth > 880) {
+                if ('off' == _menuIsOn) {
+                  $(".switch-side-menu").click();
+                }
+              }
+              if (_wWidth < 880) {
+                if ('on' == _menuIsOn) {
+                  $(".switch-side-menu").click();
+                }
+              }
+            }</script>
+        </div>
+      </div>
+      <!--引入公用尾部-->
+      <div class="clear"></div>
+      <div class="ng-footer">
+        <!--top fix bar [[-->
+        <div class="ng-fix-bar"></div>
+        <!--top fix bar ]]--></div>
+      <style type="text/css">.ng-footer{height:175px;margin-top:0;} .ng-s-footer{height:160px;background:none;text-align:center;} .ng-s-footer p.ng-url-list{height:25px;line-height:25px;} .ng-s-footer p.ng-url-list a{color:#666666;} .ng-s-footer p.ng-url-list a:hover{color:#f60;} .ng-s-footer .ng-authentication{float:none;margin:0 auto;height:25px;width:990px;margin-top:5px;} .ng-s-footer p.ng-copyright{float:none;width:100%;} .root1200 .ng-s-footer p.ng-copyright{width:100%;}</style>
+      <div class="ECode-floatBar" style="position: fixed; top: auto; left: auto; z-index: 7500; right: 55px; bottom: 0px; margin-bottom: 300px;">
+        <div style="" id="snSideTools">
+          <ul>
+            <li>
+              <a title="在线客服" href="javascript:findpass();" name="homepage_youce_zaixkf01"></a>
+            </li>
+            <li>
+              <a class="sntool" title="问卷调查" href="http://ued.suning.com/survey/express/d1NEU3dT" name="homepage_youce_wenjdc02" target="_blank">问卷调查</a></li>
+            <li id="gotop" style="display:none list-item;">
+              <a class="sntool3" title="回顶部" onclick="gotop();" href="javascript:void(0);" name="homepage_youce_huiddb03"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <script type="text/javascript" src="https://passport.suning.com/ids/js/passport.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/ms_common.min.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/utils/New.CitySelect.min.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/address2.0/main.min.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/address2.0/commonValid.min.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/address2.0/address-api.min.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/project/msIndex/js/bind/security.min.js?v=2017113002"></script>
+      <script type="text/javascript" src="http://res.suning.cn/public/js/SFE.dialog.js?v=2017113002"></script>
+      <script type="text/javascript">var _wmmq = _wmmq || [];
+        var _wmmq_param1 = ["db", "ifc"];
+        var _wmmq_param2 = ["sitecode", "T-000130-01"];
+        var _wmmq_param_end = ["_trackPoint"];
+        var _custno = "";
+        var _cookiesArray = document.cookie.split("; ");
+        for (var i = 0; i < _cookiesArray.length; i++) {
+          var _cookieInfo = _cookiesArray[i].split("=");
+          if (_cookieInfo[0] == "custno") {
+            _custno = decodeURIComponent(_cookieInfo[1] ? _cookieInfo[1] : "");
+            break;
+          }
+        }
+        var _wmmq_param3 = ["userid", _custno, "userflag", ""];
+        if (isArray(_wmmq)) {
+          if (_wmmq.length == 0) {
+            _wmmq.push(_wmmq_param1, _wmmq_param2);
+            _wmmq.push(_wmmq_param3);
+            _wmmq.push(_wmmq_param_end);
+          } else {
+            var _wmmq_param_list = new Set();
+            var _wmmq_param;
+            for (x in _wmmq) {
+              _wmmq_param = _wmmq[x];
+              _wmmq_param_list.add(_wmmq_param.toString());
+            }
+            if (!_wmmq_param_list.contains(_wmmq_param1.toString())) {
+              _wmmq.push(_wmmq_param1);
+            }
+            if (!_wmmq_param_list.contains(_wmmq_param2.toString())) {
+              _wmmq.push(_wmmq_param2);
+            }
+            if (!_wmmq_param_list.contains(_wmmq_param3.toString())) {
+              _wmmq.push(_wmmq_param3);
+            }
+            if (!_wmmq_param_list.contains(_wmmq_param_end.toString())) {
+              _wmmq.push(_wmmq_param_end);
+            }
+          }
+        }</script>
+      <style class="m-style">.m-dialog {position: fixed;_position:absolute; top: 50%; left: 50%; z-index: 8003;}.m-dialog .container { display:none; background:rgba(0,0,0,0.2);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#30000000,endColorstr=#30000000)\9;padding:6px;}.m-dialog .title { border-bottom: 1px solid #ccc; background: #eee; }.m-dialog .title h3 { padding:5px 0; padding-left: 10px; font-size: 14px; }.m-dialog .btn {display:block; position: absolute; color:#999;text-decoration:none; font-family:simsun;right: 12px; top:8px;font-size:16px;font-weight:700;cursor: pointer;}.m-dialog .gt {}.m-dialog .lt { margin-left:-4px;}.m-dialog .btn:hover { color:#666;text-decoration:none; }.m-dialog .content { background:#fff;}.m-dialog-overlay .lay { display:none;}.m-dialog-overlay .close {position:absolute;top:0; left:0; width: 100%; height: 100%; opacity: 0.3; filter:Alpha(opacity=30)\9; cursor: pointer; }.m-dialog-overlay .overlay { background: black; z-index: 8002;cursor:default }.m-dialog-overlay .frame { z-index: 8001; }</style>
+      <div class="m-dialog" style="width: 567px; position: fixed; margin-left: -283.5px; margin-top: 0px; top: 0px;"></div>
+      <div class="m-dialog-overlay">
+        <!--[if IE 6]>
+          <iframe class="close lay frame" src="about:blank" frameborder="0"></iframe>
+        <![endif]--></div>
+  </body>
+ 
+</html>
+</script>
+
+</html>

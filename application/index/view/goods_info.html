@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <title>{$goods['name']}</title>
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="applicable-device" content="pc" />
+  <meta name="MobileOptimized" content="width" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="http://ssl.suning.com/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/static/index/css/goods_info/search.min.css" />
+  <script type="text/javascript" src="/static/index/js/goods_info/SFE.base.min.js"></script>
+  <!--[if IE 6]>
+    <script type="text/javascript" src="http://res.suning.cn/public/js/DD_belatedPNG.js"></script>
+  <![endif]-->
+  <div id="_TOP_BANNER_" class="ng-top-banner"></div>
+  <div class="ng-toolbar">
+    <div class="ng-toolbar-con wrapper">
+      <div class="ng-toolbar-left">
+        <a href="/" class="ng-bar-node ng-bar-node-backhome" id="ng-bar-node-backhome" name="public0_none_gongju_fanhui">
+          <i class="ng-iconfont ng-backhome">&#xe640;</i>
+          <span>返回首页</span></a>
+        <div class="ng-bar-node-box ng-site-nav-box lazy-bar-box">
+          <a href="javascript:void(0);" class="ng-bar-node ng-bar-node-site" name="public0_none_daohang_wzdh">
+            <span>网站导航</span>
+            <em class="ng-iconfont down">&#xe62e;</em></a>
+          <div class="ng-sn-site-nav ng-d-box site-nav-child" style="display:none;">
+            <!--网站导航列表-->
+            <div class="head-loading"></div>
+            <a href="javascript:void(0);" class="ng-close" name="public0_none_daohang_close">
+              <em class="ng-iconfont">&#xe627;</em></a>
+          </div>
+        </div>
+        <div class="ng-bar-node-box shop-handle lazy-bar-box">
+          <a href="/" class="ng-bar-node ng-bar-node-pr5 ng-bar-node-shop touch-href" name="public0_none_shangjia_ruzhu" target="_blank">
+            <span>商家入驻</span>
+            <em class="ng-iconfont down">&#xe62e;</em></a>
+          <div class="ng-down-box ng-d-box shop-center-child ng-ser-list" style="display:none;">
+            <!--商家入驻列表-->
+            <div class="head-loading"></div>
+          </div>
+        </div>
+        <!--服务中心 [[-->
+        <div class="ng-bar-node-box service-handle lazy-bar-box">
+          <a href="javascript:void(0);" class="ng-bar-node ng-bar-node-service ng-bar-node-fix touch-href ng-bar-node-pr5" rel="nofollow" name="public0_none_kehu_fuwu">
+            <span>客户服务</span>
+            <em class="ng-iconfont down">&#xe62e;</em></a>
+          <div class="ng-down-box ng-d-box service-center-child ng-ser-list" style="display:none;">
+            <!--服务中心列表-->
+            <div class="head-loading"></div>
+            <a href="javascript:findpass();" rel="nofollow" name="public0_none_kehu_zixun" style="display:none;">
+              <span>在线咨询</span>
+              <em class="ng-iconfont">&#xe631;</em></a>
+          </div>
+        </div>
+        <!--服务中心 ]]-->
+        <!--网站导航 ]]-->
+        <!-- 消息 [[ -->
+        <!-- <div class="ng-bar-node-box ng-msg-box">
+        <a href="http://msg.suning.com/" class="ng-bar-node ng-bar-node-msg" name="public0_none_dbgjt_wdxx01" target="_blank">
+        <span>消息<i class="ng-iconfont dot"></i></span><em class="ng-iconfont down">&#xe62e;</em></a>
+        <div class="ng-d-box ng-msg-child" style="display:none;">
+        <div class="ng-msg-list">
+        <div class="ng-msg-item ng-msg-item-no">
+        <i></i><span>嗷~ 没有新消息...</span></div></div>
+        <div class="ng-msg-bottom"><a href="http://msg.suning.com/" name="public0_none_dbgjt_wdxx01" target="_blank">查看更多</a></div></div></div> -->
+        <!-- 消息 ]] --></div>
+      <div class="ng-toolbar-right">
+        <!-- 登录注册 -->
+        <a href="javascript:void(0)" class="ng-bar-node username-bar-node username-bar-node-showside" id="username-node" rel="nofollow" style="display:none;">
+          <span id="usernameHtml01"></span>
+          <em class="hasmsg ng-iconfont">&#xe637;</em></a>
+        <div class="ng-bar-node-box username-handle" id="username-node-slide" style="display:none;">
+          <a href="http://my.suning.com" rel="nofollow" class="ng-bar-node username-bar-node username-bar-node-noside">
+            <span id="usernameHtml02"></span>
+            <em class="hasmsg ng-iconfont">&#xe637;</em>
+            <em class="ng-iconfont down">&#xe62e;</em></a>
+          <div class="ng-d-box ng-down-box ng-username-slide" style="display:none;">
+            <a href="http://my.suning.com/person.do" class="ng-vip-union" target="_blank" name="public0_none_denglu_zhanghao" rel="nofollow">账号管理</a>
+            <a href="javascript:SFE.base.logoff();" rel="nofollow" name="public0_none_denglu_tuichu">退出登录</a></div>
+        </div>
+        <div class="ng-bar-node reg-bar-node" id="reg-bar-node">
+          <a href="javascript:SFE.base.logonurl();" name="public0_none_denglu_denglu" rel="nofollow" class="login">请登录</a>
+          <a href="https://reg.suning.com/person.do" target="_blank" class="login reg-bbb" rel="nofollow" name="public0_none_denglu_zhuce">注册有礼</a></div>
+        <!--我的订单 [[-->
+        <div class="ng-bar-node-box myorder-handle">
+          <a href="http://order.suning.com/onlineOrder/orderList.do" rel="nofollow" name="public0_none_wode_dingdan" class="ng-bar-node ng-bar-node-fix touch-href ng-bar-node-pr5">
+            <span>我的订单</span>
+            <em class="ng-iconfont down">&#xe62e;</em></a>
+          <div class="ng-down-box ng-d-box myorder-child" style="display:none;">
+            <a href="http://order.suning.com/onlineOrder/orderList.do?transStatus=waitPay" rel="nofollow" name="public0_none_wode_zhufu">待支付
+              <em id="waitPayCounts"></em></a>
+            <a href="http://order.suning.com/onlineOrder/orderList.do?transStatus=waitReceive" rel="nofollow" name="public0_none_wode_shouhuo">待收货
+              <em id="waitDeliveryCounts"></em></a>
+            <a href="http://review.suning.com/my_cmmdty_review.do" rel="nofollow" name="public0_none_wode_pingjia">待评价
+              <em id="waitEvaluation"></em></a>
+            <a href="http://assss.suning.com/assss-web/pc/modify/toModifyOrderList.do" rel="nofollow" name="public0_none_wode_xiugai">修改订单</a></div>
+        </div>
+        <!--我的订单 ]]-->
+        <!--我的易购 [[-->
+        <div class="ng-bar-node-box mysuning-handle">
+          <a href="http://my.suning.com" rel="nofollow" name="public0_none_wode_yigou" class="ng-bar-node ng-bar-node-fix touch-href ng-bar-node-pr5">
+            <span>我的易购</span>
+            <em class="ng-iconfont down">&#xe62e;</em></a>
+          <div class="ng-down-box ng-d-box mysuning-child" style="display:none;">
+            <div class="mysuning-infor clearfix">
+              <a name="public0_none_wode_touxiang" target="_blank" href="http://my.suning.com/person.do?targetTab=head" class="headimg">
+                <img src3="./images/0000000000_01_60x60.jpg" alt="" id="userHead" /></a>
+              <div class="mysuning-detail">
+                <a name="public0_none_denglu_denglu" href="javascript:SFE.base.logonurl();" class="login">请登录</a>
+                <a name="public0_none_wode_name" href="http://my.suning.com" rel="nofollow" class="username" id="userNickname">141******13</a>
+                <a href="https://sign.suning.com/sign/welcome.do" rel="nofollow" name="public0_none_wode_daka" class="daka">点击打卡</a></div>
+            </div>
+            <a href="http://2.suning.com/myOrder/queryMyOrders.do" name="public0_none_wode_ershou" rel="nofollow" target="_blank">我的二手</a>
+            <a href="http://favorite.suning.com/myFavoriteImg.do" rel="nofollow" name="public0_none_wode_shoucang" target="_blank">我的收藏</a>
+            <a href="https://passport.suning.com/ids/trustLogin?sysCode=epp&targetUrl=http:http://my.jr.suning.com/sfp/accountAssets/index.htm" rel="nofollow" name="public0_none_wode_jinrong" target="_blank">我的金融</a>
+            <a href="http://vip.suning.com" class="ng-vip-union" target="_blank" rel="nofollow" name="">苏宁会员
+              <em class="ng-iconfont">&#xe6ac;</em></a>
+            <a href="https://rxf.suning.com/epps-cpf/accountMgt/assetOverview.do" rel="nofollow" name="public0_none_wode_renxingfu">我的任性付</a>
+            <a href="http://quan.suning.com/yhq.do" rel="nofollow" name="public0_none_wode_quan">我的优惠券</a></div>
+        </div>
+        <!--我的易购 ]]-->
+        <a href="http://vip.suning.com/" name="public0_none_sn_huiyuan" rel="nofollow" class="ng-bar-node ng-bar-node-pr5" target="_blank">
+          <span>苏宁会员</span></a>
+        <!--[[ 购物车 2017-06-08 添加购物车商品 -->
+        <div class="ng-bar-node-box cart-handle">
+          <a class="ng-bar-node ng-bar-node-mini-cart " name="public0_none_gouwuche_gwc" rel="nofollow" href="http://shopping.suning.com/cart.do">
+            <em class="ng-iconfont cart">&#xe623;</em>
+            <span>购物车</span>
+            <span class="total-num-box" id="J_total_num_box">
+              <b class="total-num J_cart_total_num" id="showTotalQty">0</b>
+              <span class="total-num-bg-box">
+                <em></em>
+                <i>
+                </i>
+              </span>
+            </span>
+            <em class="ng-iconfont down">&#xe62e;</em></a>
+        </div>
+        <!-- 购物车 ]] -->
+        <a href="https://passport.suning.com/ids/trustLogin?sysCode=epp&targetUrl=https://pay.suning.com/epp-epw/login/login.action" name="public0_none_yifubao_yfb" class="ng-bar-node ng-bar-node-pr5" target="_blank">
+          <span>易付宝</span></a>
+        <a href="http://b.suning.com/" class="ng-bar-node ng-bar-node-pr5" name="public0_none_qiye_caigou" target="_blank">
+          <span>企业采购</span></a>
+        <!--手机苏宁 [[-->
+        <div class="ng-bar-node-box app-down-box">
+          <a href="http://cuxiao.suning.com/newUser.html" target="_blank" name="public0_none_shouji_sn" rel="nofollow" class="ng-bar-node mb-suning touch-href">
+            <span>手机苏宁</span>
+            <em class="ng-iconfont down">&#xe62e;</em></a>
+          <div class="ng-mb-box ng-d-box mb-down-child" style="display:none;">
+            <ul class="ng-app-code">
+              <li>
+                <img class="top-code" src3="./images/sn-top-code.png" alt="苏宁易购APP" />
+                <p>下载苏宁易购APP</p>
+                <img class="aoyun-text" src3="./images/aoyun-text.jpg" alt=""></li>
+              <li>
+                <img class="top-code" src3="./images/yfb-top-code.png" alt="易付宝APP" />
+                <p>扫一扫</p>
+                <p>下载苏宁金融APP</p>
+              </li>
+              <li>
+                <img class="top-code" src3="./images/wxcode.jpg" alt="易购服务号" />
+                <p>扫一扫</p>
+                <p>关注苏宁易购服务号</p>
+              </li>
+            </ul>
+            <div class="line"></div>
+            <div class="line lineTwo"></div>
+          </div>
+        </div>
+        <!--手机苏宁 ]]--></div>
+      <div id="ng-minicart-slide-box"></div>
+    </div>
+  </div>
+  <div class="ng-header ng-channel-header">
+    <div class="ng-header-con">
+      <div class="wrapper">
+        <div class="ng-logo-box" id="G_SUNING_LOGO">
+          <!-- LOGO -->
+          <a href="/" class="ng-logo">
+            <img src="/static/index/images/goods_info/snlogo.png" height="100" width="190" alt="苏宁易购" /></a>
+          <span id="G_CHANNEL_LOGO" class="channel-logo"></span>
+        </div>
+        <div class="ng-search channel-search">
+          <!-- PRFLS SEARCH -->
+          <div class="g-search">
+            <i class="ng-iconfont search-icon">&#xe619;</i>
+            <form method="get" onsubmit="return SFE.search.onSubmitSearch(this)">
+              <div class="search-keyword-box">
+                <input tabindex="0" id="searchKeywords" type="text" class="search-keyword" name="index1_none_search_ss2" value="" autocomplete="off" /></div>
+              <input id="searchSubmit" type="submit" class="search-btn" name="index1_none_search_ss1" value="搜索" />
+              <div id="snKeywordNew" class="g-search-hotwords"></div>
+            </form>
+            <div id="ac_results" class="g-ac-results hide"></div>
+            <div id="rec_results" class="g-rec-results hide">
+              <ul class="history-results"></ul>
+              <ul class="rec-results"></ul>
+            </div>
+          </div>
+        </div>
+        <!-- LOGO -->
+        <div class="ng-top-act" id="ng-top-act"></div>
+      </div>
+    </div>
+  </div>
+  <div class="ng-nav-bar ng-nav-bar-chanel">
+    <div class="ng-sort">
+      <a class="ng-all-hook" href="http://list.suning.com" target="_blank" name="public0_none_dht_09">
+        <i>
+        </i>
+        <span>全部商品分类</span>
+        <!-- <em class="ng-iconfont">&#xe62e;</em> --></a>
+      <div class="ng-sort-list-box">
+        <div class="ng-sort-detail">
+          <a href="javascript:void(0);" class="ng-close-sort" name="public0_none_ml_gban">
+            <em class="ng-iconfont">&#xe627;</em></a>
+          <div class="sort-chanel"></div>
+          <div class="cate-list"></div>
+        </div>
+      </div>
+    </div>
+    <div class="ng-nav-index">
+      <ul class="ng-nav">
+        <li>
+          <a name="index3_homepage1_32617813002_word01" href="https://ju.suning.com" target="_blank">大聚惠</a>
+          <span></span>
+        </li>
+        <li>
+          <a name="index3_homepage1_32617813002_word02" href="https://redbaby.suning.com" target="_blank">红孩子</a>
+          <span></span>
+        </li>
+        <li>
+          <a name="index3_homepage1_32617813002_word03" href="https://chaoshi.suning.com" target="_blank">苏宁超市
+            <i class="new"></i></a>
+          <span></span>
+        </li>
+        <li>
+          <a name="index3_homepage1_32617813343_word01" href="https://dianqi.suning.com" target="_blank">电器城</a>
+          <span></span>
+        </li>
+        <li>
+          <a name="index3_homepage1_32617813343_word02" href="https://pindao.suning.com/city/xiaojiadian.html" target="_blank">生活家电</a>
+          <span></span>
+        </li>
+        <li>
+          <a name="index3_homepage1_32617813343_word03" href="https://fashion.suning.com" target="_blank">服装城</a>
+          <span></span>
+        </li>
+        <li>
+          <a name="index3_homepage1_32617813343_word04" href="https://g.suning.com" target="_blank">海外购</a>
+          <span></span>
+        </li>
+        <li>
+          <a name="index3_homepage1_32617813343_word05" href="https://pindao.suning.com/fbs_index.html" target="_blank">特卖</a>
+          <span></span>
+        </li>
+        <li>
+          <a name="index3_homepage1_32617813343_word06" href="https://jinrong.suning.com" target="_blank">苏宁金融</a>
+          <span></span>
+        </li>
+        <li>
+          <a name="index3_homepage1_32617813343_word07" href="https://vip.suning.com" target="_blank">苏宁会员</a>
+          <span></span>
+        </li>
+      </ul>
+    </div>
+    <div class="ng-nav-right-txtact"></div>
+  </div>
+  <link rel="stylesheet" type="text/css" href="/static/index/css/goods_info/fourth-min.css" />
+  <!--[if IE 6]>
+    <style type="text/css">.icon-plusone { background:none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://css.suning.cn/project/pdsWeb/css/images/icon-plusone.png');}</style>
+    <script type="text/javascript">http: // IE6下处理PNG24图片
+      DD_belatedPNG.fix(".g-sticker-80 b, .imgzoom-video-play, .proinfo-focus .proinfo-star .stars, .proinfo-focus .proinfo-star .stars em, .imgzoom .pptv-logo, .imgzoom .oversea-logo");</script>
+  <![endif]--></head>
+<body style="min-width: initial;">
+  <div class="wrapper">
+    <div class="breadcrumb">
+      <a gid="20089" class="ft" name="item_10014529886_guide_mulu01" id="category1" href="#">手机/数码/配件</a>
+      <span class="sep">></span>
+      <div class="dropdown">
+        <span gid="20002" class="dropdown-text">
+          <a class="ft" name="item_10014529886_guide_mulu02" href="#">手机通讯</a></span>
+        <p>
+        </p>
+        <i>
+        </i>
+      </div>
+      <span class="sep">></span>
+      <div class="dropdown">
+        <span gid="20006" class="dropdown-text">
+          <a class="ft" name="item_10014529886_guide_mulu03" href="#">手机</a></span>
+        <p>
+        </p>
+      </div>
+      <span class="sep">></span>
+      <div class="dropdown">
+        <span class="dropdown-text">
+          <a href="#">vivo
+            <span style="display: none">手机</span></a>
+        </span>
+      </div>
+      <span class="sep">></span>
+      <span class="breadcrumb-title" title="" id="">
+        <a href="">步步高(vivo)vivo X20A手机</a></span>
+    </div>
+  </div>
+  <div class="wrapper proinfo">
+    <div class="proinfo-container clearfix">
+      <div class="proinfo-left">
+        <div id="imgZoom" class="imgzoom">
+          <div class="imgzoom-main">
+              <img onerror="this.src='/static/index/images/goods_info/blank_pic_800.jpg'" alt="{$goods['name']}" src="{$goods['img'][0]}">
+            <div class="imgzoom-shot"></div>
+            <i id="labelPicture" class="g-sticker-80" style="display:none;">
+              <b class=""></b>
+            </i>
+            <i class="oversea-logo hide"></i>
+          </div>
+          <div class="imgzoom-thumb">
+            <a name="item_10014529886_sppic_picup01" class="prev prev-disable" href="javascript:void(0);"></a>
+            <div class="imgzoom-thumb-main">
+              <ul>
+                {foreach name="$goods['img']" item="row"}
+                <li class="thumb">
+                  <a name="smallpic" href="javascript:void(0);">
+                    <img alt="{$goods['name']}" src="{$row}"></a>
+                </li>
+                {/foreach}
+                <script>
+                  $('a[name="smallpic"]').mouseover(function() {
+                    //获得要显示的图片的src地址
+                    src = $(this).find('img').attr('src');
+                    //修改大图src地址
+                    $('.imgzoom-main').find('img').attr('src',src);
+                  });
+
+                  //鼠标移入移出效果
+                  $('.thumb').mouseover(function() {
+                    //首先清空其他的current
+                    $('.thumb').removeClass('current');
+                    //给当前显示的加css
+                    $(this).addClass('current');
+                  });
+                  //默认第一个current
+                  $('.thumb:first').addClass('current');
+                </script>
+              </ul>
+            </div>
+            <a name="item_10014529886_sppic_picdown01" class="next" href="javascript:void(0);"></a>
+          </div>
+          <div class="imgzoom-pop">
+            <img onerror="this.src='./images/blank_pic_800.jpg'" /></div>
+        </div>
+        <div class="imgzoom-memo">
+          <div class="share">
+            <span class="label" name="item_10014529886_basic_share">
+              <i class="sh-i"></i>分享</span>
+            <div class="share-list" style="display: none;">
+              <a rel="nofollow" target="_blank" title="新浪微博" class="sina" href="#"></a>
+              <a rel="nofollow" target="_blank" title="豆瓣" class="douban" href="#"></a>
+              <a rel="nofollow" target="_blank" title="开心" class="kaixin" href="#"></a>
+            </div>
+          </div>
+          <div class="z-item favorite">
+            <a class="collect" href="javascript:void(0)" data-id="{$goods['id']}" id="inerestBox">收藏</a>
+          </div>
+          <!-- 收藏商品 -->
+          <script type="text/javascript">
+          $('.collect').click(function(){
+            //获得商品id
+           id= $(this).data('id');
+            // alert(id);
+            $.get('/home/addcollect',{id:id},function(data){
+              // alert(data);
+              if(data==1){
+                alert('收藏成功');
+              }else if(data==2){
+                alert('该商品已收藏');
+              }else if(data==0){
+                alert('收藏失败');
+              }
+            },'json');
+          })
+          </script>
+        </div>
+      </div>
+      <div class="proinfo-main" id="proinfoMain">
+        <div class="proinfo-title">
+          <h1 id="itemDisplayName">
+            <span class="zy" id="itemNameZy">自营</span>{$goods['name']}</h1>
+          <h2 id="promotionDesc">{$goods['subtitle']}</h2>
+        </div>
+        <div class="dajuhui-panel dajuhui-panel2" style="display:none;" id="timePanel2">
+          <span class="djh-logo"></span>
+          <span class="djh-cd">
+            <i class="djh-icon"></i>
+            <span class="active-label">此商品</span>
+            <span class="proinfo-cd">
+              <span id="bigPolyTime"></span>
+            </span>
+            <span class="active-label">参加大聚惠</span></span>
+        </div>
+        <div id="priceDom" class="proinfo-focus clearfix">
+            <div style="position: relative;" class="price-container clearfix" id="mainPrice">
+              <dl class="price-promo">
+                  <dt>
+                      <span class="w3" id="promPriceText">易购价</span>
+                  </dt>
+                  <dd>
+                      <span class="mainprice">
+                          <i>¥</i><em>0.00</em>
+                      </span>
+                  </dd>
+              </dl>
+              <dl class="proinfo-comments">
+                  <div class="v-div-line"></div>
+                  <a href="#pro_detail_tab">
+                      <div>累计评价</div>
+                      <span>{$goods['c_num']}</span></a>
+              </dl>
+          </div>
+          <div style="position: relative;" class="price-container clearfix" id="mainPrice"></div>
+          <dl class="receive-quan" id="freeCouponTitle">
+            <dt>
+              <span class="w2" id="getCoupon">领券</span></dt>
+            <dd>
+              <div class="more-juan" id="freeCouponBox"></div>
+              <div class="gua-juan" onclick="scrapeCouponLoginSataus()">
+                <a href="javascript:;" class="a1" onclick="return false;"></a>
+                <span>100%刮中券，最高50元无敌券</span>
+                <a href="javascript:;" class="a2" onclick="return false;">立即去刮奖&gt;</a></div>
+            </dd>
+          </dl>
+          <dl class="proinfo-promo" id="allcuxiao" style="display:block;">
+            <dt>
+              <span class="w2">促销</span></dt>
+            <dd>
+              <ul class="promo-list">
+                <li id="pointTitle" class="prom-list-box" style="display:block;">
+                  <label>云 钻</label>
+                  <i class="i-triangle"></i>
+                  <p class="promotion-content" id="pointBox"></p>
+                  <p class="promotion-content" id="yunzuan">购买即返50云钻</p>
+                </li>
+                <li id="freightfreeTitle" style="display:block;">
+                  <label>免运费</label>
+                  <i class="i-triangle"></i>
+                  <p class="promotion-content" id="freightfreeBox">商家免运费</p>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+        <div class="divide-line"></div>
+        <div class="tzm" id="J-TZM">
+          {php}$i=1;{/php}
+          {foreach name="m" item="row"}
+          <dl id="colorItemList" class="proinfo-color-ex proattr-radio attr{$i}">
+            {php}$i++;{/php}
+            <dt>
+              <span class="w2">{$row['name']}</span>
+            </dt>
+            <dd>
+              <ul class="tip-infor">
+                {foreach name="row['value']" item="rows"}
+                <li title="{$rows}" class="clr-item">
+                  <a onclick="" href="javascript:;">
+                    <i></i>
+                    <span>{$rows}</span></a>
+                </li>
+                {/foreach}
+              </ul>
+              <input type="hidden" />
+            </dd>
+          </dl>
+          {/foreach}
+          <script>
+            var num = 0;
+            //默认选中一套配置
+            // $('.attr1').find('.clr-item:first').addClass('selected');
+            // $('.attr2').find('.clr-item:first').addClass('selected');
+            // $('.attr3').find('.clr-item:first').addClass('selected');
+            // 默认选中一套
+            $.get('/goods/num?gid='+{$goods['id']}, function(data) {
+              // console.log(data.price);
+              $('.attr1').find('.clr-item').find('span').each(function() {
+                if($(this).html() == data.attr1){
+                  $(this).parents('li').addClass('selected');
+                }
+                // console.log($(this).html());
+              });
+              $('.attr2').find('.clr-item').find('span').each(function() {
+                if($(this).html() == data.attr2){
+                  $(this).parents('li').addClass('selected');
+                }
+              });
+              $('.attr3').find('.clr-item').find('span').each(function() {
+                if($(this).html() == data.attr3){
+                  $(this).parents('li').addClass('selected');
+                }
+              });
+              //修改价格
+              $('.mainprice').find('em').html(data.price);
+              //修改最大库存
+              $('#buyNum').attr('max', data.num);
+              // console.log($('#mainprice'));
+            },'json');
+            
+            //单击添加选中样式
+            $('.clr-item').click(function() {
+              //删除父级元素下所有li的selected
+              $(this).parents('ul').find('.clr-item').removeClass('selected');
+              //给当前点击的加一个class
+              $(this).addClass('selected');
+            });
+          </script>
+          <!-- <dl id="versionItemList" class="proinfo-buytype proattr-radio">
+            <dt>
+              <span>礼盒包装</span></dt>
+            <dd>
+              <ul>
+                <li class="disabled" versionid="20001" sku="000000010014529886" data-id="1" title="浅蓝色礼盒">
+                  <a name="item_10014529886_ysc_size01" onclick="FourPage.changeVersion('000000010014529886','000000010014529886','20001',this);return false;" href="http://product.suning.com/0000000000/10014529886.html">浅蓝色礼盒
+                    <i></i>
+                  </a>
+                </li>
+                <li class="disabled" versionid="20002" sku="000000000855725019" data-id="2" title="红色礼盒">
+                  <a name="item_10014529886_ysc_size02" onclick="FourPage.changeVersion('000000010014529886','000000000855725019','20002',this);return false;" href="http://product.suning.com/0000000000/855725019.html">红色礼盒
+                    <i></i>
+                  </a>
+                </li>
+              </ul>
+              <input type="hidden" /></dd>
+          </dl> -->
+          <dl id="phonedl" class="proinfo-buytype proattr-radio proinfo-hyj" style="display:none;">
+            <dt>购买方式</dt>
+            <dd>
+              <ul class="clearfix"></ul>
+              <input type="hidden" /></dd>
+          </dl>
+
+          <dl id="yanbao" class="proinfo-yanbao proattr-check" style="display:block;"></dl>
+          <dl id="buycount" class="proinfo-num" style="display:block;">
+            <dt>
+              <span class="w2">数量</span></dt>
+            <dd>
+              <a href="javascript:void(0);" class="func minus minus-disable"></a>
+              <input id="buyNum" type="text" value="1" max="99" />
+              <a href="javascript:void(0);" class="func plus"></a>
+              <!-- <span id="productLimit" class="tip" style="display:block;">每人限购20件</span> -->
+              <span id="kcjz" class="tip" style="display:block;font-weight: 600;"></span>
+            </dd>
+            <script>
+              $('.plus').click(function() {
+                //大于最大库存则不能继续增加
+                if (parseInt($('#buyNum').val())>=$('#buyNum').attr('max')) {
+                  $(this).attr('disabled',true);
+                  $(this).addClass('plus-disable');
+                  return;
+                }else{
+                  $(this).removeClass('plus-disable');
+                  $(this).attr('disabled',false);
+                  $('.minus').removeClass('minus-disable');
+                  $('#buyNum').val(parseInt($('#buyNum').val())+1);
+                  //再次判断是否为最大
+                  if (parseInt($('#buyNum').val())>=$('#buyNum').attr('max')) {
+                    $(this).attr('disabled',true);
+                  $(this).addClass('plus-disable');
+                  }
+                }
+              });
+
+              $('.minus').click(function() {
+                //小于1则不能继续减小
+                if (parseInt($('#buyNum').val())<=1) {
+                  $(this).attr('disabled',true);
+                  $(this).addClass('minus-disable');
+                  return;
+                }else{
+                  $('.plus').removeClass('plus-disable');
+                  $('#buyNum').val(parseInt($('#buyNum').val())-1);
+                  //再次判断是否最小
+                  if (parseInt($('#buyNum').val())<=1) {
+                    $(this).attr('disabled',true);
+                    $(this).addClass('minus-disable');
+                    return;
+                  }
+                }
+              });
+
+              //input框失去焦点时判断库存
+              $('#buyNum').blur(function() {
+                //输入的值
+                n = parseInt($(this).val());
+                //最大值
+                max=parseInt($(this).attr('max'));
+                if (n>=max) {
+                  $(this).val(max);
+                  $('.plus').addClass('plus-disable');
+                  $('.minus').removeClass('minus-disable');
+                }else if(n<=1){
+                  $(this).val(1);
+                  $('.plus').removeClass('plus-disable');
+                  $('.minus').addClass('minus-disable');
+                }
+              });
+              
+            </script>
+          </dl>
+        </div>
+        <dl id="bigPolyVerify" class="hide"></dl>
+        <div class="mainbtns clearfix">
+          <button id="buyNowAddCart" class="btn-dark-buy" href="javascript:Cart.buyNowTime();" style="border:0;cursor: pointer;float: left;">立即购买</button>
+            <button id="addCart" class="btn-orange-buy" href="javascript:void();" style="border:0;cursor: pointer;float: left;margin-left: 10px"><i></i>加入购物车</button>
+        </div>
+        <div class="divide-line"></div>
+    <div id="bookProcedure" class="presell-process hide">
+      <div class="pp-header">
+        <div class="h-content">
+          <h3>商品预定流程：</h3></div>
+      </div>
+      <ul class="clearfix">
+        <li id="depositTime" class="step-1 current">
+          <i class="icon-1"></i>
+          <dl>
+            <dt>付定金
+              <span class="deposit-money"></span></dt>
+            <dd></dd>
+            <dd></dd>
+          </dl>
+        </li>
+        <li class="sep">&gt;</li>
+        <li class="step-2">
+          <i class="icon-2"></i>
+          <dl>
+            <dt>商家备货</dt></dl>
+        </li>
+        <li class="sep">&gt;</li>
+        <li id="balanceTime" class="step-3">
+          <i class="icon-3"></i>
+          <dl>
+            <dt>付尾款
+              <span class="deposit-money"></span></dt>
+            <dd></dd>
+            <dd>结束：6月30日23:59</dd></dl>
+        </li>
+        <li class="sep">&gt;</li>
+        <li id="sendTime" class="step-4">
+          <i class="icon-4"></i>
+          <dl>
+            <dt>发货</dt>
+            <dd>预计7月1日发货</dd></dl>
+        </li>
+      </ul>
+    </div>
+    <div id="prebuy" class="bespoke-process" style="display:none;">
+      <div class="pp-header">
+        <div class="h-content">
+          <h3>预约抢购流程说明：</h3></div>
+        <div class="arr-bg"></div>
+      </div>
+      <ul class="clearfix">
+        <li class="step-1 current">
+          <i class="icon-1"></i>
+          <dl>
+            <dt>等待预约</dt></dl>
+        </li>
+        <li class="sep">&gt;</li>
+        <li id="appointTime" class="step-2">
+          <i class="icon-2"></i>
+          <dl>
+            <dt>预约中</dt>
+            <dd></dd>
+            <dd></dd>
+          </dl>
+        </li>
+        <li class="sep">&gt;</li>
+        <li class="step-3">
+          <i class="icon-3"></i>
+          <dl>
+            <dt>等待抢购</dt></dl>
+        </li>
+        <li class="sep">&gt;</li>
+        <li id="buyTime" class="step-4">
+          <i class="icon-4"></i>
+          <dl>
+            <dt>抢购中</dt>
+            <dd></dd>
+            <dd></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="product-compare" style="display:none;">
+    <span class="p-c-close ng-iconfont"></span>
+    <div class="p-c-recent-view" style="display: none;">
+      <div class="page-scroll-panel">
+        <div class="scroll-wrapper clearfix">
+          <ul class="pdt-list l clearfix"></ul>
+        </div>
+        <div class="pages-container">
+          <a href="javascript:;" class="l-arrow"></a>
+          <span class="pages-dot">
+            <span class="page-dot"></span>
+            <span class="page-dot"></span>
+            <span class="page-dot current"></span>
+          </span>
+          <a href="javascript:;" class="r-arrow"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="prod-comp-prompt-dialog" style="display:none;">对比栏已满，一次最多可对比4件产品，建议您删除不需要的再添加哦</div>
+  <div class="imgview">
+    <div class="imgview-head">查看大图</div>
+    <div class="imgview-main">
+      <img onerror="javascript:this.src='./images/blank_pic_800.jpg'" />
+      <div class="mask-l"></div>
+      <div class="mask-r"></div>
+      <div class="imgview-count">
+        <em></em>/
+        <span></span></div>
+    </div>
+    <div class="imgview-thumb">
+      <a href="javascript:void(0);" class="btn-dir prev prev-disable"></a>
+      <div class="imgview-thumb-main">
+        <ul id="bigPic">
+          <li class="" data-index="2" class="current">
+            <a href="javascript:void(0);">
+              <img onerror="javascript:errorMainPicture(this,true);" alt="" src-large="./images/0000000000-000000010014529886_2.jpg" src3="./images/0000000000-000000010014529886_2-3.jpg"></a>
+          </li>
+          <li class="current">
+            <a href="javascript:void(0);">
+              <img alt="" onerror="javascript:errorMainPicture(this,true);" src-large="./images/0000000000-000000010014529886_1.jpg" src3="./images/0000000000-000000010014529886_1-3.jpg"></a>
+          </li>
+          <li class="" data-index="3">
+            <a href="javascript:void(0);">
+              <img onerror="javascript:$('.imgview-thumb-main li[data-index=3]').remove();" alt="" src-large="./images/0000000000-000000010014529886_3.jpg" src3="./images/0000000000-000000010014529886_3-2.jpg"></a>
+          </li>
+          <li class="" data-index="4">
+            <a href="javascript:void(0);">
+              <img onerror="javascript:$('.imgview-thumb-main li[data-index=4]').remove();" alt="" src-large="./images/0000000000-000000010014529886_4.jpg" src3="./images/0000000000-000000010014529886_4-2.jpg"></a>
+          </li>
+          <li class="" data-index="5">
+            <a href="javascript:void(0);">
+              <img onerror="javascript:$('.imgview-thumb-main li[data-index=5]').remove();" alt="" src-large="./images/0000000000-000000010014529886_5.jpg" src3="./images/0000000000-000000010014529886_5-2.jpg"></a>
+          </li>
+        </ul>
+      </div>
+      <a href="javascript:void(0);" class="btn-dir next"></a>
+    </div>
+    <a href="javascript:void(0);" class="close">×</a></div>
+  <div class="activity lazy-ajax" id="cmsActivityBar" data-type="function" style="display:none;"></div>
+  <div class="fixbar" id="J-fixBar">
+    <div class="wrapper">
+      <div class="fix-store">
+        <div class="fix-store-name" id="fix-store">
+          <h3 title="vivo手机官方旗舰店">
+            <a target="_blank" name="item_10014529886_shop_dianpu02" href="http://shop.suning.com/30000019/index.html">vivo手机官方旗舰店</a></h3>
+          <a href="javascript:;" class="l-icon" name="item_zddh_agent" id="itemZddhAgent"></a>
+        </div>
+      </div>
+      <div class="area"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="./js/inititem-min.js"></script>
+  <script type="text/javascript">$(function() {
+      FourPage.initialize();
+    });</script>
+  <div class="wrapper mt15">
+    <div class="procon-side">
+      <div class="si-intro">
+        <div class="si-intro-head">
+          <div class="bg"></div>
+          <h4 class="si-intro-head-zy">
+            <i>
+            </i>
+            <span>苏宁自营</span></h4>
+        </div>
+      </div>
+      <div id="viewAndBuyContent" class="lazy-ajax area mt10" data-type="jsonp"></div>
+      <div class="lazy-ajax area mt10" id="relGroup" style="" data-type="function">
+        <div class="area-head">
+          <h3>相关分类</h3></div>
+        <ul class="procon-relate">
+          <li>
+            <a name="855725019_xgcata_cata01" target="_blank" title="手机" href="//list.suning.com/0-20006-0.html">手机</a></li>
+          <li>
+            <a target="_blank" href="#" title="iPhone">iPhone</a></li>
+          <li>
+            <a target="_blank" href="#" title="三星">三星</a></li>
+          <li>
+            <a target="_blank" href="#" title="诺基亚">诺基亚</a></li>
+          <li>
+            <a target="_blank" href="#" title="HTC">HTC</a></li>
+          <li>
+            <a target="_blank" href="#" title="索尼">索尼</a></li>
+          <li>
+            <a target="_blank" href="#" title="小米">小米</a></li>
+          <li>
+            <a target="_blank" href="#" title="华为">华为</a></li>
+          <li>
+            <a target="_blank" href="#" title="联想">联想</a></li>
+          <li>
+            <a target="_blank" href="#" title="Android">Android</a></li>
+          <li>
+            <a target="_blank" href="#" title="WP8">WP8</a></li>
+          <li>
+            <a target="_blank" href="#" title="电信手机">电信手机</a></li>
+          <li>
+            <a target="_blank" href="#" title="双卡双待">双卡双待</a></li>
+          <li>
+            <a target="_blank" href="" title="手机频道">手机频道</a></li>
+          <li>
+            <a target="_blank" href="#" title="先锋手机">先锋手机</a></li>
+        </ul>
+      </div>
+      <div class="area mt10" id="relBrand" style="">
+        <div class="area-head">
+          <h3>相关品牌</h3></div>
+        <ul class="procon-relate">
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_1_none_J675_01A" name="item_855725019_rec_relevent-brand" title="vivo">vivo</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_2_none_0021_01A" name="item_855725019_rec_relevent-brand" title="苹果Apple">苹果Apple</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_3_none_0864_01A" name="item_855725019_rec_relevent-brand" title="华为HUAWEI">华为HUAWEI</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_4_none_6138_01A" name="item_855725019_rec_relevent-brand" title="荣耀honor">荣耀honor</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_5_none_0DER_01A" name="item_855725019_rec_relevent-brand" title="小米mi">小米mi</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_6_none_0115_01A" name="item_855725019_rec_relevent-brand" title="OPPO">OPPO</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_7_none_1659_01A" name="item_855725019_rec_relevent-brand" title="三星SAMSUNG">三星SAMSUNG</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_8_none_1389_01A" name="item_855725019_rec_relevent-brand" title="魅族MEIZU">魅族MEIZU</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_9_none_0BEC_01A" name="item_855725019_rec_relevent-brand" title="美图Meitu">美图Meitu</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_10_none_J667_01A" name="item_855725019_rec_relevent-brand" title="努比亚nubia">努比亚nubia</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_11_none_1459_01A" name="item_855725019_rec_relevent-brand" title="诺基亚NOKIA">诺基亚NOKIA</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_12_none_0995_01A" name="item_855725019_rec_relevent-brand" title="金立">金立</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_13_none_3G49_01A" name="item_855725019_rec_relevent-brand" title="一加">一加</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_14_none_0O66_01A" name="item_855725019_rec_relevent-brand" title="锤子Smartisan">锤子Smartisan</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_15_none_8D78_01A" name="item_855725019_rec_relevent-brand" title="乐视">乐视</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_16_none_08O3_01A" name="item_855725019_rec_relevent-brand" title="360手机">360手机</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_17_none_2342_01A" name="item_855725019_rec_relevent-brand" title="中兴ZTE">中兴ZTE</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_18_none_1194_01A" name="item_855725019_rec_relevent-brand" title="酷派Coolpad">酷派Coolpad</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_19_none_1813_01A" name="item_855725019_rec_relevent-brand" title="索尼SONY">索尼SONY</a></li>
+          <li>
+            <a target="_blank" href="#" id="baoguang_xgpp_20_none_6495_01A" name="item_855725019_rec_relevent-brand" title="HTC">HTC</a></li>
+        </ul>
+      </div>
+      <div class="lazy-ajax area mt10" id="relGroup" style="display:none;" data-type="function"></div>
+      <div class="area mt10" id="relBrand" style="display:none;"></div>
+      <div class="area mt10" id="searchKeyWord">
+        <div class="area-head">
+          <h3>为您推荐大家关注的</h3></div>
+        <ul class="procon-relate">
+          <li>
+            <a target="_blank" href="" title="iphone">iphone</a></li>
+          <li>
+            <a target="_blank" href="" title="荣耀">荣耀</a></li>
+          <li>
+            <a target="_blank" href="" title="华为9">华为9</a></li>
+          <li>
+            <a target="_blank" href="" title="iphone6">iphone6</a></li>
+          <li>
+            <a target="_blank" href="" title="翻盖手机">翻盖手机</a></li>
+          <li>
+            <a target="_blank" href="" title="红米">红米</a></li>
+          <li>
+            <a target="_blank" href="" title="iphone7">iphone7</a></li>
+          <li>
+            <a target="_blank" href="" title="小米note2">小米note2</a></li>
+          <li>
+            <a target="_blank" href="" title="美图t8">美图t8</a></li>
+          <li>
+            <a target="_blank" href="" title="内存">内存</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="procon">
+      <div class="tabarea" id="product-detail">
+        <div class="procon-toolbar" id="pro_detail_tab">
+          <ul class="tabarea-items detail-tabs">
+            <li rel="#J-procon-desc" data-type="function" class="current">
+              <a name="item_10014529886_tab_xiangqing" href="javascript:void(0);">商品详情</a></li>
+            <li id="productCommTitle" rel="#J-procon-comment" data-type="function">
+              <a name="item_10014529886_tab_pingjia" href="#pingjia">评价（0）</a></li>
+            <li id="productProconSaleTitle" rel="#J-procon-sale" data-type="function">
+              <a name="item_10014529886_tab_shouhou" href="javascript:void(0);">售后保障</a></li>
+            <li id="qualityTitle" rel="#J-procon-quality" class="hide" data-type="function">
+              <a href="javascript:void(0);">质量信息</a></li>
+            <li id="credential" rel="#J-procon-credential" class="hide" data-type="function">
+              <a href="javascript:void(0);">资质证明</a></li>
+          </ul>
+        </div>
+        <div id="J-procon-desc" class="tabarea-content not-anchor clearfix">
+          <div class="prod-detail-container not-anchor">
+            <div class="pro-detail-oversea hide">
+              <img width="743" height="369" alt="" usemap="#map_oversea-detail" lazy-src="./images/oversea-detail.jpg" class="err-product">
+              <map name="map_oversea-detail" id="map_oversea-detail">
+                <area shape="rect" coords="90,308,155,329" href="#" target="_blank">
+                <area shape="rect" coords="440,50,543,72" href="#" target="_blank"></map>
+            </div>
+            <div id="phoneDetail" class="pro-detail-pics hide"></div>
+            <div id="productDetail" class="pro-detail-pics">
+              <div moduleId='R1901001_3' moduleName='商品详情'>
+               {$goods['description']}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 评价开始 -->
+        {if condition="!(empty($pingjia))" }
+        <a id="pingjia" name="pingjia"></a>
+        <div class="rv-container db"">
+  <div class="rv-rate rv-bars">
+    <div class="rv-rate-wrap clearfix">
+      <div class="rv-rate-item rv-rate-score l">
+        <div class="item">
+          <p class="score">
+            <span>98</span>%</p>
+          <p>好评率</p>
+        </div>
+        <p class="title">大家印象</p></div>
+      <div class="rv-rate-item rv-rate-label l">
+        <div class="item clearfix" style="margin-top: 20px;">
+          <a href="javascript:void(0)" class="label " name="reviewitem_690128134_pjnr_bq">
+            <span>外观漂亮</span>
+            <i></i>
+            <em></em>
+          </a>
+          <a href="javascript:void(0)" class="label " name="reviewitem_690128134_pjnr_bq">
+            <span>屏幕清晰</span>
+            <i></i>
+            <em></em>
+          </a>
+          <a href="javascript:void(0)" class="label " name="reviewitem_690128134_pjnr_bq">
+            <span>反应快</span>
+            <i></i>
+            <em></em>
+          </a>
+          <a href="javascript:void(0)" class="label " name="reviewitem_690128134_pjnr_bq">
+            <span>做工精致</span>
+            <i></i>
+            <em></em>
+          </a>
+          <a href="javascript:void(0)" class="label " name="reviewitem_690128134_pjnr_bq">
+            <span>系统流畅</span>
+            <i></i>
+            <em></em>
+          </a>
+          <a href="javascript:void(0)" class="label" name="reviewitem_690128134_pjnr_bq">
+            <span>拍照效果好</span>
+            <i></i>
+            <em></em>
+          </a>
+          <a href="javascript:void(0)" class="label " name="reviewitem_690128134_pjnr_bq">
+            <span>分辨率高</span>
+            <i></i>
+            <em></em>
+          </a>
+          <a href="javascript:void(0)" class="label" name="reviewitem_690128134_pjnr_bq">
+            <span>功能齐全</span>
+            <i></i>
+            <em></em>
+          </a>
+          <a href="javascript:void(0)" class="label " name="reviewitem_690128134_pjnr_bq">
+            <span>音质好</span>
+            <i></i>
+            <em></em>
+          </a>
+        </div>
+      </div>
+      <div class="rv-rate-item rv-rate-publish l clearfix">
+        <div class="item clearfix">
+          <p class="info">前10名发表评价可获
+            <span>双倍云钻</span>！</p>
+          <p class="btn">
+            <a class="rv-spring js-png rv-maidian " href="//review.suning.com/my_cmmdty_review.do" data-now=" " data-cache="pjzl_fbpj" target="_blank" name="reviewitem_690128134_pjzl_fbpj"></a>
+          </p>
+          <p class="diamond-rule">
+            <span>100云钻=1元</span>
+            <a href="//help.suning.com/page/channel-22.htm" rel="nofollow" target="_blank">云钻规则</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rv-main" id="rv-main">
+    <div class="rv-main-wrap">
+      <div class="rv-main-item">
+        <ul class="rv-place-item clearfix">
+          <li class="l" data-type="total" data-num="3643">
+            <a class="rv-maidian" data-now=" " data-cache="pjqh_quanbu" name="reviewitem_690128134_pjqh_quanbu">
+              <p>全部
+                <span></span></p>
+            </a>
+          </li>
+          <li class="l" data-type="show" data-num="589">
+            <a class="rv-maidian" data-now=" " data-cache="pjqh_ytpj" name="reviewitem_690128134_pjqh_ytpj">
+              <p>有图评价
+                <span></span></p>
+            </a>
+          </li>
+          <li class="l now" data-type="good" data-num="3594">
+            <a class="rv-maidian" data-now=" " data-cache="pjqh_haoping" name="reviewitem_690128134_pjqh_haoping">
+              <p>好评
+                <span></span></p>
+            </a>
+          </li>
+          <li class="l" data-type="normal" data-num="13">
+            <a class="rv-maidian" data-now=" " data-cache="pjqh_zhongping" name="reviewitem_690128134_pjqh_zhongping">
+              <p>中评
+                <span></span></p>
+            </a>
+          </li>
+          <li class="l" data-type="bad" data-num="36">
+            <a class="rv-maidian" data-now=" " data-cache="pjqh_chaping" name="reviewitem_690128134_pjqh_chaping">
+              <p>差评
+                <span></span></p>
+            </a>
+          </li>
+          <li class="l" data-type="again" data-num="3">
+            <a class="rv-maidian" data-now=" " data-cache="pjqh_zhuiping" name="reviewitem_690128134_pjqh_zhuiping">
+              <p>追评
+                <span></span></p>
+            </a>
+          </li>
+          <li class="l" data-type="try" data-num="0" style="display:none">
+            <a class="rv-maidian" data-now=" " data-cache="pjqh_try" name="reviewitem_690128134_pjqh_try">
+              <p>试用报告
+                <span></span></p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="rv-main-album" style="display: none;">
+        <div class="new-tip">
+          <span>所有图片</span>
+          <i>
+          </i>
+        </div>
+        <div class="album">
+          <a href="javascript:void(0)" class="album-left album-arrow l" name="reviewitem_690128134_pjnr_xiaotuleft">
+            <i>
+            </i>
+          </a>
+          <a href="javascript:void(0)" class="album-right album-arrow r" name="reviewitem_690128134_pjnr_xiaotuRight" style="visibility: visible;">
+            <i>
+            </i>
+          </a>
+          <div class="album-wrapper">
+            <ul class="clearfix">
+              <li index="0">
+                <p name="reviewitem_690128134_pjnr_alltuall1">
+                  <img onerror="snReview.handleImgError(this)" src="//image.suning.cn/uimg/ZR/share_order/151269879777918840_100x100.jpg"></p>
+              </li>
+              <li index="1">
+                <p name="reviewitem_690128134_pjnr_alltuall1">
+                  <img onerror="snReview.handleImgError(this)" src="//image.suning.cn/uimg/ZR/share_order/151269880014253539_100x100.jpg"></p>
+              </li>
+              <li index="2">
+                <p name="reviewitem_690128134_pjnr_alltuall1">
+                  <img onerror="snReview.handleImgError(this)" src="//image.suning.cn/uimg/ZR/share_order/151269880403808937_100x100.jpg"></p>
+              </li>
+              <li index="3">
+                <p name="reviewitem_690128134_pjnr_alltuall1">
+                  <img onerror="snReview.handleImgError(this)" src="//image.suning.cn/uimg/ZR/share_order/151269880683142017_100x100.jpg"></p>
+              </li>
+              <li index="4">
+                <p name="reviewitem_690128134_pjnr_alltuall1">
+                  <img onerror="snReview.handleImgError(this)" src="//image.suning.cn/uimg/ZR/share_order/151269880960421060_100x100.jpg"></p>
+              </li>
+              <li index="5">
+                <p name="reviewitem_690128134_pjnr_alltuall1">
+                  <img onerror="snReview.handleImgError(this)" src="//image.suning.cn/uimg/ZR/share_order/151188021204057198_100x100.jpg"></p>
+              </li>
+              <li index="6">
+                <p name="reviewitem_690128134_pjnr_alltuall1">
+                  <img onerror="snReview.handleImgError(this)" src="//image.suning.cn/uimg/ZR/share_order/151188021222926084_100x100.jpg"></p>
+              </li>
+              <li index="7">
+                <p name="reviewitem_690128134_pjnr_alltuall1">
+                  <img onerror="snReview.handleImgError(this)" src="//image.suning.cn/uimg/ZR/share_order/151188021263187726_100x100.jpg"></p>
+              </li>
+              <li index="8">
+                <p name="reviewitem_690128134_pjnr_alltuall1">
+                  <img onerror="snReview.handleImgError(this)" src="//image.suning.cn/uimg/ZR/share_order/151188021282298338_100x100.jpg"></p>
+              </li>
+              <li index="9">
+                <p name="reviewitem_690128134_pjnr_alltuall1">
+                  <img onerror="snReview.handleImgError(this)" src="//image.suning.cn/uimg/ZR/share_order/151188021306642248_100x100.jpg"></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="preview" style="display: none;">
+          <a href="javascript:void(0)" class="preview-close" name="reviewitem_690128134_pjnr_close">
+            <i>
+            </i>
+          </a>
+          <div class="preview-wrapper">
+            <a href="javascript:void(0)" class="preview-left preview-arrow" style="cursor: url(//res.suning.cn/project/review/css/images/left.cur), auto!important" name="reviewitem_690128134_pjnr_datuLeft"></a>
+            <a href="javascript:void(0)" class="preview-right preview-arrow" style="cursor: url(//res.suning.cn/project/review/css/images/right.cur), auto!important" name="reviewitem_690128134_pjnr_datuRight"></a>
+            <a href="javascript:void(0)" class="preview-zoom" style="cursor: url(//res.suning.cn/project/review/css/images/zoom.cur), auto!important" name="reviewitem_690128134_pjnr_shousuo"></a>
+            <div class="preview-count-tip"></div>
+          </div>
+        </div>
+      </div>
+      <div class="rv-main-filter clearfix">
+        <div class="rv-filter-sort" style="display:none">
+          <a href="javascript:void(0)" class="value">
+            <i class="rv-spring js-png"></i>
+            <span>按推荐排序</span></a>
+          <ul class="options">
+            <li data-no="timeSort">
+              <p name="reviewitem_690128134_pjnr_sjpx">按时间排序</p></li>
+            <li data-no="default">
+              <p name="reviewitem_690128134_pjnr_tjpx">按推荐排序</p></li>
+          </ul>
+        </div>
+        <div class="rv-funny-mode" style="display: block;">
+          <input type="checkbox" checked="" id="rv-funny-mode-checkbox">
+          <label for="rv-funny-mode-checkbox">趣评模式</label>
+          <a class="intro" href="//sale.suning.com/cszy/quping/index.html" target="_blank">（介绍）</a></div>
+      </div>
+    {foreach name="pingjia" item="row"}
+          <div style="position:relative;overflow:hidden;">
+            <div class="rv-target-list" data-reply="" data-rid="181906472" data-pid="000000000690128134">
+              <div class="rv-target-topic clearfix">
+                <div class="topic-avatar l">
+                  <div class="avatar">
+                    <!--[if (lt IE 9)&(gt IE 6) ]>
+                      <div class="font js-png"></div>
+                    <![endif]-->
+                    <img class="back" src="{$row['head']}" width="60" height="60" alt="">
+                    <i class="js-png rv-spring level1" title="V1"></i>
+                  </div>
+                  <div class="username">
+                    <span>{$row['uname']}</span></div>
+                </div>
+                <div class="topic-right">
+                  <div class="topic-main l">
+                    <div class="topic-body">
+                      <p class="body-content">{$row['content']}</p>
+                      <div class="body-info clearfix">
+                        <div class="date l">
+                          <span>{$row['addtime'] | date="Y-m-d H:i:s",###}</span></div>
+                        <div class="add r">
+                          <a href="###" class="rv-maidian pjnr_huifu" data-now=" " data-cache="pjnr_huifu" name="reviewitem_690128134_pjnr_huifu">回复
+                            <em>(0)</em></a>
+                        </div>
+                        <div class="rv-spring like r">
+                          <a href="###" class="rv-maidian pjnr_youyong" data-now=" " data-cache="pjnr_youyong" name="reviewitem_690128134_pjnr_youyong">
+                            <span class="rv-spring">
+                              <i class="rv-spring"></i>有用
+                              <em>(0)</em></span>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="body-area reply-js clearfix" data-parentid="" data-username="y**@1*.com">
+                        <textarea data-placeholder="回复:y**@1*.com">回复:y**@1*.com</textarea>
+                        <div class="action l">
+                          <div class="btn">
+                            <a href="javascript:void(0)" class="submit">提交</a>
+                            <span class="validation">
+                              <input type="text"></span>
+                            <span class="onerror hide"></span>
+                          </div>
+                        </div>
+                        <div class="info r">
+                          <span>您还可以输入
+                            <em>150</em>个字</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    </div>
+  </div>
+</div>
+
+{/foreach}
+{/if}
+        <!-- 评价结束 -->
+      </div>
+      <!-- 广告开始 -->
+      <div id="appAdv" class="mt10">
+        <a rel="nofollow" name="item_10014529886_mobileAd_01" href="#" target="_blank">
+          <img src="/static/index/images/goods_info/148793152077671357.jpg" /></a>
+      </div>
+      <!-- 广告结束 -->
+    </div>
+  </div>
+  <div class="pro-pop gray6 hide" id="proPop" style="display: none;">
+    <div class="pop-up fix">
+      <a id="proPopCloseBtn" class="close-btn" href="javascript:void(0)" title="关闭">x</a></div>
+    <div class="pop-main pop-main-normal fix">
+      <em class="tipIcon"></em>
+      <div class="msg">
+        <strong>您已成功将商品加入收藏夹</strong>
+        <p style="font-size:12px;">查看
+          <a href="#">我的收藏夹</a></p>
+      </div>
+    </div>
+    <div class="pop-down">
+      <a id="proPopSubmit" class="pop-btn" href="javascript:;">确定</a></div>
+  </div>
+  <div class="lazy-ajax" id="pds-footer" data-type="function">
+    <div style="height:25px;"></div>
+  </div>
+  <link rel="stylesheet" type="text/css" href="/static/index/css/goods_info/fourthPopBox.css" />
+  <link rel="stylesheet" type="text/css" href="/static/index/css/goods_info/review.css" />
+  <script type="text/javascript" src="/static/index/js/goods_info/fourPageService.min.js"></script>
+  <script type="text/javascript" src="/static/index/js/goods_info/jquery.js"></script>
+  <script type="text/javascript" src="/static/index/js/goods_info/detect.js"></script>
+  <script type="text/javascript" src="/static/index/js/goods_info/showMobilePop1-min.js"></script>
+  <script>
+    //查库存
+    //获得商品id
+    gid = {$goods['id']};
+  </script>
+  <script>
+    //选项卡
+    $('.detail-tabs').find('li').click(function() {
+      //去掉当前兄弟元素的样式
+      $(this).parent('ul').find('li').removeClass('current');
+      //给自己加一个样式
+      $(this).addClass('current');
+    });
+  </script>
+  <script>
+    var nums = 0;
+    //点击后修改价格
+    $('.attr1').click(function() {
+      attr1 = $(this).find('.selected').find('span').html();
+      attr2 = $('.attr2').find('.selected').find('span').html();
+      attr3 = $('.attr3').find('.selected').find('span').html();
+      // alert(attr1);
+      // alert(attr2);
+      // alert(attr3);
+      //Ajax查询
+      args = '&attr1='+attr1+'&attr2='+attr2+'&attr3='+attr3;
+      $.get('/goods/search?id='+gid+args, function(data) {
+        // console.log(data);
+        if (data == null || data.num == 0) {
+          //将价格修改
+          $('.mainprice').html('<i>暂时无货</i>');
+          //修改最大库存
+          $('#buyNum').attr('max',0)
+          //将按钮禁用
+          $('#buyNowAddCart').addClass('btn-disabled');
+          $('#buyNowAddCart').attr('disabled', true);
+          $('#addCart').addClass('btn-disabled');
+          $('#addCart').attr('disabled', true);
+        }else{
+          //将价格修改
+          $('.mainprice').html('<i>¥</i><em>'+data.price+'</em>');
+          //修改最大库存
+          $('#buyNum').attr('max', data.num);
+          //将按钮启用
+          $('#buyNowAddCart').removeClass('btn-disabled');
+          $('#buyNowAddCart').attr('disabled', false);
+          $('#addCart').removeClass('btn-disabled');
+          $('#addCart').attr('disabled', false);
+        }
+      },'json');
+    });
+
+
+      $('.attr2').click(function() {
+      attr1 = $('.attr1').find('.selected').find('span').html();
+      attr2 = $(this).find('.selected').find('span').html();
+      attr3 = $('.attr3').find('.selected').find('span').html();
+      // alert(attr1);
+      // alert(attr2);
+      // alert(attr3);
+      //Ajax查询
+      args = '&attr1='+attr1+'&attr2='+attr2+'&attr3='+attr3;
+      $.get('/goods/search?id='+gid+args, function(data) {
+        // console.log(data);
+        if (data == null) {
+          //将价格修改
+          $('.mainprice').html('<i>暂时无货</i>');
+          //修改最大库存
+          $('#buyNum').attr('max',0);
+          //将按钮禁用
+          $('#buyNowAddCart').addClass('btn-disabled');
+          $('#buyNowAddCart').attr('disabled', true);
+          $('#addCart').addClass('btn-disabled');
+          $('#addCart').attr('disabled', true);
+        }else{
+          //将价格修改
+          $('.mainprice').html('<i>¥</i><em>'+data.price+'</em>');
+          //修改最大库存
+          $('#buyNum').attr('max', data.num);
+          //将按钮启用
+          $('#buyNowAddCart').removeClass('btn-disabled');
+          $('#buyNowAddCart').attr('disabled', false);
+          $('#addCart').removeClass('btn-disabled');
+          $('#addCart').attr('disabled', false);
+        }
+      },'json');
+    });
+
+
+      $('.attr3').click(function() {
+      attr1 = $('.attr1').find('.selected').find('span').html();
+      attr2 = $('.attr2').find('.selected').find('span').html();
+      attr3 = $(this).find('.selected').find('span').html();
+      // alert(attr1);
+      // alert(attr2);
+      // alert(attr3);
+      //Ajax查询
+      args = '&attr1='+attr1+'&attr2='+attr2+'&attr3='+attr3;
+      $.get('/goods/search?id='+gid+args, function(data) {
+        // console.log(data);
+        if (data == null) {
+          //将价格修改
+          $('.mainprice').html('<i>暂时无货</i>');
+          //修改最大库存
+          $('#buyNum').attr('max', 0);
+          //将按钮禁用
+          $('#buyNowAddCart').addClass('btn-disabled');
+          $('#buyNowAddCart').attr('disabled', true);
+          $('#addCart').addClass('btn-disabled');
+          $('#addCart').attr('disabled', true);
+        }else{
+          //将价格修改
+          $('.mainprice').html('<i>¥</i><em>'+data.price+'</em>');
+          //修改最大库存
+          $('#buyNum').attr('max', data.num);
+          //将按钮启用
+          $('#buyNowAddCart').removeClass('btn-disabled');
+          $('#buyNowAddCart').attr('disabled', false);
+          $('#addCart').removeClass('btn-disabled');
+          $('#addCart').attr('disabled', false);
+        }
+      },'json');
+    });
+
+    //加入购物车
+    $('#addCart').click(function() {
+      id = {$goods['id']};
+      //获取当前所选中的属性
+      attr1 = $('.attr1').find('.selected').find('span').html();
+      attr2 = $('.attr2').find('.selected').find('span').html();
+      attr3 = $('.attr3').find('.selected').find('span').html();
+      // alert(attr1);
+      // alert(attr2);
+      // alert(attr3);
+      //获取购买数量
+      gnum = $('#buyNum').val();
+      args = '/cart/add?id='+id+'&attr1='+attr1+'&attr2='+attr2+'&attr3='+attr3+'&gnum='+gnum;
+      console.log(args);
+      //Ajax发送
+      $.get(args, function(data) {
+        if (data == 1) {
+          window.location.href="/cart/cartok";
+        }else if(data == 2){
+          alert('该商品库存不足');
+        }else{
+          window.location.href="/index/login";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

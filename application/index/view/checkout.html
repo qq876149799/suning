@@ -1,0 +1,436 @@
+<html lang="zh-cn">
+ <!--<![endif]-->
+ <head> 
+  <script src="/static/index/js/analytics.js"></script> 
+  <script type="text/javascript" async="" src="/static/index/js/sa-analytics.js"></script> 
+  <script type="text/javascript" async="" src="/static/index/js/da_opt.js"></script> 
+  <title>确认订单信息</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript">
+        //全局变量
+        var sn = sn || {
+            "context": "/emall",
+            "domain": "www.suning.com",
+            "storeId": "10052",
+            "catalogId": "10051",
+            "memberDomain": "member.suning.com",
+            "online": "online.suning.com",
+            "cookieDomain": "suning.com",
+            "categoryId": "20089",
+            "searchDomain": "http://search.suning.com/emall/",
+            "noMiniCart":true
+        };
+        
+	var passport_config = {
+            base: "/", 
+            loginTheme: "b2c_pop" 
+        };
+		
+</script> 
+  <script type="text/javascript">
+  function appendInput(id){
+        if($("#"+id+"").length == 0){
+        	var obj = document.createElement("input");
+			obj.setAttribute("type", "hidden");
+			obj.setAttribute("id", id);
+			document.body.appendChild(obj);
+        }
+ }	
+</script> 
+  <!-- 引入全站公用资源文件 --> 
+  <link rel="stylesheet" href="/static/index/css/common.css" /> 
+  <link rel="stylesheet" href="/static/index/css/search.css" /> 
+  <link rel="stylesheet" href="/static/index/css/sn-sidebar.css" /> 
+  <script type="text/javascript" src="/static/index/js/jquery.js"></script> 
+  <script type="text/javascript" src="/static/index/js/sn_lazyload.js"></script> 
+  <script type="text/javascript" src="/static/index/js/lazyelem.min.js"></script> 
+  <script type="text/javascript" src="/static/index/js/SFE.base.min.js"></script> 
+  <script type="text/javascript" src="/static/index/js/search.min.js"></script> 
+  <script type="text/javascript" src="/static/index/js/sn-sidebar.min.js"></script> 
+  <script type="text/javascript" src="/static/index/js/chatCompat_mini.js"></script> 
+  <script src="/static/index/js/passport_checkout.js" type="text/javascript"></script> 
+  <!-- 引入项目资源文件 --> 
+  <link href="/static/index/css/Snaddress.css?v=2016031003" type="text/css" rel="stylesheet" /> 
+  <link href="/static/index/css/cart-base.css?v=2016031003" type="text/css" rel="stylesheet" /> 
+  <link href="/static/index/css/cart-calendar.css?v=2016031003" type="text/css" rel="stylesheet" /> 
+  <link href="/static/index/css/cart-2.css?v=2016031003" type="text/css" rel="stylesheet" /> 
+ </head> 
+ <body class="root1200"> 
+  <script>
+        //宽窄屏切换
+        var bigscreen = false;
+        if ( screen.width>=1200 ) {
+            bigscreen = true;
+            var bodyTag = document.getElementsByTagName("body")[0],
+                    bodyClassName = bodyTag.getAttribute("className") || bodyTag.getAttribute("class");
+            bodyClassName = bodyClassName ? bodyClassName+" " : "";
+            bodyTag.className = bodyClassName+"root1200";
+        }
+    </script> 
+  <span class="label-tips hide">操作中，请稍候...</span> 
+  <input type="hidden" value="web" id="resourceType" /> 
+  <div class="cart-header"> 
+   <div class="wrapper clearfix"> 
+    <div class="g-logo"> 
+     <a href="index.html"><img alt="苏宁易购" src="http://img.suning.cn/public/images/logo/snlogo.png?v=2016031003" /></a> 
+    </div> 
+    <div class="r cart-progress"> 
+     <ul> 
+      <li class="finish finish-01"><i>1</i><span><a name="new_cart2_top_mycar01" href="cart.html?langId=-7&amp;storeId=10052&amp;catalogId=10051">我的购物车</a></span><b></b></li> 
+      <li class="finish finish-02"><i>2</i><span>确认订单</span><b></b></li> 
+      <li><i>3</i><span>付款</span><b></b></li> 
+      <li><i>4</i><span>支付成功</span><b></b></li> 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="wrapper checkout mt10"> 
+   <div class="" id="step1"> 
+    <div class="step"> 
+     <div class="address-container address-finish"> 
+      <div class="step-title link-box"> 
+       <b class="l">配送信息</b> 
+       <a class="l edit" href="javascript:;">添加新地址</a> 
+      </div> 
+      <div class="step-content"> 
+       <div class="addr-list clearfix"> 
+        <ul> 
+         <li id="1" class="addr addr-selected" provcode="020" citycode="000001000267" distcode="00000006" provwcscode="020" citywcscode="021" distwcscode="02106" provname="上海" cityname="上海市" distname="普陀区" areacode="" telephone="" extnum="" deliveryregioncode="0210699" receivername="黄金林" receivermobile="180****1538" townwcscode="0210699" towncode="99" townname="全区" detailaddr="中浩云花园23栋2003" smtowncode="0210699" pickupaddress="" defaultaddress="true"> 
+          <div class="inner"> 
+           <div class="addr-hd"> 
+            <span class="name fl">黄金林</span> 
+            <span class="addr-desc fr"><span class="prov">上海</span>&nbsp;<span class="city">上海市</span></span> 
+           </div> 
+           <div title="普陀区全区中浩云花园23栋2003" class="addr-bd"> 
+            <span class="dist">普陀区</span>&nbsp; 
+            <span class="town">全区</span>&nbsp; 
+            <span class="street">中浩云花园23栋2003</span>&nbsp; 
+            <span class="phone">180****1538</span> 
+           </div> 
+           <div class="addr-toolbar"> 
+            <span class="addr-opt fr"><a name="new_icart2_add_change" class="modify-addr" href="javascript:void(0);">修改</a><span class="default-addr c9">默认地址</span></span> 
+           </div> 
+          </div><a name="new_icart2_add_delete" class="del hide"></a><a class="selected"></a></li> 
+         <li name="new_icart2_add_addnew01" class="addr add-addr"> 
+          <div class="inner"> 
+           <p class="add-addr-text">添加地址</p> 
+          </div></li> 
+        </ul> 
+       </div> 
+       <div class="nearby-self-pickup clearfix"> 
+        <div class="pickup-title hide not-support"> 
+         <span class="name">附近自提点</span> 
+         <a href="javascript:void(0);" class="no-fare-arr c-f60"><i class="plus"></i><span>免运费</span></a> 
+         <span class="pickup-info">选择自提点并下单<i class="arr">&gt;</i>收到提货短信<i class="arr">&gt;</i>到自提点自提</span> 
+        </div> 
+        <span style="display: none;" class="show-all"><a href="javascript:void(0);">显示全部地址</a></span> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <textarea selftakeshopcode="" distname="普陀区" cityname="上海市" provname="上海" distcode="00000006" citycode="000001000267" provcode="020" storepickup="N" class="hide" id="addressbox" count="NaN"> &lt;div class=&quot;new-user&quot;&gt; &lt;div class=&quot;step-content&quot;&gt; &lt;div class=&quot;content-box&quot;&gt; &lt;dl class=&quot;delivery-mode&quot;&gt; &lt;dt class=&quot;delivery-item-title&quot;&gt; &lt;div class=&quot;delivery-way-hd fl&quot;&gt; &lt;span&gt;&lt;em&gt;*&lt;/em配送方式：&lt;/span &lt;/div &lt;div class=&quot;delivery-way-bd delivery-way-checked fl&quot; id=&quot;delivery_tab&quot;&gt; &lt;div class=&quot;cart-radio&quot;&gt; &lt;input type=&quot;radio&quot; name=&quot;adress&quot; class=&quot;radio&quot; id=&quot;delivery01&quot;&gt; &lt;label class=&quot;&quot; for=&quot;delivery01&quot;&gt;&lt;/label &lt;/div &lt;span&gt;配送上门&lt;/span &lt;/div &lt;div class=&quot;delivery-way-bd fl hide&quot; id=&quot;pickup_tab&quot;&gt; &lt;div class=&quot;cart-radio&quot;&gt; &lt;input type=&quot;radio&quot; name=&quot;adress&quot; class=&quot;radio&quot; id=&quot;delivery02&quot;&gt; &lt;label class=&quot;&quot; for=&quot;delivery02&quot;&gt;&lt;/label &lt;/div &lt;span&gt;顾客自提&lt;a href=&quot;javascript:void(0);&quot; class=&quot;no-fare&quot;&gt;免运费&lt;/a&lt;/span &lt;/div &lt;/dt &lt;dd class=&quot;delivery-item-content&quot;&gt; &lt;div class=&quot;address-form sh-address-form&quot;&gt; &lt;div class=&quot;row clearfix&quot;&gt; &lt;div class=&quot;label&quot;&gt; &lt;em&gt;*&lt;/em收货人： &lt;/div &lt;div class=&quot;field&quot;&gt; &lt;input type=&quot;text&quot; id=&quot;sh_receive_name&quot; class=&quot;ui-text user&quot; maxlength=&quot;20&quot; placetext=&quot;姓名，如张三，Lily&quot;&gt; &lt;span class=&quot;tip-message&quot;&gt;&lt;/span &lt;/div &lt;/div &lt;div class=&quot;row clearfix&quot;&gt; &lt;div class=&quot;label&quot;&gt;&lt;em&gt;*&lt;/em手机：&lt;/div &lt;div class=&quot;field&quot;&gt; &lt;input type=&quot;text&quot; id=&quot;sh_receive_mobile&quot; class=&quot;ui-text mobile&quot; maxlength=&quot;11&quot; placetext=&quot;请填写正确的11位手机号码&quot;&gt; &lt;span class=&quot;tip-message&quot;&gt;&lt;/span &lt;/div &lt;/div &lt;div class=&quot;row tel clearfix&quot;&gt; &lt;div class=&quot;label&quot;&gt;固定电话：&lt;/div &lt;div class=&quot;field&quot;&gt; &lt;input type=&quot;text&quot; id=&quot;sh_receive_tel_quhao&quot; class=&quot;ui-text area-number&quot; maxlength=&quot;4&quot; placetext=&quot;区号&quot;&gt;&lt;em&gt;-&lt;/em &lt;input type=&quot;text&quot; id=&quot;sh_receive_tel_num&quot; class=&quot;ui-text tel-number&quot; maxlength=&quot;8&quot; placetext=&quot;电话号码&quot;&gt;&lt;em&gt;-&lt;/em &lt;input type=&quot;text&quot; id=&quot;sh_receive_tel_fenji&quot; class=&quot;ui-text ext-number&quot; maxlength=&quot;6&quot; placetext=&quot;分机号码（选填）&quot;&gt; &lt;span class=&quot;tip-message&quot;&gt;&lt;/span &lt;/div &lt;/div &lt;div class=&quot;row rel zdx10 address-input-box clearfix&quot;&gt; &lt;div class=&quot;label&quot;&gt;&lt;em&gt;*&lt;/em所在地区：&lt;/div &lt;div class=&quot;field&quot;&gt; &lt;div id=&quot;city&quot; class=&quot;l mr10&quot;&gt;&lt;/div &lt;/div &lt;/div &lt;div class=&quot;row zdx5 clearfix&quot;&gt; &lt;div class=&quot;label&quot;&gt;&lt;em&gt;*&lt;/em详细地址：&lt;/div &lt;div class=&quot;field&quot;&gt; &lt;input type=&quot;text&quot; id=&quot;sh_receive_address&quot; class=&quot;ui-text detial-address verifica&quot; disabled=&quot;disabled&quot; maxlength=&quot;50&quot; placetext=&quot;详细地址&quot;&gt; &lt;span class=&quot;tip-message&quot;&gt;&lt;/span &lt;span id=&quot;village_tip&quot; class=&quot;tip-address-message&quot;&gt;&lt;/span &lt;/div &lt;/div &lt;div class=&quot;row clearfix&quot;&gt; &lt;div class=&quot;label&quot;&gt; &nbsp; &lt;/div &lt;div class=&quot;field&quot;&gt; &lt;div class=&quot;cart-checkbox&quot;&gt; &lt;input type=&quot;checkbox&quot; class=&quot;checkbox chk-item&quot; id=&quot;set-default&quot;&gt; &lt;label for=&quot;set-default&quot;&gt; &lt;i class=&quot;check-icon&quot;&gt;&lt;/i &lt;span&gt;设为默认收货地址&lt;/span &lt;/label &lt;/div &lt;span id=&quot;set-default-tip&quot; class=&quot;c-f70 ml20 hide&quot;&gt;设置后我们将在您购物时自动选中该收货地址&lt;/span &lt;/div &lt;/div &lt;/div &lt;/dd&lt;dd class=&quot;delivery-item-content&quot; style=&quot;display: none;&quot;&gt; &lt;div class=&quot;address-form zt-address-form&quot;&gt; &lt;div class=&quot;row clearfix&quot;&gt; &lt;div class=&quot;label&quot;&gt;&lt;em&gt;*&lt;/em收货人：&lt;/div &lt;div class=&quot;field&quot;&gt; &lt;input type=&quot;text&quot; id=&quot;zt_receive_name&quot; class=&quot;ui-text user&quot; maxlength=&quot;20&quot; placetext=&quot;姓名，如张三，Lily&quot;&gt; &lt;span class=&quot;tip-message&quot;&gt;&lt;/span &lt;/div &lt;/div &lt;div class=&quot;row clearfix&quot;&gt; &lt;div class=&quot;label&quot;&gt;&lt;em&gt;*&lt;/em手机：&lt;/div &lt;div class=&quot;field&quot;&gt; &lt;input type=&quot;text&quot; id=&quot;zt_receive_mobile&quot; class=&quot;ui-text mobile&quot; maxlength=&quot;11&quot; placetext=&quot;请填写正确的11位手机号码&quot;&gt; &lt;span class=&quot;tip-message&quot;&gt;&lt;/span &lt;/div &lt;/div &lt;div class=&quot;row tel clearfix&quot;&gt; &lt;div class=&quot;label&quot;&gt;固定电话：&lt;/div &lt;div class=&quot;field&quot;&gt; &lt;input type=&quot;text&quot; id=&quot;zt_receive_tel_quhao&quot; class=&quot;ui-text area-number&quot; maxlength=&quot;4&quot; placetext=&quot;区号&quot;&gt;&lt;em&gt;-&lt;/em &lt;input type=&quot;text&quot; id=&quot;zt_receive_tel_num&quot; class=&quot;ui-text tel-number&quot; maxlength=&quot;8&quot; placetext=&quot;电话号码&quot;&gt;&lt;em&gt;-&lt;/em &lt;input type=&quot;text&quot; id=&quot;zt_receive_tel_fenji&quot; class=&quot;ui-text ext-number&quot; maxlength=&quot;6&quot; placetext=&quot;分机号码（选填）&quot;&gt; &lt;span class=&quot;tip-message&quot;&gt;&lt;/span &lt;/div &lt;/div &lt;div class=&quot;row clearfix&quot;&gt; &lt;div class=&quot;label&quot;&gt;&lt;em&gt;*&lt;/em自提地址：&lt;/div &lt;div class=&quot;field&quot;&gt; &lt;div id=&quot;city2&quot; class=&quot;l mr10&quot;&gt;&lt;/div &lt;span class=&quot;tip-message&quot;&gt;&lt;/span &lt;/div &lt;/div &lt;div class=&quot;row pick-self-row clearfix&quot;&gt; &lt;div class=&quot;label&quot;&gt;&lt;em&gt;*&lt;/em自提点：&lt;/div &lt;div class=&quot;field&quot;&gt; &lt;p id=&quot;sites_tip&quot; class=&quot;c-f70 lh28&quot;&gt;请选择自提地址&lt;/p &lt;div id=&quot;pickUp&quot; class=&quot;pick-self-box hide&quot;&gt;&lt;/div &lt;/div &lt;/div &lt;/div &lt;/dd &lt;dd class=&quot;save-addr&quot;&gt; &lt;a href=&quot;javascript:void(0);&quot; id=&quot;sava-addr-btn&quot; class=&quot;cart-btn&quot; name=&quot;new_icart2_add_save&quot;&gt;保存&lt;/a &lt;/dd &lt;dd class=&quot;save-addr hide save-addr-error mt5&quot;&gt;&lt;/dd &lt;/dl &lt;/div &lt;/div &lt;/div </textarea> 
+   </div> 
+   <div id="step2"> 
+    <div class="step"> 
+     <div class="payment-container"> 
+      <div class="step-title link-box"> 
+       <b class="l">支付方式</b> 
+      </div> 
+      <div class="step-content clearfix"> 
+       <div class="pay-list"> 
+        <ul class="clearfix"> 
+         <li name="new_icart2_pay_online01" paytype="01" class="pay-item short-icon-item pay-checked"> <span class="pay-way">在线支付</span> <i class="tip-icon tip-help-16"></i> <i class="check"></i> 
+          <div class="pay-info-boxes hide"> 
+           <p class="pay-info-box pay-info-box4">支持易付宝和各主流银行的信用卡，借记卡消费<a class="c-2288ec" href="http://help.suning.com/page/channel-28.htm" target="_blank">查看银行和限额</a>、<a target="_blank" class="c-2288ec" href="http://help.suning.com/page/id-546.htm">任性付</a></p> 
+          </div> </li> 
+         <li name="new_icart2_pay_store" paytype="02" class="pay-item short-icon-item  "> <span class="pay-way">门店付款</span> <i class="tip-icon tip-help-16"></i> <i class="check"></i> 
+          <div class="pay-info-boxes hide"> 
+           <p class="pay-info-box pay-info-box5">网站下单去门店付款，支持现金、POS机刷卡<a href="http://member.suning.com/emall/SNNetStoreView?storeId=10052&amp;catalogId=10051&amp;storeType=0" target="_blank" class="c-2288ec">查看门店地址</a></p> 
+          </div> </li> 
+        </ul> 
+        <div class="store-shop-step-box hide" style="display: none;">
+          门店付款流程： 
+         <i class="store-shop-step-icon store-shop-step-icon-one"></i> 
+         <span class="store-shop-one">待货物到达门店</span> 
+         <i class="store-shop-step-icon store-shop-step-triangle"></i> 
+         <i class="store-shop-step-icon store-shop-step-icon-two"></i> 
+         <span class="store-shop-two">收到短信通知</span> 
+         <i class="store-shop-step-icon store-shop-step-triangle"></i> 
+         <i class="store-shop-step-icon store-shop-step-icon-three"></i> 
+         <span class="store-shop-three">前往门店支付并提货</span> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="step3"> 
+    <div class="step"> 
+     <div class="goods-info-container"> 
+      <div class="step-title link-box"> 
+       <b class="l">商品及服务信息</b> 
+       <a name="new_icart2_product_back" class="l edit goods-edit" href="cart.html?langId=-7&amp;storeId=10052&amp;catalogId=10051" id="back_to_one">返回我的购物车修改</a> 
+       <span class="l"></span> 
+      </div> 
+      <div class="step-content"> 
+       <input type="hidden" value="1" id="commodityType_ID" /> 
+       <input type="hidden" value="0" id="overSeaFlag_ID" /> 
+       <input type="hidden" value="" id="onlyOverSea_ID" /> 
+       <input type="hidden" value="0" id="donateTotalAmount" /> 
+       <input type="hidden" value="0" id="warrantyTotalAmount" /> 
+       <input type="hidden" value="" id="onlyServiceProduct_ID" /> 
+       <!-- 苏宁自营 [[ --> 
+       <!-- 苏宁自营 ]] --> 
+       <!-- C店商品 [[ --> 
+       <div shopdeliveryfee="0.00" shopname="花袭人鲜花旗舰店" shopcode="0070075699" class="store mt20 c-store"> 
+        <table class="cart-table three-column store-item"> 
+         <tbody> 
+          <tr class="store-title"> 
+           <th class="first-column"> <span class="store-name l mr10"><a name="new_icart2_product_shop" target="_blank" href="http://shop70075699.suning.com">花袭人鲜花旗舰店</a></span> <a onclick="javascript:findpassSupplier('0070075699','','','');" href="javascript:;" title="点此可以直接和卖家交流选好的产品，或相互交流网购体验。" class="tm fl" name="new_cart2_buy_ask"></a> </th> 
+           <th colspan="2" class="second-column">服务信息</th> 
+           <th class="third-column tr">单价</th> 
+           <th class="fourth-column tr">数量</th> 
+           <th class="fifth-column tr">小计</th> 
+          </tr> 
+          <tr class="product"> 
+           <td class="first-column "> 
+            <div class="product-box clearfix"> 
+             <a name="new_icart2_product_pic" target="_blank" href="http://product.suning.com/0070075699/124734977.html" class="product-img-box"> <img alt="花袭人 鲜花速递全国 21朵香水百合送亲友送朋友上海海南镇江徐州苏州南京全国同城配送 百合款1" class="product-img l lazy-loading" src="http://image2.suning.cn/content/catentries/00000000012473/000000000124734977/000000000124734977_ls.jpg" /> </a> 
+             <div class="product-detail l"> 
+              <p class="product-name"> <a pagesale="124734977_0070075699" href="http://product.suning.com/0070075699/124734977.html" target="_blank" cmmdtyname="花袭人 鲜花速递全国 21朵香水百合送亲友送朋友上海海南镇江徐州苏州南京全国同城配送 百合款1" salesprice="228.00" qty="1" storeid="0070075699" listprice="228.00" marketingactivitytype="0" businesssign="0" commdtycode="000000000124734977" id="142000000007260750" activitytype="01" name="new_icart2_product_name" title="花袭人 鲜花速递全国 21朵香水百合送亲友送朋友上海海南镇江徐州苏州南京全国同城配送 百合款1" class="pageSale">花袭人 鲜花速递全国 21朵香水百合送亲友送朋友上海海南镇江徐州苏州南京全国同城配送 百合款1</a> <i id="freightInsurance_000000000124734977_0070075699"></i> </p> 
+              <p id="000000000124734977_0070075699" name="noReason" class="tui-content"> <a name="new_icart2_product_return" target="_blank" href="http://help.suning.com/page/id-205.htm">不支持无理由退换货</a> </p> 
+             </div> 
+            </div> </td> 
+           <td class="second-column tc" rowspan="1" colspan="2"> <p class="lh20">支付完成后尽快为您发货</p> <p shopcode="0070075699" class="cInstall"></p> <p class="lh20">如有疑问请联系<b class="c-f60">18538596880</b></p> 
+            <div id="divfreightInsurance_000000000124734977_0070075699"></div> </td> 
+           <td colspan="3" class="tr  col-td"> 
+            <div class="col-td-box clearfix"> 
+             <div class="third-column l "> 
+              <div class="sn-price"> 
+               <i>&yen;</i> 
+               <em>228.00</em> 
+              </div> 
+             </div> 
+             <div cmmdtycode="000000000124734977" class="fourth-column l ">
+               1 
+             </div> 
+             <div class="fifth-column l "> 
+              <div class="booking_price_one hide"> 
+               <span class="sn-price font-bold"><span class="booking-promo"></span><i>&yen;</i><em></em></span> 
+               <p class="booking-content">（尾款<span class="sn-price"><i>&yen;</i><em></em></span>）</p> 
+              </div> 
+              <span class="sn-price font-bold booking_price_total"><i>&yen;</i><em>228.00</em></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <!--主商品的赠品列表  --> 
+          <!--子商品列表--> 
+          <!--卖家留言--> 
+          <tr class="store-message-box"> 
+           <td rowspan="2" colspan="3" class="end-column"> <span class="l">给卖家留言：</span> 
+            <div class="message-input-box "> 
+             <textarea class="c-store-message l" flag="0" autocomplete="off" shop="0070075699">选填：对本次交易的补充说明（所填内容建议已经和卖家达成一致意见）</textarea> 
+            </div> 
+            <div class="message-length l"> 
+             <span class="current-length">0</span> 
+             <span class="max-length">/85</span> 
+            </div> 
+            <div class="tip-info"></div> </td> 
+           <td class="third-column tr no-border-bottom end-column-style"> </td> 
+           <td class="fouth-column tr no-border-bottom"></td> 
+           <td class="fifth-column tr no-border-bottom"> 免运费 </td> 
+          </tr> 
+          <tr class="store-message-box"> 
+           <td class="third-column tr end-column-style">合计(含运费)</td> 
+           <td class="fouth-column tr"></td> 
+           <td class="fifth-column tr"> <span class="sn-price font-bold c-ff4400"> <i>&yen;</i> <em class="booking_price_two hide">0.00</em> <em class="booking_price_amount">228.00</em> </span> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+       <!-- C店商品 --> 
+       <input type="hidden" value="124734977_1_228.00," id="saOrderInfo" /> 
+       <div class="hide" id="subsidy-tip-dom-wrapper"> 
+        <div class="subsidy-tip-dom"> 
+         <p class="subsidy-tip-blank">节能补贴购买须知</p> 
+         <p class="subsidy-tip-content-blank">一、补贴对象</p> 
+         <p class="subsidy-tip-content">具有北京身份证明的居民，选购符合节能补贴的商品，送货地址为北京市。</p> 
+         <p class="subsidy-tip-content-blank">二、补贴标准</p> 
+         <p class="subsidy-tip-content">商品实际付款（去除苏宁卡、优惠券、云钻抵扣金额后）的8%、13%不等， 800元封顶。</p> 
+         <p class="subsidy-tip-content-blank">三、补贴数量</p> 
+         <p class="subsidy-tip-content">在政策实施期内（2015年11月30日至2018年11月30日），<span class="c-ff4400">每个消费者每类产品只能有1台（个）享受补贴政策</span>。</p> 
+         <p class="subsidy-tip-content-blank">四、补贴流程</p> 
+         <p class="subsidy-tip-content">1、消费者在苏宁易购选购节能减排补贴商品，并<span class="c-ff4400">提交订单且支付完成</span>；</p> 
+         <p class="subsidy-tip-content">2、订单<span class="c-ff4400">支付成功后1小时内</span>，顾客需在订单中心<span class="c-ff4400">上传身份证扫描件</span>；</p> 
+         <p class="subsidy-tip-content">3、苏宁代消费者将相关身份证件信息提交至政府系统进行审核，如审核通过，则订单购买成功，进行发货；如审核不通过，则消费者订单失效，消费者可操作退款。</p> 
+         <p class="subsidy-tip-content-blank">五、注意事项</p> 
+         <p class="subsidy-tip-content">1、配送方式为<span class="c-ff4400">自提</span>、支付方式为<span class="c-ff4400">门店付款</span>、发票类型为<span class="c-ff4400">增值税发票</span>时，将<span class="c-ff4400">无法享受节能补贴</span>；</p> 
+         <p class="subsidy-tip-content">2、选择节能补贴支付完成后，需上传身份证扫描件，<span class="c-ff4400">请在发票抬头处填写与申请人身份证一致的姓名</span>；</p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="step4"> 
+    <div id="finishDivInvoice" class="step"> 
+     <div class="invoice-container invoice-finish"> 
+      <div class="step-title link-box"> 
+       <b class="l">发票信息</b> 
+       <a name="new_icart2_invoice_change" id="modifyInvoice" data-flag="new-user" class="l edit" href="javascript:;">修改</a> 
+       <span class="l save-invoice-tip"></span> 
+      </div> 
+      <div class="step-content"> 
+       <p> <input type="hidden" value="05" id="invoiceTypeId" /> <span class="mr20">不开发票</span><span class="mr20">您购买的商品默认为打印购物清单（您的订单有第三方卖家销售的商品，如需开发票，请自行联系商家开具！）</span> </p> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="step5"> 
+    <div class="coupon-container coupon-original"> 
+     <div class="step-title link-box"> 
+      <b class="l">结算信息</b> 
+     </div> 
+     <div class="step-content"> 
+      <div id="coupon_ID"> 
+       <div class="item coupon-item"> 
+        <div id="coupon_title" class="toggle-title "> 
+         <a href="javascript:void(0)"> <i></i><b>使用优惠券</b> </a> 
+         <span class="c9"> (无可用优惠券)</span> 
+        </div> 
+        <div style="display:" id="coupon_finish_id" class="toggle-content"> 
+         <div class="clearfix"> 
+          <span class="yellow-info-box">您还没有优惠券，暂不能使用</span> 
+         </div> 
+         <div class="add-coupon-box mt10"> 
+          <div class="add-coupon-btn link-box clearfix"> 
+           <span>您有新的优惠券？</span> 
+           <a name="new_icart2_account_newticket" class="1 btn" href="javascript:;">点击添加新的优惠券<i class="icon"></i></a> 
+          </div> 
+          <div style="display:none" class="form add-coupon-form mt5 clearfix"> 
+           <div id="coupon_bind" class="row error-row"> 
+            <span class="label">请输入优惠券号：</span> 
+            <input type="text" id="coupon_num" placetext="请输入优惠券号" maxlength="" class="ui-text" data-is-enter="0" style="color: rgb(187, 187, 187);" /> 
+            <input type="password" id="coupon_passw" placeholder="请输入密码" maxlength="" class="ui-text hide" /> 
+            <a name="new_icart2_account_addticket" id="add-coupon" class="btn-w50-h26 cart-btn mr10" href="javascript:void(0)">添加</a> 
+            <span id="coupon_error" class="l tip-message"></span> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="item other-coupon-item"> 
+       <div id="other_coupon_title" class="toggle-title"> 
+        <a name="new_icart2_account_usenumber" href="javascript:void(0)"> <i></i><b>使用推荐号</b> </a> 
+       </div> 
+       <div id="other_coupon_content" class="toggle-content"> 
+       </div> 
+      </div> 
+      <div class="checkout-promotion tr"> 
+       <div class="checkout-promotion-item"> 
+        <span qty="1" id="cart2_qty" class="c-ff6600">1</span>件商品 总计： 
+        <span class="sn-price"><i>&yen;</i><em id="cmmdyTotalID">228.00</em></span> 
+       </div> 
+       <div style="display: none;" id="energySubsidiesAmountDiv" class="checkout-promotion-item">
+         节能补贴减免： 
+        <span class="sn-price"><i>&yen;</i><em id="energySubsidiesID">0.00</em></span> 
+       </div> 
+       <div class="checkout-promotion-item">
+         运费： 
+        <span class="sn-price"><i>&yen;</i><em id="shippingChargeID">0.00</em></span> 
+       </div> 
+       <div class="checkout-promotion-item">
+         优惠： 
+        <span class="sn-price"><i>&yen;</i><em id="cmmdyDiscountID">0.00</em></span> 
+       </div> 
+       <div class="checkout-promotion-item">
+         优惠券/卡： 
+        <span class="sn-price"><i>&yen;</i><em id="freeAmountID">0.00</em></span> 
+       </div> 
+       <div class="checkout-promotion-item checkout-promotion-input-item "> 
+        <span class="cart-checkbox "> <input type="checkbox" name="new_icart2_account_yunzuan" id="cloudDaimondInputId" class="checkbox" /> <label class="check-icon" for="cloudDaimondInputId"></label> </span> 
+        <span class="c-333333">使用云钻</span> 
+        <span class="diamond-check">： <input type="text" value="" data-max="0" class="input-box" id="toatalPiontsId" />个 <span class="sn-price-box"> <span class="sn-price"> <i>&yen;</i><em id="cloudAccountId">0.00</em> </span> </span> </span> 
+       </div> 
+       <div class="checkout-promotion-item diamond-check clearfix"> 
+        <span class="cloud-diamond-can-use r">（可用<span id="toatalPiontsId2" class="c-ff6600">0</span>个）</span> 
+       </div> 
+       <div class="checkout-promotion-item other-pay-box clearfix"> 
+        <span id="otherPayDesc"></span> 
+        <span class="cart-checkbox "> <input type="checkbox" name="new_icart2_account_daifu" id="otherPayCheck" class="checkbox" /> <label class="check-icon" for="otherPayCheck"></label> </span> 
+        <span class="spc-col">找人代付</span> 
+        <i data-html="仅限在线支付" data-flag="other-pay-help-tip" id="otherPayTip1" class="tip-icon tip-help tip-common-hover-fn-btn hide"></i> 
+        <i data-html="订单中包含不支持代付的商品" data-flag="other-pay-help-tip2" id="otherPayTip2" class="tip-icon tip-help tip-common-hover-fn-btn hide"></i> 
+        <i data-html="政企用户暂不支持代付" data-flag="other-pay-help-tip3" id="otherPayTip3" class="tip-icon tip-help tip-common-hover-fn-btn hide"></i> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="checkout-bar-boxes" id="step6"> 
+    <div class="checkout-bar-box checkout-bar-box-fix"> 
+     <div class="checkout-bar clearfix"> 
+      <div class="order-address l"> 
+       <p class="content mt5">收货信息：<span title="黄金林 180****1538 上海上海市普陀区全区中浩云花园23栋2003" class="c-333333">黄金林 180****1538 上海上海市普陀区全区中浩云花园23栋2003</span></p> 
+       <p class="content">支付方式：<span class="c-333333 pay-name">在线支付</span></p> 
+      </div> 
+      <div class="checkout-bar-r r"> 
+       <div class="l"> 
+        <p class="sum-pay-price"><span id="sum-pay-text">应付金额：</span><span class="sn-price"><i>&yen;</i><em id="payAmountID">228.00</em></span></p> 
+        <p class="capricious-pay  hide">任性付：期</p> 
+        <p class="checkout-warning capricious-pay"><i class="tip-icon tip-warning mr5"></i>提交订单后尽快支付，商品才不会被人抢走哦！</p> 
+       </div> 
+       <a id="submit-btn" style="" class="checkout-submit-btn cart-btn l" name="new_icart2_account_submit" href="javascript:;">提交订单</a> 
+       <a class="checkout-submit-btn cart-btn cart-btn-disable l" href="javascript:;" style="display: none;">提交订单</a> 
+       <a style="display:none" class="checkout-submit-btn-load checkout-submit-btn-load l" href="javascript:;"><span>提交中...</span></a> 
+      </div> 
+      <div class="checkout-float-warning" style="display: none;"> 
+       <span class="checkout-float-warning-content booking-check-warning-content">您需先保存发票信息，再提交订单</span> 
+       <span class="checkout-float-warning-bg"></span> 
+      </div> 
+     </div> 
+    </div> 
+    <input type="hidden" value="0" name="directFlag" id="directFlag" /> 
+    <input type="hidden" value="140100000000512567" name="cart2No" id="cart2No" /> 
+    <input type="hidden" value="" id="supportedSelfPickUp" /> 
+    <input type="hidden" value="1" id="deliveryType" /> 
+    <input type="hidden" value="1" id="payType" /> 
+    <input type="hidden" value="" id="comTypeFlag" /> 
+    <input type="hidden" value="true" id="otherPaySwitch" /> 
+    <input type="hidden" value="false" id="otherPay" /> 
+    <input type="hidden" value="true" id="anotherPaySwitch" /> 
+    <input type="hidden" value="" id="anotherPayTip" /> 
+    <input type="hidden" value="" id="footballProduct" /> 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+        //CEM数据采集设置
+        var sa = sa || {};
+        sa.bid = "106";
+        sa.maxLength = 100;
+        sa.openAPI = true;
+	</script> 
+  <script src="/static/index/js/SFE.lion.dialog.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/cart-listloop.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/SFE.tooltip.new.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/cart-calendar.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/New.CitySelect.min.js" type="text/javascript"></script> 
+  <script src="/static/index/js/cloudCart.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/cart_2.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/cart_2_util.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/cart2Validation.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/settleInfo.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/addressUtil.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/invoice.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/jquery.json.min.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/cart_2_extend.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/maiDian.js?v=2016031003" type="text/javascript"></script> 
+  <script src="/static/index/js/da.js?v=2016031003" type="text/javascript"></script> 
+  <div class="ECode-floatBar" style="position: fixed; top: auto; left: auto; z-index: 7700; right: 0px; bottom: 0px; margin-bottom: 180px;"> 
+   <div class="cart-float-bar"> 
+    <a href="http://ued.suning.com/survey/express/d0lTRERm" target="_blank" class="bar-item"> <em>问卷调查</em><i></i> </a> 
+   </div> 
+  </div>  
+ </body>
+</html>

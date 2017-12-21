@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>苏宁易购-苏宁云商网上商城，领先的综合网上购物商城，正品行货，全国联保，货到付款，让您尽享购物乐趣！</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="苏宁易购" />
+    <meta name="description" content="苏宁易购是领先的综合网上购物商城, 在线特价销售家电、通讯数码、电脑、家居百货、服装服饰、母婴、图书、食品、保险、旅行、充值、团购等数万类商品和服务。正品行货, 全国联保, 本地配送, 货到付款。省钱放心上苏宁电器网上商城, 尽享购物乐趣！" />
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="shortcut icon" href="http://www.suning.com/favicon.ico" type="image/x-icon" />
+    <!-- 引入全站公用资源文件 -->
+<link rel="stylesheet" href="/static/index/css/reg/reg.css">
+<script type="text/javascript" src="/static/index/css/reg/reg.js"></script>
+
+
+<!--[if IE 6]>
+<script type="text/javascript" src="//res.suning.cn/public/js/DD_belatedPNG.js"></script>
+<![endif]-->
+    
+    <!-- 引入项目资源文件 -->
+    <link rel="stylesheet" type="text/css" href="/static/index/css/reg/siller-min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/index/css/reg/style-person-reg-new-min.css" />
+    <style>
+        #sendSmsCode{border:0;position: relative;top:1px;cursor:pointer;}
+        #aliasTip a:{color:gray;}
+        #aliasTip a:hover{color:#f60;}
+    </style>
+</head>
+<!--[if lt IE 7 ]><body class="ie ie6"><![endif]-->
+<!--[if IE 7 ]><body class="ie ie7"><![endif]-->
+<!--[if IE 8 ]><body class="ie ie8"><![endif]-->
+<!--[if IE 9 ]><body class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body><!--<![endif]-->
+    <div class="header clearfix">
+        <a href="/index/login" class="login" name="Preg_index_none_log">我已经注册，马上登录&gt;</a>
+        <a href="//www.suning.com" class="logo"></a>
+        <div class="logo-txt">欢迎注册</div>
+    </div>
+    <div class="main">
+    <form id="grapReg_form" action="/identification.do" method="post" autocomplete="off">
+        <input type="hidden" id="token" name="token"  value="bd4b3bda-cb00-4476-864a-5f43e4625e56"/>
+        <input type="hidden" id="regPage" name="regPage" value="NORMAL_REG_PAGE"/>
+        <input type="hidden" id="alias" name="aliasName" maxlength="11" />
+        <input type="hidden" id="random" name="random"/>
+        <input type="hidden" id="uid" name="uid" />
+        <input type="hidden" id="iCode" name="iCode" value="" />
+        
+    </form>
+    <!-- <form  id="enterReg_form" action="/b2cregister.do" method="post" autocomplete="off"> -->
+        <div class="reg-form">
+            <div class="gift-pkg"><i></i>注册领<em>199</em>元大礼包</div>
+            <div class="phone-field">
+                <div class="input-box clearfix">
+                    <label class="title">手机号码</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="phone" name="phone" maxlength="11" placeholder="请输入手机号">
+                        <i class="ok"></i>
+                    </div>
+                </div>
+                <div id="aliasTip" class="error-msg hide"></div>
+            </div>
+            <div class="siller-field hide" id="imgCodeDiv">
+                <div id="siller"></div>
+                <input type="hidden" id="imgCode" name="imgCode" value="" />
+                <script type="text/javascript">
+                var isEnableSiller = true;
+                </script>
+            </div>
+            <div class="error-msg hide" id="imgCodeTip"></div>
+            <div class="msg-field">
+                <div class="input-box clearfix">
+                    <label class="title">手机验证码</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="smsCode" name="smsCode" maxlength="4" placeholder="请输入手机验证码">
+                        <i class="ok"></i>
+                    </div>
+                    <button id="sendSmsCode" class="send-msg" name="Preg_index_none_getmobile">获取短信验证码</button>             
+                </div>
+                <div class="send-success">
+                    <div id="smsCodeTip" class="error-msg hide" style="height:34px;line-height:34px;margin-top:0;overflow:hidden"></div>
+                    <div class="msg-sent hide">手机验证码已经成功发送，<em>3</em>分钟内有效</div>
+                </div>
+            </div>
+            <div class="password-field">
+                <div class="input-box clearfix" style="margin-bottom:0;">
+                    <label class="title">设置密码</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" name="password" maxlength="20" class="encrypt"  placeholder="请输入密码">
+                        <i class="ok"></i>
+                    </div>
+                </div>
+                <div style="height:50px;">
+                    <div id="setPswTip" class="error-msg hide" style="margin:0;"></div>
+                    <div class="suggestion hide"><em>6-20个字符，由字母，数字和符号的两种以上组合。</em></div>
+                </div>
+            </div>
+            <div class="items">
+                <input type="checkbox" id="protocol" checked="checked" class="accept-items" name="Preg_index_none_check"><a href="/memberRegu.do" target="_blank" name="Preg_index_none_hyzc">《苏宁易购会员章程》</a><a href="/eppAggrement.do" target="_blank" name="Preg_index_none_yfb">《易付宝协议》</a>及<a href="/snAdPlatformTreaty.do" target="_blank" name="Preg_index_none_snlm">《苏宁广告联盟在线协议》</a>
+            </div>
+            <div id="protocolTip" class="pls-accept-items hide">您必须同意苏宁服务条款后，才能提交注册</div>
+            <a href="javascript:void(0)" id="save" class="submit-btn" name="Preg_index_none_submit">提交注册</a>    
+            <a href="javascript:;" onclick="srscommon.goCompanyReg($('#myTargetUrl').val(), $('#custSource').val());return false;" class="enter-reg" name="Preg_index_none_companyreg"><i></i>企业用户注册&gt;</a>
+        </div>
+    <!-- </form> -->
+    </div>
+    <!-- 此处引入公用尾部 -->
+<div class="clear"></div>
+<div class="ng-footer">
+<div class="ng-s-footer">
+    <div class="ng-s-f-con">
+        <p class="ng-url-list"><a href="http://www.suningholdings.com/" target="_blank" name="public0_none_sn_konggu">苏宁控股</a><span>|</span><a href="http://www.suning.cn/" target="_blank" name="public0_none_sn_yunshang"> 苏宁云商</a><span>|</span><a href="http://10035.suning.com/" target="_blank" name="public0_none_sn_hulian"> 苏宁互联</a><span>|</span><a href="https://jinrong.suning.com" target="_blank" name="public0_none_sn_jinrong">苏宁金融</a><span>|</span><a href="https://pay.suning.com/epp-epw/login/login.action?idsTrustFrom=suning&amp;ticket=ST1F1671F32556BC51442EB2ED516EB41D" target="_blank" name="public0_none_sn_zhifu1">苏宁支付</a><span>|</span><a href="http://www.pptv.com/?rcc_id=snyg" target="_blank" name="public0_none_sn_pptv">PPTV</a><span>|</span><a href="http://redbaby.suning.com/" target="_blank" name="public0_none_sn_redbaby">红孩子</a><span>|</span><a href="http://wuliu.suning.com/slp/" target="_blank" name="public0_none_sn_wuliu">苏宁物流</a><span>|</span><a href="http://cuxiao.suning.com/newUser.html" target="_blank" name="public0_none_sn_shouji">手机苏宁 </a><span>|</span><a href="http://www.suninghotel.com/shors-web/pc/hotel/index.html" target="_blank" name="public0_none_sn_jiudian">苏宁酒店</a><span>|</span><a href="http://ipp.suning.com/sips/toAgree.action" target="_blank" name="public0_none_sn_zhishi">知识产权举报</a></p>
+        <p class="ng-url-list"><a href="http://help.suning.com/page/id-469.htm" target="_blank" name="public0_none_sn_callme">联系我们</a><span>|</span><a href="http://careers.suning.cn/" target="_blank" name="public0_none_sn_zhaopin">诚聘英才</a><span>|</span><a href="https://sop.suning.com/sel/canvassBusCenter/showModelDetailNew.htm?model=K" target="_blank" name="public0_none_sn_gongyingshang">供应商入驻</a><span>|</span><a href="http://ap.suning.com/aps-sale-web/" target="_blank" name="public0_none_sn_guanggao">广告平台</a><span>|</span><a href="http://sums.suning.com/" target="_blank" name="public0_none_sn_lianmeng">苏宁联盟</a><span>|</span><a href="http://zb.suning.com/bid-web/main.htm" target="_blank" name="public0_none_sn_zhaobiao">苏宁招标</a><span>|</span><a href="http://sums.suning.com/aas/links.html" target="_blank" name="public0_none_sn_link">友情链接</a><span>|</span><a href="http://help.suning.com/page/id-281.htm" target="_blank" name="public0_none_sn_law">法律申明</a><span>|</span><a href="http://ued.suning.com/survey/" target="_blank" name="public0_none_sn_tiyan">用户体验提升计划</a><span>|</span><a href="http://mrs.suning.com/mrs-web/stockholder/check.htm" target="_blank" name="public0_none_sn_gudong">股东会员认证</a></p>
+        <p class="ng-copyright" style="display: block;">
+            Copyright© 2002-2017 ，苏宁云商集团股份有限公司版权所有<span>|</span>
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32010202010078" rel="nofollow" style="color:#999" class="gwab"><i></i>苏公网安备 32010202010078号</a><span>|</span>
+            <a href="" target="_blank" style="color:#999">苏ICP备10207551号-4</a><span>|</span>
+            <a href="" target="_blank" rel="nofollow" style="color:#999">苏B1-20130131</a></p>
+        <p class="ng-copyright ng-copyright-2" style="display: block;">
+            <a href="" target="_blank" rel="nofollow" style="color:#999">苏B2-20130376</a><span>|</span>
+            <a href="" target="_blank" rel="nofollow" style="color:#999">苏B2-20130391</a>
+            出版物经营许可证新出发苏批字第A-243号<span>|</span>
+            互联网药品信息服务资格证书<a href="" rel="nofollow" style="color:#999">（苏）-非经营性-2016-0005</a></p>
+            <p></p>
+        <p class="ng-copyright" style="display: block;">本网站直接或间接向消费者推销商品或者服务的商业宣传均属于“广告”（包装及参数、售后保障等商品信息除外）</p>
+        <div class="ng-authentication" style="display: block;">
+            <a href="" name="public0_none_wb_zs0302" rel="nofollow">
+                <img src="/static/index/images/login/chengxin.png" height="24" width="76" alt="诚信网站">
+            </a>
+            <a href="" name="public0_none_wb_zs0303" rel="nofollow">
+                <img src="/static/index/images/login/unicom.png" height="24" width="76" alt="中国联通授权网络经营代理商">
+            </a>
+            <a href="" name="public0_none_wb_zs0304" rel="nofollow">
+                <img src="/static/index/images/login/dianxin.jpg" height="24" width="76" alt="中国电信授权网络经营代理商">
+            </a>
+            <a href="" rel="nofollow" name="public0_none_wb_zs0303">
+                <img src="/static/index/images/login/dianzi.png" height="24" width="76" alt="电子营业执照">
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+
+<style type="text/css">
+.ng-footer{height:175px;margin-top:0;}
+.ng-s-footer{height:160px;background:none;text-align:center;}
+.ng-s-footer p.ng-url-list{height:25px;line-height:25px;}
+.ng-s-footer p.ng-url-list a{color:#666666;}
+.ng-s-footer p.ng-url-list a:hover{color:#f60;}
+.ng-s-footer .ng-authentication{float:none;margin:0 auto;height:25px;width:990px;margin-top:5px;}
+.ng-s-footer p.ng-copyright{float:none;width:100%;}
+.root1200 .ng-s-footer p.ng-copyright{width:100%;}
+</style>
+
+<script>
+    var phones = codes = pass = false;
+    //判断手机号
+    $("#phone").blur(function() {
+        //获取值
+        phone = $('#phone').val();
+        //判断值
+        if(!(/^1[34578]\d{9}$/.test(phone))){ 
+            $(this).next('.ok').css('display','none');
+            $("#aliasTip").css('display','block');
+            $("#aliasTip").html('格式不正确，请输入正确的手机号码！');
+            $("#sendSmsCode").attr('disabled',true);
+        }else{
+            $("#aliasTip").css('display','none');
+            $(this).next('.ok').css('display','inline');
+            $("#sendSmsCode").attr('disabled',false);
+        }
+    });
+
+    //验证手机号
+    $("#sendSmsCode").click(function() {
+        phone = $('#phone').val();
+        if (phone == '') {
+            $("#aliasTip").css('display','block');
+            $("#aliasTip").html('请输入注册手机！');
+        }else{
+            $.post("/reg/check",{phone:phone},function(data){ 
+                if (data == 2) {
+                    // alert(data);
+                    $(this).next('.ok').css('display','none');
+                    $("#aliasTip").css('display','block');
+                    $("#aliasTip").html('该手机号已注册！请直接<a href="/index/login">登录</a>');
+                    $("#sendSmsCode").attr('disabled',true);
+                }else{
+                    // alert(data);
+                    phones = true;
+                    $(".msg-sent").css('display','block');
+                    for(var i=0;i<data.length;i++){
+                        // alert(data[i].resp.respCode);
+                        if(data[i].resp.respCode==000000){
+                            //倒计时
+                            m=60;
+                            mytime=setInterval(function(){
+                                m--;
+                                //把m赋值给button
+                                $("#sendSmsCode").html(m+"秒后重新发送");
+                                //禁用按钮
+                                $("#sendSmsCode").attr('disabled',true);
+                                //判断
+                                if(m==0){
+                                    //清除定时器
+                                    clearInterval(mytime);
+                                    $("#sendSmsCode").html("重新发送");
+                                    $("#sendSmsCode").attr('disabled',false);
+                                }
+                            },1000);
+                        }
+                    }
+                }
+        },'json');
+        }
+    });
+
+    //手机验证码
+    $('#smsCode').focus(function() {
+        $("#smsCodeTip").css('display','none');
+        $("#smsCodeTip").html('');
+    });
+
+    //密码
+    $('#password').focus(function() {
+        $(".suggestion").css('display','block');
+    });
+    $('#password').blur(function() {
+        $(".suggestion").css('display','none');
+        pwd = $("#password").val();
+        if (pwd=='') {
+            $('#setPswTip').css('display','block');
+            $('#setPswTip').html('请输入6-20位密码！');
+            $(this).next('.ok').css('display','none');
+        }else if(!(/^([a-z0-9\.\@\!\#\$\%\^\&\*\(\)]){6,20}$/.test(pwd))){ 
+            $(this).next('.ok').css('display','none');
+            $("#setPswTip").css('display','block');
+            $("#setPswTip").html('密码格式不正确,请输入6-20位密码！');
+            $(this).next('.ok').css('display','none');
+        }else{
+            pass = true;
+            $("#setPswTip").css('display','none');
+            $(this).next('.ok').css('display','inline');
+        }
+    });
+
+    //执行注册
+    $("#save").click(function() {
+        // alert(11111111);
+        code=$('#smsCode').val();
+        pwd = $("#password").val();
+        phone = $("#phone").val();
+        // alert(code);
+        if (code=='') {
+            //未输入验证码
+            $(".msg-sent").css('display','none');
+            $("#smsCodeTip").css('display','block');
+            $("#smsCodeTip").html('请输入手机验证码！');
+            codes = false;
+        }else{
+            codes = true;
+        }
+        console.log(codes);
+        console.log(phones);
+        console.log(pass);
+        if (codes && phones && pass) {
+            // alert('验证通过');
+            $.post('/reg/doreg', {phone:phone,code:code,password:pwd}, function(data) {
+                // alert(data);
+                // console.log(data);
+                if (data ==2) {
+                    $(".msg-sent").css('display','none');
+                    // $("#msg-sent").css('display','none');
+                    $("#smsCodeTip").css('display','block');
+                    $("#smsCodeTip").html('手机验证码错误！');
+                }else if(data==1){
+                    window.location.href="/reg/regok";
+                }else{
+                    // alert(data);
+                    console.log(data);
+                }
+            });
+        }else{
+            // alert('验证不通过');
+        }
+
+    });
+</script>
+</body>
+</html>

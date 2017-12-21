@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <title>苏宁易购：我的购物车</title>
+  <link rel="dns-prefetch" href="//res.suning.cn">
+  <!-- 引入公用头 -->
+  <meta charset="UTF-8">
+  <meta name="keywords" content="苏宁易购">
+  <meta name="description" content="苏宁易购是国内领先的综合购物商城">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="cache-control" content="no-store">
+  <meta http-equiv="cache-control" content="max-age=0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 引入全站公用资源文件 -->
+  <link rel="shortcut icon" href="http://ssl.suning.com/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="//res.suning.cn/public/v3/css/??v3common.min.css,search.min.css,sn-sidebar.min.css?v=2017103101">
+  <script src="/static/index/js/shop/jquery.js"></script>
+  <script src="/static/index/js/shop/sn_lazyload.js"></script>
+  <script src="/static/index/js/info/lazyelem.min.js"></script>
+  <script src="/static/index/js/shop/SFE.base.min.js"></script>
+  <script src="/static/index/js/shop/search.min.js"></script>
+  <script src="/static/index/js/info/sn-sidebar.min.js"></script>
+  <script src="/static/index/js/info/chatCompat_mini.js"></script>
+  <script type="text/javascript" src="https://sslres.suning.com/project/passport/js/passport.min.js"></script>
+  <!-- 引入项目资源文件 -->
+  <link rel="stylesheet" type="text/css" href="/static/index/css/shop/cart-1.css">
+  <link rel="stylesheet" type="text/css" href="/static/index/css/shop/cart-base.css">
+  <link rel="stylesheet" type="text/css" href="/static/index/css/shop/Snaddress.css">
+</head>
+          
+          <body>
+            <style id="ui-city-style">ul,li,p,h3,h5,em,b,i,span,a{ margin: 0; padding: 0; }ul,li { list-style: none; }.clearfix:after{ content:"."; display:block; height:0; clear:both; visibility:hidden}.clearfix{ zoom:1}.ui-city a,.ui-city a:visited{ line-height:14px; color:#333; text-decoration: none; outline: none; cursor: pointer;}.ui-city a:hover { text-decoration:none; }.ui-city { display:inline-block;*dispplay:inline;*zoom:1; font-size: 12px; position: relative; z-index: 0}.ui-city .dn { display: none; }.ui-city .db { display: block; }.ui-city .dib { display: inline-block; }.ui-city .arr { display: inline-block; width: 0; height:0; border-color: #bbb transparent transparent; border-width: 5px; border-style: solid dashed dashed; font-size: 0; line-height: 0; overflow: hidden; }.ui-city a.ui-city-toggle:hover { color:#333;}.ui-city-toggle { display:inline-block; border: 1px solid #bbb; padding:6px 5px 6px 6px; color: #000;background: #fff; position: relative; z-index: 100}.ui-city-toggle .address-placement {font-style: normal; float: left;}.ui-city-toggle span { padding-right: 5px}.ui-city-toggle span:hover {color: #333;}.ui-city-toggle .arr { margin-right:5px;position: relative; top:5px; float: left;}.ui-city-group { display:none; position: absolute;background: #fff; left: 0; top:27px;border: 1px solid #ccc; margin-top:-1px; width: 420px; z-index: 99; box-shadow: 0 0 6px #ddd;padding-top:5px;}.ui-city-group .ui-city-close { position: absolute;right: 0;top: 0;padding: 5px 10px;overflow: hidden;}.ui-city-group .ui-city-close i { font: 700 14px/1.5 simsun;margin-left:-4px; color: #aaa}.ui-city-group-header { padding-top: 10px; }.ui-city-group-header p { padding-left:15px; margin-bottom: 10px; }.ui-city-group-header .address-title { }.ui-city-group-header .address-item {clear:both; }.ui-city-group-header .address-item a,.ui-city-group-header .address-item a:visited{ display: inline-block;zoom:1; padding-top: 4px; padding-left: 5px; padding-bottom: 4px; margin-right: 10px; border: 1px solid #bbb; }.ui-city-group-header .address-item a:hover { background: #f90; color: #fff;border:1px solid #f90; }.ui-city-group-header .address-item a span { padding-right:5px}.ui-city-group-content { margin: 10px 10px 0 10px; background:#fff;}.ui-city-group-content .nav-tabs { padding-left: 6px }.ui-city-group-content .nav-tabs li {float: left; position: relative; z-index:2;border: 1px solid #ccc; height: 26px;background:#fff;margin-right: 6px; margin-bottom:0; cursor: pointer; }.ui-city-group-content .nav-tabs li p { padding: 6px 10px 6px 10px;border:1px solid #fff; }.ui-city-group-content .nav-tabs li a,.ui-city-group-content .nav-tabs li a:visited{ color: #999;float: left}.ui-city-group-content .nav-tabs li .arr { position: relative; top: 3px;left: 5px;font-size: 0; line-height: 0;}.ui-city-group-content .nav-tabs li.current { border: 2px solid #ffb84e; border-bottom:none; z-index: 4;}.ui-city-group-content .nav-tabs li.current p { padding: 6px 10px 5px 10px; position: relative; z-index: 4; border:none; }.ui-city-group-content .nav-tabs li.current .arr { border-color: transparent transparent #f90; border-style: dashed dashed solid; top:-2px; }.ui-city-group-content .nav-tabs li.current a,.ui-city-group-content .nav-tabs li.current a:visited{ display:inline-block; color: #333; }.ui-city-group-content .nav-tabs li.active a,.ui-city-group-content .nav-tabs li.active a:visited{ display:inline-block; color: #333; }.ui-city-group-content .tab-content { border-top: 2px solid #ffb84e;top:-2px; position: relative; z-index: 3}.ui-city-group-content .tab-content .tab-panel { display: none; padding-top: 3px; padding-bottom: 15px; background: #fff;padding-left: 8px }.ui-city-group-content .tab-content .tab-panel.active { display: block;}.ui-city-group-content .tab-content li:after { content:"."; display:block; height:0; clear:both; visibility:hidden }.ui-city-group-content .tab-content li { *zoom:1;}.ui-city-group-content .tab-content li span {display:inline-block;width: 98px;}.ui-city-group-content .tab-content li a,.ui-city-group-content .tab-content li a:visited { display:inline-block; background:#fff;margin: 2px; padding: 5px; color:#000; }.ui-city-group-content .tab-content li a:hover { background: #f90; color: #fff;}.ui-city-group-content .tab-content li a.on,.ui-city-group-content .tab-content li a.on:visited { background: #f90;color: #fff; }.ui-city-group-content .tab-content .pr-panel li a{ }.ui-city.active { z-index: 10}.ui-city.active a.ui-city-toggle { border: 1px solid #ccc;background:#fff;border-bottom:none;box-shadow: 0 -1px 1px #ddd}.ui-city.active a.ui-city-toggle:hover { color: #333; background: #fff; text-decoration: none;}.ui-city.active a.ui-city-toggle .arr{ border-color: transparent transparent #f90; border-style: dashed dashed solid; top:0; }.ui-city.active .ui-city-group { display: block; }.ui-city .arr {transition:All .2s ease;-webkit-transition:All .2s ease;-moz-transition:All .2s ease;-o-transition:All .2s ease;-ms-transition:All .2s ease;}</style>
+            <script>//宽窄屏切换
+              var bigscreen = false;
+              if (screen.width > 1440) {
+                bigscreen = true;
+                var bodyTag = document.getElementsByTagName("body")[0],
+                bodyClassName = bodyTag.getAttribute("className") || bodyTag.getAttribute("class");
+                bodyClassName = bodyClassName ? bodyClassName + " ": "";
+                bodyTag.className = bodyClassName + "root1200";
+              }</script>
+            <input type="hidden" id="resourceType" value="web">
+            <!-- 此处引入cart1页头 -->
+            <div id="_TOP_BANNER_" class="ng-top-banner"></div>
+            <div class="ng-toolbar">
+              <div class="ng-toolbar-con wrapper">
+                <div class="ng-toolbar-left">
+                  <a href="/" class="ng-bar-node ng-bar-node-backhome" id="ng-bar-node-backhome" name="public0_none_gongju_fanhui" style="display: block;">
+                    <i class="ng-iconfont ng-backhome"></i>
+                    <span>返回首页</span></a>
+                  <!--网站导航 [[-->
+                  <div class="ng-bar-node-box ng-site-nav-box lazy-bar-box">
+                    <a href="javascript:void(0);" class="ng-bar-node ng-bar-node-site" name="public0_none_daohang_wzdh">
+                      <span>网站导航</span>
+                      <em class="ng-iconfont down"></em></a>
+                    <div class="ng-sn-site-nav ng-d-box site-nav-child" style="display:none;">
+                      <!--网站导航列表-->
+                      <div class="head-loading"></div>
+                      <a href="javascript:void(0);" class="ng-close" name="public0_none_daohang_close">
+                        <em class="ng-iconfont"></em></a>
+                    </div>
+                  </div>
+                  <div class="ng-bar-node-box shop-handle lazy-bar-box">
+                    <a href="https://sop.suning.com" class="ng-bar-node ng-bar-node-pr5  ng-bar-node-shop touch-href" name="public0_none_shangjia_ruzhu" target="_blank">
+                      <span>商家入驻</span>
+                      <em class="ng-iconfont down"></em></a>
+                    <div class="ng-down-box ng-d-box shop-center-child ng-ser-list" style="display:none;">
+                      <!--商家入驻列表-->
+                      <div class="head-loading"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ng-toolbar-right">
+                  <!-- 登录注册 -->
+                  <a href="javascript:void(0)" class="ng-bar-node username-bar-node username-bar-node-showside" id="username-node" rel="nofollow" style="display:none;">
+                    <span id="usernameHtml01">155******03</span>
+                    <em class="hasmsg ng-iconfont"></em></a>
+                  <div class="ng-bar-node-box username-handle" id="username-node-slide" style="display: block;">
+                    <a href="//my.suning.com" rel="nofollow" class="ng-bar-node username-bar-node username-bar-node-noside">
+                      <span id="usernameHtml02">155******03</span>
+                      <em class="hasmsg ng-iconfont"></em>
+                      <em class="ng-iconfont down"></em></a>
+                    <div class="ng-d-box ng-down-box ng-username-slide" style="display:none;">
+                      <a href="//my.suning.com/person.do" class="ng-vip-union" target="_blank" name="public0_none_denglu_zhanghao" rel="nofollow">账号管理</a>
+                      <a href="javascript:SFE.base.logoff();" rel="nofollow" name="public0_none_denglu_tuichu">退出登录</a></div>
+                  </div>
+                  <div class="ng-bar-node reg-bar-node" id="reg-bar-node" style="display: none;">
+                    <a href="javascript:SFE.base.logonurl();" name="public0_none_denglu_denglu" rel="nofollow" class="login">请登录</a>
+                    <a href="https://reg.suning.com/person.do" target="_blank" class="login reg-bbb" rel="nofollow" name="public0_none_denglu_zhuce">注册有礼</a></div>
+                  <!--我的订单 [[-->
+                  <div class="ng-bar-node-box myorder-handle">
+                    <a href="//order.suning.com/onlineOrder/orderList.do" rel="nofollow" name="public0_none_wode_dingdan" class="ng-bar-node ng-bar-node-fix touch-href ng-bar-node-pr5">
+                      <span>我的订单</span>
+                      <em class="ng-iconfont down"></em></a>
+                    <div class="ng-down-box ng-d-box myorder-child" style="display:none;">
+                      <a href="//order.suning.com/onlineOrder/orderList.do?transStatus=waitPay" rel="nofollow" name="public0_none_wode_zhufu">待支付
+                        <em id="waitPayCounts"></em></a>
+                      <a href="//order.suning.com/onlineOrder/orderList.do?transStatus=waitReceive" rel="nofollow" name="public0_none_wode_shouhuo">待收货
+                        <em id="waitDeliveryCounts"></em></a>
+                      <a href="//review.suning.com/my_cmmdty_review.do" rel="nofollow" name="public0_none_wode_pingjia">待评价
+                        <em id="waitEvaluation"></em></a>
+                      <a href="//assss.suning.com/assss-web/pc/modify/toModifyOrderList.do" rel="nofollow" name="public0_none_wode_xiugai">修改订单</a></div>
+                  </div>
+                  <!--我的易购 [[-->
+                  <div class="ng-bar-node-box mysuning-handle">
+                    <a href="//my.suning.com" rel="nofollow" name="public0_none_wode_yigou" class="ng-bar-node ng-bar-node-fix touch-href ng-bar-node-pr5">
+                      <span>我的易购</span>
+                      <em class="ng-iconfont down"></em></a>
+                    <div class="ng-down-box ng-d-box mysuning-child" style="display:none;">
+                      <div class="mysuning-infor clearfix">
+                        <a name="public0_none_wode_touxiang" target="_blank" href="//my.suning.com/person.do?targetTab=head" class="headimg">
+                          <img src3="//image.suning.cn/uimg/cmf/cust_headpic/0000000000_01_60x60.jpg" alt="" id="userHead"></a>
+                        <div class="mysuning-detail">
+                          <a name="public0_none_denglu_denglu" href="javascript:SFE.base.logonurl();" class="login">请登录</a>
+                          <a name="public0_none_wode_name" href="//my.suning.com" rel="nofollow" class="username" id="userNickname">141******13</a>
+                          <a href="https://sign.suning.com/sign/welcome.do" rel="nofollow" name="public0_none_wode_daka" class="daka">点击打卡</a></div>
+                      </div>
+                      <a href="//2.suning.com/myOrder/queryMyOrders.do" name="public0_none_wode_ershou" rel="nofollow" target="_blank">我的二手</a>
+                      <a href="//favorite.suning.com/myFavoriteImg.do" rel="nofollow" name="public0_none_wode_shoucang" target="_blank">我的收藏</a>
+                      <a href="https://passport.suning.com/ids/trustLogin?sysCode=epp&amp;targetUrl=http://my.jr.suning.com/sfp/accountAssets/index.htm" rel="nofollow" name="public0_none_wode_jinrong" target="_blank">我的金融</a>
+                      <a href="//vip.suning.com" class="ng-vip-union" target="_blank" rel="nofollow" name="public0_none_wode_huiyuan">苏宁会员
+                        <em class="ng-iconfont"></em></a>
+                      <a href="https://rxf.suning.com/epps-cpf/accountMgt/assetOverview.do" rel="nofollow" name="public0_none_wode_renxingfu">我的任性付</a>
+                      <a href="//quan.suning.com/yhq.do" rel="nofollow" name="public0_none_wode_quan">我的优惠券</a></div>
+                  </div>
+                  <!--我的易购 ]]-->
+                  <a href="https://passport.suning.com/ids/trustLogin?sysCode=epp&amp;targetUrl=https://pay.suning.com/epp-epw/login/login.action" name="public0_none_yifubao_yfb" class="ng-bar-node ng-bar-node-pr5" target="_blank">
+                    <span>易付宝</span></a>
+                  <!--服务中心 [[-->
+                  <div class="ng-bar-node-box service-handle lazy-bar-box">
+                    <a href="javascript:void(0);" class="ng-bar-node ng-bar-node-service ng-bar-node-fix touch-href ng-bar-node-pr5" rel="nofollow" name="public0_none_kehu_fuwu">
+                      <span>客户服务</span>
+                      <em class="ng-iconfont down"></em></a>
+                    <div class="ng-down-box ng-d-box service-center-child ng-ser-list" style="display:none;">
+                      <!--服务中心列表-->
+                      <div class="head-loading"></div>
+                      <a href="javascript:findpass();" rel="nofollow" name="public0_none_kehu_zixun" style="display:none;">
+                        <span>在线咨询</span>
+                        <em class="ng-iconfont"></em></a>
+                    </div>
+                  </div>
+                  <!--服务中心 ]]-->
+                  <a href="//b.suning.com/" class="ng-bar-node ng-bar-node-pr5" name="public0_none_qiye_caigou" target="_blank">
+                    <span>企业采购</span></a>
+                  <!--手机苏宁 [[-->
+                  <div class="ng-bar-node-box app-down-box">
+                    <a href="#" target="_blank" name="public0_none_shouji_sn" rel="nofollow" class="ng-bar-node mb-suning touch-href">
+                      <span>手机苏宁</span>
+                      <em class="ng-iconfont down"></em></a>
+                    <div class="ng-mb-box ng-d-box mb-down-child" style="display:none;">
+                      <ul class="ng-app-code">
+                        <li>
+                          <img class="top-code" src3="http://res.suning.cn/public/v3/images/sn-top-code.png?var=01" alt="苏宁易购APP">
+                          <p>下载苏宁易购APP</p>
+                          <img class="aoyun-text" src3="http://res.suning.cn/public/v3/images/aoyun-text.jpg?var=01" alt=""></li>
+                        <li>
+                          <img class="top-code" src3="http://res.suning.cn/public/v3/images/yfb-top-code.png?var=01" alt="易付宝APP">
+                          <p>扫一扫</p>
+                          <p>下载苏宁金融APP</p>
+                        </li>
+                        <li>
+                          <img class="top-code" src3="http://res.suning.cn/public/v3/images/wxcode.jpg?var=01" alt="易购服务号">
+                          <p>扫一扫</p>
+                          <p>关注苏宁易购服务号</p>
+                        </li>
+                      </ul>
+                      <div class="line"></div>
+                    </div>
+                  </div>
+                  <!--手机苏宁 ]]--></div>
+                <div id="ng-minicart-slide-box"></div>
+              </div>
+            </div>
+            <div id="cart-one-header" class="cart-header">
+              <div class="wrapper clearfix">
+                <div class="g-logo" id="cart-g-logo">
+                  <a href="#" name="icart1_shopping_logo">
+                    <img src="http://imgssl.suning.com/public/images/logo/snlogo.png?v=2017120301" alt="苏宁易购"></a>
+                </div>
+                <!-- 增加搜索框-->
+                <!-- 购物车头部搜索框 start -->
+                <div class="cart-search">
+                  <div class="cart-search-box">
+                    <i class="search-icon"></i>
+                    <input type="text" class="cart-search-input" name="search_input_box"></div>
+                  <a href="javascript:void(0);" class="cart-search-btn" name="search_go" target="">搜索</a>
+                  <!--[[ 搜索列表 start -->
+                  <div class="cart-search-list" style="display: none;">
+                    <ul></ul>
+                  </div>
+                  <!--[[ 搜索列表 end --></div>
+                <!-- 购物车头部搜索框 end --></div>
+            </div>
+            <div class="cart-bg" id="cart-bg">
+              <div class="wrapper cart cart-wrapper" id="cart-wrapper">
+                <!--此处引入购物车未登录标题及提示语 -->
+                {if condition="!$Think.session.user"}
+                <div class="cart-empty">
+                    <!-- [[ 未登录的购物车-->
+                  <h2 class="c3">购物车还是空空的呢，马上 <a href="javascript:void(0);" class="link-btn cart-btn" name="icart1_blank_login">登录</a> 查看您之前加入的商品</h2>
+                    <p class="link-wrap lh28 clearfix">您可以 <a target="_blank" href="//ju.suning.com">去逛逛&gt;&gt;</a></p>
+                  <!-- [[ 未登录的购物车-->
+                </div>
+                {else /}
+                {if condition="empty($data)"}
+                    <div class="cart-empty">
+                        <!-- [[ 登录之后空购物车车  -->
+                      <h2 class="c3">购物车还是空空的呢，快去 <a href="/" class="link-btn cart-btn">首页</a> 逛逛吧~~</h2>
+                      <p class="link-wrap lh28 clearfix">您可以 <a target="_blank" href="/home/collect">查看我的收藏&gt;&gt;</a></p>
+                      <!-- [[ 登录之后空购物车车  -->
+                    </div>
+                {else /}
+                <div class="m-cart-header">
+                  <div class="cart-table-header">
+                    <div class="inner-box c6">
+                      <div class="th th-chk form th-chk-chkd" style="padding-left: 20px;">
+                          <label class="allchoose"><input type="checkbox"  style="position: relative;top:1px;" > 全选</label>
+                      </div>
+                      <div class="th th-item">商品信息</div>
+                      <div class="th th-specs">规格</div>
+                      <div class="th th-price">单价（元）</div>
+                      <div class="th th-amount">数量</div>
+                      <div class="th th-sum">小计（元）</div>
+                      <div class="th th-op">操作</div></div>
+                  </div>
+                </div>
+                <div class="m-cart-body" id="cart-body">
+                  {foreach name="data" item="row"}
+                  <div id="store" class="m-store">
+                    <form action="/shopping/index" method="post">
+                    <div class="cart-list">
+                      <!-- 普通商品-[[-->
+                      <div data-sku="a" class="item  
+                      item-last item-specs-can">
+                        <span class="line-this"></span>
+                        <span class="main-line"></span>
+                        <span class="main-line main-line-11"></span>
+                        <div class="item-main  clearfix">
+                          
+                          <div class="td td-chk form">
+                            <div>
+                              <input name="ids[]" type="checkbox" class="checked" value="{$row['cid']}">
+                              
+                            </div>
+                          </div>
+                          <div class="td td-item">
+                            <div class="item-pic">
+                              <a href="/goods/index?id={$row['gid']}" class="item-img-box" target="_blank" name="icart1_goods_pic">
+                                <img src="{$row['img']}" alt="{$row['name']}"></a>
+                            </div>
+                            <div class="item-info">
+                              <a href="/goods/index?id={$row['gid']}" target="_blank" class="item-title">{$row['name']}</a></div>
+                            <div class="item-service">
+                              <span class="service-icon service-zheng" title="正品保障"></span>
+                            </div>
+                            <div class="item-remark"></div>
+                          </div>
+                          <div class="td td-specs">
+                            <div class="specs-line">
+                              {foreach name="row['attr']" item="rowss"}
+                              <p title="{$rowss}">{$rowss}</p>
+                              {/foreach}
+                            </div>
+                          </div>
+                          <div class="td td-price">
+                            <div class="price-line">
+                              <span class="price-now sn-price">
+                                <i>¥</i>
+                                <em>{$row['price']}</em></span>
+                            </div>
+                            <!-- 付费会员 2017-08-23 --></div>
+                          <div class="td td-amount">
+                            <div class="item-amount">
+                              <a href="javascript:;" class="minus" data-cid="{$row['cid']}" data-aid="{$row['aid']}">-</a>
+                              <input type="text" id="gnum" class="ui-text text-amount" value="{$row['gnum']}">
+                              <a href="javascript:;" class="plus" data-cid="{$row['cid']}" data-aid="{$row['aid']}">+</a></div>
+                          </div>
+                          <div class="td td-sum">
+                            <b class="sn-price">
+                              <i>¥</i>
+                              <em>{$row['subtotal']}</em>
+                            </b><br>
+                              运费：<span class="yunfei"><i>¥</i><em>0.00</em></span>
+                          </div>
+                          <div class="td td-op">
+                            <a href="javascript:;" class="add-fav tip-common-click-fn-btn" data-tip-type="addFav" name="icart1_goods_col" data-placement="bottom">移入收藏</a>
+                            <a href="javascript:;" class="del tip-common-click-fn-btn delOne" data-id="{$row['cid']}">删除</a>
+                            <div id="alikePro-570925224915269101" class="hide">
+                              <div class="alike-container">
+                                <div class="alike-prolist J-alike-pro">
+                                  <a class="prev" href="javascript:void(0);"></a>
+                                  <a class="next" href="javascript:void(0);"></a>
+                                  <div class="list-container">
+                                    <ul class="list-box"></ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 循环购物车店铺list ]]-->
+                    </div>
+                  </div>
+                  {/foreach}
+                  {/if}
+                {/if}
+                <!-- 联合满减区域 [[-->
+                <!-- 购物车结算工具条 [[-->
+                <div class="cart-toolbar-box">
+                  <div class="cart-toolbar rel clearfix">
+                    <div class="toolbar-box clearfix">
+                      <i class="had-buy-arr"></i>
+                      <div class="l-column l form rel" id="cart-toolbar-opt" style="padding-left: 10px">
+                        <label class="allchoose"><input type="checkbox" style="position: relative;top:2px" > 全选</label>
+                        <a href="javascript:;" class="del-selected ml20 tip-common-click-fn-btn" data-placement="top" data-tip-type="delSelect" data-wrapper=".l-column">删除选中商品</a>
+                        </div>
+                      <div class="r-column r  clearfix">
+                        <div class="cart-collect fl">
+                          <!-- 1115 dom结构变化 -->
+                          <!-- 总价 -->
+                          <div class="cart-total-price clearfix">
+                            <div class="split"></div>
+                            <div class="sn-sum-price rel">
+                              <p class="cart-sum-price">
+                                <span id="totalName">总价（含运费）：</span>
+                                <b class="sn-price price-color">
+                                  <i>¥</i>
+                                  <em id="cart1PayAmount">0.00</em></b>
+                              </p>
+                              <p class="cart-extra-price">运费（以结算页为准）：
+                                <span class="sn-price">
+                                  <i>¥</i>
+                                  <em>0.00</em></span>
+                              </p>
+                            </div>
+                          </div>
+                          <!-- 已选优惠模块 -->
+                          <div class="save-ship">
+                            <!-- 已选商品 为您节省-->
+                            <div class="selected-prods clearfix">
+                              <!-- 为您节省-->
+                              <p class="cart-sub-total fr mr20">已享满减：
+                                <span class="sn-price">
+                                  <i>-¥</i>
+                                  <em>0.00</em></span>
+                              </p>
+                              <div class="alchose rel">
+                                <a href="javascript:void(0);" class="now-select-goods" data-placement="top" data-node="#selected-pro" data-tip-force="1" data-wrapper=".alchose">已选商品
+                                  <b class="c-f70 ff-tahoma price-color">0</b>件
+                                </a>
+                                <div id="selected-pro" class="hide">
+                                  <div class="had-buy">
+                                    <div class="ui-had-buy J-selected-pro">
+                                      <a class="prev" href="javascript:void(0);"></a>
+                                      <a class="next" href="javascript:void(0);"></a>
+                                      <div class="list-container">
+                                        <ul class="list-box"></ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cart-checkout l">
+                          <a class="checkout cart-btn checkout-disable-tip" href="javascript:void(0)" name="icart1_ope_buy01">
+                            <b>
+                            </b><input type="submit" value="去结算" style="border:0;background: transparent;color:white;font-weight: bold;width: 120px;height: 60px;"></a>
+                        </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <script>
+              total();
+              //商品加操作
+              $('.plus').click(function() {
+                t = $(this);
+                //数量输入框
+                obj = t.prev('input[type="text"]');
+                //拿到购物车id
+                id = t.data('cid');
+                //拿到属性id
+                aid = t.data('aid');
+                // alert(id);
+                // alert(aid);
+                //Ajax请求
+                $.get('/cart/jia?cid='+id+'&aid='+aid, function(data) {
+                    obj.val(data);
+                    //获取单价
+                    price = t.parents('.td').prev('.td-price').find('em').html();
+                    s = subtotal(data,price);
+                    s = s.toFixed(2);
+                    //更改小计
+                    t.parents('.td').next('.td-sum').find('.sn-price').find('em').html(s);
+                    total();
+                });
+              });
+
+              //商品减操作
+              $('.minus').click(function() {
+                t = $(this);
+                //数量输入框
+                obj = t.next('input[type="text"]');
+                //拿到购物车id
+                id = t.data('cid');
+                //Ajax请求
+                $.get('/cart/jian?cid='+id, function(data) {
+                  obj.val(data);
+                  //获取单价
+                  price = t.parents('.td').prev('.td-price').find('em').html();
+                  // alert(price);
+                  s =  subtotal(data,price);
+                  s = s.toFixed(2);
+                  //更改小计
+                  t.parents('.td').next('.td-sum').find('.sn-price').find('em').html(s);
+                  total();
+                });
+              });
+
+              //小计
+              function subtotal(gnum,price){
+                res = gnum*price;
+                // alert(res);
+                return res;
+              }
+
+              //输入框
+              $('.text-amount').blur(function() {
+                // alert(222222);
+                obj = $(this);
+                v = $(this).val();
+                //拿到购物车id
+                id = obj.prev('a').data('cid');
+                //拿到属性id
+                aid = obj.prev('a').data('aid');
+                //做修改
+                $.get('/cart/change?cid='+id+'&aid='+aid+'&v='+v, function(data) {
+                  obj.val(data);
+                  //获取单价
+                  price = obj.parents('.td').prev('.td-price').find('em').html();
+                  // alert(price);
+                  s = subtotal(data,price);
+                  //更改小计
+                  obj.parents('.td').next('.td-sum').find('.sn-price').find('em').html(s);
+                  total();
+                });
+              });
+
+              //实时检测数量输入的框内是否为字符
+              $("#gnum").bind("input propertychange", function () {
+                var check = new RegExp("^[0-9]*$");
+                a = $("#gnum").val();
+                // alert(a);
+                a = a.replace(/[^0-9]/g,'');
+                $("#gnum").val(a);
+              });
+
+              //选中商品改样式
+              $('.checked').click(function() {
+                if ($(this).parents('.item').hasClass('item-checked')) {
+                  $(this).parents('.item').removeClass('item-checked');
+                  total();
+                }else{
+                  $(this).parents('.item').addClass('item-checked');
+                  total();
+                }
+                
+              });
+
+              //全选
+              $('.allchoose').click(function() {
+                if ($(this).find('input').attr('checked')) {
+                  $('input[type="checkbox"]').each(function() {
+                    $(this).attr('checked',false);
+                    $(this).parents('.item').removeClass('item-checked');
+                  });
+                  total();
+                }else{
+                  $('input[type="checkbox"]').each(function() {
+                    $(this).attr('checked',true);
+                    $(this).parents('.item').addClass('item-checked');
+                  });
+                  total();
+                }
+              });
+
+              //删除选中
+              $('.del-selected').click(function() {
+                arr = new Array();
+                //获取所有被选中的checkbox
+                $('.checked').each(function() {
+                  if ($(this).attr('checked')) {
+                    // console.log($(this).attr('checked'));
+                    arr.push($(this).val());
+                  }
+                });
+                if (arr.length<=0) {
+                  alert('您还未选中要删除的商品');
+                  return;
+                }
+                //Ajax发送
+                $.get('/cart/del',{ids:arr}, function(data) {
+                  if (data == 1) {
+                    window.location.reload();
+                  }
+                });
+                // console.log(arr);
+              });
+
+              //总计
+              function total(){
+                arr = new Array();
+                sum = 0;
+                //获取所有被选中的checkbox
+                $('.checked').each(function() {
+                  if ($(this).attr('checked')) {
+                    // console.log($(this).attr('checked'));
+                    arr.push($(this));
+                  }
+                });
+                // console.log(arr.length);
+                // 循环被选中的chexkbox计算总价
+                for (var i = 0; i < arr.length; i++) {
+                  //获取被选中的小计
+                  s = parseFloat($(arr[i]).parents('.td-chk').nextAll('.td-sum').find('.sn-price').find('em').html());
+                  sum+=s;
+                   // console.log(sum);
+                }
+                if (sum == 0) {
+                  sum ='0.00';
+                }
+                //修改总计
+                $('#cart1PayAmount').html(sum);
+                //修改已选商品数量
+                // console.log(arr.length);
+                $('.now-select-goods').find('b').html(arr.length);
+                //结算按钮是否可用
+                if (arr.length<=0) {
+                  $('.cart-btn').addClass('checkout-disable-tip');
+                }else{
+                  $('.cart-btn').removeClass('checkout-disable-tip');
+                }
+              }
+
+              //去结算
+              $('.cart-btn').click(function() {
+                if (!$(this).hasClass('checkout-disable-tip')) {
+                  //获取以选中的checkbox
+                  arr = new Array();
+                  //获取所有被选中的checkbox
+                  $('.checked').each(function() {
+                    if ($(this).attr('checked')) {
+                      // console.log($(this).attr('checked'));
+                      arr.push($(this).val());
+                    }
+                  });
+                  console.log(arr);
+                  //Ajax去结算
+                  // $.post('/shopping/index', function(data) {
+
+                    // window.location.href="/shopping/index"
+                   // });
+                }
+              });
+
+              //删除单个商品
+              $('.delOne').click(function() {
+                //获取id
+                id = $(this).data('id');
+                // alert(id);
+                //Ajax发送
+                $.get('/cart/dels?id='+id, function(data) {
+                  if (data == 1) {
+                    window.location.reload();
+                  }else{
+                    console.log(data);
+                  }
+                });
+              });
+            </script>
+            <!-- 引入公用尾 -->
+            <!-- 此处引入公用尾部 -->
+            <div class="clear"></div>
+            <div class="ng-footer">
+              <div class="ng-s-footer">
+                <div class="ng-s-f-con">
+                  <p class="ng-url-list">
+                    <a href="https://www.suningholdings.com/" target="_blank" name="public0_none_sn_konggu">苏宁控股</a>
+                    <span>|</span>
+                    <a href="https://www.suning.cn/" target="_blank" name="public0_none_sn_yunshang">苏宁云商</a>
+                    <span>|</span>
+                    <a href="https://10035.suning.com/" target="_blank" name="public0_none_sn_hulian">苏宁互联</a>
+                    <span>|</span>
+                    <a href="https://jinrong.suning.com" target="_blank" name="public0_none_sn_jinrong">苏宁金融</a>
+                    <span>|</span>
+                    <a href="https://pay.suning.com/epp-epw/login/login.action?idsTrustFrom=suning&amp;ticket=ST1F1671F32556BC51442EB2ED516EB41D" target="_blank" name="public0_none_sn_zhifu1">苏宁支付</a>
+                    <span>|</span>
+                    <a href="https://www.pptv.com/?rcc_id=snyg" target="_blank" name="public0_none_sn_pptv">PPTV</a>
+                    <span>|</span>
+                    <a href="https://redbaby.suning.com/" target="_blank" name="public0_none_sn_redbaby">红孩子</a>
+                    <span>|</span>
+                    <a href="https://wuliu.suning.com/slp/" target="_blank" name="public0_none_sn_wuliu">苏宁物流</a>
+                    <span>|</span>
+                    <a href="https://cuxiao.suning.com/newUser.html" target="_blank" name="public0_none_sn_shouji">手机苏宁</a>
+                    <span>|</span>
+                    <a href="https://www.suninghotel.com/shors-web/pc/hotel/index.html" target="_blank" name="public0_none_sn_jiudian">苏宁酒店</a>
+                    <span>|</span>
+                    <a href="https://ipp.suning.com/sips/toAgree.action" target="_blank" name="public0_none_sn_zhishi">知识产权举报</a></p>
+                  <p class="ng-url-list">
+                    <a href="https://help.suning.com/page/id-469.htm" target="_blank" name="public0_none_sn_callme">联系我们</a>
+                    <span>|</span>
+                    <a href="https://careers.suning.cn/" target="_blank" name="public0_none_sn_zhaopin">诚聘英才</a>
+                    <span>|</span>
+                    <a href="https://sop.suning.com/sel/canvassBusCenter/showModelDetailNew.htm?model=K" target="_blank" name="public0_none_sn_gongyingshang">供应商入驻</a>
+                    <span>|</span>
+                    <a href="https://ap.suning.com/aps-sale-web/" target="_blank" name="public0_none_sn_guanggao">广告平台</a>
+                    <span>|</span>
+                    <a href="https://sums.suning.com/" target="_blank" name="public0_none_sn_lianmeng">苏宁联盟</a>
+                    <span>|</span>
+                    <a href="https://zb.suning.com/bid-web/main.htm" target="_blank" name="public0_none_sn_zhaobiao">苏宁招标</a>
+                    <span>|</span>
+                    <a href="https://sums.suning.com/aas/links.html" target="_blank" name="public0_none_sn_link">友情链接</a>
+                    <span>|</span>
+                    <a href="https://help.suning.com/page/id-281.htm" target="_blank" name="public0_none_sn_law">法律申明</a>
+                    <span>|</span>
+                    <a href="https://ued.suning.com/survey/" target="_blank" name="public0_none_sn_tiyan">用户体验提升计划</a>
+                    <span>|</span>
+                    <a href="https://mrs.suning.com/mrs-web/stockholder/check.htm" target="_blank" name="public0_none_sn_gudong">股东会员认证</a></p>
+                  <p class="ng-copyright" style="display: block;">Copyright© 2002-2017 ，苏宁云商集团股份有限公司版权所有
+                    <span>|</span>
+                    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32010202010078" rel="nofollow" style="color:#999" class="gwab">
+                      <i>
+                      </i>苏公网安备 32010202010078号</a>
+                    <span>|</span>
+                    <a href="http://www.miitbeian.gov.cn" target="_blank" style="color:#999">苏ICP备10207551号-4</a>
+                    <span>|</span>
+                    <a href="//res.suning.cn/public/v3/images/SUB1-20130131.png" target="_blank" rel="nofollow" style="color:#999">苏B1-20130131</a></p>
+                  <p class="ng-copyright ng-copyright-2" style="display: block;">
+                    <a href="//res.suning.cn/public/v3/images/SUB2-20130376.png" target="_blank" rel="nofollow" style="color:#999">苏B2-20130376</a>
+                    <span>|</span>
+                    <a href="//res.suning.cn/public/v3/images/SUB2-20130391.png" target="_blank" rel="nofollow" style="color:#999">苏B2-20130391</a>出版物经营许可证新出发苏批字第A-243号
+                    <span>|</span>互联网药品信息服务资格证书
+                    <a href="//res.suning.cn/public/v3/images/yaopin_content.jpg" target="_blank" rel="nofollow" style="color:#999">（苏）-非经营性-2016-0005</a></p>
+                  <p>
+                  </p>
+                  <p class="ng-copyright" style="display: block;">本网站直接或间接向消费者推销商品或者服务的商业宣传均属于“广告”（包装及参数、售后保障等商品信息除外）</p>
+                  <div class="ng-authentication" style="display: block;">
+                    <a href="https://search.szfw.org/cert/l/CX20111018000608000610" target="_blank" name="public0_none_wb_zs0302" rel="nofollow">
+                      <img src="//res.suning.cn/public/v3/images/chengxin.png" height="24" width="76" alt="诚信网站"></a>
+                    <a href="http://image.suning.cn/uimg/snnet/snnetImg/142891196680527240.jpg" target="_blank" name="public0_none_wb_zs0303" rel="nofollow">
+                      <img src="//res.suning.cn/public/v3/images/unicom.png" height="24" width="76" alt="中国联通授权网络经营代理商"></a>
+                    <a href="//res.suning.cn/public/v3/images/dianxin_content.jpg" target="_blank" name="public0_none_wb_zs0304" rel="nofollow">
+                      <img src="//res.suning.cn/public/v3/images/dianxin.jpg" height="24" width="76" alt="中国电信授权网络经营代理商"></a>
+                    <a href="http://odr.jsdsgsxt.gov.cn/mbm/entweb/elec/certView.shtml?siteId=27cfad762f3d45069d79a9f8f83f458f" target="_blank" rel="nofollow" name="public0_none_wb_zs0303">
+                      <img src="//res.suning.cn/public/v3/images/dianzi.png?v=02" height="24" width="76" alt="电子营业执照"></a>
+                  </div>
+                </div>
+              </div>
+              <!--top fix bar [[-->
+              <div class="ng-fix-bar"></div>
+              <!--top fix bar ]]--></div>
+            <style type="text/css">.ng-footer{height:175px;margin-top:0;} .ng-s-footer{height:160px;background:none;text-align:center;} .ng-s-footer p.ng-url-list{height:25px;line-height:25px;} .ng-s-footer p.ng-url-list a{color:#666666;} .ng-s-footer p.ng-url-list a:hover{color:#f60;} .ng-s-footer .ng-authentication{float:none;margin:0 auto;height:25px;width:990px;margin-top:5px;} .ng-s-footer p.ng-copyright{float:none;width:100%;} .root1200 .ng-s-footer p.ng-copyright{width:100%;}</style>
+          </body>
+          
+          </html>

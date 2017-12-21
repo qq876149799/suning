@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>用户登录</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="https://ssl.suning.com/favicon.ico" type="image/x-icon">
+    <!-- 引入全站公用资源文件 -->
+    <link rel="stylesheet" type="text/css" href="/static/index/css/a.css">
+    <!-- <link rel="stylesheet" href="/static/index/css/login.css"> -->
+    <script src="/static/index/js/jquery.js"></script>
+</head>
+<body>
+    <div class="header">
+        <a href="/" class="logo"></a>
+        <div style="margin-left:189px;padding:37px 0 0 16px;*zoom:1">
+            <div style="margin-right:-100px;*zoom:1">
+                <div class="bind-phone">为确保您账户的安全及正常使用，依《网络安全法》相关要求，6月1日起会员账户需绑定手机。如您还未绑定，请尽快完成，感谢您的理解及支持！</div>
+            </div>
+            <a name="Logon_index_denglu020" id="LOGIN_ADVISE" href="#" target="_blank" class="advise"><i></i>我想对“登录”提意见</a>
+        </div> 
+    </div>
+    <div class="main" style="background:url(/static/index/images/login/151194326938773800.jpg) center no-repeat;">
+        <div class="login-c">
+            <a href="javascript:void(0)" class="single-link" name="Logon_index_denglu005"></a>
+            <div class="login-form">
+                <div class="login-tab">
+                    <a href="javascript:void(0)" class="tab-item"><span>扫码登录</span><i></i></a>
+                    <a href="javascript:void(0)" class="tab-item on"><span>账户登录</span><i></i></a>
+                </div>
+                <div class="pc-login" style="display: block;"> 
+                    <div class="username-login">
+                        <div>
+                            <div class="login-error" style="display:none;"><i></i><span></span></div>
+                            <div class="login-blank" style="line-height: 40px; display: block;">&nbsp;</div>
+                        </div>
+                        <div class="username-box">
+                            <div class="input-box" id="showErrorUsernameDiv">
+                                <input id="username" autocomplete="off" tabindex="1" type="text" placeholder="用户名/手机/邮箱/门店会员卡号" name="username">
+                                <i class="icon username-icon"></i>
+                                <i class="clear"></i>
+                            </div>
+                            <div class="email-list hide"></div>
+                        </div>
+                        <div class="password-box">
+                            <div class="input-box" id="showErrorPwdDiv">
+                                <input id="password" autocomplete="off" tabindex="2" type="password" placeholder="密码" name="password">
+                                <i class="icon password-icon"></i>
+                                <i class="clear"></i>
+                            </div>
+                        </div>
+                        <div class="verify-box clearfix showErrorVerifyCodeDiv">
+                            <!-- <div class="input-box">
+                                <!-- <input class="validate" maxlength="4" tabindex="3" name="code" type="text" placeholder="验证码" id="code"> -->
+                               <!--  <i class="icon verify-icon"></i>
+                                <i class="clear"></i>
+                                <i class="ok" style="display: none;"></i>
+                                <i class="error" style="display: none;"></i>
+                            </div> -->
+                           <!--  <a href="javascript:void(0);" class="verify-code">
+                                <img id="imageCode1" src="{:captcha_src()}" alt="图形验证码">
+                                <span>换一张</span>
+                            </a> -->
+                        </div>
+                        <div class="login-help clearfix">
+                            <a class="login-switch" href="javascript:void(0)"><i></i>短信验证码登录</a>
+                            <a id="FORGET_PWD" href="/forget/index" name="Logon_index_denglu001" class="forget-password">忘记密码？</a>
+                            
+                        </div>
+                            <input type="submit" id="submit" name="Logon_index_denglu002" class="login-submit" value="登 录">
+                    </div>
+                    <div class="phone-login">
+                        <div>
+                            <div class="login-warning" style="display: none;"><i></i><span>公共场所不建议自动登录！</span></div>
+                            <div class="login-error" style="display:none;"><i></i><span></span></div>
+                            <div class="login-blank" style="line-height: 40px; display: block;">&nbsp;</div>
+                        </div>
+                        <div class="phone-box">
+                            <div class="input-box" id="showErrorPhoneNumberDiv">
+                                <input id="phoneNumber" autocomplete="off" tabindex="1" maxlength="11" type="text">
+                                <label>手机号码</label>
+                                <i class="icon username-icon"></i>
+                                <i class="clear"></i>
+                            </div>
+                        </div>
+                        <div class="verify-box clearfix showErrorVerifyCodeDiv" style="display:none;">
+                            <div class="input-box">
+                                <!-- <input class="validate" maxlength="4" autocomplete="off" tabindex="2" type="text" name="code1"> -->
+                                <label>验证码</label>
+                                <i class="icon verify-icon"></i>
+                                <i class="clear"></i>
+                                <i class="ok" style="display: none;"></i>
+                                <i class="error" style="display: none;"></i>
+                            </div>
+                            <!-- <a href="javascript:void(0)" class="verify-code">
+                                <img id="imageCode2" src="{:captcha_src()}" alt="图形验证码">
+                                <span>换一张</span>
+                            </a> -->
+                        </div>
+                        <div id="Logon_index_denglu040" class="siller-box sillerVerifyCode" style="display:none;">
+                            <div id="siller2"></div>
+                        </div>
+                        <div class="sms-box clearfix">
+                            <!-- <div class="input-box" id="showErrorSmsCodeDiv">
+                                <input id="smsCode" autocomplete="off" tabindex="3" maxlength="6" type="text">
+                                <label>手机验证码</label>
+                                <i class="icon password-icon"></i>
+                                <i class="clear"></i>
+                            </div> -->
+                            <a name="Logon_index_denglu033" href="javascript:void(0)" class="send-sms">获取验证码</a>
+                        </div>
+                        <div class="login-help clearfix">
+                            <a class="login-switch" href="javascript:void(0)"><i></i>账号密码登录</a>
+                            <a id="FORGET_PWD" href="javascript:void(0);" onclick="javascript:forgetPwdClick(); return false;" name="Logon_index_denglu001" class="forget-password">忘记密码？</a>
+                        </div>
+                        <button id="submit" name="Logon_index_denglu002" class="login-submit">登 录</button>
+                    </div>
+                </div>
+
+                <div class="free-reg">
+                    <a id="FREE_TO_REG" href="/login/reg" name="Logon_index_denglu003">免费注册 有惊喜 &gt;</a>
+                </div>
+                <div class="bind-login">
+                    <span class="title">使用以下账号登录</span>
+                    <div class="common clearfix">
+                        <a name="Logon_index_denglu027" href="javascript:void(0);" onclick="javascript:qqLogin(); return false;" class="qq"><i></i>QQ</a>
+                        <a name="Logon_index_denglu026" href="javascript:void(0);" onclick="javascript:weixinLogin(); return false;" class="weixin"><i></i>微信</a>
+                        <a name="Logon_index_denglu017" href="javascript:void(0);" onclick="javascript:eppLogin(); return false;" class="yifubao"><i></i>易付宝</a>
+                        <a name="Logon_index_denglu012" href="javascript:void(0);" onclick="javascript:memberCardLogin(); return false;">门店会员卡</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="ng-footer">
+        <div class="ng-s-footer">
+            <div class="ng-s-f-con">
+                <p class="ng-url-list">
+                    <a href="" name="public0_none_wb_yqlj0101">苏宁云商</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0102" rel="nofollow">苏宁互联</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0111" rel="nofollow">苏宁金融</a><span>|</span>
+                    <a href="" rel="nofollow" name="public0_none_wb_yqlj0103">易付宝</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0105" rel="nofollow">PPTV</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0106" rel="nofollow">红孩子</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0107" rel="nofollow">缤购</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0108" rel="nofollow">乐购仕</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0111" rel="nofollow">苏宁物流</a><span>|</span>
+                        <a href="" name="public0_none_wb_yqlj0109" rel="nofollow">苏宁美国</a><span>|</span>
+                        <a href="" name="public0_none_wb_yqlj0110" rel="nofollow">苏宁香港</a><span>|</span>
+                        <a href="" name="public0_none_wb_yqlj0111">手机苏宁</a>
+                </p>
+                <p class="ng-url-list">
+                    <a href="" name="public0_none_wb_yqlj0201" rel="nofollow">关于苏宁易购</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0202" rel="nofollow">联系我们</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0203" rel="nofollow">诚聘英才</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0204" rel="nofollow">供应商入驻</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0205" rel="nofollow">苏宁联盟</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0206" rel="nofollow">苏宁招标</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0207">友情链接</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0208" rel="nofollow">法律申明</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0209" rel="nofollow">用户体验提升计划</a><span>|</span>
+                    <a href="" name="public0_none_wb_yqlj0209" rel="nofollow">股东会员认证</a>
+                </p>
+                <p class="ng-copyright">
+                    Copyright? 2002-2017 ，苏宁云商集团股份有限公司版权所有
+                    <a href="" style="color:#999">苏ICP备10207551号-4</a>
+                    <a href="" rel="nofollow" style="color:#999">苏B1-20130131</a>
+                    出版物经营许可证新出发苏批字第A-243号</p>
+                <div class="ng-authentication">
+                    <a href="" name="public0_none_wb_zs0302" rel="nofollow">
+                        <img alt="诚信网站" src="/static/index/images/login/chengxin.png" class="loading" width="76" height="24">
+                    </a>
+                    <a href="" name="public0_none_wb_zs0303" rel="nofollow">
+                        <img alt="中国联通授权网络经营代理商" src="/static/index/images/login/unicom.png" class="loading" width="76" height="24">
+                    </a>
+                    <a href="" rel="nofollow">
+                        <img alt="中国电信授权网络经营代理商" src="/static/index/images/login/dianxin.jpg" class="loading" width="76" height="24">
+                    </a>
+                    <a href="" rel="nofollow" name="public0_none_wb_zs0303">
+                        <img alt="电子营业执照" src="/static/index/images/login/dianzi.png" class="loading" width="76" height="24">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $('.verify-code').click(function () {
+        $(this).children('img').attr('src','{:captcha_src()}?'+Math.random());
+    });
+
+
+    $("#submit").click(function() {
+        //获取输入的用户名密码以及验证码
+        username = $("#username").val();
+        pwd = $("#password").val();
+        // code = $("#code").val();
+        //判断是否输入值
+        if (username.length<=0) {
+            $(".login-blank").css('display','none');
+            $(".login-error").css('display','block').children('span').html('请输入用户名/邮箱/手机号！');
+            return false;
+        }else if(pwd.length<=0){
+            $(".login-blank").css('display','none');
+            $(".login-error").css('display','block').children('span').html('请输入6-20位密码！');
+            return false;
+        }
+        // else if(code.length<=0){
+        //     $(".login-blank").css('display','none');
+        //     $(".login-error").css('display','block').children('span').html('请输入验证码！');
+        //     return false;
+        // }
+        //Ajax提交验证
+        $.post('/index/dologin', {username:username,password:pwd}, function(data) {
+            console.log(data);
+            if (data == 2) {
+                $(".login-blank").css('display','none');
+                $(".login-error").css('display','block').children('span').html('用户名不存在！');
+            }else if(data == 3){
+                $(".login-blank").css('display','none');
+                $(".login-error").css('display','block').children('span').html('密码不正确！');
+            }else if(data ==4){
+                $(".login-blank").css('display','none');
+                $(".login-error").css('display','block').children('span').html('您的邮箱还未激活，不能使用邮箱登录！');
+            }else if(data == 6){
+                $(".login-blank").css('display','none');
+                $(".login-error").css('display','block').children('span').html('对不起您的帐号已被封，请联系客服！');
+            }else if(data == 1){
+                window.location.href='/';
+            }
+       });
+    });
+
+    $(document).keydown(function(event){ 
+      // console.log(event.keyCode); 
+    }); 
+
+    $(window).keydown(function(event){
+        if (event.keyCode == 13) {
+            $("#submit").trigger("click");
+        }
+    });
+</script>
+</html>

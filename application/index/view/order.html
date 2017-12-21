@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <title>苏宁易购：确认订单信息</title>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="苏宁易购">
+  <meta name="description" content="苏宁易购是国内领先的综合购物商城">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="cache-control" content="no-store">
+  <meta http-equiv="cache-control" content="max-age=0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 引入全站公用资源文件 -->
+  <!-- <link rel="shortcut icon" href="//ssl.suning.com/favicon.ico" type="image/x-icon"> -->
+  <!-- <link rel="stylesheet" href="http://res.suning.cn/public/v3/css/??v3common.min.css,search.min.css,sn-sidebar.min.css?v=2017103101"> -->
+
+  <link rel="stylesheet" href="/static/index/css/info/v3common.min.css">
+  <link rel="stylesheet" href="/static/index/css/info/search.min.css">
+  <link rel="stylesheet" href="/static/index/css/sn-sidebar.min.css">
+
+  <link rel="stylesheet" href="/static/index/css/shop/cart-base.css">
+  <link rel="stylesheet" href="/static/index/css/shop/Snaddress.css">
+  <link rel="stylesheet" href="/static/index/css/shop/cart-calendar.css">
+  <link rel="stylesheet" href="/static/index/css/shop/cart-2.css">
+  <link rel="stylesheet" type="text/css" href="/static/bs/css/bootstrap.min.css">
+  <script src="/static/index/js/jquery.js"></script>
+    <!-- <script src="/static/index/js/jquery.js"></script> -->
+  <script src="/static/bs/js/jquery.min.js"></script>
+  <script src="/static/bs/js/bootstrap.min.js"></script>
+  <script src="/static/bs/js/holder.min.js"></script>
+
+</head>
+<body>
+  <script>//宽窄屏切换
+    var bigscreen = false;
+    if (screen.width > 1440) {
+      bigscreen = true;
+      var bodyTag = document.getElementsByTagName("body")[0],
+      bodyClassName = bodyTag.getAttribute("className") || bodyTag.getAttribute("class");
+      bodyClassName = bodyClassName ? bodyClassName + " ": "";
+      bodyTag.className = bodyClassName + "root1200";
+    }</script>
+  <input id="resourceType" value="web" type="hidden">
+  <div class="cart-header">
+    <div class="wrapper clearfix">
+      <div class="g-logo">
+        <a href="/">
+          <img src="/static/index/images/snlogo.png" alt="苏宁易购"></a>
+      </div>
+      <div style="float: right;font-size: 25px;margin-top: 30px;margin-right: 50px;"><h1>结算页</h1></div>
+      </div>
+  </div>
+  <div class="wrapper checkout mt10">
+    <p class="effective-tips hide">
+      <i class="tip-icon tip-info-16"></i>
+      <span class="c-f60"></span>
+      <a href="javascript:void(0);" class="tips-close"></a>
+    </p>
+    <div id="step1">
+      <div class="step">
+        <div class="address-container address-finish">
+          <div class="step-title link-box">
+            <b class="l">收货信息</b></div>
+          <div class="step-content">
+            <div class="addr-list clearfix">
+              <ul>
+                <!--当订单金额小于联营自提设定的金额或者自提点类型不是7的时候才展现-->
+                {foreach name="address" item="row"}
+                <li class="addr" data-id="{$row['id']}">
+                  <div class="inner">
+                    <div class="addr-hd">
+                      <span class="name fl">{$row['name']}</span>
+                    </div>
+                    <div class="addr-bd" title="{$row['huo']}">
+                      <span class="street">{$row['huo']}</span>
+                      <span class="phone">{$row['phone']}</span></div>
+                  </div>
+                </li>
+                {/foreach}
+                <li class="addr add-addr" name="new_icart2_add_addnew02" data-toggle="modal" data-target="#myModal">
+                  <div class="inner">
+                    <p class="add-addr-text">添加新地址</p>
+                </div>
+                </li>
+              </ul>
+              <script>
+                $('.addr').mouseenter(function() {
+                  if ($(this).hasClass('add-addr')) {
+                      return;
+                  }
+                  $(this).addClass('addr-cur');
+                  $(this).mouseleave(function() {
+                    $(this).removeClass('addr-cur');
+                  });
+
+                  $('.addr').click(function() {
+                    //判断是否点击的是添加地址
+                    if ($(this).hasClass('add-addr')) {
+                      return;
+                    }
+                    //去掉所有已选中的
+                    $('.addr').removeClass('addr-selected');
+                    $(this).addClass('addr-selected');
+                    $('.cart-btn-disable').remove();
+                    $('.checkout-float-warning').css('display', 'none');
+                    $('#submit-btn').css('display','block');
+                  });
+                });
+              </script>
+            </div>
+            <div class="addr-about clearfix">
+              <span class="show-all r" style="display: none;">
+                <a href="javascript:void(0);" name="new_icart2_add_all">显示全部地址</a></span>
+            </div>
+            <div class="nearby-self-pickup clearfix hide">
+              <div class="pickup-title m5 hide">
+                <i class="plus"></i>
+                <span class="name" name="new_icart2_add_nearby">附近自提点</span>
+                <a class="no-fare-arr c-f60" href="javascript:void(0);" name="new_icart2_add_nearby">
+                  <span>免运费</span></a>
+                <!--<span class="pickup-addr-tips">-->
+                <!--<span>天坛自提点（东晓市街32号）<em class="c9">距离<i>1.35km</i></em></span>-->
+                <!--<a href="javascript:void(0);">立即查看</a>-->
+                <!--</span>-->
+                <p>
+                  <span class="pickup-info">选择自提点并下单
+                    <i class="arr">&gt;</i>收到提货短信
+                    <i class="arr">&gt;</i>到自提点自提</span></p>
+              </div>
+              <p class="pickup-auto hide"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+    <div id="step1-1"></div>
+    <!-- 身份证实名认证 2017-09-14 ]] -->
+    <div id="step2">
+      <div class="step">
+        <div class="payment-container">
+          <div class="step-title link-box">
+            <b>支付方式</b>
+            <span class="pay-yh" style="display:none;" id="eppOrderPromotion"></span>
+            <span class="pay-yh hide" style="display:none;" id="eppChannelPromotion"></span>
+          </div>
+          <div class="step-content pay-benefits clearfix">
+            <div class="pay-list">
+              <ul class="clearfix">
+                <li class="pay-item short-icon-item pay-checked" paytype="01" name="new_icart2_pay_online01">
+                  <span class="pay-way">苏宁支付</span>
+                  <!--0727 在线支付优惠-->
+                  <i class="check"></i>
+                  <div class="pay-info-boxes hide">
+                    <p class="pay-info-box pay-info-box1">支持苏宁支付和各主流银行的信用卡，借记卡消费
+                      <a target="_blank" href="//help.suning.com/page/channel-28.htm" class="c-2288ec">查看银行和限额</a>、
+                      <a href="http://help.suning.com/page/id-546.htm" class="c-2288ec" target="_blank">任性付</a></p>
+                    <!--2017-02-13 支付方式优惠信息--></div>
+                </li>
+                <!-- <li class="pay-item short-icon-item " paytype="13" name="new_icart2_pay_alipay">
+                  <span class="pay-way">支付宝</span>
+                  <i class="check"></i>
+                </li>
+                <li class="pay-item short-icon-item pay-item-mdfk " paytype="02" name="new_icart2_pay_store">
+                  <span class="pay-way">门店付款</span>
+                  <i class="check"></i>
+                  <div class="pay-info-boxes hide">
+                    <p class="pay-info-box pay-info-box5">网站下单去门店付款，支持现金、POS机刷卡
+                      <a class="c-2288ec" target="_blank" href="//vbuy.suning.com/vbuyCity.html">查看门店地址</a></p>
+                  </div>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="step3">
+      <div class="step">
+        <div class="goods-info-container">
+          <div class="step-title link-box">
+            <b class="l">商品及服务信息</b>
+            <a id="back_to_one" href="/cart/index" class="l edit goods-edit">返回我的购物车修改</a>
+            <span class="l"></span>
+          </div>
+          <div class="step-content">
+            <!-- 苏宁自营 [[ -->
+            <div class="store sn-store" shopcode="0000000000" shopname="苏宁自营" shopdeliveryfee="0.00">
+              <input class="shopinfo" shopcode="0000000000" shopname="苏宁自营" shopdeliveryfee="0.00" querycoupondeliveryfree="0.00" businesssign="0" type="hidden">
+              <div class="store-list separate">
+                <table class="cart-table four-column store-item" style="font-size: 12px;">
+                  <tbody>
+                    <tr class="store-title">
+                      <th class="first-column">
+                        <span class="store-name l mr10">苏宁自营</span></th>
+                      <th class="second-column" colspan="2">服务信息</th>
+                      <th class="third-column tr">单价</th>
+                      <th class="fourth-column tr">数量</th>
+                      <th class="fifth-column tr">小计</th></tr>
+                      {foreach name="data" item="row"} 
+                    <tr class="product" data-id="{$row['cid']}">
+                      <td class="first-column ">
+                        <div class="product-box clearfix">
+                          <a class="product-img-box" href="/goods/info?id={$row['gid']}" target="_blank">
+                            <img class="product-img l lazy-loading" alt="{$row['name']}" src="{$row['img']}"></a>
+                          <div class="product-detail l">
+                            <p class="product-name">
+                              <a class="pageSale" title="{$row['name']}" href="/goods/info?id={$row['gid']}">{$row['name']}</a>
+                              <i></i>
+                            </p>
+                            <p class="product-attr">
+                              {foreach name="$row['attr']" item="rows"}
+                              <span>{$rows}</span>
+                              {/foreach}
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td rowspan="1" colspan="2" class="second-column tc">
+                <div class="second-column-inner">
+                        <p>
+                        </p>
+                            <p><span class="date-type-flag ">承诺达</span></p>
+                            <div>预计<em class="dom-space">12-21</em><em class="dom-space">09:00-18:00</em>送达</div>
+                 </div>
+              </td>
+                      <td class="tr  col-td" colspan="3">
+                        <div class="col-td-box clearfix">
+                          <div class="third-column l ">
+                            <div class="sn-price">
+                              <i>¥</i>
+                              <em>{$row['price']}</em></div>
+                          </div>
+                          <div class="fourth-column l  " cmmdtycode="000000000619557816">
+                            <div class="amount-modify ">
+                              <div class="num-readonly">{$row['gnum']}</div></div>
+                          </div>
+                          <div class="fifth-column l ">
+                            <div class="booking_price_one hide" style="display: none;">
+                              <span class="sn-price font-bold">
+                                <span class="booking-promo"></span>
+                                <i>¥</i>
+                                <em></em>
+                              </span>
+                              <p class="booking-content">优惠
+                                <span class="sn-price">
+                                  <i>¥</i>
+                                  <em>0.00</em></span>
+                              </p>
+                              <p class="booking-content">尾款
+                                <span class="sn-price">
+                                  <i>¥</i>
+                                  <em></em>
+                                </span>
+                              </p>
+                            </div>
+                            <span class="sn-price font-bold booking_price_total">
+                              <i>¥</i>
+                              <em>{$row['subtotal']}</em></span>
+                            <span class="weight">0.22kg</span></div>
+                        </div>
+                      </td>
+                    </tr>
+                    {/foreach}
+                    <!--主商品的换货险列表-->
+                    <!--主商品的服务商品列表-->
+                    <!--主商品的延保列表-->
+                    <!--主商品的赠品列表 -->
+                    <!--子商品列表-->
+                    <!-- 店铺 -->
+                    <tr>
+                      <td class="end-column " colspan="3" rowspan="2"></td>
+                      <td class="third-column tr no-border-bottom end-column-style"></td>
+                      <td class="fouth-column tr no-border-bottom"></td>
+                      <td class="fifth-column tr no-border-bottom">免运费</td></tr>
+                    <tr>
+                      <td class="third-column tr end-column-style ">合计</td>
+                      <td class="fouth-column tr "></td>
+                      <td class="fifth-column tr ">
+                        <span class="sn-price font-bold price-color">
+                          <i>¥</i>
+                          <em class="booking_price_two hide" style="display: none;"></em>
+                          <em class="booking_price_amount">0.00</em></span>
+                      </td>
+                    </tr>
+                    <script>
+                      //总计
+                      total = 0;
+                      $('.booking_price_total').each(function() {
+                        total+=parseFloat($(this).find('em').html());
+                      });
+                      $('.booking_price_amount').html(total);
+
+                    </script>
+                    <!--云钻加钱购和全额购--></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="step5">
+      <div class="coupon-container coupon-original">
+        <div class="step-title link-box">
+          <b class="l">结算信息</b></div>
+        <div class="step-content">
+          <div class="checkout-promotion tr">
+            <div class="checkout-promotion-item">
+              {php}$sum = count($data){/php}
+              <span class="c-ff6600">{$sum}</span>件商品 总计：
+              <span class="sn-price">
+                <i>¥</i>
+                <em id="cmmdyTotalID">0.00</em></span>
+            </div>
+            <script>$('#cmmdyTotalID').html(total);</script>
+            <!-- [[ 运费总提示 0508 -->
+            <div class="checkout-promotion-item " id="freightModule">运费：
+              <span class="sn-price ">
+                <i>¥</i>
+                <em id="shippingChargeID">0.00</em></span>
+              <!-- [[ 运费总计说明 0508 -->
+              <!-- 运费总计说明 0508 ]]--></div>
+            <!-- 运费总提示 0508 ]]-->
+            <div class="checkout-promotion-item hide" id="taxFareDisplay">
+              <span class="tax-introduce tip-common-hover-fn-btn " data-placement="top" data-node="#tax-tip-1">已为您补贴税费
+                <em class="price-color" id="discountTaxFare"></em>元
+                <i class="tip-icon tip-info"></i>
+                <b class="arr"></b>
+              </span>
+              <span>税费：
+                <span class="sn-price">
+                  <i>¥</i>
+                  <em id="taxFare">0.00</em></span>
+              </span>
+              <div class="hide" id="tax-tip-1">
+                <div class="tax-tip">
+                  <p>
+                    <span class="tax-tit">应付：</span>
+                    <span class="sn-price price-color">
+                      <i>¥</i>
+                      <em id="payTaxFareID">0.00</em></span>
+                  </p>
+                </div>
+                
+              </div>
+            </div>
+            <div class="checkout-promotion-item">优惠：
+              <span class="sn-price">
+                <i>-¥</i>
+                <em id="cmmdyDiscountID">0.00</em></span>
+            </div>
+            <div class="checkout-promotion-item">优惠券/卡：
+              <span class="sn-price">
+                <i>-¥</i>
+                <em id="freeAmountID">0.00</em></span>
+            </div>
+            <div class="checkout-promotion-item checkout-promotion-input-item ">
+              <span class="cart-checkbox ">
+                <input class="checkbox" id="cloudDaimondInputId" name="new_icart2_account_yunzuan" type="checkbox">
+                <label for="cloudDaimondInputId" class="check-icon"></label>
+              </span>
+              <span class="diamond-num c-333333">可使用
+                <em class="c-f60" id="totalPiontsAvialId">0</em>云钻抵扣
+                <em class="ff-tahoma price-color" id="totalPiontsAmtId">0.00</em>元</span>
+              <span class="diamond-tips">使用云钻</span>
+              <span class="diamond-check">：
+                <input id="toatalPiontsId" class="input-box" data-max="0" value="" type="text">个
+                <span class="sn-price-box">
+                  <span class="sn-price">
+                    <i>-¥</i>
+                    <em id="cloudAccountId">0.00</em></span>
+                </span>
+              </span>
+            </div>
+            <div class="checkout-promotion-item diamond-check clearfix">
+              <span class="cloud-diamond-can-use r">（可用
+                <span class="c-ff6600" id="toatalPiontsId2">0</span>个）</span></div>
+            <div class="checkout-promotion-item other-pay-box  clearfix">
+              <span id="otherPayDesc"></span>
+              <span class="cart-checkbox ">
+                <input class="checkbox" id="otherPayCheck" name="new_icart2_account_daifu" type="checkbox">
+                <label for="otherPayCheck" class="check-icon"></label>
+              </span>
+              <span class="spc-col">找人代付</span>
+              <i class="tip-icon tip-help tip-common-hover-fn-btn hide" id="otherPayTip1" data-flag="other-pay-help-tip" data-html="仅限在线支付"></i>
+              <i class="tip-icon tip-help tip-common-hover-fn-btn hide" id="otherPayTip2" data-flag="other-pay-help-tip2" data-html="订单中包含不支持代付的商品"></i>
+              <i class="tip-icon tip-help tip-common-hover-fn-btn hide" id="otherPayTip3" data-flag="other-pay-help-tip3" data-html="政企用户暂不支持代付"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="step6" class="checkout-bar-boxes">
+      <div class="checkout-bar-box">
+        <div class="checkout-bar clearfix">
+          <div class="all-about-price">
+            <p class="sum-pay-price sum-pay-price-sp">
+              <span id="sum-pay-text">应付金额：</span>
+              <span class="sn-price price-color">
+                <i>¥</i>
+                <em id="payAmountID">99.00</em></span>
+            </p>
+          </div>
+          <script>$('#payAmountID').html(total);</script>
+          <div class="order-address r hide">
+            <p class="content coupon-tip-use hide" id="realAuthGuidance" style="display: block;">
+              <span class="cut-now">立减</span>苏宁支付立减5元资格
+              <a class="get-coupon" onclick="cloudCart2.payMethod.showRealAuthWin();" name="new_icart2_epp_diancilingqu">点此领取</a>
+              <span class="get-done hide" name="new_icart2_epp_yilingqu">已领取</span></p>
+            <p class="content mt5">收货信息：
+              <span class="c-333333" title="  "></span></p>
+            <p class="content" id="payDivNoral">支付方式：
+              <span class="c-333333 pay-name">苏宁支付</span></p>
+            <p class="content hide" id="payRxf"></p>
+          </div>
+          <div class="checkout-float-warning r">
+            <span class="checkout-float-warning-content booking-check-warning-content">您需先选择配送地址，再提交订单</span>
+            <span class="checkout-float-warning-bg"></span>
+          </div>
+          <div class="checkout-bar-r r">
+            <div class="l" data-html="">
+              <span class="checkout-warning">
+                <i class="tip-icon tip-warning mr5"></i>提交订单后尽快支付，商品才不会被人抢走哦！</span>
+            </div>
+            <a href="javascript:;" name="new_icart2_account_submit" class="checkout-submit-btn cart-btn l" style="display:none" id="submit-btn">提交订单</a>
+            <a href="javascript:;" class="checkout-submit-btn cart-btn-disable l">提交订单</a>
+            <a href="javascript:;" class="checkout-submit-btn-load checkout-submit-btn-load l" style="display:none">
+              <span>提交中...</span></a>
+          </div>
+        </div>
+        <div id="rxfHideDiv" class="hide"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $('#submit-btn').click(function() {
+      //获取需要传的参数
+      //收货地址id
+      add_id = $('.addr-selected').data('id');
+      // alert(address+man+phone);
+      //获取购物车id
+      cids = new Array();
+      $('.product').each(function() {
+        cids.push($(this).data('id'));
+      });
+      // console.log(cids);
+      // 获取总价
+      total = $('#payAmountID').html();
+      // console.log(total);
+      // Ajax发送
+      $.post('/order/create', {addid:add_id,cids:cids,total:total}, function(data) {
+        if (data != 0) {
+          window.location.href="/order/topay?id="+data;
+        }else{
+          console.log(data);
+        }
+      },'json');
+    });
+  </script>
+    <script type="text/javascript">
+   //第一级别 
+    $.ajax({
+      'type': 'get',
+      //请求类型
+      'url': '/address/address',
+      //请求地址
+      'data': {
+        upid: 0
+      },
+      //附加参数
+      'dataType': 'json',
+      //响应数据类型
+      'success':
+      //接受响应数据
+      function(data) {
+        $(".mm").attr('disabled', true);
+        // alert(data);
+        //把响应数据遍历
+        for (var i = 0; i < data.length; i++) {
+          // alert(data[i].name);
+          //遍历数据插入到option
+          var info = '<option value="' + data[i].id + '">' + data[i].name + '</option>';
+          // alert(info);
+          //插入到select里
+          $("#cid").append(info);
+        }
+      },
+      //Ajax 失败
+      'error': function() {
+        alert('Ajax 请求失败');
+      }
+    })
+
+    //做其他的级别数据 live 事件委派 绑定事件和触发事件的函数
+    $("select").live('change',
+    function() {
+      //获取当前级别id 当做下一个级别upid
+      ob = $(this);
+      //清除数据（当前级别之后所有同辈select）防止数据累积
+      ob.nextAll('select').remove();
+      id = ob.val();
+      //Ajax 其他级别数据获取到
+      $.ajax({
+        'url': '/address/address',
+        'type': 'get',
+        'data': {
+          upid: id
+        },
+        'dataType': 'json',
+        'success': function(data) {
+
+          //创建一个select
+          select = $("<select class='btn btn-group'></select>"); // =document.createElement();
+          //插入一个option
+          select.append("<option value=''>--请选择--</option>");
+          // alert(data);
+          if (data.length > 0) {
+
+            //遍历
+            for (var i = 0; i < data.length; i++) {
+              // alert(data[i].name);
+              //把其他级别数据插入到option
+              var info = '<option value="' + data[i].id + '">' + data[i].name + '</option>';
+              // alert(info);
+              //内部插入到其他的select
+              select.append(info);
+            }
+
+            //把含有其他级别数据的select 外部插入到上一个select 后面
+            ob.after(select);
+          }
+        },
+        'error': function() {
+          alert('Ajax 响应失败');
+        }
+      })
+    })
+
+  </script>
+
+  <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">添加收货地址</h4></div>
+                        <div class="modal-body" width="800px" height="800px">
+                          <!-- <form action="" method="post"> -->
+                            <div class="form-group has-success">
+                              <label>用户名:</label>
+                              <input type="text" name="name" class="form-control peo" placeholder="请输入收货人"></div>
+                            <div class="form-group has-success">
+                              <label>电话:</label>
+                              <input type="text" name="phone" class="form-control phone1" placeholder="请输入电话"></div>
+                            <div class="form-group">
+                              <label>城市信息:</label>
+                              <select id="cid" class="btn btn-group">
+                                <option value="" class="mm" >--请选择--</option></select>
+                            </div>
+                            <div class="form-group has-success">
+                              <label>街道:</label>
+                              <input type="text" name="adds" class="form-control ads" placeholder="请输入具体街道"></div>
+                           <!--  <input type="hidden" name="address" value=""> -->
+                            <input type="submit" id="bb" value="提交" class="btn btn-info">
+                            <!-- </form> -->
+                        </div>
+                      </div>
+                      <!-- /.modal-content --></div>
+                    <!-- /.modal-dialog --></div>
+                    <script type="text/javascript">
+                      
+                    //单击提交的时候获取选中的数据
+                    $("#bb").click(function(){
+
+                      //获取收货信息
+                      peo=$(".peo").val();
+                      phone=$(".phone1").val();
+                      // alert(phone);
+                      ads=$(".ads").val();
+                      arr=[];
+                        $('select').each(function(){
+                          m=$(this).find("option:selected").html();
+                          arr.push(m);
+                         // alert(arr);
+                        })
+                        // console.log(peo);
+                        // console.log(phone);
+                        // console.log(ads);
+                        // console.log(arr);
+                       
+                        $.post("/order/insert",{peo:peo,phone:phone,ads:ads,arr:arr},function(data){
+                          // alert(data);
+                      // console.log(data);
+                            if(data==1){
+                              // alert("添加成功");
+                              // location.reload();
+                              $(".close").trigger("click");
+                              window.location.reload();
+                            }
+                        });
+              // $.get("/order/indexx",{id:i},function(data){
+              //   alert(data);
+              // })
+                    });
+                    </script>
+</body>
+
+</html>

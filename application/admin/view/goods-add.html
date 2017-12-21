@@ -1,0 +1,276 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+
+<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]--> 
+<!--/meta 作为公共模版分离出去-->
+
+<!-- <link href="/static/admin/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" /> -->
+</head>
+<body>
+    <nav class="breadcrumb"><i class="Hui-iconfont"></i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 商品列表 <span class="c-gray en">&gt;</span> 添加商品 <a href="javascript:;" onclick="window.history.go(-1);"><font color="blue">返回上一页</font></a><a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont"></i></a></nav>
+<div class="page-container">
+	<form action="/admin-goods/doadd" method="post" class="form form-horizontal" id="form-goods-add"  enctype="multipart/form-data">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商品名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="name">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">副标题：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="subtitle">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商品分类：</label>
+			<div class="formControls col-xs-8 col-sm-3"> <span class="select-box">
+				<select name="cate" class="select">
+					<option value="0" disabled selected>--请选择--</option>
+					{foreach name="data" item="row"}
+					<option value="{$row['id']}" {if condition="($row['pid'] eq 0 or substr_count($row['path'],',') eq 1)"}disabled{/if}>{$row['name']}</option>
+					{/foreach}
+				</select>
+				</span> </div>
+		</div>
+<!-- 		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">商品属性：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				属性名：<input type="text" name="" id="" placeholder="" value="" class="input-text" style=" width:25%">
+				属性值：<input type="text" name="" id="" placeholder="" value="" class="input-text" style=" width:25%">
+			</div>
+		</div> -->
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商品模型：</label>
+			<div class="formControls col-xs-8 col-sm-3"> <span class="select-box">
+				<select name="model" class="select">
+					<option value="0" disabled selected>--请选择--</option>
+					{foreach name="model" item="row"}
+					<option value="{$row['id']}">{$row['name']}</option>
+					{/foreach}
+				</select>
+				</span> </div>
+		</div>    
+        <div class="row cl" id="attr">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商品规格：</label>
+            <div id="atte" class="col-md-offset-2">
+            <!-- <div class="formControls col-xs-8 col-sm-2">
+                <span></span>
+            </div>
+            <div class="formControls col-xs-8 col-sm-2">
+                <select name="attrV1" class="select attrV">
+                    <option value="0" disabled selected>--请选择--</option>
+                </select>
+            </div>
+            <label class="form-label col-xs-4 col-sm-1"><span class="c-red">*</span>库存：</label>
+            <div class="formControls col-xs-8 col-sm-2">
+                <input type="text" class="input-text" value="" placeholder="" id="num1" name="num1">
+            </div>
+            <label class="form-label col-xs-4 col-sm-1"><span class="c-red">*</span>单价：</label>
+            <div class="formControls col-xs-8 col-sm-2">
+                <input type="text" class="input-text" value="" placeholder="" id="price1" name="price1">
+            </div> -->
+            </div>
+        </div>
+   <!--      <div class="row cl">
+            <a href="javascript:void(0);" class="btn btn-success radius col-xs-4 col-sm-2 col-md-offset-1" onclick="addAttr()" id="addbtn">添加规格</a>
+        </div> -->
+
+       
+<!-- 		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">销售开始时间：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" onfocus="WdatePicker()" id="datemin" class="input-text Wdate" style="width:180px;">
+			</div>
+		</div> -->
+<!-- 		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">销售结束时间：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" onfocus="WdatePicker()" id="datemax" class="input-text Wdate" style="width:180px;">
+			</div>
+		</div> -->
+<!-- 		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">产品关键字：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" name="" id="" placeholder="多个关键字用英文逗号隔开，限10个关键字" value="" class="input-text">
+			</div>
+		</div> -->
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">图片上传：</label>
+            <div class="formControls col-xs-8 col-sm-9 btn-upload">
+                <input class="input-text upload-url radius" type="text" name="uploadfile-1" id="uploadfile-1" readonly><a href="javascript:void();" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
+                <input type="file" multiple name="file[]" class="input-file" multiple>
+            </div>
+		</div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">是否上架：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <label><input type="radio" name="is_sale" value="1" checked>上架</label>
+                <label><input type="radio" name="is_sale" value="0">下架</label>
+            </div>
+        </div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">商品描述：</label>
+			<div class="formControls col-xs-8 col-sm-9"> 
+				<script id="editor" name="description" type="text/plain" style="width:100%;height:400px;"></script> 
+			</div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 提交</button>
+				<button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+			</div>
+		</div>
+	</form>
+    <input type="hidden" id="attrs" name="attrs" value="{$attrs}">
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<!-- <script type="text/javascript" src="/static/admin/lib/jquery/1.9.1/jquery.min.js"></script>  -->
+<script src="/static/index/js/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/static/admin/static/h-ui/js/H-ui.min.js"></script> 
+ <script type="text/javascript" src="/static/admin/static/h-ui.admin/js/H-ui.admin.js"></script> 
+ <!--/_footer 作为公共模版分离出去 -->
+
+<!-- 请在下方写此页面业务相关的脚本 -->
+<!-- <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script> -->
+
+
+<script type="text/javascript" src="/static/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="/static/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<!-- <script type="text/javascript" src="/static/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script> -->
+<!-- <script type="text/javascript" src="/static/admin/lib/webuploader/0.1.5/webuploader.min.js"></script>  -->
+<script type="text/javascript" src="/static/admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="/static/admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="/static/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+ var num = 1;
+function addAttr() {
+
+    //克隆对象
+    div1 = $('#attr').clone();
+    // console.log(div1);
+    ss = div1.find('.attrV');
+    // console.log(ss);
+    //处理select重名
+    for (var i = 0; i < ss.length; i++) {
+        old = $(ss[i]).attr('name');
+        old=old.substring(0,old.length-1);
+        $(ss[i]).attr('name',old+num);
+        // console.log(old);
+    }
+    //处理价格参数同名
+    pn = div1.find('.prices').attr('name');
+    pn=pn.substring(0,pn.length-1);
+    nn = div1.find('.nums').attr('name');
+    nn=nn.substring(0,nn.length-1);
+    // console.log(nn);
+    // console.log(pn);
+    div1.find('.prices').attr('name',pn+num);
+    div1.find('.nums').attr('name',nn+num);
+    //获取btn父级div
+    p = $('#addbtn').parent();
+    // console.log(p);
+    // 插入
+    div1.insertBefore(p)
+    num++;
+}
+
+//获取模型id 通过ajax拿到必有属性
+$('select[name="model"]').change(function() {
+    // alert(111);
+
+    // $('#attr').css('display','block');
+    
+    id = $(this).val();
+    // console.log(id);
+    //Ajax获取模型下的属性
+    $.get('/admin-goods/attr?id='+id, function(data) {
+        // console.log(data) ;
+        // alert(data);
+        //清空原有select框中的option
+        $("#atte").empty();
+        for (var i = 0; i < data.length; i++) {
+            // str = data[i].value;
+            // arr = str.split(',');
+            // 属性名
+            // s = $('<span>'+data[i].name+'</span>');
+
+            // console.log(s)
+            vals = data[i].value;
+            // console.log(vals);
+            div = $('<div class="contents"><div class="formControls col-xs-2 col-sm-2" id="attrN"><span>'+data[i].name+'：</span></div><div class="formControls col-xs-8 col-sm-2"><select name="'+data[i].name+'0" class="select attrV"><option value="0" disabled selected>--请选择--</option></select></div></div><br><br>');
+            //循环插入option
+            for (var j = 0; j < vals.length; j++) {
+                //可选值
+                // alert(vals[j]);
+                o = $('<option value="'+vals[j]+'">'+vals[j]+'</option>');
+                // console.log(o); 
+                 n = div.find('.select');
+                o.appendTo(n);
+            }
+            
+            // s.appendTo('#attrN');
+            //插入到页面
+            div.appendTo($('#atte'));
+        }
+
+        //插入单价库存
+    divs = $('<label class="form-label col-xs-4 col-sm-1" id="h"><span class="c-red">*</span>库存：</label><div class="formControls col-xs-8 col-sm-2"><input type="text" class="input-text nums" value="" placeholder="" name="num0"></div><label class="form-label col-xs-4 col-sm-1"><span class="c-red">*</span>单价：</label><div class="formControls col-xs-8 col-sm-2"><input type="text" class="input-text prices" value="" placeholder="" name="price0">');
+       divs.appendTo('#atte');
+
+       //计算需要多少个hidden
+       // console.log(data.length);
+       n = $('#attrs').val()-data.length;
+       // console.log(n);
+       for (var i = 0; i < n; i++) {
+        h = $('<input type="hidden" name="隐'+i+'" value=" ">');
+        h.insertBefore('#h');
+       }
+       
+       
+    });
+    
+});
+
+
+
+// //删除属性行
+// function delAttr() {
+//     p = $(this).parents('#atte');
+//     // console.log(p);
+//     p.remove();
+// }
+
+
+//百度编辑器
+$(function(){
+	var ue = UE.getEditor('editor');
+});
+</script>
+</body>
+</html>

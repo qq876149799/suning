@@ -1,0 +1,169 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>用户管理</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 用户中心 <span class="c-gray en">&gt;</span> 用户管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c"> 日期范围：
+		<input type="text" onfocus="WdatePicker()" id="datemin" class="input-text Wdate" style="width:120px;">
+		-
+		<input type="text" onfocus="WdatePicker()" id="datemax" class="input-text Wdate" style="width:120px;">
+		<input type="text" class="input-text" style="width:250px" placeholder="输入管理员名称" id="" name="">
+		<button type="submit" class="btn btn-success" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> 
+		<span class="l">
+			<a href="javascript:void(0);" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> 
+			<!-- <a href="" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a> -->
+		</span>
+	</div>
+	<table class="table table-border table-bordered table-hover table-bg">
+		<input type="hidden" id="table" value="users" >
+		<thead>
+			<tr>
+				<th scope="col" colspan="8">会员列表</th>
+			</tr>
+			<tr class="text-c">
+				<td colspan="7" class="text-l">
+					<a id="select" class="btn size-MINI" href="javascript:void(0);">全选</a> <a id="noselect"  class="btn size-MINI"href="javascript:void(0);">全不选</a> <a  class="btn size-MINI"href="javascript:void(0);" id="fanxuan">反选</a>
+				</td>
+			</tr>
+			<tr class="text-c">
+				<th width="80">ID</th>
+				<th width="100">用户名</th>
+				<th width="90">手机</th>
+				<th width="150">邮箱</th>
+				<th width="130">加入时间</th>
+				<th width="70">状态</th>
+				<th width="100">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach name="user" item="row"}
+			<tr class="text-c">
+				<td><input type="checkbox" name="ids[]" class="ckb" value="{$row['id']}"> {$row['id']}</td>
+				<td><u style="cursor:pointer" class="text-primary"></u>
+				{if condition="($row['username'] neq '')"}{$row['username']}{else/}{/if}</td>
+				<td>{$row['phone']}</td>
+				<td class="text-c">{if condition="($row['email'] neq '')"}{$row['email']}{else/}{/if}</td>
+				<td>{$row['addtime'] | date="Y-m-d H:i:s",###}</td>
+				<td><a href="/admin-user/status?status={$row['status']}&id={$row['id']}">{$row['status']==1?"<span class='label label-primary radius'>可以登录</span>":"<span class='label label-default radius'>已封号</span>"}</a></td>
+				<td class="td-manage"><a style="text-decoration:none" onClick="" href="/admin-user/status?status={$row['status']}&id={$row['id']}" title="禁用"><i class="Hui-iconfont">&#xe631;</i></a> <a style="text-decoration:none" class="ml-5" href="javascript:;" title="查看资料" onclick="member_show('会员信息','/admin-user/info?id={$row['id']}','','800','520')"><i class="Hui-iconfont">&#xe705;</i></a>
+
+					<!-- <a title="查看地址" href="javascript:;" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>  -->
+					<a style="text-decoration:none" class="ml-5" href="/admin-user/address?id={$row['id']}" title="查看地址"><i class="Hui-iconfont">&#xe63f;</i></a>
+
+					 <a title="删除" href="/admin-user/is_del?id={$row['id']}" onclick="" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+			</tr>
+			{/foreach}
+		</tbody>
+	</table>
+	</div>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<!-- <script type="text/javascript" src="/static/admin/lib/jquery/1.9.1/jquery.min.js"></script>  -->
+<script src="/static/index/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/static/admin/static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="/static/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/static/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
+<script type="text/javascript" src="/static/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="/static/admin/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.table-sort').dataTable({
+		"aaSorting": [[ 4, "desc" ]],//默认第几个排序
+		"bStateSave": true,//状态保存
+		"aoColumnDefs": [
+		  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+		  {"orderable":false,"aTargets":[0,1,2,3,4,5,6]}// 制定列不参与排序
+		]
+	});
+});
+
+/*用户-查看*/
+function member_show(title,url,id,w,h){
+	layer_show(title,url,w,h);
+}
+//Ajax批量删除
+function datadel() {
+	arr = new Array();
+	diff = new Array();	//保存差集（删除失败的id）
+	//获取到所有已选中的checkbox
+	$('.ckb').each(function() {
+     	if ($(this).attr('checked')) {
+     		arr.push($(this).val());
+     	}
+	});
+	table = $('#table').val();
+	// console.log(arr);
+	$.get('/admin-delete/action',{id:arr,table:table}, function(data) {
+		if (data == 1) {
+			alert('删除成功!');
+		}else{
+			// alert(data);
+			// console.log(data);
+			for (var i = 0; i < arr.length; i++) {
+				var flag = true;
+				for (var j = 0; j < data.length; j++) {
+					if(arr[i] == data[j]){
+						flag = false;
+					}
+				}
+				if (flag) {
+					diff.push(arr[i]);
+				}
+			}
+			if (diff.length==0) {
+				layer.msg('批量删除成功', {icon: 6});
+				setTimeout(function() {location.reload();}, 2000);
+				
+			}else{
+				layer.msg('删除失败的会员id为：'+diff.tostring(), {icon: 5});
+			}
+		}
+	});
+	
+}
+
+//全选
+$('#select').click(function() {
+    $(".ckb").attr("checked",true);
+});
+
+//全不选
+$('#noselect').click(function() {
+    $(".ckb").attr("checked",false);
+});
+
+//反选
+$('#fanxuan').click(function() {
+	$('.ckb').each(function() {
+		$(this).attr('checked',!$(this).attr("checked"));
+	});
+});
+</script> 
+</body>
+</html>

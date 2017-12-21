@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chorme=1">
+    <link rel="shortcut icon" href="https://respay.suning.com/epps-ppps/style/icons/favicon-96x96.png" type="image/x-icon">
+    <title>支付收银台</title>
+    <link rel="stylesheet" href="https://respay.suning.com/epps-pppm/css/index.css?eppVersion=2017121402">
+    <script type="text/javascript" async="" src="https://sslres.suning.com/project/yunxin/js/chatCompat_mini.js"></script>
+    <script type="text/javascript" async="" src="http://2.qtmojo.cn/aywmq_qt.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://respay.suning.com/epps-pppm/js/index/main.js?eppVersion=2017121402" src="https://respay.suning.com/epps-pppm/js/index/main.js?eppVersion=2017121402"></script>
+    <script src='/static/index/js/jquery.js'></script>
+  </head>
+  
+  <body>
+    <!-- 进入收银台等待页面 [[ -->
+    <div class="welcome" style="display: none;">
+      <div class="welcome-content">
+        <div class="logo"></div>
+        <div class="waiting-icon"></div>
+        <div class="waiting-txt">智能安全防护正在检测</div></div>
+    </div>
+    <!-- 进入收银台等待页面 ]] -->
+    <div class="sn-main-wrap" style="display: block;">
+      <div class="header">
+        <div class="header-shadow"></div>
+        <div class="wrap">
+          <span class="logo"></span>
+          <span class="logo-sub-title">收银台</span>
+          <div class="top-bar">
+            <div class="user-alias-wrap" style="display: block;">
+              <span class="item">支付账户：
+                <span id="userAlias">182******00</span></span>
+              <i class="pipe-line"></i>
+            </div>
+            <a href="#" class="item">帮助中心</a>
+            <i class="pipe-line"></i>
+            <a href="#" class="item">提建议</a>
+            <i class="pipe-line"></i>
+            <span class="item">服务电话：95177</span></div>
+        </div>
+      </div>
+      <div class="sn-data-main-wrap" style="display: block;">
+        <!-- 订单信息 [[ -->
+        <div class="order-info wrap clearfix z2">
+          <div class="abstract-info clearfix z2">
+            <div class="product-info clearfix">
+              <div class="single-product-wrap hide">
+                <!-- 商品名称 -->
+                <div class="prd-name ellipsis">
+                  <!-- 商品名称 --></div>
+                <!-- 收款方 -->
+                <div class="merchant-name clearfix">
+                  <div class="fl" id="salerLoginName">
+                    <!-- 收款方 --></div>
+                  <a href="javascript:void(0);" class="detail" name="test_dac_index_">
+                    <span class="txt">详情</span></a>
+                </div>
+              </div>
+              <div class="multi-product-wrap clearfix hide" style="display: block;">
+                <!-- 商品名称 -->
+                <div class="prd-name fl">{if condition="($sum>=2)"}合并支付 | 共 2 笔订单{else/}共 1 笔订单{/if}</div>
+              </div>
+            </div>
+            <div class="pay-info">
+              <div class="order-price">
+                <span class="txt">订单金额</span>
+                <span class="num" id="orderAmount">{$total}</span>
+                <span class="txt">元</span>
+                <a href="javascript:void(0);" class="refresh" name="test_dac_index_">刷新</a></div>
+              <div class="scan-pay">
+                <div class="qrcode">
+                  <img src="/static/index/images/pay/code.png" width="80px" alt="二维码">
+                </div>
+                <a href="javascript:void(0);" class="promotion">新用户满百减十</a>
+                <div class="tips-wrap" style="display: none;">
+                  <i class="tips-arrow"></i>
+                  <span class="pop-desc">使用苏宁金融APP扫描二维码付款</span>
+                  <span class="pop-desc">（仅限本人使用）</span>
+                  <span class="download-use">
+                    <a href="http://respay.suning.com/eppClientApp/html/mobile/index.html" target="_blank" class="fl">苏宁金融APP下载</a>
+                    <a href="http://help.suning.com/page/id-476.htm" target="_blank" class="fr">如何使用？</a></span>
+                  <div class="discount-wrap clearfix">
+                    <i class="discount-icon"></i>
+                    <div class="discount-desc">新用户满百减十</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order-detail clearfix z1 hide" style="display: none;">
+            <ul class="g-row g-row-head clearfix">
+              <li class="g-head order-name">订单号</li>
+              <li class="g-head payee">收款方</li>
+              <li class="g-head amount">金额</li>
+              <li class="g-head operate">操作</li></ul>
+            <div class="data-grid" style="display: block;">
+              <ul class="g-row clearfix">
+                <li class="g-data order-name ellipsis" title="Apple iPhone 6 32GB 金色 移动联通电信4G 手机">Apple iPhone 6 32GB 金色 移动联通电信4G 手机</li>
+                <li class="g-data payee ellipsis" title="北京苏宁云商销售有限公司">北京苏宁云商销售有限公司</li>
+                <li class="g-data amount">2399.00元</li>
+                <li class="g-data operate">
+                  <a href="javascript:void(0);" class="detail" name="test_dac_index_">详情
+                    <em class="tips-wrap">
+                      <i class="left-tips-arrow tips-arrow"></i>
+                      <p>
+                        <span class="lable">商品名称：</span>
+                        <span class="fl" title="Apple iPhone 6 32GB 金色 移动联通电信4G 手机">Apple iPhone 6 32GB ...</span></p>
+                      <p>
+                        <span class="lable">收款方：</span>
+                        <span class="fl">北京苏宁云商销售有限公司</span></p>
+                      <p>
+                        <span class="lable">交易类型：</span>
+                        <span class="fl">即时到账</span></p>
+                      <p>
+                        <span class="lable">订单号：</span>
+                        <span class="fl">34500359992</span></p>
+                      <p>
+                        <span class="lable">收货信息：</span>
+                        <span class="fl">张**,忻州市忻府区新建路街道购物中心对对面信通手机广场,182******00,配送</span></p>
+                    </em>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- 订单信息 ]] -->
+        <div class="main-section z1">
+            <div class="payment-method-index-wrap">
+              <!-- 选择支付方式 [[ -->
+              <ul class="payment-method clearfix z2">
+                <li class="payment-item end" paytypecode="EPP_BALANCE" paychannelcode="EPP" providercode="EPP">
+                  <div class="hover-border"></div>
+                  <div class="clearfix z2">
+                    <i class="bank-icon EPP" title="易付宝"></i>
+                    <!-- 可用额度 -->
+                    <div class="available-credit">可用余额：{$money}元</div>
+                    <!-- 尾号 和 签约ID（authPK） -->
+                    <!-- 支付类型，例如：储蓄卡｜快捷支付 -->
+                    <!-- 限额 -->
+                    <!-- 电子券 -->
+                    <!-- 订单促销 -->
+                    <!-- 渠道促销 -->
+                    <!-- 渠道促销展示，例如：（满88减10） -->
+                    <!-- 使用分期复选框 -->
+                    <div class="installment-select-wrap fl"></div>
+                    <!-- 任性付显示优惠标识 -->
+                    <!-- 当前支付方式不可用信息 -->
+                    <div class="bank-prompt bank-prompt-light">金额不足</div>
+
+                    <script>
+                      if ({$money}<={$total}) {
+                        $('.bank-prompt-light').css('display','block');
+                        $('.payment-item').addClass('gray');
+                        $('.confirm-btn').click(function() {
+                          return false;
+                        });
+                      }else{
+                        $('.bank-prompt-light').css('display','none');
+                      }
+                    </script>
+
+                    <div class="order-price">
+                      <span class="txt">
+                        <!-- 促销信息，例如：（-10元） -->
+                        <span class="txt channel-discount-dis-amount hide"></span>支付</span>
+                      <span class="num payment-item-pay-amount" payamount="3598.00" newpayamount="3598.00">3598.00</span>
+                      <span class="txt">元</span></div>
+                  </div>
+                </li>
+              </ul>
+              <!-- 选择支付方式 ]] -->
+              <!-- 确认支付按钮区域 [[ -->
+              <div class="confirm-pay-wrap hide" style="display: block">
+                <!-- 放心支付 [[ -->
+                <div class="do-not-worry">
+                  <i class="icon"></i>
+                  <a href="javascript:void(0);" class="desc">
+                    <span class="txt">智能安全防护保障，请放心支付</span>
+                    <em class="tips-wrap">
+                      <i class="right-tips-arrow tips-arrow"></i>苏宁金融智能风控体系，实时监控支付环境、交易操作、支付密码安全，保障您的资金安全。</em>
+                  </a>
+                </div>
+                <!-- 放心支付 ]] -->
+                <!-- <a href="javascript:void(0);" ></a> -->
+                <button class="confirm-btn strong-btn" id="confirmPay" name="test_dac_index_" style="border:0;cursor: pointer;">确认付款</button>
+              </div>
+              <!-- 确认支付按钮区域 ]] --></div>
+          </div>
+        </div>
+        <div class="faq wrap" id="faq" style="display: block;">
+          <dl></dl>
+        </div>
+      </div>
+      <!-- inject:footer:html -->
+      <div class="footer">
+        <div class="footer-shadow"></div>
+        <p>Copyright © 2002-
+          <span class="copyright-end-year">2017</span>，苏宁版权所有</p>
+        <p>苏ICP备10207551号 苏B2-20100316 出版物经营许可证新出发苏批字第A-243</p>
+      </div>
+      <!-- endinject --></div>
+
+    <!-- 提示信息 ]] -->
+    <!-- 收银台客服new [[ -->
+    <div class="cashier-helper" id="cashierHelp">
+      <a id="btnCashierHelperClose" class="icon-pop-close" href="javascript:void(0)">关闭</a>
+      <a id="cashierHelperPerson" class="person" href="javascript:;" onclick="findsinglepass(14556);return false">
+        <div class="eye-left"></div>
+        <div class="eye-right"></div>
+        <div class="mouth"></div>
+      </a>
+      <div class="pop pop1">
+        <a class="pop-text" href="javascript:;" onclick="findsinglepass(14556);return false">欢迎提问哦~</a></div>
+      <div class="pop pop2">
+        <a class="pop-text" href="javascript:;" onclick="findsinglepass(14556);return false">有问必答哟~</a></div>
+    </div>
+    <!-- 收银台客服new ]]-->
+  </body>
+<script>
+  if ($('.payment-item').hasClass('gray')) {
+    $('.confirm-pay-wrap').css('display', 'none');
+  }
+    //点击付款
+    $('.confirm-btn').click(function() {
+      //获取金额
+      money = $('#orderAmount').html();
+      //获取订单id
+      oid = {$oid};
+      // alert(money);
+      //Ajax
+      $.post('/order/dopay', {money: money,oid:oid}, function(data) {
+        // console.log(data);
+        // if (data !=0) {
+          document.write('<h1>支付成功！现在将跳转到个人中心订单页面</h1>');
+          setTimeout(function() {
+            window.location.href="/member-order/index";
+          }, 3000);
+        // }
+      });
+    });
+</script>
+</html>

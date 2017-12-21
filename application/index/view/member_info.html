@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <iframe src="http://wmcdn.qtmojo.cn/adxcm_base_idigger.htm" style="width: 0px; height: 0px; position: absolute; top: -100px; left: -100px; display: none;"></iframe> -->
+        <meta charset="utf-8">
+        <title>我的易购-个人信息</title>  
+        <script type="text/javascript" src="/static/index/js/info/aywmq_qt.js"></script>
+        <script type="text/javascript" src="/static/index/js/info/da_opt.js"></script>
+        <script type="text/javascript" src="/static/index/js/info/siteAnalytics.min.js"></script>
+         <script src="/static/bs/js/jquery.min.js"></script>
+  <script src="/static/bs/js/bootstrap.min.js"></script>
+  <script src="/static/bs/js/holder.min.js"></script>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <!-- 引入全站公用资源文件 -->
+        <!--#include file="/include/resources-jq172.shtml"-->
+        <!-- <link rel="shortcut icon" href="//ssl.suning.com/favicon.ico" type="image/x-icon"> -->
+        <link rel="stylesheet" href="/static/index/css/info/v3common.min.css">
+        <link rel="stylesheet" href="/static/index/css/info/search.min.css">
+        <link rel="stylesheet" href="/static/index/css/info/sn-sidebar.min.css">
+        <style>
+          .controls{margin-top: 5px}
+          #gender,.lh26{margin-top: 0px;}
+          .select{margin-top: 0px;}
+        </style>
+        <script src="/static/index/js/info/jquery.js"></script>
+        <script src="/static/index/js/info/sn_lazyload.js"></script>
+        <script src="/static/index/js/info/lazyelem.min.js"></script>
+        <script src="/static/index/js/info/SFE.base.min.js"></script>
+        <script src="/static/index/js/info/search.min.js"></script>
+        <script src="/static/index/js/info/sn-sidebar.min.js"></script>
+        <script src="/static/index/js/info/"></script>
+        <script type="text/javascript" src="/static/index/js/info/chatCompat_mini.js"></script>
+        <!-- 引入项目资源文件 -->
+        <link rel="stylesheet" type="text/css" href="/static/index/css/info/reset.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/index/css/info/ms-style.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/index/css/info/personal_member.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/index/css/info/calendar.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/index/css/info/Snaddress.min.css">
+        <script type="text/javascript" src="/static/index/js/info/personalMemberInfo.min.js"></script>
+        <script type="text/javascript" src="/static/index/js/info/checkPersonMemberInfo.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/index/css/info/imgareaselect-default.min.css">
+        <script type="text/javascript" src="/static/index/js/info/jquery.imgareaselect.pack.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/bs/css/bootstrap.min.css">
+    </head>                   
+    <body class="ms-body">
+    <!--<![endif]-->
+    <!-- 此处引入公用头部 -->
+    <div id="_TOP_BANNER_" class="ng-top-banner"></div>
+    <div class="ng-toolbar">
+        <div class="ng-toolbar-con wrapper">
+            <div class="ng-toolbar-left">
+                 <a href="/" class="ng-bar-node ng-bar-node-backhome" id="ng-bar-node-backhome" name="public0_none_gongju_fanhui" style="display: block;">
+                    <i class="ng-iconfont ng-backhome"><img src="/static/index/images/icon/back-home.png" width="12px" height="12px"></i>
+                    <span>返回首页</span></a>
+                <div class="ng-bar-node-box ng-site-nav-box lazy-bar-box">
+                     <a href="#" class="ng-bar-node ng-bar-node-site" name="public0_none_daohang_wzdh">
+                        <span>网站导航﹀</span>
+                    <div class="ng-sn-site-nav ng-d-box site-nav-child" style="display:none;">
+                        <!--网站导航列表-->
+                        <div class="head-loading"></div>
+                         <a href="#" class="ng-close" name="public0_none_daohang_close">
+                            <em class="ng-iconfont"></em></a>
+                    </div>
+                </div>
+                <div class="ng-bar-node-box shop-handle lazy-bar-box">
+                     <!-- <a href="#" class="ng-bar-node ng-bar-node-pr5  ng-bar-node-shop touch-href" name="public0_none_shangjia_ruzhu"  > -->
+                        <span>商家入驻﹀</span>
+                        <!-- <em class="ng-iconfont down"></em></a> -->
+                    <div class="ng-down-box ng-d-box shop-center-child ng-ser-list" style="display:none;">
+                        <!--商家入驻列表-->
+                        <div class="head-loading"></div>
+                    </div>
+                </div>
+                <!--服务中心 [[-->
+                <div class="ng-bar-node-box service-handle lazy-bar-box">
+                     <a href="#" class="ng-bar-node ng-bar-node-service ng-bar-node-fix touch-href ng-bar-node-pr5" rel="nofollow" name="public0_none_kehu_fuwu">
+                        <span>客户服务﹀</span>
+                        <em class="ng-iconfont down"></em></a>
+                    <div class="ng-down-box ng-d-box service-center-child ng-ser-list" style="display:none;">
+                        <!--服务中心列表-->
+                        <div class="head-loading"></div>
+                         <a href="#" rel="nofollow" name="public0_none_kehu_zixun" style="display:none;">
+                            <span>在线咨询</span>
+                            <em class="ng-iconfont"></em></a>
+                    </div>
+                </div>
+            </div>
+            <div class="ng-toolbar-right">
+                <!-- 登录注册 -->
+                 <a href="#" class="ng-bar-node username-bar-node username-bar-node-showside" id="username-node" rel="nofollow" style="display:none;">
+                    <span id="usernameHtml01">156******64﹀</span>
+                    <em class="hasmsg ng-iconfont"></em></a>
+                <div class="ng-bar-node-box username-handle" id="username-node-slide" style="display: block;">
+                     <a href="#" rel="nofollow" class="ng-bar-node username-bar-node username-bar-node-noside">
+                        <span id="usernameHtml02">156******64﹀</span>
+                        <em class="hasmsg ng-iconfont"></em>
+                        <em class="ng-iconfont down"></em></a>
+                    <div class="ng-d-box ng-down-box ng-username-slide" style="display:none;">
+                         <a href="/home/index" class="ng-vip-union"   name="public0_none_denglu_zhanghao" rel="nofollow">账号管理</a>
+                         <a href="/logouot" rel="nofollow" name="public0_none_denglu_tuichu">退出登录</a></div>
+                </div>
+                <div class="ng-bar-node reg-bar-node" id="reg-bar-node" style="display: none;">
+                     <a href="#" name="public0_none_denglu_denglu" rel="nofollow" class="login">请登录</a>
+                     <a href="#"   class="login reg-bbb" rel="nofollow" name="public0_none_denglu_zhuce">注册有礼</a></div>
+                <!--我的订单 [[-->
+                <div class="ng-bar-node-box myorder-handle">
+                     <a href="/orders/index" rel="nofollow" name="public0_none_wode_dingdan" class="ng-bar-node ng-bar-node-fix touch-href ng-bar-node-pr5">
+                        <span>我的订单﹀</span>
+                        <em class="ng-iconfont down"></em></a>
+                    <div class="ng-down-box ng-d-box myorder-child" style="display:none;">
+                         <a href="#" rel="nofollow" name="public0_none_wode_zhufu">待支付
+                            <em id="waitPayCounts">(0)</em></a>
+                         <a href="#" rel="nofollow" name="public0_none_wode_shouhuo">待收货
+                            <em id="waitDeliveryCounts">(0)</em></a>
+                         <a href="#" rel="nofollow" name="public0_none_wode_pingjia">待评价
+                            <em id="waitEvaluation">(0)</em></a>
+                         <a href="#" rel="nofollow" name="public0_none_wode_xiugai">修改订单</a></div>
+                </div>
+                <!--我的订单 ]]-->
+                <!--我的易购 [[-->
+                <div class="ng-bar-node-box mysuning-handle">
+                     <a href="#" rel="nofollow" name="public0_none_wode_yigou" class="ng-bar-node ng-bar-node-fix touch-href ng-bar-node-pr5">
+                        <span>我的易购﹀</span>
+                        <em class="ng-iconfont down"></em></a>
+                    <div class="ng-down-box ng-d-box mysuning-child" style="display:none;">
+                        <div class="mysuning-infor clearfix">
+                            <a name="public0_none_wode_touxiang"   href="//my.suning.com/person.do?targetTab=head" class="headimg">
+                                <img src3="//image.suning.cn/uimg/cmf/cust_headpic/0000000000_01_60x60.jpg" alt="" id="userHead"></a>
+                            <div class="mysuning-detail">
+                                <a name="public0_none_denglu_denglu" href="javascript:SFE.base.logonurl();" class="login">请登录</a>
+                                <a name="public0_none_wode_name" href="//my.suning.com" rel="nofollow" class="username" id="userNickname">141******13</a>
+                                 <a href="#" rel="nofollow" name="public0_none_wode_daka" class="daka">点击打卡</a></div>
+                        </div>
+                         <a href="#" name="public0_none_wode_ershou" rel="nofollow"  >我的二手</a>
+                         <a href="#" rel="nofollow" name="public0_none_wode_shoucang"  >我的收藏</a>
+                         <a href="#" rel="nofollow" name="public0_none_wode_jinrong"  >我的金融</a>
+                         <a href="#" class="ng-vip-union"   rel="nofollow" name="">苏宁会员
+                            <em class="ng-iconfont"></em></a>
+                         <a href="#" rel="nofollow" name="public0_none_wode_renxingfu">我的任性付</a>
+                         <a href="#" rel="nofollow" name="public0_none_wode_quan">我的优惠券</a></div>
+                </div>
+                <!--我的易购 ]]-->
+                 <a href="#" name="public0_none_sn_huiyuan" rel="nofollow" class="ng-bar-node ng-bar-node-pr5"  >
+                    <span>苏宁会员</span></a>
+                <!--[[ 购物车 2017-06-08 添加购物车商品 -->
+                <div class="ng-bar-node-box cart-handle">
+                    <a class="ng-bar-node-mini-cart ng-bar-node-mini-cart "  rel="nofollow" href="#">
+                        <!-- <em class="ng-iconfont cart"></em> -->
+                        <span>购物车</span>
+                        <span class="total-num-box" id="J_total_num_box">
+                            <b class="total-num J_cart_total_num" id="showTotalQty">1</b>
+                            <span class="total-num-bg-box">
+                                <em></em>
+                                <i>
+                                </i>
+                            </span>
+                        </span>
+                    <!-- <div class="ng-down-box ng-d-box cart-child" style="display:none;">
+                        <div>asdasdas</div>
+                    </div> -->
+                    <!-- <script type="text/javascript">var ngCartNum = d("totalProdQty");
+                        ngCartNum = (ngCartNum == 0 || ngCartNum == null) ? 0 : ngCartNum;
+                        ngCartNum = parseInt(ngCartNum);
+                        ngCartNum = ngCartNum > 99 ? '99+': ngCartNum;
+                        document.getElementById('showTotalQty').innerHTML = ngCartNum;</script> -->
+                </div>
+                <!-- 购物车 ]] -->
+                 <a href="#" name="public0_none_yifubao_yfb" class="ng-bar-node ng-bar-node-pr5"  >
+                    <span>易付宝</span></a>
+                 <a href="#" class="ng-bar-node ng-bar-node-pr5" name="public0_none_qiye_caigou"  >
+                    <span>企业采购</span></a>
+                <!--手机苏宁 [[-->
+                <div class="ng-bar-node-box app-down-box">
+                     <a href="#"   name="public0_none_shouji_sn" rel="nofollow" class="ng-bar-node mb-suning touch-href">
+                        <span>手机苏宁﹀</span>
+                    <div class="ng-mb-box ng-d-box mb-down-child" style="display:none;">
+                        <ul class="ng-app-code">
+                            <li>
+                                <img class="top-code" src3="//res.suning.cn/public/v3/images/sn-top-code.png?var=01" alt="苏宁易购APP">
+                                <p>下载苏宁易购APP</p>
+                                <img class="aoyun-text" src3="//res.suning.cn/public/v3/images/aoyun-text.jpg?var=01" alt=""></li>
+                            <li>
+                                <img class="top-code" src3="//res.suning.cn/public/v3/images/yfb-top-code.png?var=01" alt="易付宝APP">
+                                <p>扫一扫</p>
+                                <p>下载苏宁金融APP</p>
+                            </li>
+                            <li>
+                                <img class="top-code" src3="//res.suning.cn/public/v3/images/wxcode.jpg?var=01" alt="易购服务号">
+                                <p>扫一扫</p>
+                                <p>关注苏宁易购服务号</p>
+                            </li>
+                        </ul>
+                        <div class="line"></div>
+                        <div class="line lineTwo"></div>
+                    </div>
+                </div>
+                <!--手机苏宁 ]]--></div>
+            <div id="ng-minicart-slide-box"></div>
+        </div>
+    </div>
+    <!--我的易购首页头部-->
+    <!-- 我的易购公用头 [[ -->
+    <header class="ms-header ms-header-inner ms-head-position">
+        <article class="ms-header-menu" style="height:50px">
+            <style type="text/css">.ms-nav li { float: left; position: relative; padding: 0 20px; height: 44px; font: 14px/26px "Microsoft YaHei"; color: #FFF; cursor: pointer; z-index: 10; } .ms-logo { float: left; position: relative; left: 0; height: 28px; width: 12.3%; min-width: 138px; } .ms-nav { float: right; width: 78%; } .nav-manage .list-nav-manage { position: absolute; padding: 20px 0 20px 20px; left: -120px; top: 36px; width: 335px; /* margin-right: -40px; */ background: #FFF; box-shadow: 1px 0 5px #ddd, -1px 0 5px #ddd; z-index: 10; } .list-nav-manage .nav-col{ float: left; margin-right: 20px; width: 90px; } @media screen and (min-width: 1190px) { .ms-logo { float: left; position: relative; left: 0; height: 28px; width: 12.3%; min-width: 138px; } .ms-nav { float: right; width: 78%; } .nav-manage .list-nav-manage { position: absolute; padding: 20px 0 20px 20px; left: -120px; top: 36px; width: 335px; /* margin-right: -40px; */ background: #FFF; box-shadow: 1px 0 5px #ddd, -1px 0 5px #ddd; z-index: 10; } } @media screen and (max-width: 1190px) { .ms-logo { float: left; position: relative; left: 0; height: 28px; width: 12.3%; min-width: 138px; } .ms-nav { float: right; width: 73%; } .nav-manage .list-nav-manage { position: absolute; padding: 20px 0 20px 20px; left: -120px; top: 36px; width: 335px; /* margin-right: -40px; */ background: #FFF; box-shadow: 1px 0 5px #ddd, -1px 0 5px #ddd; z-index: 10; } } .ms-header .ms-useinfo { padding: 0; height: 5px; line-height: 20px; background: #FFF; box-shadow: 0 2px 5px #e3e3e3; } .ms-nav li.selected .nav-arrow { position: absolute; margin-left: -8px; left: 50%; bottom: 0; line-height: 0; border-style: solid; border-width: 8px; _font-size: 0; border-color: transparent transparent #FFF; z-index:11; } .nav-manage.hover .nav-arrow { position: absolute; margin-left: -8px; left: 50%; bottom: 7px; line-height: 0; border-style: solid; border-width: 8px; _font-size: 0; border-color: transparent transparent #FFF; z-index:11; } .list-nav-manage .nav-mge-hover { color: #666; font: 14px/26px "Microsoft yahei"; font-weight: bold; } /*左侧公用导航菜单*/ .ms-side { position: absolute; overflow: hidden; width: 160px; background: #FFF; background-image: url(images/menu-treeNeck.png); background-position: center top; background-repeat: repeat-x; box-shadow: 0 2px 2px #e3e3e3, -1px 2px 2px #e3e3e3; z-index: 12; background:#fff; } .side-neck { display:none; position: absolute; top: -10px; left: -14px; width: 185px; height: 18px; background: #FFF; border: solid 1px #FFF; border-radius: 18px; box-shadow: 0 2px 5px #e3e3e3; z-index: 10; }</style>
+            <div class="header-menu">
+                <div class="ms-logo">
+                    <a class="ms-head-logo" href="//my.suning.com" name="Myyigou_index_none_daohangLogo"></a>
+                </div>
+                <nav class="ms-nav">
+                    <ul>
+                        <li class="">
+                             <a href="#" data-url="" name="Myyigou_index_none_daohang1001">首页</a>
+                            <i class="nav-arrow"></i>
+                        </li>
+                        <li class="nav-manage selected">
+                            <a data-url="" name="Myyigou_index_none_daohang1003">账户管理
+                                <em></em></a>
+                            <i class="nav-arrow"></i>
+                            <div class="list-nav-manage hide">
+                                <div class="nav-col">
+                                    <p class="nav-mge-hover">安全设置
+                                        <em></em></p>
+                                </div>
+                                <div class="nav-col">
+                                    <p class="nav-mge-hover">个人资料
+                                        <em></em></p>
+                                </div>
+                                <div class="nav-col">
+                                    <p class="nav-mge-hover">账号绑定
+                                        <em></em></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="ms-nav-msg">
+                             <a href="#" data-url="messageMenuFlag" name="Myyigou_index_none_daohang1004">消息</a>
+                            <i class="nav-arrow"></i>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </article>
+        <article class="ms-useinfo">
+            <div class="header-useinfo" id="memberInfo">
+                <!--头像--></div>
+        </article>
+    </header>
+    <!-- 我的易购公用头 ]] -->
+    <div id="ms-center" class="personal-member">
+        <div class="cont">
+            <!-- 此处引入我的易购左侧组件 -->
+            <!-- 我的易购左侧组件 [[ -->
+            <div class="cont-side">
+                <div class="side-neck">
+                    <i>
+                    </i>
+                </div>
+                <div class="ms-side">
+                    <article class="side-menu side-menu-off">
+                        <style type="text/css">.side-hot-icon{background: url(//res.suning.cn/project/msIndex/css/images/hot.png?v=2017113002) no-repeat right top; background-color: u; padding-right: 24px; } .side-opinion-icon{ padding-right: 14px; background: url(//res.suning.cn/project/msIndex/css/images/opinion.png?v=2017113002) no-repeat right center; } .news-icon{ background: url(//res.suning.cn/project/msIndex/css/images/new.png?v=2017113002) no-repeat right top; padding-right: 24px; }</style>
+                        <dl class="side-menu-tree" style="display: block;">
+                            <dt>账户管理</dt>
+                            <dd> <a href="#" style="color:#f70"><span>·</span>个人信息</a></dd>
+                            <dd> <a href="/verify/verify?action=uppwd"><span>·</span>修改密码</a></dd>
+                            <dd> <a href="#"><span>·</span>关联互联号</a></dd>
+                            <dd> <a href="#"><span>·</span>我的易付宝</a></dd>
+                            <dd> <a href="/address/index/address"><span>·</span>地址管理</a></dd>
+                            <dd> <a href="#"><span>·</span>易付宝绑定设置</a></dd>
+                            <dd> <a href="#"><span>·</span>绑定管理</a></dd>
+                            <dd> <a href="#"><span>·</span>个人增票</a></dd>
+                            <dd> <a href="#"><span>·</span>股东会员认证</a></dd>
+                        </dl>
+                    </article>
+                </div>
+            </div>
+            <!-- 我的易购左侧组件 ]] -->
+            <script>
+            </script>
+            <div class="cont-main">
+                <div class="main-wrap mt15">
+                    <!-- head [[ -->
+                    <h3>
+                        <strong>个人信息</strong></h3>
+                    <div class="user-profile clearfix">
+                        <div class="user-profile-wrap">
+                            <div class="profile-avatar">
+                                <img src="{$info['head']}" height="125" width="125">
+                                 <!-- <a href="javascript:;" id="sss">编辑头像</a> -->
+                            </div>
+                          <!--   <input type="file" id="upJQuery" name="image" class="btn btn-primary btn-lg"/> -->
+                          <!-- <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">添加收货地址</button> -->
+                            
+                            
+                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="height:30px">添加头像</button>
+                              <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">添加头像</h4></div>
+                        <div class="modal-body" width="800px" height="800px">
+                          <form action="/info/upload" method="post" enctype="multipart/form-data">
+                            <!-- <div class="form-group has-success">
+                              <label>用户名:</label>
+                              <input type="text" name="name" class="form-control peo" placeholder="请输入收货人"></div> -->
+                           <!--  <div class="form-group has-success">
+                              <label>电话:</label>
+                              <input type="text" name="phone" class="form-control phone1" placeholder="请输入电话"></div> -->
+                            <!-- <div class="form-group">
+                              <label>城市信息:</label>
+                              <select id="cid" class="btn btn-group">
+                                <option value="" class="mm" >--请选择--</option></select>
+                            </div> -->
+                            <div class="form-group has-success">
+                              <label>街道:</label>
+                              <input type="file" name="image" class="form-control ads" placeholder="请输入具体街道"></div>
+                           <!--  <input type="hidden" name="address" value=""> -->
+                            <input type="submit" id="bb" value="提交" class="btn btn-info">
+                            </form>
+                        </div>
+                      </div>
+                      <!-- /.modal-content --></div>
+                    <!-- /.modal-dialog --></div>
+                        </div>
+                        <div class="profile-info">
+                            <div class="control-group clearfix ">
+                                <label class="control-label"><em>*</em>用户名：</label>
+                                <div class="controls lh26">
+                                  {if condition="($user['username'] eq '')"}
+                                  <input id="username" name="username" maxlength="25" type="text" class="text" placeholder="请设置用户名" value="">
+                                  {else/}
+                                  <span id="usernames">{$user['username']}</span>
+                                  {/if}
+                                    
+                                    </div>
+                                <!-- 报错位 [[ -->
+                                <div id="userNameErr" class="error-place l">
+                                    <!--<i class="error"></i>
+                                    <span class="err-msg">报错位</span>--></div>
+                                <!-- 报错位 ]] --></div>
+                            <p class="profile-member">
+                                 <a href="#" class="profile-link"  >立即查看</a>账户安全状态</p></div>
+                    </div>
+                    <input id="uuid" type="hidden" autocomplete="off" value="7d6f7e0f-c97c-4773-a846-00caf49836ab">
+                    <!-- head ]] -->
+                    <!-- 基本信息 [[-->
+                    <!-- 表单 [[ -->
+                    <div class="form-list tab-switch personal-wrap-show">
+                        <!-- form表单 [[ -->
+                        <form action="/info/doedit" method="post">
+                            <div class="control-group clearfix">
+                                <label class="control-label">
+                                    <em>*</em>真实姓名：</label>
+                                <div class="controls">
+                                    <input id="fullname" type="text" class="text" maxlength="12" value="{$info['fullname']}" name="fullname"></div>
+                                <!-- 报错位 [[ -->
+                                <div id="nameErr" class="error-place"></div>
+                                <!-- 报错位 ]] --></div>
+                            <div class="control-group clearfix">
+                                <label class="control-label">昵称：</label>
+                                <div class="controls">
+                                    <input id="nickname" name="nickname" type="text" class="text" maxlength="20" value="{$info['nickname']}"></div>
+                                <!-- 报错位 [[ -->
+                                <div id="nickNameErr" class="error-place"></div>
+                                <!-- 报错位 ]] --></div>
+                            <div class="control-group clearfix">
+                                <label class="control-label">
+                                    <em>*</em>性别：</label>
+                                <div id="gender" class="controls">
+                                    <label class="sex-label">
+                                        <input type="radio" name="sex" value="1" {if condition="($info['sex'] == 1)"}checked{/if}>
+                                        <span>男</span></label>
+                                    <label class="sex-label">
+                                        <input type="radio" name="sex" value="0" {if condition="($info['sex'] == 0)"}checked{/if}>
+                                        <span>女</span></label>
+                                    <label class="sex-label">
+                                        <input type="radio" name="sex" value="2" {if condition="($info['sex'] == 2)"}checked{/if}>
+                                        <span>保密</span></label>
+                                </div>
+                            </div>
+                            <div class="control-group clearfix">
+                                <label class="control-label">手机：</label>
+                                <div class="controls lh26">
+                                    <span>{$user['phone']}</span>
+                                     <a href="/info/bind" name="person_index_info_data02">修改</a></div>
+                            </div>
+                            <div class="control-group clearfix">
+                                <label class="control-label">邮箱：</label>
+                                <div class="controls lh26">
+                                    <span>{if condition="($user['email'] eq '')"}您的账号还没有绑定邮箱<a href="/verify/verify?action=email" name="person_index_info_data03">立即绑定</a>{else /}{$user['email']}<a href="/verify/verify?action=email" name="person_index_info_data03"> 修改邮箱</a>{/if}</span>
+                                     </div>
+                            </div>
+                            <div class="control-group clearfix">
+                                <label class="control-label">出生日期：</label>
+                                <div class="controls">
+                                        <input value="" type="date" class="text" name="birthday" id="birthday" >
+                                        <i class="date-icons"></i>
+                                    </div>
+                                <!-- 报错位 [[ -->
+                                <div id="birthdateErr" class="error-place">
+                                    <i class="tips"></i>
+                                    <span>填写生日日期，享受特权好礼</span></div>
+                                <!-- 报错位 ]] --></div>
+                            <div class="control-group clearfix priority-high">
+                                <label class="control-label">
+                                    <em>*</em>居住地址：</label>
+                                <div class="controls select">
+                                    <!-- <select name="sid" id="sid">
+                                      <option value="" disabled selected>--请选择--</option>
+                                    </select> -->
+                                    <p class="adress-detail">
+                                        <input type="text" class="text" value="{$info['address']}" placeholder="详细街道名称或小区名称" name="address" id='address'>
+                                        </p>
+                                    <!-- 报错位 [[ -->
+                                    <div id="addressErr" class="error-place ml0"></div>
+                                    <!-- 报错位 ]] --></div>
+                            </div>
+                            <div class="control-group clearfix" style="display:block;">
+                                <label class="control-label">
+                                    <em>*</em>验证码：</label>
+                                <div class="controls">
+                                    <input id="code" name="code" type="text" class="text" maxlength="4" autocomplete="off"  style="width:150px" value="">
+                                    <span class="tips-words"></span>
+                                    <img src="{:captcha_src()}" id="imgSrc" width="62" height="24" class="authCode" onclick='this.src="{:captcha_src()}?rand="+Math.random()' id='code'>
+                                </div>
+                                <div id="imgCodeErr" class="error-place"></div>
+                            </div>
+                            <div class="control-group clearfix priority-low">
+                                <label class="control-label">&nbsp;</label>
+                                <div style="float:left;">
+                                     <a href="javascript:void(0);" class="ms-stand-btn1" name="person_index_info_data05" id="dosave">保 存</a>
+                                     <!-- <input type="submit" class="ms-stand-btn1" style="border:0" value="保  存"> -->
+                                    <!-- <a href="#" class="btn-sub btn-sub-ing">保存中...</a>--></div>
+                                <!-- 报错位 [[ -->
+                                <div id="basicInfoErr" class="error-place"></div>
+                                <div class="error-place mt29"></div>
+                                <!-- 报错位 ]] --></div>
+                        </form>
+                        <!-- form表单 ]] --></div>
+                    <!-- 表单 ]] -->
+                    <!-- 基本信息 ]]-->
+                    <!-- 头像修改 [[ -->
+                    <!-- 基本信息 [[ -->
+                    <!--#include virtual="basic_information.html"-->
+                    <!-- 基本信息 ]] -->
+                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 头像修改 ]] --></div>
+            </div>
+        </div>
+    </div>
+    <!-- 此处引入公用尾部 -->
+    <div class="clear"></div>
+    <div class="ng-footer"> 
+    <div class="ng-s-footer">
+        <div class="ng-s-f-con">
+            <p class="ng-url-list"> <a href="#"  name="public0_none_sn_konggu">苏宁控股</a><span>|</span> <a href="#"  name="public0_none_sn_yunshang"> 苏宁云商</a><span>|</span> <a href="#"  name="public0_none_sn_hulian"> 苏宁互联</a><span>|</span> <a href="#"  name="public0_none_sn_jinrong">苏宁金融</a><span>|</span> <a href="#"  name="public0_none_sn_zhifu1">苏宁支付</a><span>|</span> <a href="#"  name="public0_none_sn_pptv">PPTV</a><span>|</span> <a href="#"  name="public0_none_sn_redbaby">红孩子</a><span>|</span> <a href="#"  name="public0_none_sn_wuliu">苏宁物流</a><span>|</span> <a href="#"  name="public0_none_sn_shouji">手机苏宁 </a><span>|</span> <a href="#"  name="public0_none_sn_jiudian">苏宁酒店</a><span>|</span> <a href="#"  name="public0_none_sn_zhishi">知识产权举报</a></p>
+            <p class="ng-url-list"> <a href="#"  name="public0_none_sn_callme">联系我们</a><span>|</span> <a href="#"  name="public0_none_sn_zhaopin">诚聘英才</a><span>|</span> <a href="#"  name="public0_none_sn_gongyingshang">供应商入驻</a><span>|</span> <a href="#"  name="public0_none_sn_guanggao">广告平台</a><span>|</span> <a href="#"  name="public0_none_sn_lianmeng">苏宁联盟</a><span>|</span> <a href="#"  name="public0_none_sn_zhaobiao">苏宁招标</a><span>|</span> <a href="#"  name="public0_none_sn_link">友情链接</a><span>|</span> <a href="#"  name="public0_none_sn_law">法律申明</a><span>|</span> <a href="#"  name="public0_none_sn_tiyan">用户体验提升计划</a><span>|</span> <a href="#"  name="public0_none_sn_gudong">股东会员认证</a></p>
+            <p class="ng-copyright" style="display: block;">
+                Copyright© 2002-2017 ，苏宁云商集团股份有限公司版权所有<span>|</span>
+                <a  href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32010202010078" rel="nofollow" style="color:#999" class="gwab"><i></i>苏公网安备 32010202010078号</a><span>|</span>
+                 <a href="#"  style="color:#999">苏ICP备10207551号-4</a><span>|</span>
+                 <a href="#"  rel="nofollow" style="color:#999">苏B1-20130131</a></p>
+            <p class="ng-copyright ng-copyright-2" style="display: block;">
+                 <a href="#"  rel="nofollow" style="color:#999">苏B2-20130376</a><span>|</span>
+                 <a href="#"  rel="nofollow" style="color:#999">苏B2-20130391</a>
+                出版物经营许可证新出发苏批字第A-243号<span>|</span>
+                互联网药品信息服务资格证书 <a href="#"  rel="nofollow" style="color:#999">（苏）-非经营性-2016-0005</a></p>
+                <p></p>
+            <p class="ng-copyright" style="display: block;">本网站直接或间接向消费者推销商品或者服务的商业宣传均属于“广告”（包装及参数、售后保障等商品信息除外）</p>
+            <div class="ng-authentication" style="display: block;">
+                 <a href="#"  name="public0_none_wb_zs0302" rel="nofollow">
+                    <img src="//res.suning.cn/public/v3/images/chengxin.png" height="24" width="76" alt="诚信网站">
+                </a>
+                 <a href="#"  name="public0_none_wb_zs0303" rel="nofollow">
+                    <img src="//res.suning.cn/public/v3/images/unicom.png" height="24" width="76" alt="中国联通授权网络经营代理商">
+                </a>
+                 <a href="#"  name="public0_none_wb_zs0304" rel="nofollow">
+                    <img src="//res.suning.cn/public/v3/images/dianxin.jpg" height="24" width="76" alt="中国电信授权网络经营代理商">
+                </a>
+                 <a href="#"  rel="nofollow" name="public0_none_wb_zs0303">
+                    <img src="//res.suning.cn/public/v3/images/dianzi.png?v=02" height="24" width="76" alt="电子营业执照">
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+<!--top fix bar [[-->
+<div class="ng-fix-bar"></div>
+<!--top fix bar ]]-->
+</div>
+    <style type="text/css">.ng-footer{height:175px;margin-top:0;} .ng-s-footer{height:160px;background:none;text-align:center;} .ng-s-footer p.ng-url-list{height:25px;line-height:25px;} .ng-s-footer p.ng-url-list a{color:#666666;} .ng-s-footer p.ng-url-list a:hover{color:#f60;} .ng-s-footer .ng-authentication{float:none;margin:0 auto;height:25px;width:990px;margin-top:5px;} .ng-s-footer p.ng-copyright{float:none;width:100%;} .root1200 .ng-s-footer p.ng-copyright{width:100%;}</style>
+    <!-- 判断值开始 -->
+    <script>
+      var uname = fullname = nickname = code = false;
+      //检查用户名
+      $('#username').focus(function() {
+        $('#userNameErr').html('<i class="tips"></i><span>用户名可以用来登录，只能由中文、英文、数字和_组成，最大25个字符</span>');
+        $('#username').removeClass('error-border');
+      });
+      $('#username').blur(function() {
+        str = $(this).val();
+        // alert(str);
+         if (str == null) {
+            $('#username').addClass('error-border');
+            $('#userNameErr').html('<i class="error"></i><span>请输入用户名！</span>');
+         }else{
+            if(!str.match(/^[\u4e00-\u9fa5_a-zA-Z0-9]+$/)){
+              $('#userNameErr').html('<i class="error"></i><span>用户名格式不正确</span>');
+              $('#username').addClass('error-border');
+            }else{
+              //Ajax判断是否存在
+              $.get('/info/check?username='+str, function(data) {
+                if (data == 1) {
+                  $('#userNameErr').html('<i class="right"></i><span>一旦完善成功，不能修改</span>');
+                  uname = true;
+                  $('#username').removeClass('error-border');
+                }else{
+                  $('#userNameErr').html('<i class="error"></i><span>用户名已存在</span>');
+                  $('#username').addClass('error-border');
+                }
+              });
+            }
+         }
+      });
+
+      //检查真实姓名
+      $('#fullname').blur(function() {
+        if ($(this).val() == '') {
+           $('#nameErr').html('<i class="error"></i><span>姓名不能为空</span>');
+           $(this).addClass('error-border');
+        }else{
+          $(this).removeClass('error-border');
+          $('#nameErr').html('<i class="right"></i>');
+          fullname = true;
+        }
+      });
+
+      //检查昵称
+      $('#nickname').focus(function() {
+        $('#nickNameErr').html('<i class="tips"></i><span>昵称由中文、英文、数字和_组成，最大20个字符</span>');
+        $('#nickname').removeClass('error-border');
+        $(this).blur(function() {
+          str1 = $('#nickname').val();
+          if (!str1.match(/^[\u4e00-\u9fa5_a-zA-Z0-9]+$/)) {
+            $('#nickname').addClass('error-border');
+            $('#nickNameErr').html('<i class="error"></i><span>请输入正确的昵称</span>');
+          }else{
+            $('#nickname').removeClass('error-border');
+            $('#nickNameErr').html('<i class="right"></i><span>昵称可展示在评价晒单等地方，不能用来登录</span>');
+            nickname = true;
+          }
+        });
+      });
+
+      //校验验证码
+    $('#code').blur(function() {
+        code = $(this).val();
+        if (code == '') {
+            $('#code').addClass('error-border');
+            $('#imgCodeErr').html('<i class="error"></i><span>请输入验证码！</span>');
+        }else{
+            $.get('/info/check?code='+code, function(data) {
+            if (data == 1) {
+              $('#code').removeClass('error-border');
+              $('#imgCodeErr').html('<i class="right"></i>');
+              code = true;
+            }else if(data == 2){
+              $('#code').addClass('error-border');
+              $('#imgCodeErr').html('<i class="error"></i><span>您输入的图片验证码不正确，请重新输入！</span>');
+              return;
+            }
+          });
+        }
+    });
+    </script>
+    <!-- 判断值结束 -->
+
+    <!-- Ajax提交开始 -->
+    <script>
+        $('#dosave').click(function() {
+            // alert(1111);
+        if ($('#username').length>0) {
+             $('#username').trigger('blur');
+         }else{
+            uname = true;
+         }
+         
+          $('#fullname').trigger('blur');
+          $('#nickname').trigger('focus');
+          $('#nickname').trigger('blur');
+          
+          if (uname && fullname && nickname && code) {
+            //获取username的值
+            
+            if ($('#username').length>0) {
+                uname = $('#username').val();
+             }else{
+                uname = $('#usernames').html();
+             }
+            //获取真实姓名 
+            fullname = $('#fullname').val();
+            //获取昵称
+            nickname = $('#nickname').val();
+            //获取性别
+            var sex = $("input[name='sex']:checked").val();
+            //获取出生日期
+            birthday = $('#birthday').val();
+            //获取居住地址
+            sid = $('#sid').val();
+            cid = $('#cid').val();
+            address = $('#address').val();
+            //获取验证码
+            code = $('#code').val();
+            // alert('用户名：'+uname+'真实姓名：'+fullname+'昵称：'+nickname+'性别：'+sex+'出生日期：'+birthday+'居住地址：'+address+'验证码：'+code);
+            $.post('/info/doedit', {'username':uname,'fullname':fullname,'nickname':nickname,'sex':sex,'birthday':birthday,'address':address,'code':code}, function(data) {
+                console.log(data);
+                if (data == 2 || data == 1) {
+                  $('#basicInfoErr').addClass('right-replace');
+                  $('#basicInfoErr').html('<i class="right"></i><span>资料修改成功</span>');
+                  var sum = 3;
+                  timmer = setInterval(function (){
+                    sum--;
+                    $('#basicInfoErr').removeClass('right-replace');
+                    $('#basicInfoErr').html('');
+                    if (sum == 0) {
+                      clearInterval(timmer);
+                    }
+                  },3000);
+                }
+            });
+          }else{
+            console.log('验证不通过');
+          }
+        });
+    </script>
+    <script type="text/javascript">// alert($);
+    //第一级别 
+    $.ajax({
+      'type': 'get',
+      //请求类型
+      'url': '/address/address',
+      //请求地址
+      'data': {
+        upid: 0
+      },
+      //附加参数
+      'dataType': 'json',
+      //响应数据类型
+      'success':
+      //接受响应数据
+      function(data) {
+        $(".mm").attr('disabled', true);
+        // alert(data);
+        //把响应数据遍历
+        for (var i = 0; i < data.length; i++) {
+          // alert(data[i].name);
+          //遍历数据插入到option
+          var info = '<option value="' + data[i].id + '">' + data[i].name + '</option>';
+          // alert(info);
+          //插入到select里
+          $("#cid").append(info);
+        }
+      },
+      //Ajax 失败
+      'error': function() {
+        alert('Ajax 请求失败');
+      }
+    })
+
+    //做其他的级别数据 live 事件委派 绑定事件和触发事件的函数
+    $("select").live('change',
+    function() {
+      //获取当前级别id 当做下一个级别upid
+      ob = $(this);
+      //清除数据（当前级别之后所有同辈select）防止数据累积
+      ob.nextAll('select').remove();
+      id = ob.val();
+      //Ajax 其他级别数据获取到
+      $.ajax({
+        'url': '/address/address',
+        'type': 'get',
+        'data': {
+          upid: id
+        },
+        'dataType': 'json',
+        'success': function(data) {
+
+          //创建一个select
+          select = $("<select></select>"); // =document.createElement();
+          //插入一个option
+          select.append("<option value=''>--请选择--</option>");
+          // alert(data);
+          if (data.length > 0) {
+
+            //遍历
+            for (var i = 0; i < data.length; i++) {
+              // alert(data[i].name);
+              //把其他级别数据插入到option
+              var info = '<option value="' + data[i].id + '">' + data[i].name + '</option>';
+              // alert(info);
+              //内部插入到其他的select
+              select.append(info);
+            }
+
+            //把含有其他级别数据的select 外部插入到上一个select 后面
+            ob.after(select);
+          }
+        },
+        'error': function() {
+          alert('Ajax 响应失败');
+        }
+      })
+    })
+
+    //单击提交的时候获取选中的数据
+    $("#bb").click(function() {
+      arr = [];
+      // alert('sss');
+      //遍历所有的select each
+      $("select").each(function() {
+        //搜索与所有表达式相匹配的元素
+        sss = $(this).find("option:selected").html();
+        // alert(sss);
+        //添加元素
+        arr.push(sss);
+      })
+
+      // alert(arr);
+      //吧获取到的城市级联数据添加到隐藏域里
+      $("input[name='address']").val(arr);
+    })</script>
+    <!-- Ajax提交结束 -->
+
+    <!-- <script type="text/javascript" src="/static/index/js/info/passport.js"></script> -->
+    <!-- <script type="text/javascript" src="/static/index/js/info/New.CitySelect.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/static/index/js/info/ms_common.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/static/index/js/info/personal_member.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/static/index/js/info/person/ECode.calendar.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/static/index/js/info/SFE.dialog.dev.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/static/index/js/info/jquery.form.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/static/index/js/info/imgUtils.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/static/index/js/info/headPic.min.js"></script> -->
+<style class="m-style">.m-dialog {position: fixed;_position:absolute; top: 50%; left: 50%; z-index: 8003;}.m-dialog .container { display:none; background:rgba(0,0,0,0.2);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#30000000,endColorstr=#30000000)\9;padding:6px;}.m-dialog .title { border-bottom: 1px solid #ccc; background: #eee; }.m-dialog .title h3 { padding:5px 0; padding-left: 10px; font-size: 14px; }.m-dialog .btn {display:block; position: absolute; color:#999;text-decoration:none; font-family:simsun;right: 12px; top:8px;font-size:16px;font-weight:700;cursor: pointer;}.m-dialog .gt {}.m-dialog .lt { margin-left:-4px;}.m-dialog .btn:hover { color:#666;text-decoration:none; }.m-dialog .content { background:#fff;}.m-dialog-overlay .lay { display:none;}.m-dialog-overlay .close {position:absolute;top:0; left:0; width: 100%; height: 100%; opacity: 0.3; filter:Alpha(opacity=30)\9; cursor: pointer; }.m-dialog-overlay .overlay { background: black; z-index: 8002;cursor:default }.m-dialog-overlay .frame { z-index: 8001; }</style>
+</body>
+
+</html>

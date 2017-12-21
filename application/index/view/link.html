@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<title>友情链接_苏宁易购</title>
+<meta name="description" content="苏宁易购欢迎各大网站与苏宁易购交换友情链接！" />
+<meta name="keywords" content="友情链接交换,苏宁易购，网上商城" />
+<link rel="stylesheet" href="/static/index/css/union.css" />
+<script type="text/javascript">
+ //全局变量
+    var sn = sn || {
+      "context": "/emall",
+      "domain": "www.suning.com",
+      "storeId": "10052",
+      "catalogId": "10051",
+      "memberDomain": "<%=StatusConstants.MEMBERDOMAIN%>",
+      "online": "online.suning.com",
+	  "eppurl": "pay.suning.com",
+      "cookieDomain": ".suning.com",
+      "categoryId": "20089",
+      "searchDomain": "http://search.suning.com/emall/"
+    };
+</script>
+</head>
+<body>
+ 	<link rel="stylesheet" href="/static/index/css/blogtoll.css" />
+ 	<link rel="stylesheet" type="text/css" href="/static/index/css/unionNew.css" />
+<script type="text/javascript" src="/static/index/link/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="/static/index/link/webstatic/aas/blogroll.js"></script>
+
+<style>
+body .ng-channel-header {
+  height: 110px;
+}
+.tip-box {
+  position: inherit;
+  z-index: 9000;
+}
+</style>
+ <div class="header">
+    <div class="h-content clearfix">
+        <div class="logo">            
+            <img src="/static/index/images/logo.png" alt="" width="238" height="53">
+            <a href="http://www.suning.com" class="suning-logo"  style="background:url(about:blank)"></a>           
+            <a href="/union/home.htm" class="union-logo" style="background:url(about:blank)"></a>
+        </div>
+        <div class="h-btns clearfix">
+            <a href="/union/unionPromote.htm">产品介绍</a><em></em><a href="/union/questions/detail.htm">帮助中心</a>
+            <div class="weixin"><img src="/static/index/images/unionapp.png" alt="苏宁联盟APP"><span>下载联盟APP</span></div>
+            <!-- <a href="/home.htm">回到旧版</a> -->	
+        </div>
+    </div>
+</div><div class="wapper">
+    <!--面包屑-->
+    <div class="snCrumb"><a href="http://www.suning.com" target="_blank">首页</a> &gt; 友情链接</div>
+    <!--友情链接模块-->
+    <div class="frlink pd">
+        <h2 class="title">友情链接</h2>
+        <div class="frlink-con">
+            <ul>
+            		{foreach name="info" item="row"}
+            		<li><a href="{$row['url']}" target="_blank">{$row['name']}</a></li>
+            		{/foreach}
+            </ul>
+        </div>
+	    <div class="clear"></div>
+    </div>
+	<div class="apply-link pd">
+		<h2 class="title">申请友情链接</h2>
+		<div class="apply-link-con">
+			<div class="link-con-left">
+				<p class="step mt10">申请步骤：</p>
+				<dl class="info">
+					<dt>1.&nbsp;请先在贵站做好苏宁易购的文字链接。</dt>
+					<dd>链接文字：苏宁易购</dd>
+					<dd>链接地址：<a href="http://www.suning.com" target="_blank">http://www.suning.com</a> </dd>
+				</dl>
+				<dl class="info">
+					<dt>2.&nbsp;做好链接后,请在右侧填写申请信息。电子邮箱和QQ号请必填一项，</dt>
+					<dd>方便联系。（暂时只接受文字链接申请)</dd>
+				</dl>
+				<dl class="info">
+					<dt>3.&nbsp;符合我站友情链接要求且已开通我站友情链接的网站，提交申请后，</dt>
+					<dd>经管理员审核成功，可立即显示在此友情链接页面。</dd>
+				</dl>
+				<p class="step mt20">合作说明：</p>
+				<dl class="info">
+					<dt>1.&nbsp;网站不得包含D版/政治/黄色等内容；</dt>
+				</dl>
+				<dl class="info">
+					<dt>2.&nbsp;网站排名alexa排名3000之前；</dt>
+				</dl>
+				<dl class="info">
+					<dt>3.&nbsp;站点首页 google pagerank （PR值）不少于5。</dt>
+				</dl>
+			</div>
+			<div class="link-con-right">
+			 
+				<p class="step mt10 pl50">申请信息：</p>
+				<div class="fill-info">
+				 <form action="/link/dolink" id="from2" method="post">
+					<dl class="mn">
+						<dt><em>*</em>网站名称：</dt>
+						<dd>
+							<input class="import input_focus" id="name"   maxLength="14"  name="name" type="text" placeholder="请填写网站名称，长度在1-14位字符之间" value="" />
+							<div class="tip-box " > 
+								<span class="nameTip" style="display:none;">请填写网站名称，长度在1-14位字符之间</span>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><em>*</em>网&nbsp;&nbsp;&nbsp;&nbsp;址：</dt>
+						<dd>
+							<input class="import input_focus"  id="url" name="url" maxLength="50"  type="text" value="http://" />
+							<div class="tip-box">
+								<span class="urlTip" style="display:none;">请输入网址</span>
+							</div>
+						</dd>
+					</dl>
+					<dl class="check">
+						<dt>验证码：</dt>
+						<dd>
+							<div class="ver-message">
+								<input class="import w93 input_focus" id="code" name="fcode" type="text" value="" />
+								<img id="yy"src="{:captcha_src()}" alt="" onclick='this.src="{:captcha_src()}?rand="+Math.random()'><a onclick='a.src="{:captcha_src()}?rand="+Math.random()'>换一张</a><br>
+							</div>
+							<div class="tip-box">
+								<span class="codeTip" style="display:none;" >验证码错误</span> 	
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt>&nbsp;</dt>
+						<dd><input type="submit" class="button applyLinks" value=" "></a></dd>
+					</dl>
+					</form>
+					
+				</div>
+			  
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+    <p class="fin-url-list">
+        <a href="http://www.suning.cn" target="_blank" name="public0_none_wb_yqlj0101">苏宁云商</a>
+        <span>|</span>
+        <a href="http://10035.suning.com" target="_blank" name="public0_none_wb_yqlj0102" rel="nofollow">苏宁互联</a>
+        <span>|</span>
+        <a href="http://jinrong.suning.com/" target="_blank" name="public0_none_wb_yqlj0103">苏宁金融</a>
+        <span>|</span>
+        <a href="https://pay.suning.com/epp-epw/index/welcome.action?idsTrustFrom=suning" rel="nofollow" target="_blank" name="public0_none_wb_yqlj0104">易付宝</a>
+        <span>|</span>
+        <a href="http://www.pptv.com/?rcc_id=snyg" target="_blank" name="public0_none_wb_yqlj0105" rel="nofollow">PPTV</a>
+        <span>|</span>
+        <a href="http://redbaby.suning.com/9017.html#sourceUrl4Sa=http://jinrong.suning.com/" target="_blank" name="public0_none_wb_yqlj0106" rel="nofollow">红孩子</a>
+        <span>|</span>
+        <a href="http://binggo.suning.com/9017.html#sourceUrl4Sa=http://jinrong.suning.com/" target="_blank" name="public0_none_wb_yqlj0107" rel="nofollow">缤购</a>
+        <span>|</span>
+        <a href="http://laox.suning.com/" target="_blank" name="public0_none_wb_yqlj0108" rel="nofollow">乐购仕</a>
+        <span>|</span>
+        <a href="http://wuliu.suning.com/slp/" target="_blank" name="public0_none_wb_yqlj0109" rel="nofollow">苏宁物流</a>
+        <span>|</span>
+        <a href="http://usa.suning.com/" target="_blank" name="public0_none_wb_yqlj01010" rel="nofollow">苏宁美国</a>
+        <span>|</span>
+        <a href="http://hk.suning.com/" target="_blank" name="public0_none_wb_yqlj0111" rel="nofollow">苏宁香港</a>
+    </p>
+    <p class="fin-url-list">
+        <a href="http://club.suning.com/hr/aboutus.html" target="_blank" name="public0_none_wb_yqlj0201" rel="nofollow">关于苏宁易购</a>
+        <span>|</span>
+        <a href="http://help.suning.com/page/id-469.htm" target="_blank" name="public0_none_wb_yqlj0202" rel="nofollow">联系我们</a>
+        <span>|</span>
+        <a href="http://careers.suning.cn/" target="_blank" name="public0_none_wb_yqlj0203" rel="nofollow">诚聘英才</a>
+        <span>|</span>
+        <a href="http://sop.suning.com/" target="_blank" name="public0_none_wb_yqlj0204" rel="nofollow">供应商入驻</a>
+        <span>|</span>
+        <a href="http://union.suning.com/" target="_blank" name="public0_none_wb_yqlj0205" rel="nofollow">苏宁联盟</a>
+        <span>|</span>
+        <a href="http://zb.suning.com/bid-web/main.htm" target="_blank" name="public0_none_wb_yqlj0206" rel="nofollow">苏宁招标</a>
+        <span>|</span>
+        <a href="http://union.suning.com/aas/links.html" target="_blank" name="public0_none_wb_yqlj0207">友情链接</a>
+        <span>|</span>
+        <a href="http://help.suning.com/page/id-281.htm" target="_blank" name="public0_none_wb_yqlj0208" rel="nofollow">法律申明</a>
+        <span>|</span>
+        <a href="http://ued.suning.com/survey/" target="_blank" name="public0_none_wb_yqlj0209" rel="nofollow">用户体验提升计划</a>
+        <span>|</span>
+        <a href="http://mrs.suning.com/mrs-web/stockholder/check.htm" target="_blank" name="public0_none_wb_yqlj0209" rel="nofollow">股东会员认证</a>
+    </p>
+    <p class="fin-copyright">Copyright©2002-2015, 苏宁版权所有 苏ICP备10207551号 苏B1-20130131 苏B2-20130376 出版物经营许可证新出发苏批字第A-243号</p>
+    <div class="fin-authentication">
+        <a class="fin-copyright-icon-example fin-header-hide" href="https://ss.knet.cn/verifyseal.dll?sn=2011060700100009557&amp;ct=ic&amp;pa=911439" target="_blank" name="public0_none_wb_zs0301" rel="nofollow" title="可信网站"></a>
+        <a class="fin-copyright-icon-trust" href="https://search.szfw.org/cert/l/CX20111018000608000610" target="_blank" name="public0_none_wb_zs0302" rel="nofollow" title="诚信网站"></a>
+        <a class="fin-copyright-icon-unicom" href="http://image.suning.cn/uimg/snnet/snnetImg/142891196680527240.jpg" target="_blank" name="public0_none_wb_zs0303" rel="nofollow" title="中国联通授权网络经营代理商"></a>
+        <a class="fin-copyright-icon-dianxin" href="http://image.suning.cn/uimg/snnet/snnetImg/143010010209282146.jpg" target="_blank" name="public0_none_wb_zs0304" rel="nofollow" title="中国电信授权网络经营代理商"></a>
+        <a class="fin-copyright-icon-certificate" href="http://www.jsgsj.gov.cn:60101/keyLicense/verifKey.jsp?serial=320000163820130117100000009630&amp;signData=0+ADYt839gp1EiqiZXnsxsyOnpO32Wg4sFePaiV9+NtTV/XCAMXGzT/AOgycGMm0EjsR/Ot661M7h9GeStpA8QyJTs1Ip1K/CSNaemthn7f1NjI03x1E6v9ZRT+3M60WZIGLBEjFs5XMliufNz1cJlYDQrTZvaZbHyJ2KzgJB4Y=" target="_blank" rel="nofollow" name="public0_none_wb_zs0303" title="电子营业执照"></a>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/static/index/link/SFE.dialog.js"></script>
+<script type="text/javascript">
+		
+	
+	
+	$(function(){
+	
+			var appCode = "/";
+			//分页使用
+			function pageQueryHtml(url) {
+					window.location.href=url;
+			}
+			
+			$(".pagesubmit").click(function(){
+				var url = "/aas/links_NN.html";
+				if(!isNaN($('#inputPageNumber').val())&&($('#inputPageNumber').val()-0)<=($('#inputTotalPage').val()-0)&&$('#inputPageNumber').val() > 0){
+					if($('#inputPageNumber').val()==1){
+						 url = "/aas/links.html";
+					}else{
+						 url = "/aas/links_"+$('#inputPageNumber').val()+".html";
+					}
+					window.location.href=url;
+				}else{
+					alert('输入正确的页数!');
+					return ;
+				}
+			})
+					
+					
+			//兼容IE不支持placeholder属性
+			readyInput = function(){
+				var doc=document,inputs=doc.getElementsByTagName('input'),supportPlaceholder='placeholder'in doc.createElement('input'),placeholder=function(input){
+				var text=input.getAttribute('placeholder'),defaultValue=input.value;
+					//兼容textarea
+					var info = $("#linkApplyInfo");
+					var infoText = info.attr("placeholder");
+					if(info.val()==''){info.val(infoText);};
+					info.focus(function(){if(info.val()==infoText){info.val('')}});
+					info.blur(function(){if(info.val()==''){info.val(infoText)}});
+					//兼容input
+					if(defaultValue==''){
+						 input.value=text
+					}
+					input.onfocus=function(){
+						if(input.value===text){
+							this.value=''
+						}
+					};
+					input.onblur=function(){
+						if(input.value===''){
+							this.value=text
+						}
+					}
+				};
+				if(!supportPlaceholder){
+					for(var i=0,len=inputs.length;i<len;i++){
+						var input=inputs[i],text=input.getAttribute('placeholder');
+						if(input.type==='text'&&text){
+							placeholder(input)
+						}
+					}
+				}
+			 }
+			 
+			 clearInput = function(){
+				$(".input_focus").each(function(){
+					var placeholder = $(this).attr("placeholder");
+					var val = $(this).val();
+					//兼容textarea
+					if($(this).attr("maxLength")==300){
+						if(placeholder==$(this).html()){
+							 $(this).html("");
+						}
+					}else{
+						//兼容text
+						if(placeholder==val){
+							 $(this).val("");
+						}
+					}
+				})
+			 }
+	 
+	
+			//失去焦点验证网址是否存在
+			$("#url").blur(function(){
+				urlValidate();
+			 });
+			 
+			 //网址验证
+			 urlValidate = function(){
+			 	if($("#url").val()==null||$("#url").val()==""||$("#url").val()=="http://"){
+					$("#url").addClass("err");
+					$(".urlTip").html("请输入网址!");
+					$(".urlTip").show();
+					return false;
+				}else{
+					var reg=/^([hH][tT]{2}[pP]:\/\/|[hH][tT]{2}[pP][sS]:\/\/)(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~\/])+$/;
+					if(!reg.test($("#url").val())){
+						$("#url").addClass("err");
+						$(".urlTip").html("网址格式不正确");  
+						$(".urlTip").show();
+						return false;  
+					} 
+				}
+				
+				//网址ajax验证
+				var url=""+appCode+"aas/links/ajaxExit.htm?url="+$("#url").val();
+				response=$.ajax({url:url,async:false,cache: false});
+				if(response.responseText!=null&&response.responseText!=""){
+					$("#url").addClass("err");
+					$(".urlTip").html(response.responseText);
+					$(".urlTip").show();
+					return false;
+				}else{
+					$("#url").removeClass("err");
+					$(".urlTip").hide();
+					return true;
+				}
+				
+			 }
+			 
+			 $("#name").blur(function(){
+				if($("#name").val()==null||$("#name").val()==''||$("#name").val().indexOf(' ')!=-1||$("#name").val()==$("#name").attr("placeholder")){
+					$("#name").addClass("err");
+					$(".nameTip").show();
+					return;
+				}else{
+					$("#name").removeClass("err");
+					$(".nameTip").hide();
+					return;
+				}
+			 });
+			 
+			 $("#eMail").blur(function(){
+				if($("#eMail").val()==null||$("#eMail").val()==""||$("#eMail").val()==$("#eMail").attr("placeholder")){
+					$("#eMail").removeClass("err");
+					$(".eMailTip").hide();
+					return;
+				}else{
+					var myreg =/^[0-9a-z][a-z0-9\._-]{1,}@[a-z0-9-]{1,}[a-z0-9]\.[a-z\.]{1,}[a-z]$/;
+					if(!myreg.test($("#eMail").val()))
+					 {
+						$("#eMail").addClass("err");
+						$(".eMailTip").html("电子邮箱格式不正确!")
+						$(".eMailTip").show();
+						return;
+					 }else{
+					 	$("#eMail").removeClass("err");
+						$(".eMailTip").hide();
+						return;
+					 }
+				}
+			 });
+			 
+			 $("#qq").blur(function(){
+			 	//qq验证
+				if($("#qq").val()==null||$("#qq").val()==""){
+					$("#qq").removeClass("err");
+					$(".qqTip").hide();
+					return;
+				}else{
+					if(/^[0-9]*$/.test($("#qq").val())){
+						$("#qq").removeClass("err");
+							$(".qqTip").hide();
+							return;
+					 }else{
+						$("#qq").addClass("err");
+						$(".qqTip").html("QQ格式不正确!");
+						$(".qqTip").show();
+						return;
+					 }
+				}				
+			 });
+			 
+			 
+			//提交申请
+			$(".button").click(function(){
+				$(".input_focus").removeClass("err");
+				$(".nameTip").hide();
+				$(".urlTip").hide();
+				$(".eMailTip").hide();
+				$(".qqTip").hide();
+				clearInput();
+				if($("#name").val()==null||$("#name").val()==''||$("#name").val().indexOf(' ')!=-1){
+					$("#name").addClass("err");
+					$(".nameTip").show();
+					readyInput();
+					return;
+				}
+				
+				if(!urlValidate()){readyInput();  return;}
+				if($("#eMail").val()==null||$("#eMail").val()==""){
+					//Email和QQ都为空
+					if($("#qq").val()==null||$("#qq").val()==""){
+						$("#eMailTip").addClass("err");
+						$(".eMailTip").html("电子邮箱和QQ必填一项!")
+						$(".eMailTip").show();
+						readyInput();
+						return;
+					}
+				}else{
+				   var myreg =/^[0-9a-z][a-z0-9\._-]{1,}@[a-z0-9-]{1,}[a-z0-9]\.[a-z\.]{1,}[a-z]$/;
+					if(!myreg.test($("#eMail").val()))
+					 {
+						$("#eMail").addClass("err");
+						$(".eMailTip").html("电子邮箱格式不正确!")
+						$(".eMailTip").show();
+						readyInput();
+						return;
+					 }
+				}
+				//qq验证
+				if($("#qq").val()==null||$("#qq").val()==""){
+					$("#qq").removeClass("err");
+					$(".qqTip").hide();
+				}else{
+					if(/^[0-9]*$/.test($("#qq").val())){
+						$("#qq").removeClass("err");
+						$(".qqTip").hide();
+					 }else{
+						$("#qq").addClass("err");
+						$(".qqTip").html("QQ格式不正确!");
+						$(".qqTip").show();
+						readyInput();
+						return;
+					 }
+				}	
+				var code = $("#code").val();
+				if(code==null||code==""){
+					$("#code").addClass("err");
+					$(".codeTip").html("验证码不能为空!")
+					$(".codeTip").show();
+					readyInput();
+					return;
+				}
+				
+				$.ajax({  
+					type:'post',
+					url: ""+appCode+"aas/links/validateCode.htm?_validate_code="+code,
+					success: function(response){
+						if(response!=null&&response!=''){
+							$("#code").addClass("err");
+							$(".codeTip").html(response);
+							$(".codeTip").show();
+							readyInput();
+							return;
+						}else{
+							$("#code").removeClass("err");
+							$(".codeTip").hide();
+							//换验证码
+							$('#Verify_code').click();
+							$.mDialog({
+								http:function(element,opts){
+									$.ajax({
+										type:'post',
+										url:''+appCode+'aas/links/applySave.htm',
+										cache:'false',
+										dataType:'html',
+										async:false,   // 必须设置为同步,如果需要异步请，设置css的高度。
+										data:$('#from2').serializeArray(),
+										success:function(data){
+										readyInput();
+										if(null==data||""==data){
+											element.find('.content').html("<div class='pop'><em></em><p class='tips'>您的申请已成功提交，请等待管理员审核！</p></div>");
+										}else{
+											element.find('.content').html("<div class='pop'><em></em><p class='tips'>"+data+"</p></div>");	
+										}
+											
+										}
+									})
+								},
+				
+								title:'温馨提示',
+								overlayClick:true,
+								fadeIn:300,
+								fadeOut:500,
+								css:{width:"438"}
+				
+							})
+						}
+					}
+				  });
+				
+			})
+			
+	})
+	
+	$(document).ready(function(){
+		readyInput();
+	})
+
+</script>
+<script type="text/javascript">
+	$(function(){
+		//IE也能用textarea
+		$("textarea[maxlength]").live("keyup",function(){
+			var area=$(this);
+			var max=parseInt(area.attr("maxlength"),10); //获取maxlength的值
+			$("#codeLength").html(area.val().length);
+			if(max>0){
+				if(area.val().length>max){ //textarea的文本长度大于maxlength
+					area.val(area.val().substr(0,max)); //截断textarea的文本重新赋值
+					$("#codeLength").html(area.val().length);
+				}
+			}
+		});
+		//复制的字符处理问题
+		$("textarea[maxlength]").live("blur",function(){
+			var area=$(this);
+			var max=parseInt(area.attr("maxlength"),10); //获取maxlength的值
+			$("#codeLength").html(area.val().length);
+			if(max>0){
+				if(area.val().length>max){ //textarea的文本长度大于maxlength
+					area.val(area.val().substr(0,max)); //截断textarea的文本重新赋值
+					$("#codeLength").html(area.val().length);
+				}
+			}
+		});
+	});
+</script> 
+</body>
+<script type="text/javascript" src="static/index/link/js/union.js"></script>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="UTF-8" /> 
+  <!-- {foreach name="lists" item="row"} --> 
+  <title></title> 
+  <link rel="stylesheet" href="http://res.suning.cn/public/v3/css/??v3common.min.css,search.min.css,sn-sidebar.min.css?2017120607" /> 
+  <link rel="stylesheet" type="text/css" href="http://res.suning.cn/project/cmsWeb/suning/homepage/v6/css/index.css?2017120607" /> 
+  <link rel="stylesheet" href="/static/index/css/lunbo_css.css" /> 
+  <script src="/static/index/js/lrtk.js"></script> 
+  <script src="/static/index/js/jquery.min.js"></script> 
+  <style>
+    #lunbo{
+      position: absolute;
+      left: 270px;
+    }
+  </style> 
+ </head> 
+ <body> 
+  <script type="text/javascript">
+;(function() {
+var isPc = function() {
+var userAgentInfo = navigator.userAgent;
+var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+var flag = true;
+for (var v=0;v<Agents.length;v++) {
+if (userAgentInfo.indexOf(Agents[v]) > 0) {
+flag = false;
+break;
+}
+}
+return flag;
+}
+if (!isPc() && window.location.href.indexOf('towap=0') < 0) {
+var url = window.location.href;
+url = '//m.suning.com';
+window.location.href = url;
+}
+})();
+</script> 
+  <script type="text/javascript">
+var sa=sa||{};var saExportUtil=saExportUtil||{};(function(){var l=/\.suning\.com/,s=(("https:"==document.location.protocol)?"https://":"http://"),a=u(),e=q(g()),b="|";var j=f(),k="",w="",v="-",d="",r="";var m=document.getElementById("URLPattern")||document.getElementById("CUrlPattern"),m=m?m.value:"";h();var t=function(){var x=0;var y=new Object();this.getThis=function(){return y};this.put=function(z,A){if(!this.containsKey(z)){x++}y[z]=A};this.get=function(z){if(this.containsKey(z)){return y[z]}else{return null}};this.remove=function(z){if(delete y[z]){x--}};this.containsKey=function(z){return(z in y)};this.containsValue=function(z){for(var A in y){if(y[A]==z){return true}}return false};this.values=function(){var z=new Array(x);for(var A in y){z.push(y[A])}return z};this.keys=function(){var z=new Array(x);for(var A in y){z.push(A)}return z};this.size=function(){return x}};function o(){var y=this;var D=1;var z=2;var B=3;var C=2;var A=new t();y.getAdExproMap=function(){return A};y.adverCarousel=function(E){y.sendExpoData(E,z,false)};y.adverClick=function(E){y.sendExpoData(E,z,true)};y.adverShow=function(E){y.sendExpoData(E,z,true)};y.sendCustomExpoData=function(F,E){y.sendExpoData(F,E)};y.sendExpoData=function(H,E,J){try{if(!H||H==""){return false}if(!J){J=false}if(E==z){if(J&&J==true){A=new t()}var G=H;var F=A.get(G);if(!F||F<=2){x(H,z);F=F+1;A.put(G,F);return true}return false}x(H,E)}catch(I){}};function x(H,E){var J=n();var I=q(H);var F=E;var G="/ajaxSiteExpro.gif?oId="+J+"&pvId="+j+"&expoInfo="+I+"&expoType="+F+"&pageUrl="+e+"&visitorId="+k+"&loginUserName="+w+"&memberID="+v+"&sessionId="+d+"&pageType="+r+"&hidUrlPattern="+m;i(G)}}function h(){var x=c("_snma");try{if(x!=undefined&&x!=null&&x.indexOf("|")>=0){try{k=x.split("|")[1]}catch(z){}}}catch(z){}var y=c("idsLoginUserIdLastTime");try{if(y!=undefined&&y!=null){w=q(y)}}catch(z){}v=c("custno")?c("custno"):"-";var A=c("_snmb");try{if(A!=undefined&&A!=null&&A.indexOf("|")>=0){d=A.split("|")[0]}}catch(z){}try{r=(r=document.getElementById("resourceType"))?r.value:"web"}catch(z){}}function f(){if(!sa.pvId){sa.pvId=n()}return sa.pvId}function n(){var y=new Date();var x=Math.round(100000*Math.random());var z=y.getTime().toString().concat(x);return z}function q(x){try{return null!=x?encodeURIComponent(x):""}catch(y){return""}}function g(){var z="-";try{var x=p();if(document.location.hash){z=document.location.href.substring(0,location.href.indexOf(x)-1)}else{z=document.location.href}}catch(y){}return z}function p(){var x=location.href.match(/#(.*)$/);return x?x[1]:""}function c(B){try{var x=document.cookie.split("; ");for(var y=0;y<x.length;y++){var A=x[y].split("=");if(A[0]==B){return unescape(A[1])}}}catch(z){return""}}function u(){if(l.test(document.location.hostname)){return"sa.suning.cn"}else{return"sasit.suning.cn"}}function i(z){z=s+a+z;var y="log_"+(new Date()).getTime();var x=window[y]=new Image();x.onload=(x.onerror=function(){window[y]=null});x.src=z+"&iId="+y;x=null}saExportUtil=new o()})();
+</script> 
+  <script>
+//宽窄屏切换
+var SCREEN = {};
+SCREEN.small = false;//750
+SCREEN.middle = false;//990
+SCREEN.large = false;//1190
+SCREEN.wider = false;//1690
+if (screen.width < 1190) {
+SCREEN.middle = true;
+} else {
+SCREEN.large = true;
+}
+var bigscreen = false,
+tooBigscreen = false;
+if ( document.documentElement.clientWidth >= 1200 ) {
+bigscreen = true;
+var bodyTag = document.getElementsByTagName("body")[0],
+bodyClassName = bodyTag.getAttribute("className") || bodyTag.getAttribute("class");
+bodyClassName = bodyClassName ? bodyClassName+" " : "";
+bodyTag.className = bodyClassName+"root1200";
+if(document.documentElement.clientWidth >= 1540){
+tooBigscreen = true;
+bodyTag.className = bodyClassName+"root1200 root1400";
+}
+}
+
+</script> 
+  <div id="_TOP_BANNER_" class="ng-top-banner"></div> 
+  <div class="ng-toolbar"> 
+   <div class="ng-toolbar-con wrapper"> 
+    <div class="ng-toolbar-left"> 
+     <a href="//www.suning.com" class="ng-bar-node ng-bar-node-backhome" id="ng-bar-node-backhome" name="public0_none_gongju_fanhui"> <i class="ng-iconfont ng-backhome"></i><span>返回首页</span> </a> 
+     <div class="ng-bar-node-box ng-site-nav-box lazy-bar-box"> 
+      <a href="javascript:void(0);" class="ng-bar-node ng-bar-node-site" name="public0_none_daohang_wzdh"> <span>网站导航</span><em class="ng-iconfont down"></em> </a> 
+      <div class="ng-sn-site-nav ng-d-box site-nav-child" style="display:none;"> 
+       <!--网站导航列表--> 
+       <div class="head-loading"></div> 
+       <a href="javascript:void(0);" class="ng-close" name="public0_none_daohang_close"><em class="ng-iconfont"></em></a> 
+      </div> 
+     </div> 
+     <div class="ng-bar-node-box shop-handle lazy-bar-box"> 
+      <a href="https://sop.suning.com" class="ng-bar-node ng-bar-node-pr5 ng-bar-node-shop touch-href" name="public0_none_shangjia_ruzhu" target="_blank"><span>商家入驻</span><em class="ng-iconfont down"></em></a> 
+      <div class="ng-down-box ng-d-box shop-center-child ng-ser-list" style="display:none;"> 
+       <!--商家入驻列表--> 
+       <div class="head-loading"></div> 
+      </div> 
+     </div> 
+     <!--服务中心 [[--> 
+     <div class="ng-bar-node-box service-handle lazy-bar-box"> 
+      <a href="javascript:void(0);" class="ng-bar-node ng-bar-node-service ng-bar-node-fix touch-href ng-bar-node-pr5" rel="nofollow" name="public0_none_kehu_fuwu"><span>客户服务</span><em class="ng-iconfont down"></em> </a> 
+      <div class="ng-down-box ng-d-box service-center-child ng-ser-list" style="display:none;"> 
+       <!--服务中心列表--> 
+       <div class="head-loading"></div> 
+       <a href="javascript:findpass();" rel="nofollow" name="public0_none_kehu_zixun" style="display:none;"><span>在线咨询</span><em class="ng-iconfont"></em></a> 
+      </div> 
+     </div> 
+     <!--服务中心 ]]--> 
+    </div> 
+    <div class="ng-toolbar-right"> 
+     <!-- 登录注册 --> 
+     <a href="javascript:void(0)" class="ng-bar-node username-bar-node username-bar-node-showside" id="username-node" rel="nofollow" style="display:none;"> <span id="usernameHtml01"></span> <em class="hasmsg ng-iconfont"></em> </a> 
+     <div class="ng-bar-node-box username-handle" id="username-node-slide" style="display:none;"> 
+      <a href="//my.suning.com" rel="nofollow" class="ng-bar-node username-bar-node username-bar-node-noside"> <span id="usernameHtml02"></span> <em class="hasmsg ng-iconfont"></em> <em class="ng-iconfont down"></em> </a> 
+      <div class="ng-d-box ng-down-box ng-username-slide" style="display:none;"> 
+       <a href="//my.suning.com/person.do" class="ng-vip-union" target="_blank" name="public0_none_denglu_zhanghao" rel="nofollow">账号管理</a> 
+       <a href="javascript:SFE.base.logoff();" rel="nofollow" name="public0_none_denglu_tuichu">退出登录</a> 
+      </div> 
+     </div> 
+     <div class="ng-bar-node reg-bar-node" id="reg-bar-node"> 
+      <a href="javascript:SFE.base.logonurl();" name="public0_none_denglu_denglu" rel="nofollow" class="login">请登录</a> 
+      <a href="https://reg.suning.com/person.do" target="_blank" class="login reg-bbb" rel="nofollow" name="public0_none_denglu_zhuce">注册有礼</a> 
+     </div> 
+     <script type="text/javascript">
+var stripscript = function(s){
+var pattern = new RegExp("[<>]")
+var rs = "";
+for (var i = 0; i < s.length; i++) {
+rs = rs+s.substr(i, 1).replace(pattern, '');
+}
+return rs;
+}
+function d(b) {
+var a;
+return (a = document.cookie.match(RegExp("(^| )" + b + "=([^;]*)(;|$)"))) ?stripscript(decodeURIComponent(a[2].replace(/\+/g, "%20"))) : null
+};
+var uernameA = d("logonStatus");
+var usernameNode = document.getElementById('username-node');
+var usernameNodeSlide = document.getElementById('username-node-slide');
+var usernameHtml01 = document.getElementById('usernameHtml01') , usernameHtml02 = document.getElementById('usernameHtml02');
+var regBarNode = document.getElementById('reg-bar-node');
+if (uernameA != null && uernameA != "") {
+var uernameC = d("nick");
+// if( ((window.sidebar_config && sidebar_config.enable)||sn.hasSidebar) && !sn.hasNewSidebar ){
+// usernameNode.style.display = "block";
+// }else{
+usernameNodeSlide.style.display = "block";
+//}
+usernameHtml01.innerHTML = uernameC;
+usernameHtml02.innerHTML = uernameC;
+regBarNode.style.display = "none";
+}else{
+usernameNode.style.display = "none";
+usernameNodeSlide.style.display = "none";
+usernameHtml01.innerHTML = " ";
+usernameHtml02.innerHTML = " ";
+regBarNode.style.display = "block";
+}
+</script> 
+     <!--我的订单 [[--> 
+     <div class="ng-bar-node-box myorder-handle"> 
+      <a href="//order.suning.com/onlineOrder/orderList.do" rel="nofollow" name="public0_none_wode_dingdan" class="ng-bar-node ng-bar-node-fix touch-href ng-bar-node-pr5"><span>我的订单</span><em class="ng-iconfont down"></em></a> 
+      <div class="ng-down-box ng-d-box myorder-child" style="display:none;"> 
+       <a href="//order.suning.com/onlineOrder/orderList.do?transStatus=waitPay" rel="nofollow" name="public0_none_wode_zhufu">待支付<em id="waitPayCounts"></em></a> 
+       <a href="//order.suning.com/onlineOrder/orderList.do?transStatus=waitReceive" rel="nofollow" name="public0_none_wode_shouhuo">待收货<em id="waitDeliveryCounts"></em></a> 
+       <a href="//review.suning.com/my_cmmdty_review.do" rel="nofollow" name="public0_none_wode_pingjia">待评价<em id="waitEvaluation"></em></a> 
+       <a href="//assss.suning.com/assss-web/pc/modify/toModifyOrderList.do" rel="nofollow" name="public0_none_wode_xiugai">修改订单</a> 
+      </div> 
+     </div> 
+     <!--我的订单 ]]--> 
+     <!--我的易购 [[--> 
+     <div class="ng-bar-node-box mysuning-handle"> 
+      <a href="//my.suning.com" rel="nofollow" name="public0_none_wode_yigou" class="ng-bar-node ng-bar-node-fix touch-href ng-bar-node-pr5"><span>我的易购</span><em class="ng-iconfont down"></em></a> 
+      <div class="ng-down-box ng-d-box mysuning-child" style="display:none;"> 
+       <div class="mysuning-infor clearfix"> 
+        <a name="public0_none_wode_touxiang" target="_blank" href="//my.suning.com/person.do?targetTab=head" class="headimg"><img src3="//image.suning.cn/uimg/cmf/cust_headpic/0000000000_01_60x60.jpg" alt="" id="userHead" /></a> 
+        <div class="mysuning-detail"> 
+         <a name="public0_none_denglu_denglu" href="javascript:SFE.base.logonurl();" class="login">请登录</a> 
+         <a name="public0_none_wode_name" href="//my.suning.com" rel="nofollow" class="username" id="userNickname">141******13</a> 
+         <a href="https://sign.suning.com/sign/welcome.do" rel="nofollow" name="public0_none_wode_daka" class="daka">点击打卡</a> 
+        </div> 
+       </div> 
+       <a href="//2.suning.com/myOrder/queryMyOrders.do" name="public0_none_wode_ershou" rel="nofollow" target="_blank">我的二手</a> 
+       <a href="//favorite.suning.com/myFavoriteImg.do" rel="nofollow" name="public0_none_wode_shoucang" target="_blank">我的收藏</a> 
+       <a href="https://passport.suning.com/ids/trustLogin?sysCode=epp&amp;targetUrl=http://my.jr.suning.com/sfp/accountAssets/index.htm" rel="nofollow" name="public0_none_wode_jinrong" target="_blank">我的金融</a> 
+       <a href="//vip.suning.com" class="ng-vip-union" target="_blank" rel="nofollow" name="">苏宁会员<em class="ng-iconfont"></em></a> 
+       <a href="https://rxf.suning.com/epps-cpf/accountMgt/assetOverview.do" rel="nofollow" name="public0_none_wode_renxingfu">我的任性付</a> 
+       <a href="//quan.suning.com/yhq.do" rel="nofollow" name="public0_none_wode_quan">我的优惠券</a> 
+      </div> 
+     </div> 
+     <!--我的易购 ]]--> 
+     <a href="//vip.suning.com/" name="public0_none_sn_huiyuan" rel="nofollow" class="ng-bar-node ng-bar-node-pr5" target="_blank"><span>苏宁会员</span></a> 
+     <!--[[ 购物车 2017-06-08 添加购物车商品 --> 
+     <div class="ng-bar-node-box cart-handle"> 
+      <a class="ng-bar-node ng-bar-node-mini-cart " name="public0_none_gouwuche_gwc" rel="nofollow" href="//shopping.suning.com/cart.do"> <em class="ng-iconfont cart"></em><span>购物车</span> <span class="total-num-box" id="J_total_num_box"> <b class="total-num J_cart_total_num" id="showTotalQty">0</b> <span class="total-num-bg-box"> <em></em> <i></i> </span> </span> <em class="ng-iconfont down"></em> </a> 
+      <div class="ng-down-box ng-d-box cart-child" style="display:none;">
+       <!-- --> 
+       <div class="cart-box"> 
+       </div> 
+       <div class="cart-loading">
+        <p class="loading-content">加载中...</p>
+       </div> 
+      </div> 
+      <script type="text/javascript">
+var ngCartNum = d("totalProdQty");
+ngCartNum = ( ngCartNum ==0 || ngCartNum == null )?0:ngCartNum;
+ngCartNum = parseInt(ngCartNum);
+ngCartNum = ngCartNum>99?'99+':ngCartNum;
+document.getElementById('showTotalQty').innerHTML = ngCartNum;
+</script> 
+     </div> 
+     <!-- 购物车 ]] --> 
+     <a href="https://passport.suning.com/ids/trustLogin?sysCode=epp&amp;targetUrl=https://pay.suning.com/epp-epw/login/login.action" name="public0_none_yifubao_yfb" class="ng-bar-node ng-bar-node-pr5" target="_blank"><span>易付宝</span></a> 
+     <a href="//b.suning.com/" class="ng-bar-node ng-bar-node-pr5" name="public0_none_qiye_caigou" target="_blank"><span>企业采购</span></a> 
+     <!--手机苏宁 [[--> 
+     <div class="ng-bar-node-box app-down-box"> 
+      <a href="//cuxiao.suning.com/newUser.html" target="_blank" name="public0_none_shouji_sn" rel="nofollow" class="ng-bar-node mb-suning touch-href"><span>手机苏宁</span><em class="ng-iconfont down"></em></a> 
+      <div class="ng-mb-box ng-d-box mb-down-child" style="display:none;"> 
+       <ul class="ng-app-code"> 
+        <li> <img class="top-code" src3="//res.suning.cn/public/v3/images/sn-top-code.png?var=01" alt="苏宁易购APP" /> <p>下载苏宁易购APP</p> <img class="aoyun-text" src3="//res.suning.cn/public/v3/images/aoyun-text.jpg?var=01" alt="" /> </li> 
+        <li> <img class="top-code" src3="//res.suning.cn/public/v3/images/yfb-top-code.png?var=01" alt="易付宝APP" /> <p>扫一扫</p> <p>下载苏宁金融APP</p> </li> 
+        <li> <img class="top-code" src3="//res.suning.cn/public/v3/images/wxcode.jpg?var=01" alt="易购服务号" /> <p>扫一扫</p> <p> 关注苏宁易购服务号</p> </li> 
+       </ul> 
+       <div class="line"></div> 
+       <div class="line lineTwo"></div> 
+      </div> 
+     </div> 
+     <!--手机苏宁 ]]--> 
+    </div> 
+    <div id="ng-minicart-slide-box"></div> 
+   </div> 
+  </div> 
+  <div class="index-header"> 
+   <div class="bg-container"> 
+   </div> 
+   <div class="ng-header-con"> 
+    <!--促销图片维护]]--> 
+    <div class="ng-header-box"> 
+     <a href="https://www.suning.com/" name="index3_homepage1_32617813020_pic01" class="logo-set" title="苏宁易购"> <img alt="苏宁易购" src="//image5.suning.cn/uimg/cms/img/150338612019892140.png" /> </a> 
+     <a class="ng-gif-logo" target="_blank" name="index3_homepage1_32617813000_pic01" href="https://cuxiao.suning.com/bxzbxmzhe.html"><img src="//script.suning.cn/images/ShoppingArea/Common/blank.gif" src3="//image3.suning.cn/uimg/cms/img/151254139415803851.gif" /></a> 
+    </div> 
+    <div class="ng-search"> 
+     <!-- PRFLS SEARCH --> 
+     <div class="g-search"> 
+      <i class="ng-iconfont search-icon"></i> 
+      <form method="get" onsubmit="return SFE.search.onSubmitSearch(this)"> 
+       <div class="search-keyword-box"> 
+        <input tabindex="0" id="searchKeywords" type="text" class="search-keyword" name="index1_none_search_ss2" value="" autocomplete="off" /> 
+       </div> 
+       <input id="searchSubmit" type="submit" class="search-btn" name="index1_none_search_ss1" value="搜索" /> 
+       <div id="snKeywordNew" class="g-search-hotwords"></div> 
+      </form> 
+      <div id="ac_results" class="g-ac-results hide"></div> 
+      <div id="rec_results" class="g-rec-results hide"> 
+       <ul class="history-results"></ul> 
+       <ul class="rec-results"></ul> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="index-head-active"> 
+     <img src="//image2.suning.cn/uimg/cms/img/149391734040363425.png" alt="苏宁易购APP" /> 
+    </div> 
+   </div> 
+   <div class="ng-nav-bar"> 
+    <div class="index-sort ng-sort-index homepage-sort"> 
+     <a class="index-all-hook" href="javascript:;"> <i></i> <span>全部商品分类</span> </a> 
+     <div class="dacu-list-wrapper"> 
+      <div class="index-sort-list-box"> 
+       <div class="index-sort-detail"> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="ng-nav-index"> 
+     <ul class="ng-nav"> 
+      <li><a name="index3_homepage1_32617813343_word01" href="https://ju.suning.com/" target="_blank">大聚惠 </a><span></span></li> 
+      <li><a name="index3_homepage1_32617813343_word02" href="https://redbaby.suning.com/" target="_blank">红孩子 </a><span></span></li> 
+      <li><a name="index3_homepage1_32617813343_word03" href="https://chaoshi.suning.com/" target="_blank">苏宁超市 </a><span></span></li> 
+      <li><a name="index3_homepage1_32617813343_word04" href="https://dianqi.suning.com" target="_blank">电器城 <i class="hot"></i> </a><span></span></li> 
+      <li><a name="index3_homepage1_32617813343_word05" href="https://pindao.suning.com/city/xiaojiadian.html" target="_blank">生活家电 </a><span></span></li> 
+      <li><a name="index3_homepage1_32617813343_word06" href="https://fashion.suning.com" target="_blank">服装城 </a><span></span></li> 
+      <li><a name="index3_homepage1_32617813343_word07" href="https://g.suning.com" target="_blank">海外购 </a><span></span></li> 
+      <li><a name="index3_homepage1_32617813343_word08" href="https://temai.suning.com" target="_blank">特卖 </a><span></span></li> 
+      <li><a name="index3_homepage1_32617813343_word09" href="https://jinrong.suning.com" target="_blank">苏宁金融 </a><span></span></li> 
+      <li><a name="index3_homepage1_32617813343_word10" href="https://vip.suning.com" target="_blank">苏宁会员 </a><span></span></li> 
+     </ul> 
+    </div> 
+    <div class="ng-nav-right-wenjuan"> 
+     <a href="https://cuxiao.suning.com/city/zhtsgfppd.html" target="_blank" name="index3_homepage1_yjfk_word01"> <img src="//image5.suning.cn/uimg/cms/img/150271436155347363.png" alt="扶贫" /> </a> 
+    </div> 
+   </div>
+  </div>
+ </body>
+</html>

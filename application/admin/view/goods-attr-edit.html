@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="/static/admin/static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>/static/admin/
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title></title>
+</head>
+<body>
+<div class="page-container">
+	<nav>
+	<a href="javascript:void(0);" onclick="attr_add('添加规格','/admin-goods/addAttr?id={$id}','600','230')" class="btn btn-primary radius">添加规格</a> <a class="btn btn-success radius r" style="line-height:1.6em;" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<input type="hidden" name="gid" value="{$id}">
+	<table class="table table-border table-bordered table-hover table-bg">
+		<thead>
+			<tr>
+				<th scope="col" colspan="7">规格列表</th>
+			</tr>
+			<tr class="text-c">
+				<th>ID</th>
+				{foreach name="attrs" item="row"}
+				<th>{$row['name']}</th>
+				{/foreach}
+				<th>单价</th>
+				<th>库存</th>
+				<th width="70">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach name="data" item="row"}
+			<tr class="text-c">
+				<td>{$row['id']}</td>
+				{for start="0" end="count($attrs)" name="i"}
+				{php}$j=$i+1{/php}
+				<td>{$row['attr'.$j]}</td>
+				{/for}
+				<td class="price">{$row['price']}</td>
+				<td class="num">{$row['num']}</td>
+				<td class="f-14"><a title="删除" href="javascript:;" class="ml-5 del" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+			</tr>
+			{/foreach}
+		</tbody>
+	</table>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<!-- <script type="text/javascript" src="/static/admin/lib/jquery/1.9.1/jquery.min.js"></script>  -->
+<script src='/static/index/js/jquery.js'></script>
+<script type="text/javascript" src="/static/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/static/admin/static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="/static/admin/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/static/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+function attr_add(title,url,w,h){
+	layer_show(title,url,w,h);
+
+}
+
+//Ajax修改价格
+var flag = false;
+$('.price').dblclick(function() {
+	//获取id
+	id = $(this).parents('tr').find('td:first').html();
+	// alert(id);
+	if (flag) {
+		return;
+	}
+	flag = true;
+	v = $(this).html();
+	input = $('<input type="number" name="price" value="'+v+'">');
+	$(this).html(input);
+	input.select();
+	input.blur(function() {
+		newV = input.val();
+		if (input.val() <=0) {
+			layer.msg('价格不能为0！',{time:2000,icon:5});
+			flag = false;
+			return;
+		}else if(input.val()==v){
+			layer.msg('价格无修改！');
+			input.parent('td').html(v);
+			flag = false;
+			return;
+		}
+		//Ajax提交修改请求
+		$.post('/admin-goods/doeditAttr?id=', {price: newV,id:id}, function(data) {
+			// alert(data);
+			if (data==1) {
+				layer.msg('修改价格成功！');
+				// setTimeout(function() {location.reload();}, 1000);
+				input.parent('td').html(newV);
+				// layer.msg('修改价格成功！', function(){
+					// location.reload();
+				// });
+				flag = false;
+			}else{
+				layer.msg('修改价格失败！');
+				input.parent('td').html(v);
+				flag = false;
+			}
+		});
+	});
+});
+
+//Ajax修改库存
+var flag1 = false;
+$('.num').dblclick(function() {
+	//获取id
+	id = $(this).parents('tr').find('td:first').html();
+	if (flag1) {return;}
+	flag1 = true;
+	c = $(this).html();
+	input = $('<input type="number" name="num" value="'+c+'">');
+	$(this).html(input);
+	input.select();
+	input.blur(function() {
+		newV = input.val();
+		if (input.val() <=0) {
+			layer.msg('库存不能为0！',{time:2000,icon:5});
+			flag1 = false;
+			return;
+		}
+		//Ajax提交修改请求
+		$.post('/admin-goods/doeditAttr?id=', {num: newV,id:id}, function(data) {
+			// alert(data);
+			if (data==1) {
+				layer.msg('修改库存成功！');
+				input.parent('td').html(newV);
+				flag1 = false;
+			}else{
+				layer.msg('修改库存失败！');
+				input.parent('td').html(v);
+				flag1 = false;
+			}
+		});
+	});
+});
+
+//Ajax删除规格
+$('.del').click(function() {
+	// alert(111);
+	//获取id
+	id = $(this).parents('tr').find('td:first').html();
+	// alert(id);
+	//获取商品id
+	gid = $('input[name="gid"]').val();
+	// alert(id);
+	$.get('/admin-goods/deleteAttr?id='+id+'&gid='+gid, function(data) {
+		if (data == 2) {
+			layer.msg('无法删除最后一条属性',function(){});
+		}else{
+			layer.msg('删除成功！', {time: 2000, icon:5});
+			setTimeout(function() {location.reload()}, 100);
+		}
+	});
+});
+
+</script>
+</body>
+</html>

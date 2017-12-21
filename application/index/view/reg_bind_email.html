@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <title>注册邮箱绑定</title> 
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> 
+  <!-- 引入全站公用资源文件 --> 
+  <link rel="stylesheet" href="/static/index/css/reg.css" /> 
+  <script type="text/javascript" src="/static/index/js/jquery.js"></script> 
+  <script type="text/javascript" src="/static/index/js/sn_lazyload.js"></script> 
+  <script type="text/javascript" src="/static/index/js/lazyelem.min.js"></script> 
+  <script type="text/javascript" src="/static/index/js/SFE.base.min.js"></script> 
+  <script type="text/javascript" src="/static/index/js/search.min.js"></script> 
+  <script type="text/javascript" src="/static/index/js/sn-sidebar.min.js"></script> 
+  <script type="text/javascript" src="/static/index/js/chatCompat_mini.js"></script> 
+ </head> 
+ <body> 
+  <input type="hidden" id="baseUrl" value="" /> 
+  <script type="text/javascript">
+        //全局变量
+        var sn = sn || {
+            "context": "/emall",
+            "domain": "www.suning.com",
+            "storeId": "10052",
+            "catalogId": "10051",
+            "memberDomain": "member.suning.com",
+            "sslDomain": "ssl.suning.com",
+            "imgssl": "imgssl.suning.com",
+            "online": "online.suning.com",
+            "cookieDomain": ".suning.com",
+            "categoryId": "0",
+            "searchDomain": "http://search.suning.com/emall/"
+        };
+
+//跳转到passport登录
+/*
+*url 登录成功后跳转 目标 URL
+*logonType  passport 的登录皮肤  
+*  b2c 主站      默认值
+*  sop 苏宁云商
+*/
+
+function logonUrl(url,logonType,userVal){
+   if(url == "" || typeof(url) == "undefined"){
+     url = "http://www.suning.com";
+   }
+   if(logonType == "" || typeof(logonType) == "undefined"){
+     logonType = "b2c";
+   }
+ var targetUrl = encodeURIComponent(url);
+ var logonurl = "https://passport.suning.com/ids/login?service="
+			 + encodeURIComponent("https://reg.suning.com/auth?targetUrl="+ targetUrl)
+			 + "&method=GET&loginTheme="+logonType;
+  if("" !=userVal && "undefined" != typeof(userVal) ){
+     logonurl = logonurl+"&username="+userVal;
+  }
+ hrefLink(logonurl);
+}
+
+function hrefLink(e) {
+		if (navigator.userAgent.indexOf("Firefox") > 0) {
+			window.location = e
+		} else {
+			var f = document.createElement("a");
+			f.href = e;
+			document.body.appendChild(f);
+			if (/msie/i.test(navigator.userAgent.toLowerCase())) {
+				f.click()
+			} else {
+				var d = document.createEvent("MouseEvent");
+				d.initEvent("click", false, false);
+				f.dispatchEvent(d)
+			}
+		}
+	};
+</script> 
+  <!-- 引入项目资源文件 --> 
+  <link rel="stylesheet" type="text/css" href="css/snAccount_v2-min.css" /> 
+  <link rel="stylesheet" type="text/css" href="css/style-min.css" /> 
+  <link rel="stylesheet" type="text/css" href="css/style-person-reg-min.css" /> 
+  <div class="wrapper"> 
+   <!-- 简头 [[ --> 
+   <div class="simple-header"> 
+    <div id="snlogo" class="clearfix"> 
+     <a href="index.html" title="苏宁易购"><img alt="苏宁易购" src="https://sslres.suning.com/project/srsregister/images/snlogo.png?v=201603010121" /></a> 
+     <span class="channel l reglogo"></span> 
+    </div> 
+   </div> 
+   <!-- 简头 ]] --> 
+   <div class="main-box reg mart reg-bor-top"> 
+    <p class="tr lh36 notice login-bor">&nbsp;</p> 
+    <form id="bind_form" action="/doBindEmail.do" method="post" autocomplete="off"> 
+     <div class="tab-cont cont-marg" id="step22"> 
+      <div class="reg-nav"> 
+       <ul class="reg-step clearfix" style="text-align:center;"> 
+        <li><i class="icon-1"></i>设置登录名</li> 
+        <li class="current"><i class="icon-2"></i>设置账户信息</li> 
+        <li><i class="icon-3"></i>注册成功</li> 
+       </ul> 
+      </div> 
+      <!-- reg-type-cont [[ --> 
+      <div class="reg-main"> 
+       <div class="error-wrap"> 
+        <div class="error-box mt10 hide"> 
+         <i class="error"></i> 
+         <span></span> 
+        </div> 
+       </div> 
+       <div class="reg-form pb85"> 
+        <!--
+                    <div class="input-tip per-input-tip perNotice sms-notice"></div>
+					--> 
+        <div class="input-tip per-input-tip mb20" style="font-size:14px;"> 
+         <p>为您的账号绑定一个邮箱，更安全！</p> 
+        </div> 
+        <div class="reg-txtbox mail-reg"> 
+         <label class="input-label">请输入您的邮箱</label> 
+         <i class="ico-email"></i> 
+         <input class="txt-input text-email yfb-acc-mark yfb-account" type="text" id="emailAlias" name="emailAlias" maxlength="50" tabindex="1" /> 
+         <ul class="yfb-account-pannel"> 
+         </ul> 
+        </div> 
+        <div class="input-tip per-input-tip tip-error-color" id="emailAliasTip"></div> 
+        <div class="reg-code reg-phone-code"> 
+         <div class="code-txtbox"> 
+          <i class="ico-code"></i> 
+          <input class="txt-input" type="text" id="emailCode" name="emailCode" maxlength="6" tabindex="4" /> 
+          <label class="input-label">请输入邮件验证码</label> 
+         </div> 
+         <a class="btn-get-code" href="javascript:void(0)" id="sendEmailCode" name="Preg_index_none_getmailnew"><span>获取邮件验证码</span></a> 
+        </div> 
+        <div class="input-tip per-input-tip" id="emailCodeTip"></div> 
+        <div class="btn-reg"> 
+         <a href="###" class="reg-submit" id="step22save" name="Preg_index_none_nextstep2">完&nbsp;&nbsp;&nbsp;成</a> 
+         <a href="javascript:;" class="reg-submit" id="step22saveing" style="display:none">正在提交...</a> 
+        </div> 
+        <p class="bottom-tip mt10 text-right"> <a href="/b2cregsuccjump.do?token=C167769E4288D95ACD24B316B3A6B102&amp;alias=18005151538&amp;myTargetUrl=http%3A%2F%2Fwww.suning.com%2F" id="regsucc" name="Preg_index_none_skip2">不想绑定，跳过 &gt;</a> </p> 
+        <div class="clear"></div> 
+       </div> 
+      </div> 
+      <!-- reg-type-cont ]] --> 
+     </div> 
+     <input type="hidden" id="token" name="token" value="C167769E4288D95ACD24B316B3A6B102" /> 
+     <input type="hidden" id="eseqNum" value="-1" /> 
+    </form> 
+   </div> 
+  </div> 
+  <!-- 问卷调查 [[ --> 
+  <div class="ECode-floatBar" style="position: fixed;_position:absolute; top: auto; left: auto; z-index: 7500; right: 0px; bottom: 0px; margin-bottom: 270px;"> 
+   <div id="gSideTools" class="g-sidebar"> 
+    <ul> 
+     <li> <a name="Preg_index_none_info016" target="_blank" href="http://ued.suning.com/survey/express/d0RrZlNT" class="i-side-survey"><em>问卷调查</em><i></i></a> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <!-- 问卷调查 ]] --> 
+  <iframe class="screen-iframe" style="display:none;" scrolling="no" frameborder="0"></iframe> 
+  <!-- 此处引入公用简尾 --> 
+  <div class="clear"></div> 
+  <div class="ng-s-footer"> 
+   <div class="ng-s-f-con"> 
+    <p class="ng-url-list"> <a name="public0_none_wb_yqlj0101" target="_blank" href="http://www.suning.cn/">苏宁云商</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0102" target="_blank" href="http://10035.suning.com/">苏宁互联</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0111" target="_blank" href="http://jinrong.suning.com/">苏宁金融</a><span>|</span> <a name="public0_none_wb_yqlj0103" target="_blank" rel="nofollow" href="https://passport.suning.com/ids/trustLogin?sysCode=epp&amp;targetUrl=https://pay.suning.com/epp-epw/login/login.action">易付宝</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0105" target="_blank" href="http://www.pptv.com?rcc_id=snyg">PPTV</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0106" target="_blank" href="http://redbaby.suning.com/">红孩子</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0107" target="_blank" href="http://binggo.suning.com/">缤购</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0108" target="_blank" href="http://laox.suning.com/">乐购仕</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0111" target="_blank" href="http://wuliu.suning.com/">苏宁物流</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0109" target="_blank" href="http://usa.suning.com/">苏宁美国</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0110" target="_blank" href="http://hk.suning.com/">苏宁香港</a><span>|</span> <a name="public0_none_wb_yqlj0111" target="_blank" href=" http://m.suning.com/">手机苏宁</a> </p> 
+    <p class="ng-url-list"> <a rel="nofollow" name="public0_none_wb_yqlj0201" target="_blank" href="http://club.suning.com/hr/aboutus.html">关于苏宁易购</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0202" target="_blank" href="http://help.suning.com/page/id-469.htm">联系我们</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0203" target="_blank" href="http://careers.cnsuning.com/">诚聘英才</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0204" target="_blank" href="http://sop.suning.com/">供应商入驻</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0205" target="_blank" href="http://union.suning.com/">苏宁联盟</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0206" target="_blank" href="http://zb.suning.com/">苏宁招标</a><span>|</span> <a name="public0_none_wb_yqlj0207" target="_blank" href="http://union.suning.com/aas/links.html">友情链接</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0208" target="_blank" href="http://help.suning.com/page/id-281.htm">法律申明</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0209" target="_blank" href="http://ued.suning.com/survey/">用户体验提升计划</a><span>|</span> <a rel="nofollow" name="public0_none_wb_yqlj0209" target="_blank" href="http://mrs.suning.com/mrs-web/stockholder/check.htm">股东会员认证</a> </p> 
+    <p class="ng-copyright"> Copyright&copy; 2002-2016 ，苏宁云商集团股份有限公司版权所有 <a style="color:#999" target="_blank" href="http://www.miitbeian.gov.cn">苏ICP备10207551号-4</a> <a style="color:#999" rel="nofollow" target="_blank" href="http://img.suning.cn/public/v3/images/SUB1-20130131.png">苏B1-20130131</a> <a style="color:#999" rel="nofollow" target="_blank" href="http://img.suning.cn/public/v3/images/SUB2-20130376.png">苏B2-20130376</a> <a style="color:#999" rel="nofollow" target="_blank" href="http://img.suning.cn/public/v3/images/SUB2-20130391.png">苏B2-20130391</a> 出版物经营许可证新出发苏批字第A-243号</p> 
+    <div class="ng-authentication"> 
+     <a rel="nofollow" name="public0_none_wb_zs0302" target="_blank" href="https://search.szfw.org/cert/l/CX20111018000608000610"> <img width="76" height="24" alt="诚信网站" src="http://img.suning.cn/public/v3/images/chengxin.png" /> </a> 
+     <a rel="nofollow" name="public0_none_wb_zs0303" target="_blank" href="http://image.suning.cn/uimg/snnet/snnetImg/142891196680527240.jpg"> <img width="76" height="24" alt="中国联通授权网络经营代理商" src="http://img.suning.cn/public/v3/images/unicom.png" /> </a> 
+     <a rel="nofollow" name="public0_none_wb_zs0304" target="_blank" href="http://img.suning.cn/public/v3/images/dianxin_content.jpg"> <img width="76" height="24" alt="中国电信授权网络经营代理商" src="http://img.suning.cn/public/v3/images/dianxin.jpg" /> </a> 
+     <a name="public0_none_wb_zs0303" rel="nofollow" target="_blank" href="http://www.jsgsj.gov.cn:60101/keyLicense/verifKey.jsp?serial=320000163820130117100000009630&amp;signData=0+ADYt839gp1EiqiZXnsxsyOnpO32Wg4sFePaiV9+NtTV/XCAMXGzT/AOgycGMm0EjsR/Ot661M7h9GeStpA8QyJTs1Ip1K/CSNaemthn7f1NjI03x1E6v9ZRT+3M60WZIGLBEjFs5XMliufNz1cJlYDQrTZvaZbHyJ2KzgJB4Y="> <img width="76" height="24" alt="电子营业执照" src="http://img.suning.cn/public/v3/images/dianzi.png?v=02" /> </a> 
+    </div> 
+   </div> 
+  </div> 
+  <style type="text/css">
+.ng-footer{height:130px;margin-top:0;}
+.ng-s-footer{height:130px;background:none;text-align:center;}
+.ng-s-footer p.ng-url-list{height:25px;line-height:25px;}
+.ng-s-footer p.ng-url-list a{color:#666666;}
+.ng-s-footer p.ng-url-list a:hover{color:#f60;}
+.ng-s-footer .ng-authentication{float:none;margin:0 auto;height:25px;width:990px;margin-top:5px;}
+.ng-s-footer p.ng-copyright{float:none;width:100%;}
+.root1200 .ng-s-footer p.ng-copyright{width:100%;}
+</style> 
+  <script> 
+    var passport_config = { 
+        base: "/", 
+        loginTheme: "b2c_pop" 
+    }; 
+</script> 
+  <script src="js/passport.js?v=201603010121"></script> 
+  <script type="text/javascript" src="/static/index/js/snAccount_v2-min.js"></script> 
+  <script type="text/javascript" src="/static/index/js/main-min.js"></script> 
+  <script type="text/javascript" src="/static/index/js/srs-common-min.js"></script> 
+  <script type="text/javascript" src="/static/index/js/srs-validate-min.js"></script> 
+  <script type="text/javascript" src="/static/index/js/perReg-bindEmail-min.js?v=201603010121"></script> 
+  <script type="text/javascript" src="/static/index/js/sa-analytics.js"></script> 
+  <script type="text/javascript" src="/static/index/js/sa-functions.js"></script> 
+  <script type="text/javascript" src="/static/index/js/da_opt_inc-min.js?v=201603010121"></script> 
+  <script type="text/javascript">
+/**
+ *2014-11-20
+ *
+ * 更新记录：
+ * 1.
+ */
+ 
+/**
+ * 第一步：在页面引入基础代码
+ * 埋点前请检查页面是否已经埋入此代码，避免重复引入代码
+ * 此部分代码不允许修改，若私自修改源码导致出现的问题，后果自负
+ */
+var sa;if(!sa){sa={}}if(!sa.click){sa.click={}}(function(){var t=/^\w*?.suning.com$/,s=document.location.hostname,g=(("https:"==document.location.protocol)?"https://":"http://"),o=h(),b="|",c=location.href,m=l(p(c));function q(Z,M){var Y=Z.name?l(Z.name):"name undefined";if(Y=="name undefined"){var aa=Z.attributes.name;if(aa!=undefined&&aa!=null){Y=aa.value?l(aa.value):"name undefined"}}if(M!=undefined&&M!=null&&M!=""){var J=Z.attributes[M];if(J!=undefined&&J!=null){Y=J.value?l(J.value):M+" undefined"}}var N=Z.id?l(Z.id):"id undefined",Q=new Array(),z=(e(Z,Q),Q)?l(Q.join("").replace(/\s|\|/ig,"")):"text undefined",T=(T=document.getElementById("resourceType"))?T.value:"",A=N+b+Y+b+z,R=(R=document.getElementById("errorCode"))?R.value:"",W=g+o+"/ajaxClick.gif",y=u(),k="_snck";i(k,y,"/","","");var X=n("_snmp"),D=typeof sn=="object"?sn.cityId:"can not get cityId",I=y+b+X+b+A+b+m,V=Z.href?Z.href:"",H=(V?w(V):"-"),K=document.getElementById("URLPattern"),P=(K?K.value:"");var C="";var F=n("logonStatus");if(F!=undefined&&F!=null){C=F}var E="";var j=n("_snma");if(j!=undefined&&j!=null&&j.indexOf("|")>=0){try{E=j.split("|")[1]}catch(U){}}var B="";var x=n("idsLoginUserIdLastTime");if(x!=undefined&&x!=null){B=x}var S="";var O=n("custno");if(O!=undefined&&O!=null){S=O}var L="";var ab=n("_snmb");if(ab!=undefined&&ab!=null&&ab.indexOf("|")>=0){try{L=ab.split("|")[0]}catch(U){}}var G=W+"?_snmk="+I+"&_snme="+R+"&_type="+T+"&_cId="+D+"&_sid="+H+"&urlPattern="+P+"&vid="+E+"&lu="+B+"&sid="+L+"&mid="+S+"&ls="+C;v(G)}function u(){var k=new Date(),j=Math.round(100000*Math.random()),x=k.getTime().toString().concat(j);return x}function n(k){var j=document.cookie.split("; ");for(var x=0;x<j.length;x++){var y=j[x].split("=");if(y[0]==k){return unescape(y[1])}}}function v(j){var x="log_"+(new Date()).getTime();var k=window[x]=new Image();k.onload=(k.onerror=function(){window[x]=null});k.src=j+"&iId="+x;k=null}function h(){if(t.test(s)){return"click.suning.cn/sa"}else{return"clicksit.suning.cn/sa"}}function d(){return document.domain}function i(k,j,C,B,A){var z=k+"="+escape(j);if(B!=""){var y=new Date();y.setTime(y.getTime()+B);z+=";expires="+y.toGMTString()}if(C!=""){z+=";path="+C}var x=d();if(x.indexOf(".suning.com")!=-1){z+=";domain=.suning.com"}else{if(x.indexOf(".cnsuning.com")!=-1){z+=";domain=.cnsuning.com"}else{z+=";domain="+A}}document.cookie=z}function w(k){var j="-";if(!a(k)){j=f(k,"tid","&")}return j}function p(j){if(j.length>301){j=j.substring(0,300)}while(j.indexOf(b)!=-1){j=j.replace(b,"--")}return j}function e(x,k){if(x.nodeType==3){k.push(x.nodeValue)}else{if(x.nodeType==1){for(var j=x.firstChild;j!=null;j=j.nextSibling){e(j,k)}}}}function l(j){return j!=null?encodeURIComponent(j):""}function f(x,k,A){var z="-",j;if(!a(x)&&!a(k)&&!a(A)){j=x.indexOf(k);if(j>-1){var y=x.indexOf(A,j);if(y<0){y=x.length}z=x.substring(j+k.length+1,y)}}return z}function a(j){return(undefined==j||""==j||"-"==j)}var r=sa.click;r.sendDatasIndex=q})();
+
+/**
+ * 第二步：为元素绑定click事件
+ * 技术支持：此方案需要jQuery支持，使用此方案前请确认使用的jquery版本对live方法的支持性
+ * 功能：为点击对象添加点击事件处理函数
+ * 示例解释：下面的示例中是为标签的name以test_dac_index_开头的元素埋点，实际生产中的name属性命名约束请联系贺婷芳(12061488)确认；未经确认不得埋点，否则引起冲突后果自负
+ * 示例修改：在具体埋点过程中请开发人员根据具体的name修改a[name^=\*需要埋点的name*\]或者input[name^=\*需要埋点的name*\]
+ * 命名技术规范：标签的name,id属性不能含有"|"
+ */
+
+
+$(document).ready(function(){
+	// 企业用户注册页面
+	$("a[name*=Creg_index_none_],input[name*=Creg_index_none_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// 注册成功页
+	$("a[name*=Creg_sucess_none_],input[name*=Creg_sucess_none_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// 记得密码验证公司卡信息页面
+	$("a[name*=VerCocard_index_none_],input[name*=VerCocard_index_none_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// 忘记密码验证公司卡信息页面
+	$("a[name*=FVerCocard_index_none_],input[name*=FVerCocard_index_none_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// 验证公司卡中的手机页面
+	$("a[name*=VerCocard_cellphone_none_],input[name*=VerCocard_cellphone_none_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// 创建易购账号页面
+	$("a[name*=MobCreg_index_none_],input[name*=MobCreg_index_none_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// 验证注册成功页面
+	$("a[name*=MerCocard_sucess_none_],input[name*=MerCocard_sucess_none_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	//个人注册页面
+	$("a[name*=Preg_index_none_],input[name*=Preg_index_none_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	//个人注册弹框页面
+	$("a[name*=Treg_info_none_],input[name*=Treg_info_none_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	//个人注册成功页面
+	$("a[name*=Preg_sucess_none_],input[name*=Preg_sucess_none_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	//个人注册成功跳转页面
+	$("a[name*=Preg_sucessTz_none_],input[name*=Preg_sucessTz_none_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	//新版物流企业用户注册页面
+	$("a[name*=ClpsReg_index_none_],input[name*=ClpsReg_index_none_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// wap注册
+	$("a[name*=Wap_reg_person_],input[name*=Wap_reg_person_],span[name*=Wap_reg_person_],em[name*=Wap_reg_person_],img[name*=Wap_reg_person_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// PC联合登录
+	$("a[name*=PClogin_weixin],a[name*=PClogin_qq]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// Wap联合登录
+	$("a[name*=WAPlogin_qq],span[name*=WAPlogin_qq],em[name*=WAPlogin_qq]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// Wap信任登录--PPTV
+	$("a[name*=WAPlogin_pptv],span[name*=WAPlogin_pptv],em[name*=WAPlogin_pptv]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// Wap企业会员注册
+	$("a[name*='wap_companystep1.do_'],a[name*='wap_companystep2.do_'],a[name*='wap_companystep3.do_'],a[name*='wap_compregsucc.do_']").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// Wap端POS扫码验证
+	$("a[name*=reg_scan_],span[name*=reg_scan_],em[name*=reg_scan_],input[name*=reg_scan_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// Wap端门店快捷登陆
+	$("a[name*=reg_shortcut_],span[name*=reg_shortcut_],em[name*=reg_shortcut_],input[name*=reg_shortcut_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// wap端和pc端 门店会员卡首次登录
+	$("a[name*=reg_fusion_],span[name*=reg_fusion_],a[name*=PCreg_card_offline_],span[name*=PCreg_card_offline_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+	
+	// wap端和pc端 我的易购绑定会员卡
+	$("a[name*=my_fusion_],span[name*=my_fusion_],a[name*=PCreg_card_online_],span[name*=PCreg_card_online_]").live("click",function(){
+		sa.click.sendDatasIndex(this);
+	});
+});
+
+</script>  
+ </body>
+</html>
